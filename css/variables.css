@@ -1,0 +1,140 @@
+/* CSS Custom Properties - Apple-inspired Design System */
+:root {
+  /* Color Palette */
+  --color-black: #1d1d1f;
+  --color-white: #ffffff;
+  --color-gray-50: #f5f5f7;
+  --color-gray-100: #e8e8ed;
+  --color-gray-200: #d2d2d7;
+  --color-gray-400: #86868b;
+  --color-gray-600: #424245;
+  --color-gray-800: #1d1d1f;
+  --color-blue: #0066cc;
+  --color-blue-hover: #0077ed;
+  --color-gold: #d4af37;
+  --color-gold-light: #e5c158;
+  
+  /* Text Colors */
+  --text-primary: var(--color-gray-800);
+  --text-secondary: var(--color-gray-400);
+  --text-light: var(--color-gray-50);
+  --text-on-dark: var(--color-gray-50);
+  --text-link: var(--color-blue);
+  
+  /* Background Colors */
+  --bg-primary: #fdfff5;
+  --bg-primary-alt: #ffffff;
+  --bg-dark: var(--color-black);
+  --bg-gray: var(--color-gray-50);
+  --bg-nav: rgba(0, 0, 0, 0.8);
+  
+  /* Typography Scale */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  --font-size-hero-xl: 80px;
+  --font-size-hero-lg: 64px;
+  --font-size-hero-md: 48px;
+  --font-size-hero-sm: 40px;
+  --font-size-headline: 56px;
+  --font-size-subheadline: 28px;
+  --font-size-subheadline-sm: 21px;
+  --font-size-body: 17px;
+  --font-size-body-sm: 14px;
+  --font-size-caption: 12px;
+  
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.8;
+  
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  
+  /* Layout */
+  --container-max-width: 980px;
+  --container-padding: var(--space-6);
+  --nav-height: 44px;
+  --nav-height-mobile: 70px;
+  
+  /* Grid */
+  --grid-gap: 12px;
+  --grid-gap-lg: 24px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  --transition-hero: 0.8s ease-out;
+  
+  /* Animations */
+  --animation-fade-up: fadeUp 0.8s ease-out forwards;
+  --animation-scale-in: scaleIn 0.6s ease-out forwards;
+  
+  /* Z-index Scale */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-nav: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Typography */
+@media (max-width: 1068px) {
+  :root {
+    --font-size-hero-xl: 64px;
+    --font-size-hero-lg: 56px;
+    --font-size-hero-md: 40px;
+    --font-size-headline: 48px;
+    --font-size-subheadline: 24px;
+  }
+}
+
+@media (max-width: 734px) {
+  :root {
+    --font-size-hero-xl: 48px;
+    --font-size-hero-lg: 40px;
+    --font-size-hero-md: 32px;
+    --font-size-headline: 40px;
+    --font-size-subheadline: 21px;
+    --container-padding: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-hero-xl: 40px;
+    --font-size-hero-lg: 32px;
+    --font-size-headline: 32px;
+    --font-size-subheadline: 19px;
+  }
+}

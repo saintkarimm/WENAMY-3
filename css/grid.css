@@ -1,0 +1,108 @@
+/* Bento Grid Section Styles */
+
+.bento-grid {
+  padding: var(--space-3);
+  background-color: var(--bg-primary);
+}
+
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Bento Card Base */
+.bento-card {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.bento-card:hover {
+  transform: scale(1.01);
+}
+
+/* Light Card */
+.bento-card-light {
+  background-color: var(--bg-gray);
+  color: var(--text-primary);
+}
+
+/* Dark Card */
+.bento-card-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.bento-card-dark .bento-card-subtitle {
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+/* Card Content */
+.bento-card-content {
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  z-index: 2;
+}
+
+.bento-card-title {
+  font-size: var(--font-size-headline);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-2);
+}
+
+.bento-card-subtitle {
+  font-size: var(--font-size-subheadline-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.bento-card-links {
+  margin-top: var(--space-4);
+}
+
+.bento-card-links .btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-body-sm);
+}
+
+/* Card Image */
+.bento-card-image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.bento-card:hover .bento-card-image img {
+  transform: scale(1.03);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1068px) {
+  .bento-card {
+    min-height: 500px;
+  }
+  
+  .bento-card-title {
+    font-size: var(--font-size-hero-md);
+  }
+}

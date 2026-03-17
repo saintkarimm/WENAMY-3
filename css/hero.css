@@ -1,0 +1,119 @@
+/* Hero Section Styles */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  padding: var(--space-16) var(--space-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-headline {
+  font-size: var(--font-size-hero-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.015em;
+  color: var(--text-light);
+  margin-bottom: var(--space-4);
+}
+
+.hero-subheadline {
+  font-size: var(--font-size-subheadline);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--text-light);
+  opacity: 0.9;
+  margin-bottom: var(--space-6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero-cta .btn {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-body);
+}
+
+.hero-image-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero animations are handled in animations.css */
+.hero-text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-text-reveal.animated {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 80px;
+  }
+  
+  .hero-text {
+    padding: var(--space-8) var(--space-4);
+  }
+  
+  .hero-headline {
+    font-size: var(--font-size-hero-md);
+  }
+  
+  .hero-subheadline {
+    font-size: var(--font-size-body);
+  }
+}

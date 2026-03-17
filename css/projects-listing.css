@@ -1,0 +1,262 @@
+/* Projects Listing Styles - Clean, spacious design with visual hierarchy */
+
+/* Page Header - Minimal with primary background */
+.page-header-minimal {
+  padding: calc(var(--nav-height) + var(--space-20)) var(--space-6) var(--space-16);
+  text-align: center;
+  background-color: var(--bg-primary);
+}
+
+.page-header-label {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-4);
+}
+
+.page-title-minimal {
+  font-size: var(--font-size-hero-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-tight);
+}
+
+.page-subtitle-minimal {
+  font-size: var(--font-size-subheadline-sm);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Filter/Category Section */
+.category-section {
+  padding: var(--space-8) var(--space-6);
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.category-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-title {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-6);
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.category-item {
+  max-width: 500px;
+}
+
+.category-item-title {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.category-item-desc {
+  font-size: var(--font-size-body-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Projects Grid - Masonry-like layout */
+.projects-listing-section {
+  padding: var(--space-16) var(--space-6);
+  background-color: var(--bg-primary);
+}
+
+.projects-listing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-masonry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-12) var(--space-8);
+}
+
+/* Project Card - Clean minimal design */
+.project-card-minimal {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-minimal:nth-child(odd) {
+  margin-top: 0;
+}
+
+.project-card-minimal:nth-child(even) {
+  margin-top: var(--space-16);
+}
+
+.project-image-wrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-5);
+}
+
+.project-image-wrap img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.project-card-minimal:hover .project-image-wrap img {
+  transform: scale(1.03);
+}
+
+/* Sold Out Badge */
+.sold-out-badge {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-blue);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Project Info */
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.project-type-tag {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-price {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.project-name {
+  font-size: var(--font-size-subheadline-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-tight);
+}
+
+.project-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color var(--transition-normal);
+  width: fit-content;
+}
+
+.project-cta-btn:hover {
+  background-color: var(--color-blue-hover);
+}
+
+/* CTA Section at bottom */
+.listing-cta-section {
+  padding: var(--space-20) var(--space-6);
+  background-color: var(--color-gray-800);
+  text-align: center;
+}
+
+.listing-cta-title {
+  font-size: var(--font-size-headline);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.listing-cta-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--color-gray-200);
+  margin-bottom: var(--space-8);
+}
+
+.listing-cta-btn {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-normal);
+}
+
+.listing-cta-btn:hover {
+  background-color: var(--color-blue-hover);
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .projects-masonry {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  
+  .project-card-minimal:nth-child(even) {
+    margin-top: 0;
+  }
+  
+  .page-title-minimal {
+    font-size: var(--font-size-hero-md);
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header-minimal {
+    padding: calc(var(--nav-height) + var(--space-12)) var(--space-4) var(--space-10);
+  }
+  
+  .page-title-minimal {
+    font-size: var(--font-size-hero-sm);
+  }
+  
+  .category-list {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .projects-listing-section {
+    padding: var(--space-10) var(--space-4);
+  }
+}
