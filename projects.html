@@ -10,125 +10,63 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero-new.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/projects-listing.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <!-- Navigation - Split-Level Luxury Design -->
-  <header class="nav-header" id="nav">
-    <!-- Top Branding Bar -->
-    <div class="nav-brand-bar">
-      <div class="nav-brand-container">
-        <div class="nav-brand-left">
-          <a href="index.html" class="nav-brand-logo">
-            <img src="images/icons/logo.png" alt="Wenamy Ghana Ltd">
-            <span class="nav-brand-logo-text">WENAMY</span>
-          </a>
-          <span class="nav-tagline">Just Exceptional</span>
-        </div>
-        <div class="nav-brand-right">
-          <div class="nav-contact-info">
-            <div class="nav-contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <a href="tel:0243817969">0243 817 969</a>
-            </div>
-            <div class="nav-contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <a href="mailto:info@wenamy.com">info@wenamy.com</a>
-            </div>
-          </div>
-          <div class="nav-social">
-            <a href="#" class="nav-social-link" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" class="nav-social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-            </a>
-            <a href="#" class="nav-social-link" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-            </a>
-            <a href="#" class="nav-social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-          </div>
-        </div>
+  <!-- Navigation - Wenamytest Style -->
+  <nav class="navbar navbar-light">
+    <div class="nav-left">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link active">Projects</a>
+      <a href="offplan.html" class="nav-link">Off-Plan</a>
+      <a href="about.html" class="nav-link">About Us</a>
+    </div>
+    
+    <div class="nav-center">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+          <rect x="4" y="4" width="10" height="16" rx="3" stroke="white" stroke-width="2"/>
+          <rect x="8" y="8" width="12" height="12" rx="3" stroke="white" stroke-width="2"/>
+        </svg>
+        Wenamy
       </div>
     </div>
     
-    <!-- Main Navigation Bar -->
-    <div class="nav-main-bar">
-      <div class="nav-main-container">
-        <div class="nav-main-content">
-          <!-- Mobile Menu Button -->
-          <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </button>
-            
-          <!-- Logo (Mobile) -->
-          <a href="index.html" class="nav-main-logo">
-            <img src="images/icons/logo.png" alt="Wenamy Ghana Ltd">
-            <span class="nav-main-logo-text">WENAMY</span>
-          </a>
-            
-          <!-- Desktop Navigation -->
-          <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li class="nav-dropdown">
-              <a href="offplan.html" class="nav-dropdown-toggle">Off-Plan <span class="dropdown-arrow">▼</span></a>
-              <ul class="nav-dropdown-menu">
-                <li><a href="offplan.html?category=family">Family Homes</a></li>
-                <li><a href="offplan.html?category=vacation">Vacation Homes</a></li>
-                <li><a href="offplan.html?category=beach">Beach Homes</a></li>
-                <li><a href="offplan.html?category=apartments">Apartments</a></li>
-                <li><a href="offplan.html?category=townhouses">Townhouses</a></li>
-              </ul>
-            </li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-            
-          <!-- Nav Actions -->
-          <div class="nav-actions">
-            <a href="contact.html" class="nav-cta-btn">Get in Touch</a>
-          </div>
-        </div>
-          
-        <!-- Mobile Menu -->
-        <div class="nav-mobile-menu" id="mobileMenu">
-          <ul class="nav-mobile-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li class="nav-mobile-dropdown">
-              <a href="offplan.html" class="nav-mobile-dropdown-toggle">Off-Plan <span class="dropdown-arrow">▼</span></a>
-              <ul class="nav-mobile-dropdown-menu">
-                <li><a href="offplan.html?category=family">Family Homes</a></li>
-                <li><a href="offplan.html?category=vacation">Vacation Homes</a></li>
-                <li><a href="offplan.html?category=beach">Beach Homes</a></li>
-                <li><a href="offplan.html?category=apartments">Apartments</a></li>
-                <li><a href="offplan.html?category=townhouses">Townhouses</a></li>
-              </ul>
-            </li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <div class="nav-mobile-cta">
-            <a href="contact.html" class="nav-cta-btn">Get in Touch</a>
-          </div>
-        </div>
-      </div>
+    <div class="nav-right">
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
     </div>
-  </header>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="offplan.html" class="nav-link">Off-Plan</a>
+    <a href="about.html" class="nav-link">About Us</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+  </div>
 
   <main>
     <!-- Page Header -->
@@ -335,93 +273,75 @@
   </main>
 
   <!-- Footer -->
+  <!-- Footer - Minimal Luxury Design -->
   <footer class="footer" id="contact">
-    <div class="footer-top-decoration"></div>
-    
-    <div class="footer-main">
-      <div class="footer-container">
-        <div class="footer-content">
-          <!-- Newsletter -->
+    <div class="footer-container">
+      <div class="footer-main">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="10" height="16" rx="3" stroke="white" stroke-width="2"/>
+              <rect x="8" y="8" width="12" height="12" rx="3" stroke="white" stroke-width="2"/>
+            </svg>
+            Wenamy
+          </div>
+          <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
+          
+          <!-- Newsletter Panel -->
           <div class="footer-newsletter">
-            <h3 class="newsletter-title">Get Updates & Information</h3>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-              <input type="email" class="newsletter-input" placeholder="email address" required>
-              <button type="submit" class="newsletter-btn">Subscribe</button>
+            <form class="newsletter-panel" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
             </form>
           </div>
-          
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <p class="contact-phone">T: <a href="tel:0243817969">0243 817 969</a></p>
-            <p class="contact-phone">C: <a href="tel:0201050996">0201 050 996</a></p>
-            <p class="contact-email"><a href="mailto:info@wenamy.com">INFO@WENAMY.COM</a></p>
-          </div>
-          
-          <!-- Office Address -->
-          <div class="footer-address">
-            <h4 class="address-title">Wenamy Ghana Ltd Offices</h4>
-            <p class="address-lines">
-              Tema Community 25<br>
-              Greater Accra Region<br>
-              Ghana
-            </p>
-          </div>
-          
-          <!-- Off-Plan Section -->
-          <div class="footer-offplan">
-            <h4 class="footer-offplan-header">Off-Plan</h4>
-            <div class="footer-offplan-content">
-              <div class="footer-offplan-categories">
-                <a href="offplan.html" class="footer-offplan-category">Family Homes</a>
-                <a href="offplan.html" class="footer-offplan-category">Vacation Homes</a>
-                <a href="offplan.html" class="footer-offplan-category">Beach Homes</a>
-                <a href="offplan.html" class="footer-offplan-category">Apartments</a>
-                <a href="offplan.html" class="footer-offplan-category">Townhouses</a>
-              </div>
-              <a href="offplan.html" class="footer-offplan-cta">Explore Off-Plan Projects</a>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Footer Navigation -->
-    <div class="footer-nav">
-      <div class="footer-container">
-        <div class="footer-nav-content">
-          <nav class="footer-nav-links">
+        
+        <!-- Contact Column -->
+        <div class="footer-contact">
+          <h4 class="footer-contact-title">Contact</h4>
+          <div class="footer-contact-info">
+            <a href="tel:0243817969">0243 817 969</a>
+            <a href="tel:0201050996">0201 050 996</a>
+            <a href="mailto:info@wenamy.com">info@wenamy.com</a>
+          </div>
+          <p class="footer-address-text">
+            Tema Community 25<br>
+            Greater Accra Region<br>
+            Ghana
+          </p>
+        </div>
+        
+        <!-- Links Column -->
+        <div class="footer-links-section">
+          <h4 class="footer-links-title">Quick Links</h4>
+          <div class="footer-links">
             <a href="projects.html">Projects</a>
             <a href="offplan.html">Off-Plan</a>
             <a href="about.html">About Us</a>
             <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-          </nav>
-          
-          <div class="footer-social">
-            <a href="#" class="social-link" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <div class="footer-container">
-        <div class="footer-bottom-content">
-          <p class="footer-copyright">&copy; 2026 Wenamy Ghana Ltd. All rights reserved.</p>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Wenamy Ghana Ltd. All rights reserved.</p>
+        
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -429,7 +349,31 @@
 
   <script src="js/utils.js"></script>
   <script src="js/animations.js"></script>
-  <script src="js/nav.js"></script>
   <script src="js/main.js"></script>
+  
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const menuClose = document.querySelector('.mobile-menu-close');
+      const mobileNav = document.querySelector('.mobile-nav-overlay');
+
+      if (menuToggle && mobileNav && menuClose) {
+        menuToggle.addEventListener('click', () => {
+          mobileNav.classList.add('active');
+        });
+        menuClose.addEventListener('click', () => {
+          mobileNav.classList.remove('active');
+        });
+        
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

@@ -126,65 +126,222 @@
   margin-top: var(--space-2);
 }
 
-/* Services Grid Clean */
-.services-clean-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+/* Services Section - Luxury Design */
+.services-luxury {
+  padding: 6rem 4rem;
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
 
-.service-clean-card {
-  padding: var(--space-8);
-  border-radius: var(--radius-lg);
+.services-luxury-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-luxury-header {
   text-align: center;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  margin-bottom: 4rem;
 }
 
-.service-clean-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+.services-luxury-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(10, 16, 29, 0.5);
+  margin-bottom: 1rem;
 }
 
-.service-clean-card-light {
-  background-color: var(--color-gray-50);
+.services-luxury-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #0a101d;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
 }
 
-.service-clean-card-dark {
-  background-color: var(--color-gray-800);
-  color: var(--color-white);
+.services-luxury-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(10, 16, 29, 0.6);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.service-clean-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto var(--space-4);
-  background-color: var(--color-blue);
-  border-radius: var(--radius-full);
+/* Services Grid - Horizontal Cards */
+.services-luxury-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-luxury-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(10, 16, 29, 0.08);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-luxury-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
+  transform: scaleY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-luxury-card:hover {
+  border-color: rgba(10, 16, 29, 0.15);
+  box-shadow: 0 20px 60px rgba(10, 16, 29, 0.1);
+  transform: translateX(8px);
+}
+
+.service-luxury-card:hover::before {
+  transform: scaleY(1);
+}
+
+.service-luxury-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(10, 16, 29, 0.3);
+  width: 40px;
+  transition: color 0.3s ease;
+}
+
+.service-luxury-card:hover .service-luxury-number {
+  color: #0a101d;
+}
+
+.service-luxury-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.service-luxury-icon {
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-white);
+  background: linear-gradient(135deg, #0a101d 0%, #1b263b 100%);
+  border-radius: 12px;
+  color: #ffffff;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
 }
 
-.service-clean-icon svg {
-  width: 28px;
-  height: 28px;
+.service-luxury-card:hover .service-luxury-icon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 10px 30px rgba(10, 16, 29, 0.3);
 }
 
-.service-clean-title {
-  font-size: var(--font-size-body);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-2);
+.service-luxury-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
 }
 
-.service-clean-desc {
-  font-size: var(--font-size-body-sm);
-  color: var(--text-secondary);
-  line-height: var(--line-height-relaxed);
+.service-luxury-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.service-clean-card-dark .service-clean-desc {
-  color: var(--color-gray-200);
+.service-luxury-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0a101d;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.service-luxury-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(10, 16, 29, 0.6);
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+.service-luxury-arrow {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(10, 16, 29, 0.1);
+  border-radius: 50%;
+  color: rgba(10, 16, 29, 0.4);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.service-luxury-arrow svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.service-luxury-card:hover .service-luxury-arrow {
+  background: #0a101d;
+  border-color: #0a101d;
+  color: #ffffff;
+}
+
+.service-luxury-card:hover .service-luxury-arrow svg {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-luxury {
+    padding: 4rem 1.5rem;
+  }
+  
+  .service-luxury-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .service-luxury-number {
+    display: none;
+  }
+  
+  .service-luxury-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .service-luxury-arrow {
+    align-self: flex-end;
+    margin-top: -3rem;
+  }
+  
+  .service-luxury-title {
+    font-size: 1.1rem;
+  }
+  
+  .service-luxury-desc {
+    font-size: 0.9rem;
+  }
 }
 
 /* Motto Section */

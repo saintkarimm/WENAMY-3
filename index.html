@@ -11,8 +11,6 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/carousel.css">
@@ -20,136 +18,13 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/page-clean.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/hero-new.css">
 </head>
 <body>
-  <!-- Navigation - Split-Level Luxury Design -->
-  <header class="nav-header" id="nav">
-    <!-- Top Branding Bar -->
-    <div class="nav-brand-bar">
-      <div class="nav-brand-container">
-        <div class="nav-brand-left">
-          <a href="index.html" class="nav-brand-logo">
-            <img src="images/icons/logo.png" alt="Wenamy Ghana Ltd">
-            <span class="nav-brand-logo-text">WENAMY</span>
-          </a>
-          <span class="nav-tagline">Just Exceptional</span>
-        </div>
-        <div class="nav-brand-right">
-          <div class="nav-contact-info">
-            <div class="nav-contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <a href="tel:0243817969">0243 817 969</a>
-            </div>
-            <div class="nav-contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <a href="mailto:info@wenamy.com">info@wenamy.com</a>
-            </div>
-          </div>
-          <div class="nav-social">
-            <a href="#" class="nav-social-link" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" class="nav-social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-            </a>
-            <a href="#" class="nav-social-link" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-            </a>
-            <a href="#" class="nav-social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Main Navigation Bar -->
-    <div class="nav-main-bar">
-      <div class="nav-main-container">
-        <div class="nav-main-content">
-          <!-- Mobile Menu Button -->
-          <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </button>
-            
-          <!-- Logo (Mobile) -->
-          <a href="index.html" class="nav-main-logo">
-            <img src="images/icons/logo.png" alt="Wenamy Ghana Ltd">
-            <span class="nav-main-logo-text">WENAMY</span>
-          </a>
-            
-          <!-- Desktop Navigation -->
-          <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li class="nav-dropdown">
-              <a href="offplan.html" class="nav-dropdown-toggle">Off-Plan <span class="dropdown-arrow">▼</span></a>
-              <ul class="nav-dropdown-menu">
-                <li><a href="offplan.html?category=family">Family Homes</a></li>
-                <li><a href="offplan.html?category=vacation">Vacation Homes</a></li>
-                <li><a href="offplan.html?category=beach">Beach Homes</a></li>
-                <li><a href="offplan.html?category=apartments">Apartments</a></li>
-                <li><a href="offplan.html?category=townhouses">Townhouses</a></li>
-              </ul>
-            </li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-            
-          <!-- Nav Actions -->
-          <div class="nav-actions">
-            <a href="contact.html" class="nav-cta-btn">Get in Touch</a>
-          </div>
-        </div>
-          
-        <!-- Mobile Menu -->
-        <div class="nav-mobile-menu" id="mobileMenu">
-          <ul class="nav-mobile-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li class="nav-mobile-dropdown">
-              <a href="offplan.html" class="nav-mobile-dropdown-toggle">Off-Plan <span class="dropdown-arrow">▼</span></a>
-              <ul class="nav-mobile-dropdown-menu">
-                <li><a href="offplan.html?category=family">Family Homes</a></li>
-                <li><a href="offplan.html?category=vacation">Vacation Homes</a></li>
-                <li><a href="offplan.html?category=beach">Beach Homes</a></li>
-                <li><a href="offplan.html?category=apartments">Apartments</a></li>
-                <li><a href="offplan.html?category=townhouses">Townhouses</a></li>
-              </ul>
-            </li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <div class="nav-mobile-cta">
-            <a href="contact.html" class="nav-cta-btn">Get in Touch</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  <!-- Dynamic Hero Section Container - Includes both navbar + hero from hero-switcher.js -->
+  <div id="dynamic-hero"></div>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero section-dark" id="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-headline hero-text-reveal">Just Exceptional</h1>
-          <p class="hero-subheadline hero-text-reveal">Wenamy Ghana Ltd - Estate Development, Building & Construction, Investment Portfolio</p>
-          <div class="hero-cta hero-text-reveal">
-            <a href="#properties" class="btn btn-primary">Explore Properties</a>
-            <a href="offplan.html" class="btn btn-outline-light">Explore Off-Plan Projects</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Featured Property Section (MacBook Style) -->
     <section class="featured-property section-light scroll-animate" id="featured">
@@ -353,180 +228,223 @@
       </div>
     </section>
 
-    <!-- Services Section - Clean Style -->
-    <section class="section-clean-gray" id="about">
-      <div class="container-clean">
-        <div class="section-header-clean scroll-animate">
-          <p class="section-label">What We Do</p>
-          <h2 class="section-title-clean">Our Services</h2>
-          <p class="section-description-clean">Just Exceptional - Delivering excellence in every project</p>
+    <!-- Services Section - Luxury Style -->
+    <section class="services-luxury" id="services">
+      <div class="services-luxury-container">
+        <div class="services-luxury-header scroll-animate">
+          <p class="services-luxury-label">What We Do</p>
+          <h2 class="services-luxury-title">Our Services</h2>
+          <p class="services-luxury-subtitle">Just Exceptional — Delivering excellence in every project we undertake</p>
         </div>
         
-        <div class="services-clean-grid">
-          <div class="service-clean-card service-clean-card-dark scroll-animate-scale">
-            <div class="service-clean-icon">
+        <div class="services-luxury-grid">
+          <!-- Service 1 -->
+          <div class="service-luxury-card scroll-animate">
+            <span class="service-luxury-number">01</span>
+            <div class="service-luxury-content">
+              <div class="service-luxury-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <div class="service-luxury-text">
+                <h3 class="service-luxury-title">Estate Development</h3>
+                <p class="service-luxury-desc">Creating premium residential and commercial properties with exceptional standards</p>
+              </div>
+            </div>
+            <div class="service-luxury-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <h3 class="service-clean-title">Estate Development</h3>
-            <p class="service-clean-desc">Creating premium residential and commercial properties with exceptional standards</p>
           </div>
           
-          <div class="service-clean-card service-clean-card-dark scroll-animate-scale">
-            <div class="service-clean-icon">
+          <!-- Service 2 -->
+          <div class="service-luxury-card scroll-animate">
+            <span class="service-luxury-number">02</span>
+            <div class="service-luxury-content">
+              <div class="service-luxury-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="2" y="6" width="20" height="8" rx="1"/>
+                  <path d="M17 14v7M7 14v7M17 3v3M7 3v3M2 10h20"/>
+                </svg>
+              </div>
+              <div class="service-luxury-text">
+                <h3 class="service-luxury-title">Building & Construction</h3>
+                <p class="service-luxury-desc">Quality construction services from foundation to finishing with precision</p>
+              </div>
+            </div>
+            <div class="service-luxury-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="6" width="20" height="8" rx="1"/>
-                <path d="M17 14v7"/>
-                <path d="M7 14v7"/>
-                <path d="M17 3v3"/>
-                <path d="M7 3v3"/>
-                <path d="M2 10h20"/>
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <h3 class="service-clean-title">Building & Construction</h3>
-            <p class="service-clean-desc">Quality construction services from foundation to finishing with precision</p>
           </div>
           
-          <div class="service-clean-card service-clean-card-dark scroll-animate-scale">
-            <div class="service-clean-icon">
+          <!-- Service 3 -->
+          <div class="service-luxury-card scroll-animate">
+            <span class="service-luxury-number">03</span>
+            <div class="service-luxury-content">
+              <div class="service-luxury-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div class="service-luxury-text">
+                <h3 class="service-luxury-title">Investment Portfolio</h3>
+                <p class="service-luxury-desc">Strategic real estate investment opportunities with excellent returns</p>
+              </div>
+            </div>
+            <div class="service-luxury-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <h3 class="service-clean-title">Investment Portfolio</h3>
-            <p class="service-clean-desc">Strategic real estate investment opportunities with excellent returns</p>
           </div>
           
-          <div class="service-clean-card service-clean-card-light scroll-animate-scale">
-            <div class="service-clean-icon">
+          <!-- Service 4 -->
+          <div class="service-luxury-card scroll-animate">
+            <span class="service-luxury-number">04</span>
+            <div class="service-luxury-content">
+              <div class="service-luxury-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <line x1="3" y1="9" x2="21" y2="9"/>
+                  <line x1="9" y1="21" x2="9" y2="9"/>
+                </svg>
+              </div>
+              <div class="service-luxury-text">
+                <h3 class="service-luxury-title">Architecture</h3>
+                <p class="service-luxury-desc">Innovative architectural designs that blend functionality with aesthetic appeal</p>
+              </div>
+            </div>
+            <div class="service-luxury-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <line x1="3" y1="9" x2="21" y2="9"/>
-                <line x1="9" y1="21" x2="9" y2="9"/>
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <h3 class="service-clean-title">Architecture</h3>
-            <p class="service-clean-desc">Innovative architectural designs that blend functionality with aesthetic appeal</p>
           </div>
           
-          <div class="service-clean-card service-clean-card-light scroll-animate-scale">
-            <div class="service-clean-icon">
+          <!-- Service 5 -->
+          <div class="service-luxury-card scroll-animate">
+            <span class="service-luxury-number">05</span>
+            <div class="service-luxury-content">
+              <div class="service-luxury-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/>
+                  <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
+                </svg>
+              </div>
+              <div class="service-luxury-text">
+                <h3 class="service-luxury-title">Interior Design</h3>
+                <p class="service-luxury-desc">Creating beautiful, functional interior spaces that reflect your style</p>
+              </div>
+            </div>
+            <div class="service-luxury-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/>
-                <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <h3 class="service-clean-title">Interior Design</h3>
-            <p class="service-clean-desc">Creating beautiful, functional interior spaces that reflect your style</p>
           </div>
           
-          <div class="service-clean-card service-clean-card-light scroll-animate-scale">
-            <div class="service-clean-icon">
+          <!-- Service 6 -->
+          <div class="service-luxury-card scroll-animate">
+            <span class="service-luxury-number">06</span>
+            <div class="service-luxury-content">
+              <div class="service-luxury-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="16" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+              </div>
+              <div class="service-luxury-text">
+                <h3 class="service-luxury-title">Consultancy</h3>
+                <p class="service-luxury-desc">Expert real estate and construction consultancy for informed decisions</p>
+              </div>
+            </div>
+            <div class="service-luxury-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="16" x2="12" y2="12"/>
-                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <h3 class="service-clean-title">Consultancy</h3>
-            <p class="service-clean-desc">Expert real estate and construction consultancy for informed decisions</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer - Minimal Luxury Design -->
   <footer class="footer" id="contact">
-    <div class="footer-top-decoration"></div>
-    
-    <div class="footer-main">
-      <div class="footer-container">
-        <div class="footer-content">
-          <!-- Newsletter -->
+    <div class="footer-container">
+      <div class="footer-main">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="10" height="16" rx="3" stroke="white" stroke-width="2"/>
+              <rect x="8" y="8" width="12" height="12" rx="3" stroke="white" stroke-width="2"/>
+            </svg>
+            Wenamy
+          </div>
+          <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
+          
+          <!-- Newsletter Panel -->
           <div class="footer-newsletter">
-            <h3 class="newsletter-title">Get Updates & Information</h3>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-              <input type="email" class="newsletter-input" placeholder="email address" required>
-              <button type="submit" class="newsletter-btn">Subscribe</button>
+            <form class="newsletter-panel" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
             </form>
           </div>
-          
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <p class="contact-phone">T: <a href="tel:0243817969">0243 817 969</a></p>
-            <p class="contact-phone">C: <a href="tel:0201050996">0201 050 996</a></p>
-            <p class="contact-email"><a href="mailto:info@wenamy.com">INFO@WENAMY.COM</a></p>
-          </div>
-          
-          <!-- Office Address -->
-          <div class="footer-address">
-            <h4 class="address-title">Wenamy Ghana Ltd Offices</h4>
-            <p class="address-lines">
-              Tema Community 25<br>
-              Greater Accra Region<br>
-              Ghana
-            </p>
-          </div>
-          
-          <!-- Off-Plan Section -->
-          <div class="footer-offplan">
-            <h4 class="footer-offplan-header">Off-Plan</h4>
-            <div class="footer-offplan-content">
-              <div class="footer-offplan-categories">
-                <a href="offplan.html" class="footer-offplan-category">Family Homes</a>
-                <a href="offplan.html" class="footer-offplan-category">Vacation Homes</a>
-                <a href="offplan.html" class="footer-offplan-category">Beach Homes</a>
-                <a href="offplan.html" class="footer-offplan-category">Apartments</a>
-                <a href="offplan.html" class="footer-offplan-category">Townhouses</a>
-              </div>
-              <a href="offplan.html" class="footer-offplan-cta">Explore Off-Plan Projects</a>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Footer Navigation -->
-    <div class="footer-nav">
-      <div class="footer-container">
-        <div class="footer-nav-content">
-          <nav class="footer-nav-links">
+        
+        <!-- Contact Column -->
+        <div class="footer-contact">
+          <h4 class="footer-contact-title">Contact</h4>
+          <div class="footer-contact-info">
+            <a href="tel:0243817969">0243 817 969</a>
+            <a href="tel:0201050996">0201 050 996</a>
+            <a href="mailto:info@wenamy.com">info@wenamy.com</a>
+          </div>
+          <p class="footer-address-text">
+            Tema Community 25<br>
+            Greater Accra Region<br>
+            Ghana
+          </p>
+        </div>
+        
+        <!-- Links Column -->
+        <div class="footer-links-section">
+          <h4 class="footer-links-title">Quick Links</h4>
+          <div class="footer-links">
             <a href="projects.html">Projects</a>
             <a href="offplan.html">Off-Plan</a>
             <a href="about.html">About Us</a>
             <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-          </nav>
-          
-          <div class="footer-social">
-            <a href="#" class="social-link" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <div class="footer-container">
-        <div class="footer-bottom-content">
-          <p class="footer-copyright">&copy; 2026 Wenamy Ghana Ltd. All rights reserved.</p>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Wenamy Ghana Ltd. All rights reserved.</p>
+        
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -535,8 +453,10 @@
   <!-- JavaScript Files -->
   <script src="js/utils.js"></script>
   <script src="js/animations.js"></script>
-  <script src="js/nav.js"></script>
   <script src="js/carousel.js"></script>
   <script src="js/main.js"></script>
+  
+  <!-- Hero Section Switcher -->
+  <script src="js/hero-switcher.js"></script>
 </body>
 </html>
