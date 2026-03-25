@@ -518,6 +518,13 @@
     height: 60vh;
   }
   
+  /* Remove gradient mask on mobile */
+  .hero-new-bg-image {
+    mask-image: none;
+    -webkit-mask-image: none;
+    opacity: 1;
+  }
+  
   .hero-new-floating-bottom {
     position: relative;
     bottom: auto;
@@ -542,9 +549,18 @@
   .hero-new-headline {
     font-size: 2.5rem;
   }
-  
+
   .hero-new-btn {
     padding: 0.875rem 1.25rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Remove gradient mask on mobile devices */
+@media (max-width: 768px) {
+  .hero-new-bg-image {
+    mask-image: none;
+    -webkit-mask-image: none;
+    opacity: 1;
   }
 }
