@@ -1,0 +1,905 @@
+/* Pages Luxury CSS - About, Contact, Blog, Off-Plan */
+/* Unified luxury design system for all remaining pages */
+
+/* ========================================
+   SHARED PAGE HEADER - Dark Gradient
+   ======================================== */
+.page-luxury-hero {
+  background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
+  padding: 7rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-luxury-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top right, rgba(255,255,255,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.page-luxury-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.page-luxury-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #c9a962;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.page-luxury-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.page-luxury-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ========================================
+   ABOUT PAGE SPECIFIC
+   ======================================== */
+.about-intro-section {
+  padding: 5rem 4rem;
+  background: #ffffff;
+}
+
+.about-intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-intro-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.8;
+}
+
+/* Motto Section */
+.about-motto-section {
+  background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.about-motto-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.about-motto-subtext {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Stats Section */
+.about-stats-section {
+  padding: 5rem 4rem;
+  background: #f8f9fa;
+}
+
+.about-stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.about-stat-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.about-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-stat-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a101d;
+  margin-bottom: 0.5rem;
+}
+
+.about-stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Values Section */
+.about-values-section {
+  padding: 5rem 4rem;
+  background: #ffffff;
+}
+
+.about-values-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a101d;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-values-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.about-value-card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.about-value-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #0a101d 0%, #1b263b 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a962;
+}
+
+.about-value-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0a101d;
+  margin-bottom: 0.75rem;
+}
+
+.about-value-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+}
+
+/* ========================================
+   CONTACT PAGE SPECIFIC
+   ======================================== */
+.contact-luxury-section {
+  padding: 5rem 4rem;
+  background: #ffffff;
+}
+
+.contact-luxury-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Contact Info Side */
+.contact-luxury-info {
+  background: linear-gradient(135deg, #0a101d 0%, #1b263b 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  color: #ffffff;
+}
+
+.contact-luxury-info-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.contact-luxury-item {
+  margin-bottom: 2rem;
+}
+
+.contact-luxury-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-luxury-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.contact-luxury-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.contact-luxury-value a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-luxury-value a:hover {
+  color: #c9a962;
+}
+
+.contact-luxury-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-luxury-social a {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.contact-luxury-social a:hover {
+  background: #c9a962;
+  transform: translateY(-3px);
+}
+
+/* Contact Form Side */
+.contact-luxury-form {
+  background: #f8f9fa;
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.contact-luxury-form-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0a101d;
+  margin-bottom: 0.5rem;
+}
+
+.contact-luxury-form-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+}
+
+.form-luxury-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-luxury-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0a101d;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-luxury-input,
+.form-luxury-textarea,
+.form-luxury-select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #0a101d;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.form-luxury-input:focus,
+.form-luxury-textarea:focus,
+.form-luxury-select:focus {
+  outline: none;
+  border-color: #0a101d;
+  box-shadow: 0 0 0 3px rgba(10, 16, 29, 0.1);
+}
+
+.form-luxury-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-luxury-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-luxury-submit {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #0a101d;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-luxury-submit:hover {
+  background: #1b263b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 16, 29, 0.2);
+}
+
+/* Map Section */
+.contact-map-section {
+  padding: 0 4rem 5rem;
+  background: #ffffff;
+}
+
+.contact-map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 400px;
+  background: #f0f0f0;
+}
+
+.contact-map-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #0a101d;
+}
+
+.contact-map-placeholder svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  color: #0a101d;
+}
+
+.contact-map-placeholder p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ========================================
+   BLOG PAGE SPECIFIC
+   ======================================== */
+.blog-luxury-section {
+  padding: 5rem 4rem;
+  background: #f8f9fa;
+}
+
+.blog-luxury-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blog-luxury-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.blog-luxury-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.blog-luxury-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog-luxury-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-luxury-card:hover .blog-luxury-image img {
+  transform: scale(1.05);
+}
+
+.blog-luxury-content {
+  padding: 1.5rem;
+}
+
+.blog-luxury-category {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #c9a962;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.blog-luxury-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0a101d;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.blog-luxury-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.blog-luxury-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   OFF-PLAN PAGE SPECIFIC
+   ======================================== */
+.offplan-luxury-section {
+  padding: 5rem 4rem;
+  background: #ffffff;
+}
+
+.offplan-luxury-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.offplan-luxury-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.offplan-luxury-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+}
+
+.offplan-luxury-image {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.offplan-luxury-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.offplan-luxury-card:hover .offplan-luxury-image img {
+  transform: scale(1.05);
+}
+
+.offplan-luxury-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.offplan-luxury-badge.coming {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.offplan-luxury-badge.presale {
+  background: #0a101d;
+  color: #ffffff;
+}
+
+.offplan-luxury-content {
+  padding: 1.5rem;
+}
+
+.offplan-luxury-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0a101d;
+  margin-bottom: 0.5rem;
+}
+
+.offplan-luxury-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.offplan-luxury-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a101d;
+  margin-bottom: 1.25rem;
+}
+
+.offplan-luxury-price span {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+
+.offplan-luxury-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: #0a101d;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.offplan-luxury-btn:hover {
+  background: #1b263b;
+  transform: translateY(-2px);
+}
+
+/* Benefits Section */
+.offplan-benefits-section {
+  padding: 5rem 4rem;
+  background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
+}
+
+.offplan-benefits-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.offplan-benefits-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.offplan-benefit-card {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.offplan-benefit-number {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #c9a962;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a962;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.offplan-benefit-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.offplan-benefit-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.page-cta-section {
+  padding: 5rem 4rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+.page-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.page-cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a101d;
+  margin-bottom: 1rem;
+}
+
+.page-cta-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+}
+
+.page-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: #0a101d;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.page-cta-btn:hover {
+  background: #1b263b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 16, 29, 0.2);
+}
+
+/* ========================================
+   WHATSAPP FLOATING BUTTON
+   ======================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 100;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #ffffff;
+  color: #333333;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .page-luxury-hero {
+    padding: 6rem 2rem 3rem;
+  }
+  
+  .about-intro-section,
+  .about-motto-section,
+  .about-stats-section,
+  .about-values-section,
+  .contact-luxury-section,
+  .blog-luxury-section,
+  .offplan-luxury-section,
+  .offplan-benefits-section,
+  .page-cta-section,
+  .contact-map-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-luxury-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .blog-luxury-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .offplan-luxury-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .offplan-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-luxury-hero {
+    padding: 5rem 1.5rem 2.5rem;
+  }
+  
+  .page-luxury-title {
+    font-size: 2rem;
+  }
+  
+  .about-intro-section,
+  .about-motto-section,
+  .about-stats-section,
+  .about-values-section,
+  .contact-luxury-section,
+  .blog-luxury-section,
+  .offplan-luxury-section,
+  .offplan-benefits-section,
+  .page-cta-section,
+  .contact-map-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .about-stats-grid,
+  .about-values-grid,
+  .blog-luxury-grid,
+  .offplan-luxury-grid,
+  .offplan-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .about-stat-card {
+    padding: 2rem 1rem;
+  }
+  
+  .about-stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .contact-luxury-info,
+  .contact-luxury-form {
+    padding: 2rem;
+  }
+  
+  .form-luxury-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-map-container {
+    height: 300px;
+  }
+  
+  .whatsapp-float {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+  }
+  
+  .whatsapp-tooltip {
+    display: none;
+  }
+}

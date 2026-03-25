@@ -1,0 +1,710 @@
+/* Project Detail Page - Luxury Design */
+/* Premium property showcase with conversion-focused elements */
+
+/* ========================================
+   PAGE HEADER - Dark Luxury
+   ======================================== */
+.project-detail-hero {
+  background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
+  padding: 6rem 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-detail-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top right, rgba(255,255,255,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.project-detail-breadcrumb {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-detail-breadcrumb a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-detail-breadcrumb a:hover {
+  color: #ffffff;
+}
+
+.project-detail-breadcrumb span {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0.75rem;
+}
+
+.project-detail-hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.project-detail-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.project-detail-location svg {
+  width: 16px;
+  height: 16px;
+  color: #c9a962;
+}
+
+.project-detail-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.project-detail-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c9a962;
+}
+
+.project-detail-price span {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+/* ========================================
+   MAIN CONTENT LAYOUT
+   ======================================== */
+.project-detail-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 4rem 6rem;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ========================================
+   IMAGE GALLERY - Luxury Showcase
+   ======================================== */
+.project-gallery {
+  position: sticky;
+  top: 2rem;
+}
+
+.project-main-image {
+  width: 100%;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+  background: #f0f0f0;
+}
+
+.project-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-main-image:hover img {
+  transform: scale(1.02);
+}
+
+/* Status Badge on Image */
+.project-image-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.project-image-badge.available {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.project-image-badge.sold-out {
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+}
+
+/* Thumbnails */
+.project-thumbnails {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-thumbnail {
+  width: 100px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.project-thumbnail:hover,
+.project-thumbnail.active {
+  border-color: #0a101d;
+  transform: translateY(-2px);
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================================
+   INFO PANEL - Luxury Card
+   ======================================== */
+.project-info-panel {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+
+.project-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Specs Grid */
+.project-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.project-spec {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.project-spec:hover {
+  background: #0a101d;
+}
+
+.project-spec:hover .project-spec-icon {
+  color: #c9a962;
+}
+
+.project-spec:hover .project-spec-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.project-spec:hover .project-spec-value {
+  color: #ffffff;
+}
+
+.project-spec-icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 0.5rem;
+  color: #0a101d;
+  transition: color 0.3s ease;
+}
+
+.project-spec-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.project-spec-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0a101d;
+  transition: color 0.3s ease;
+}
+
+/* Price Box */
+.project-price-box {
+  background: linear-gradient(135deg, #0a101d 0%, #1b263b 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-price-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.25rem;
+}
+
+.project-price-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Action Buttons */
+.project-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.project-btn-primary {
+  background: #0a101d;
+  color: #ffffff;
+}
+
+.project-btn-primary:hover {
+  background: #1b263b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 16, 29, 0.2);
+}
+
+.project-btn-secondary {
+  background: #ffffff;
+  color: #0a101d;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-btn-secondary:hover {
+  border-color: #0a101d;
+  transform: translateY(-2px);
+}
+
+.project-btn-whatsapp {
+  grid-column: span 2;
+  background: #25d366;
+  color: #ffffff;
+}
+
+.project-btn-whatsapp:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Agent Card */
+.project-agent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+.project-agent-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a101d 0%, #1b263b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.project-agent-info {
+  flex: 1;
+}
+
+.project-agent-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a101d;
+  margin-bottom: 0.25rem;
+}
+
+.project-agent-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   FEATURES SECTION
+   ======================================== */
+.project-features-section {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-features-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0a101d;
+  margin-bottom: 2rem;
+}
+
+.project-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.project-feature:hover {
+  background: #0a101d;
+}
+
+.project-feature:hover .project-feature-check {
+  background: #c9a962;
+}
+
+.project-feature:hover .project-feature-text {
+  color: #ffffff;
+}
+
+.project-feature-check {
+  width: 28px;
+  height: 28px;
+  background: #0a101d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+
+.project-feature-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #0a101d;
+  transition: color 0.3s ease;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+.project-cta-section {
+  background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
+  padding: 5rem 4rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.project-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.project-cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.project-cta-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+.project-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-cta-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-cta-btn-white {
+  background: #ffffff;
+  color: #0a101d;
+}
+
+.project-cta-btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.project-cta-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-cta-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+   WHATSAPP FLOATING BUTTON
+   ======================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 100;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #ffffff;
+  color: #333333;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================
+   NOT FOUND STATE
+   ======================================== */
+.project-not-found {
+  text-align: center;
+  padding: 8rem 4rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.project-not-found h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a101d;
+  margin-bottom: 1rem;
+}
+
+.project-not-found p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .project-detail-hero {
+    padding: 5rem 2rem 2.5rem;
+  }
+  
+  .project-detail-main {
+    padding: 2rem 2rem 4rem;
+  }
+  
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .project-gallery {
+    position: static;
+  }
+  
+  .project-main-image {
+    height: 400px;
+  }
+  
+  .project-features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-cta-section {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-detail-hero {
+    padding: 4rem 1.5rem 2rem;
+  }
+  
+  .project-detail-title {
+    font-size: 1.75rem;
+  }
+  
+  .project-detail-main {
+    padding: 1.5rem 1.5rem 3rem;
+  }
+  
+  .project-info-panel {
+    padding: 1.5rem;
+  }
+  
+  .project-specs {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .project-spec {
+    padding: 1rem;
+  }
+  
+  .project-spec-value {
+    font-size: 1rem;
+  }
+  
+  .project-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-btn-whatsapp {
+    grid-column: span 1;
+  }
+  
+  .project-main-image {
+    height: 300px;
+  }
+  
+  .project-thumbnail {
+    width: 80px;
+    height: 60px;
+  }
+  
+  .project-cta-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .project-cta-buttons {
+    flex-direction: column;
+  }
+  
+  .whatsapp-float {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+  }
+  
+  .whatsapp-tooltip {
+    display: none;
+  }
+}

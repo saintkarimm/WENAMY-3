@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/hero-new.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/projects-listing.css">
+  <link rel="stylesheet" href="css/projects-luxury.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <!-- Navigation - Wenamytest Style -->
+  <!-- Navigation -->
   <nav class="navbar navbar-light">
     <div class="nav-left">
       <a href="index.html" class="nav-link">Home</a>
@@ -41,9 +41,8 @@
       <a href="contact.html" class="btn btn-primary">Get in Touch</a>
     </div>
     
-    <!-- Mobile Menu Toggle -->
     <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="3" y1="12" x2="21" y2="12"></line>
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -54,7 +53,7 @@
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay">
     <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
@@ -69,215 +68,298 @@
   </div>
 
   <main>
-    <!-- Page Header -->
-    <section class="page-header-minimal">
-      <p class="page-header-label scroll-animate">Our Portfolio</p>
-      <h1 class="page-title-minimal scroll-animate">Our Projects</h1>
-      <p class="page-subtitle-minimal scroll-animate">Discover exceptional properties crafted with precision and elegance. Each project reflects our commitment to quality and innovation.</p>
+    <!-- Hero Header -->
+    <section class="projects-hero">
+      <div class="projects-hero-content">
+        <p class="projects-hero-label">Our Portfolio</p>
+        <h1 class="projects-hero-title">Exceptional Properties</h1>
+        <p class="projects-hero-subtitle">Discover our curated collection of luxury residences, from modern apartments to elegant townhouses.</p>
+      </div>
     </section>
 
-    <!-- Category Filter -->
-    <section class="category-section">
-      <div class="category-container">
-        <p class="category-title">Categories</p>
-        <div class="category-list">
-          <div class="category-item">
-            <h3 class="category-item-title">Apartments for sale in Accra Ghana</h3>
-            <p class="category-item-desc">Modern apartment complexes offering luxury living spaces with premium amenities in prime locations across Accra.</p>
-          </div>
-          <div class="category-item">
-            <h3 class="category-item-title">Townhouses for sale in Accra Ghana</h3>
-            <p class="category-item-desc">Elegant townhouse developments designed for families seeking comfort, security, and community living.</p>
-          </div>
+    <!-- Filter Tabs -->
+    <section class="projects-filter">
+      <div class="projects-filter-container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Projects</button>
+          <button class="filter-tab" data-filter="apartments">Apartments</button>
+          <button class="filter-tab" data-filter="townhouses">Townhouses</button>
+          <button class="filter-tab" data-filter="available">Available Now</button>
         </div>
+        <span class="filter-results">12 Properties</span>
       </div>
     </section>
 
     <!-- Projects Grid -->
-    <section class="projects-listing-section">
-      <div class="projects-listing-container">
-        <div class="projects-masonry">
+    <section class="projects-section">
+      <div class="projects-container">
+        <div class="projects-grid">
           <!-- Project 1 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments available">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Arlo Cantonments">
+              <span class="project-status-badge available">Available</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartments</span>
-              <span class="project-price">$83,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$83,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Arlo Cantonments</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Cantonments, Accra
+              </div>
+              <a href="project-detail.html#id=arlo-cantonments" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">Arlo Cantonments</h3>
-            <a href="project-detail.html#id=arlo-cantonments" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 2 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments available">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="The Address">
+              <span class="project-status-badge available">Available</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartment</span>
-              <span class="project-price">$89,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$89,000+</span>
+              </div>
+              <h3 class="project-luxury-name">The Address</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Airport Residential, Accra
+              </div>
+              <a href="project-detail.html#id=the-address" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">The Address</h3>
-            <a href="project-detail.html#id=the-address" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 3 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="The Pelican Hotel Apartments">
+          <article class="project-luxury-card" data-category="apartments available">
+            <div class="project-luxury-image-wrap">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="The Pelican">
+              <span class="project-status-badge available">Available</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Hotel Apartments</span>
-              <span class="project-price">$274,125+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Hotel Suites</span>
+                <span class="project-luxury-price">$274,125+</span>
+              </div>
+              <h3 class="project-luxury-name">The Pelican Hotel Apartments</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                East Legon, Accra
+              </div>
+              <a href="project-detail.html#id=pelican-hotel" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">The Pelican Hotel Apartments</h3>
-            <a href="project-detail.html#id=pelican-hotel" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 4 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
-              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="2 to 4.5-bedroom houses">
+          <article class="project-luxury-card" data-category="townhouses available">
+            <div class="project-luxury-image-wrap">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Accra Tema Houses">
+              <span class="project-status-badge available">Available</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Townhouses</span>
-              <span class="project-price">$270,720+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Townhouses</span>
+                <span class="project-luxury-price">$270,720+</span>
+              </div>
+              <h3 class="project-luxury-name">Luxury Townhouses</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Community 25, Tema
+              </div>
+              <a href="project-detail.html#id=accra-tema-houses" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">2 to 4.5-bedroom houses for sale in Accra, Tema</h3>
-<a href="project-detail.html#id=accra-tema-houses" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 5 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80" alt="NoVA">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartments</span>
-              <span class="project-price">$143,347+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$143,347+</span>
+              </div>
+              <h3 class="project-luxury-name">NoVA</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                East Legon, Accra
+              </div>
+              <a href="project-detail.html#id=nova" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">NoVA</h3>
-            <a href="project-detail.html#id=nova" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 6 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" alt="The Edge">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartments</span>
-              <span class="project-price">$99,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$99,000+</span>
+              </div>
+              <h3 class="project-luxury-name">The Edge</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Cantonments, Accra
+              </div>
+              <a href="project-detail.html#id=the-edge" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">The Edge</h3>
-            <a href="project-detail.html#id=the-edge" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 7 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Henrietta's Residences">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartments</span>
-              <span class="project-price">$245,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$245,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Henrietta's Residences</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Airport Residential, Accra
+              </div>
+              <a href="project-detail.html#id=henrietta-residences" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">Henrietta's Residences</h3>
-            <a href="project-detail.html#id=henrietta-residences" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 8 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80" alt="The Niiyo">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartments</span>
-              <span class="project-price">$275,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$275,000+</span>
+              </div>
+              <h3 class="project-luxury-name">The Niiyo</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                East Legon, Accra
+              </div>
+              <a href="project-detail.html#id=the-niiyo" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">The Niiyo</h3>
-            <a href="project-detail.html#id=the-niiyo" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 9 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="townhouses">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Acasia Townhomes">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Townhomes</span>
-              <span class="project-price">$850,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Townhomes</span>
+                <span class="project-luxury-price">$850,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Acasia Townhomes</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                East Legon, Accra
+              </div>
+              <a href="project-detail.html#id=acasia-townhomes" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">Acasia Townhomes</h3>
-            <a href="project-detail.html#id=acasia-townhomes" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 10 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="Avant Garde">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartments</span>
-              <span class="project-price">$170,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$170,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Avant Garde</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Airport City, Accra
+              </div>
+              <a href="project-detail.html#id=avant-garde" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">Avant Garde</h3>
-            <a href="project-detail.html#id=avant-garde" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 11 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="apartments">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80" alt="Acasia Apartments">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Apartments</span>
-              <span class="project-price">$145,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$145,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Acasia Apartments</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                East Legon, Accra
+              </div>
+              <a href="project-detail.html#id=acasia-apartments" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">Acasia Apartments</h3>
-            <a href="project-detail.html#id=acasia-apartments" class="project-cta-btn">View Details</a>
           </article>
 
           <!-- Project 12 -->
-          <article class="project-card-minimal scroll-animate-scale">
-            <div class="project-image-wrap">
+          <article class="project-luxury-card" data-category="townhouses">
+            <div class="project-luxury-image-wrap">
               <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80" alt="Palmer's Place">
-              <span class="sold-out-badge">Sold Out</span>
+              <span class="project-status-badge sold-out">Sold Out</span>
             </div>
-            <div class="project-meta">
-              <span class="project-type-tag">Townhomes</span>
-              <span class="project-price">$760,000+</span>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Townhomes</span>
+                <span class="project-luxury-price">$760,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Palmer's Place</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Cantonments, Accra
+              </div>
+              <a href="project-detail.html#id=palmers-place" class="project-luxury-cta">View Details</a>
             </div>
-            <h3 class="project-name">Palmer's Place</h3>
-            <a href="project-detail.html#id=palmers-place" class="project-cta-btn">View Details</a>
           </article>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="listing-cta-section">
-      <h2 class="listing-cta-title scroll-animate">Get your Hotel Suite at The Pelican</h2>
-      <p class="listing-cta-subtitle scroll-animate">Experience luxury living with world-class amenities</p>
-      <a href="contact.html" class="listing-cta-btn scroll-animate">Enquire Now</a>
+    <section class="projects-cta-section">
+      <div class="projects-cta-content">
+        <h2 class="projects-cta-title">Ready to Find Your Dream Home?</h2>
+        <p class="projects-cta-subtitle">Let our experts guide you through our exclusive portfolio.</p>
+        <div class="projects-cta-buttons">
+          <a href="contact.html" class="projects-cta-btn primary">Schedule a Viewing</a>
+          <a href="https://wa.me/233243817969?text=Hello,%20I'm%20interested%20in%20your%20properties%20at%20Wenamy" target="_blank" class="projects-cta-btn secondary">Chat on WhatsApp</a>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/233243817969?text=Hello,%20I'm%20interested%20in%20your%20properties%20at%20Wenamy" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </a>
+
   <!-- Footer -->
-  <!-- Footer - Minimal Luxury Design -->
   <footer class="footer" id="contact">
     <div class="footer-container">
       <div class="footer-main">
-        <!-- Brand Column -->
         <div class="footer-brand">
           <div class="footer-logo">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -287,8 +369,6 @@
             Wenamy
           </div>
           <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
-          
-          <!-- Newsletter Panel -->
           <div class="footer-newsletter">
             <form class="newsletter-panel" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
               <input type="email" placeholder="Enter your email" required>
@@ -296,8 +376,6 @@
             </form>
           </div>
         </div>
-        
-        <!-- Contact Column -->
         <div class="footer-contact">
           <h4 class="footer-contact-title">Contact</h4>
           <div class="footer-contact-info">
@@ -311,8 +389,6 @@
             Ghana
           </p>
         </div>
-        
-        <!-- Links Column -->
         <div class="footer-links-section">
           <h4 class="footer-links-title">Quick Links</h4>
           <div class="footer-links">
@@ -324,11 +400,8 @@
           </div>
         </div>
       </div>
-      
-      <!-- Footer Bottom -->
       <div class="footer-bottom">
         <p class="footer-copyright">&copy; 2026 Wenamy Ghana Ltd. All rights reserved.</p>
-        
         <div class="footer-social">
           <a href="#" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -351,8 +424,8 @@
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
   
-  <!-- Mobile Menu Toggle Script -->
   <script>
+    // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', () => {
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const menuClose = document.querySelector('.mobile-menu-close');
@@ -365,14 +438,40 @@
         menuClose.addEventListener('click', () => {
           mobileNav.classList.remove('active');
         });
-        
-        // Close menu when clicking a link
         mobileNav.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             mobileNav.classList.remove('active');
           });
         });
       }
+
+      // Filter functionality
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const projectCards = document.querySelectorAll('.project-luxury-card');
+      const resultsCount = document.querySelector('.filter-results');
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          
+          const filter = tab.dataset.filter;
+          let visibleCount = 0;
+          
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category.includes(filter)) {
+              card.style.display = 'block';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+          
+          if (resultsCount) {
+            resultsCount.textContent = `${visibleCount} Properties`;
+          }
+        });
+      });
     });
   </script>
 </body>

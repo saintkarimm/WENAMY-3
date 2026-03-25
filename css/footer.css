@@ -6,6 +6,8 @@
   color: #ffffff;
   padding: 5rem 4rem 2rem;
   font-family: 'Inter', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-container {
@@ -211,22 +213,90 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 3rem 1.5rem 2rem;
+    padding: 2.5rem 1.5rem 2rem;
   }
   
   .footer-main {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding-bottom: 3rem;
+    gap: 0;
+    padding-bottom: 2rem;
   }
   
   .footer-brand {
     grid-column: span 1;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .footer-tagline {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-newsletter {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-contact {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-contact-title {
+    text-align: center;
+  }
+  
+  .footer-contact-info {
+    align-items: center;
+  }
+  
+  .footer-contact-info a {
+    justify-content: center;
+  }
+  
+  .footer-address-text {
+    text-align: center;
+  }
+  
+  .footer-links-section {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .footer-links-title {
+    text-align: center;
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+  
+  .footer-links a {
+    justify-content: center;
   }
   
   .footer-bottom {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-copyright {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
   }
 }
