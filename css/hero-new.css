@@ -559,8 +559,12 @@
 /* Remove gradient mask on mobile devices */
 @media (max-width: 768px) {
   .hero-new-bg-image {
-    mask-image: none;
-    -webkit-mask-image: none;
-    opacity: 1;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    opacity: 1 !important;
+  }
+  
+  .hero-new-bg-wrapper {
+    opacity: 1 !important;
   }
 }
