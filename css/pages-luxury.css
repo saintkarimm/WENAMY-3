@@ -676,12 +676,12 @@
   height: 56px;
   margin: 0 auto 1.25rem;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px solid #c9a962;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c9a962;
+  color: #ffffff;
   font-family: 'Outfit', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
