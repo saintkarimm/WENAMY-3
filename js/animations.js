@@ -156,6 +156,72 @@
     });
   }
 
+  /**
+   * Initialize text reveal animations on scroll
+   * Adds scroll-triggered reveal animations to headings, paragraphs, and other text elements
+   */
+  function initTextRevealAnimations() {
+    if (reducedMotion) {
+      // Show all text elements immediately if reduced motion is preferred
+      document.querySelectorAll('.text-reveal, .text-reveal-up, .text-reveal-left, .text-reveal-right').forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      return;
+    }
+
+    // Auto-add text-reveal classes to common text elements if not already present
+    const textSelectors = [
+      'h1:not(.text-reveal):not(.text-reveal-up):not(.no-reveal)',
+      'h2:not(.text-reveal):not(.text-reveal-up):not(.no-reveal)',
+      'h3:not(.text-reveal):not(.text-reveal-up):not(.no-reveal)',
+      'h4:not(.text-reveal):not(.text-reveal-up):not(.no-reveal)',
+      'p:not(.text-reveal):not(.text-reveal-up):not(.no-reveal):not(.label):not(.featured-price)',
+      '.text-headline:not(.text-reveal):not(.text-reveal-up)',
+      '.text-subheadline:not(.text-reveal):not(.text-reveal-up)',
+      '.carousel-title:not(.text-reveal):not(.text-reveal-up)',
+      '.carousel-subtitle:not(.text-reveal):not(.text-reveal-up)',
+      '.section-title:not(.text-reveal):not(.text-reveal-up)',
+      '.section-subtitle:not(.text-reveal):not(.text-reveal-up)'
+    ];
+
+    textSelectors.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el) => {
+        // Check if element is inside hero section (already animated)
+        if (!el.closest('.hero-new') && !el.closest('.hero')) {
+          el.classList.add('text-reveal-up');
+        }
+      });
+    });
+
+    // Intersection Observer for text reveal animations
+    const textObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add stagger delay based on element index within parent
+            const parent = entry.target.parentElement;
+            const siblings = parent.querySelectorAll('.text-reveal, .text-reveal-up, .text-reveal-left, .text-reveal-right');
+            const index = Array.from(siblings).indexOf(entry.target);
+            
+            entry.target.style.transitionDelay = `${index * 100}ms`;
+            entry.target.classList.add('is-revealed');
+            textObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    // Observe all text reveal elements
+    document.querySelectorAll('.text-reveal, .text-reveal-up, .text-reveal-left, .text-reveal-right').forEach((el) => {
+      textObserver.observe(el);
+    });
+  }
+
   // Initialize all animations when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -166,6 +232,7 @@
   function init() {
     initHeroAnimation();
     initScrollAnimations();
+    initTextRevealAnimations();
     initParallax();
     initNavScroll();
     initSmoothScroll();

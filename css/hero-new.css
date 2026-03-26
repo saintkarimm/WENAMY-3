@@ -195,8 +195,9 @@
 /* Floating Top Right */
 .hero-new-floating-top {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1rem;
+  left: 60%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -220,9 +221,9 @@
   background-position: center;
 }
 
-.hero-new-circle-1 { background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=100&q=80'); }
-.hero-new-circle-2 { background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf1517?w=100&q=80'); }
-.hero-new-circle-3 { background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=100&q=80'); }
+.hero-new-circle-1 { background-image: url('../images/properties/PROJECT 1/1st.png'); }
+.hero-new-circle-2 { background-image: url('../images/properties/PROJECT 1/2nd.png'); }
+.hero-new-circle-3 { background-image: url('../images/properties/PROJECT 1/3rd.png'); }
 
 .hero-new-circle:first-child {
   margin-left: 0;
@@ -295,13 +296,15 @@
 }
 
 .hero-new-btn-outline {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 1rem 1.5rem;
   border-radius: 3rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  transform: translateZ(0);
+  will-change: backdrop-filter;
 }
 
 .hero-new-btn-outline:hover {
