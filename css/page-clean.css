@@ -211,7 +211,7 @@
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(180deg, #c9a962 0%, #d4b978 100%);
+  background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
   transform: scaleY(0);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
@@ -238,7 +238,7 @@
 }
 
 .service-luxury-card:hover .service-luxury-number {
-  color: #c9a962;
+  color: #ffffff;
 }
 
 .service-luxury-content {
