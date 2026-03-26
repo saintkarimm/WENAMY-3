@@ -49,7 +49,70 @@ class WenamyChatbot {
   init() {
     this.createChatWidget();
     this.attachEventListeners();
+    this.initDragFunctionality();
     this.addWelcomeMessage();
+  }
+
+  initDragFunctionality() {
+    const toggle = this.elements.toggleBtn;
+    const widget = document.getElementById('wenamy-chatbot');
+    let isDragging = false;
+    let startX, startY, initialRight, initialBottom;
+    let hasMoved = false;
+
+    const onMouseDown = (e) => {
+      if (this.isOpen) return;
+      isDragging = true;
+      hasMoved = false;
+      startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      startY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+      
+      const rect = widget.getBoundingClientRect();
+      const parentRect = widget.offsetParent?.getBoundingClientRect() || { width: window.innerWidth, height: window.innerHeight };
+      initialRight = parentRect.width - rect.right;
+      initialBottom = parentRect.height - rect.bottom;
+      
+      toggle.style.transition = 'none';
+    };
+
+    const onMouseMove = (e) => {
+      if (!isDragging) return;
+      
+      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+      
+      const deltaX = startX - clientX;
+      const deltaY = startY - clientY;
+      
+      if (Math.abs(deltaX) > 5 || Math.abs(deltaY) > 5) {
+        hasMoved = true;
+      }
+      
+      const newRight = Math.max(10, Math.min(window.innerWidth - 60, initialRight + deltaX));
+      const newBottom = Math.max(10, Math.min(window.innerHeight - 60, initialBottom + deltaY));
+      
+      widget.style.right = newRight + 'px';
+      widget.style.bottom = newBottom + 'px';
+    };
+
+    const onMouseUp = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      toggle.style.transition = 'all 0.3s ease';
+      
+      if (!hasMoved) {
+        this.toggleChat();
+      }
+    };
+
+    toggle.addEventListener('mousedown', onMouseDown);
+    toggle.addEventListener('touchstart', onMouseDown, { passive: true });
+    
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('touchmove', onMouseMove, { passive: true });
+    
+    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('touchend', onMouseUp);
   }
 
   createChatWidget() {
@@ -100,7 +163,6 @@ class WenamyChatbot {
   }
 
   attachEventListeners() {
-    this.elements.toggleBtn.addEventListener('click', () => this.toggleChat());
     this.elements.closeBtn.addEventListener('click', () => this.toggleChat());
     this.elements.sendBtn.addEventListener('click', () => this.sendMessage());
     this.elements.input.addEventListener('keypress', (e) => {

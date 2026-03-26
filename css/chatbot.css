@@ -14,58 +14,65 @@
 
 /* Toggle Button */
 .chatbot-toggle {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: linear-gradient(135deg, #0a101d 0%, #1b263b 100%);
   border: 2px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
+  cursor: grab;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 20px rgba(10, 16, 29, 0.4);
   transition: all 0.3s ease;
   position: relative;
+  user-select: none;
+  touch-action: none;
+}
+
+.chatbot-toggle:active {
+  cursor: grabbing;
 }
 
 .chatbot-toggle:hover {
-  transform: scale(1.05);
   box-shadow: 0 6px 25px rgba(10, 16, 29, 0.5);
 }
 
 .chatbot-toggle img {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
+  pointer-events: none;
 }
 
 /* TALK TO ME Bubble */
 .chatbot-bubble {
   position: absolute;
-  bottom: 70px;
+  bottom: 58px;
   right: 0;
   background: #ffffff;
   color: #0a101d;
-  padding: 0.75rem 1.25rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
   animation: bubblePop 3s ease-in-out infinite;
   pointer-events: none;
+  letter-spacing: 0.3px;
 }
 
 .chatbot-bubble::after {
   content: '';
   position: absolute;
-  bottom: -8px;
-  right: 24px;
+  bottom: -6px;
+  right: 20px;
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid #ffffff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #ffffff;
 }
 
 @keyframes bubblePop {
@@ -91,7 +98,7 @@
 /* Chat Container */
 .chatbot-container {
   position: absolute;
-  bottom: 80px;
+  bottom: 65px;
   right: 0;
   width: 380px;
   height: 500px;
