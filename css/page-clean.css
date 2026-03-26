@@ -2,7 +2,7 @@
 
 /* Page Header - Minimal with primary background */
 .page-header-minimal {
-  padding: 160px var(--space-6) var(--space-16);
+  padding: calc(80px + 4rem) var(--space-6) var(--space-16);
   text-align: center;
   background-color: var(--bg-primary);
 }
@@ -255,22 +255,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #c9a962 0%, #d4b978 100%);
+  background: linear-gradient(135deg, #0a101d 0%, #1b263b 100%);
   border-radius: 12px;
-  color: #0a101d;
   transition: all 0.4s ease;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .service-luxury-card:hover .service-luxury-icon {
   transform: scale(1.1) rotate(-5deg);
-  box-shadow: 0 10px 30px rgba(201, 169, 98, 0.4);
+  box-shadow: 0 10px 30px rgba(10, 16, 29, 0.4);
 }
 
-.service-luxury-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke-width: 1.5;
+.service-luxury-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .service-luxury-text {
@@ -619,7 +620,7 @@
 
 @media (max-width: 767px) {
   .page-header-minimal {
-    padding: 100px var(--space-4) var(--space-10);
+    padding: calc(70px + 2rem) var(--space-4) var(--space-10);
   }
   
   .page-title-minimal {

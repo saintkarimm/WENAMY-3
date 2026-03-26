@@ -6,7 +6,7 @@
    ======================================== */
 .project-detail-hero {
   background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
-  padding: 6rem 4rem 3rem;
+  padding: calc(80px + 4rem) 4rem 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -22,28 +22,42 @@
   pointer-events: none;
 }
 
-.project-detail-breadcrumb {
+.project-detail-back {
   max-width: 1400px;
   margin: 0 auto 2rem;
   position: relative;
   z-index: 1;
 }
 
-.project-detail-breadcrumb a {
+.back-to-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: color 0.3s ease;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  transition: all 0.3s ease;
 }
 
-.project-detail-breadcrumb a:hover {
+.back-to-projects-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.back-to-projects-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
 }
 
-.project-detail-breadcrumb span {
-  color: rgba(255, 255, 255, 0.4);
-  margin: 0 0.75rem;
+.back-to-projects-btn:hover svg {
+  transform: translateX(-3px);
 }
 
 .project-detail-hero-content {
@@ -613,7 +627,7 @@
    ======================================== */
 @media (max-width: 1024px) {
   .project-detail-hero {
-    padding: 5rem 2rem 2.5rem;
+    padding: calc(70px + 4rem) 2rem 2.5rem;
   }
   
   .project-detail-main {
@@ -644,7 +658,7 @@
 
 @media (max-width: 768px) {
   .project-detail-hero {
-    padding: 4rem 1.5rem 2rem;
+    padding: calc(70px + 4rem) 1.5rem 2rem;
   }
   
   .project-detail-title {

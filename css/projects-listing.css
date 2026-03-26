@@ -2,7 +2,7 @@
 
 /* Page Header - Minimal with primary background */
 .page-header-minimal {
-  padding: calc(var(--nav-height) + var(--space-20)) var(--space-6) var(--space-16);
+  padding: calc(80px + var(--space-16)) var(--space-6) var(--space-16);
   text-align: center;
   background-color: var(--bg-primary);
 }
@@ -244,7 +244,7 @@
 
 @media (max-width: 767px) {
   .page-header-minimal {
-    padding: calc(var(--nav-height) + var(--space-12)) var(--space-4) var(--space-10);
+    padding: calc(70px + var(--space-10)) var(--space-4) var(--space-10);
   }
   
   .page-title-minimal {

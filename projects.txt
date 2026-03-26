@@ -1,0 +1,157 @@
+
+PROJECT 1
+
+project-type">Apartments
+project-price">$83,000+
+project-name">3 Bedroom Bungalow
+project-location"> Cantonments, Accra
+project-description"> 3 bedrooms,  4 washrooms,  kitchens,  pantry,  and a big hall . Designed and built for family living and recreational activities. 
+         
+
+PROJECT 2
+
+project-status-badge available">Available
+project-type">Villa
+project-price">$83,000+
+project-name">3 6 Bedroom Villa
+project-location"> Airpot Residential, Accra
+project-description"> Fascinating Villa designed for special and exceptional people.  On a little more than one Acre of land , this Villa Has, Rooftop 
+Infinity pool ,3 halls, 2 kitchens, Cinema, Bar ,Barbecue area, Outdoor jacuzzi ,Large windows ,Bedrooms: 6, Bathrooms: 9, And extras
+
+
+PROJECT 3
+
+project-status-badge available">Available
+project-type">Apartments
+project-price">$83,000+
+project-name">Family 3 Bedroom House
+project-location"> East Legon, Accra
+project-description"> 3 suites ,Guest washroom ,Living room, Dinning hall ,Kitchen ,Pantry ,Open garage ,Compound with greens 
+
+
+PROJECT 4
+
+project-status-badge available">Available
+project-type"> Bungalow
+project-price">$83,000+
+project-name">Family 3 Bedroom Bungalow
+project-location"> Community 25, Tema
+project-description"> On a 40f by 100 feet,  this 3 ensuite bedrooms amwith very elegant and minimalistic design, with a modern touch and boys quaters.  It's selling ofplan with options of semi furnished and fully furnished. 
+
+
+
+PROJECT 5
+
+project-status-badge available">Available
+project-type">Duplex
+project-price">$83,000+
+project-name">4 Bedroom Duplex
+project-location"> East Legon, Accra
+project-description"> Exclusive 4 bedroom duplex with all bedrooms ensuite , 2 halls, big kitchen with pantry, compound with greens, open garage,  pool , cild play area , and very spacious and comfortable.
+
+
+PROJECT 6
+
+project-status-badge available">Available
+project-type">Apartments
+project-price">$350,000 
+project-name">5 +2  Bedroom House
+project-location"> Community 25, Tema
+project-description"> his 7 bedrooms Luxurious Contemporary Mansion comes with 5 master bedrooms all in En-suite  and 2 En-suite Boy’s Quarters each with kitchen and bathroom and lots of exciting features for sale in serene and secure location 
+- 5 master bedrooms all en-suite 
+- 2 Boy’s Quarters 
+- 2 Spacious living rooms 
+- ⁠Security room
+- Dinning area
+- Fully Fitted Kitchen 
+- Pantry 
+- Guest Toilet 
+- Walk-in-closet 
+- kitchen store
+- Balcony 
+- Jacuzzi 
+- water heater
+- POP ceiling 
+-Swimming Pool 
+- CCTV 
+- 24 hours electricity 
+- Family Lounge
+- Walk- in Showers
+- Bath Tub 
+
+
+PROJECT 7
+
+project-status-badge available">Available
+project-type">Duplex
+project-price">$83,000+
+project-name">4 Bedroom Duplex
+project-location"> East Legon, Accra
+project-description"> This contemporary 4 bedroom duplex is designed to suit your family needs amd provide comfort and a  luxury lifestyle as well as child safety, and also recreational purposes. It jqs the following
+4 big ensuite bedrooms
+Guest washroom
+Big fitted kitchen
+Storeroom
+Laudry
+Balcony
+Boys quarters and an open garage.
+
+
+PROJECT 8
+
+project-status-badge available">Available
+project-type">Bungalow
+project-price">$83,000+
+project-name">3 Bedroom Bungalow
+project-location"> East Legon, Accra
+project-description"> Beautiful 3 bedroom bungalow,  comes will all rooms ensuite,  guest washroom,  big hall , dining hall , swimming pool and compound with lots of greens .
+
+
+
+
+PROJECT 9
+
+project-status-badge available">Available
+project-type">Bungalow
+project-price">$83,000+
+project-name">3 Bedroom Bungalow
+project-location"> East Legon, Accra
+project-description"> Simple 3 bedroom house for sale, each bedroom  en-suite , visitiors washroom,  ample compound space,  selling now as ofplan
+
+
+PROJECT 10
+
+project-status-badge available">Available
+project-type">Appartments
+project-price">$83,000+
+project-name">3 Bedroom House
+project-location"> East Legon, Accra
+project-description"> Simple,  detailed,  minimalistic, and very well planned out and designed for grear family experience , 3 suites with a guest washroom.  Swimming Pool and compound with greens and children play area. Open garage and a nice fence wall design.
+
+
+PROJECT 11
+
+project-status-badge available">Available
+project-type">Appartments
+project-price">$83,000+
+project-name">3 Bedroom Vacation Home
+project-location"> East Legon, Accra
+project-description"> 3 ensuite bedrooms designed for leisure and vacation purposes suitable for beaches and mountainous areas like Aburi.
+Now selling ofplan , you can also buy the plan from us .
+
+
+
+PROJECT 12
+
+project-status-badge available">Available
+project-type">Appartments
+project-price">Without pool $250,000/With pool $280,000
+project-name">4 Bedroom House
+project-location"> Eastlegon-Ogbojo, Accra
+project-description"> All en-suites rooms
+Good road network
+Fully fitted kitchen
+Land Title Certificate
+KwaDF124325
+
+

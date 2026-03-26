@@ -6,7 +6,7 @@
    ======================================== */
 .page-luxury-hero {
   background: url('../images/bar-all.png') center/cover no-repeat;
-  padding: 7rem 4rem 4rem;
+  padding: calc(80px + 4rem) 4rem 4rem;
   position: relative;
   overflow: hidden;
   min-height: 350px;
@@ -67,7 +67,7 @@
    ABOUT PAGE SPECIFIC
    ======================================== */
 .about-intro-section {
-  padding: 5rem 4rem;
+  padding: calc(80px + 3rem) 4rem 5rem;
   background: #ffffff;
 }
 
@@ -87,7 +87,7 @@
 /* Motto Section */
 .about-motto-section {
   background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
-  padding: 6rem 4rem;
+  padding: calc(80px + 4rem) 4rem 6rem;
   text-align: center;
 }
 
@@ -215,7 +215,7 @@
    CONTACT PAGE SPECIFIC
    ======================================== */
 .contact-luxury-section {
-  padding: 5rem 4rem;
+  padding: calc(80px + 3rem) 4rem 5rem;
   background: #ffffff;
 }
 
@@ -436,7 +436,7 @@
    BLOG PAGE SPECIFIC
    ======================================== */
 .blog-luxury-section {
-  padding: 5rem 4rem;
+  padding: calc(80px + 3rem) 4rem 5rem;
   background: #f8f9fa;
 }
 
@@ -520,7 +520,7 @@
    OFF-PLAN PAGE SPECIFIC
    ======================================== */
 .offplan-luxury-section {
-  padding: 5rem 4rem;
+  padding: calc(80px + 3rem) 4rem 5rem;
   background: #ffffff;
 }
 
@@ -809,7 +809,7 @@
    ======================================== */
 @media (max-width: 1024px) {
   .page-luxury-hero {
-    padding: 6rem 2rem 3rem;
+    padding: calc(70px + 3rem) 2rem 3rem;
   }
   
   .about-intro-section,
@@ -854,7 +854,7 @@
 
 @media (max-width: 768px) {
   .page-luxury-hero {
-    padding: 5rem 1.5rem 2.5rem;
+    padding: calc(70px + 2rem) 1.5rem 2.5rem;
   }
   
   .page-luxury-title {
@@ -871,7 +871,7 @@
   .offplan-benefits-section,
   .page-cta-section,
   .contact-map-section {
-    padding: 3rem 1.5rem;
+    padding: calc(70px + 2rem) 1.5rem 3rem;
   }
   
   .about-stats-grid,
