@@ -1,337 +1,375 @@
 // Projects Data - Used by project-detail.html
 const projectsData = {
-  // Completed Projects
-  "arlo-cantonments": {
-    name: "Arlo Cantonments",
+  // Project 1: 3 Bedroom Bungalow
+  "3-bedroom-bungalow": {
+    name: "3 Bedroom Bungalow",
     location: "Cantonments, Accra",
     type: "Apartments",
-    status: "Ready",
-    price: "$83,000",
-    bedrooms: "2 - 4",
-    bathrooms: "2 - 4",
-    sqft: "1,200 - 3,500",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "3",
+    bathrooms: "4",
+    sqft: "1,800",
     parking: "2 Spaces",
-    description: "Arlo Cantonments represents the pinnacle of luxury apartment living in Accra. Located in the prestigious Cantonments neighborhood, this development offers residents an unparalleled lifestyle with world-class amenities and sophisticated design. Each apartment has been meticulously designed to maximize space and natural light, featuring premium finishes, modern appliances, and thoughtful details throughout.",
+    description: "3 bedrooms, 4 washrooms, kitchens, pantry, and a big hall. Designed and built for family living and recreational activities. This beautiful bungalow offers spacious living areas perfect for entertaining guests and creating lasting family memories.",
     images: [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
+      "images/properties/PROJECT 1/2nd.png",
+      "images/properties/PROJECT 1/3rd.png",
+      "images/properties/PROJECT 1/4th.png",
+      "images/properties/PROJECT 1/5th.png"
     ],
-    amenities: ["Fitness Center", "Swimming Pool", "24/7 Security", "Concierge Service", "CCTV Surveillance", "High-Speed WiFi"],
+    amenities: ["3 Bedrooms", "4 Washrooms", "Kitchen", "Pantry", "Big Hall", "Family Living", "Recreational Space"],
     features: [
-      "Modern architecture design",
-      "Ample parking space",
-      "High-quality finishes",
-      "Access to major roads",
-      "24/7 security services",
-      "Landscaped gardens",
-      "Strategic location",
-      "Nearby amenities"
+      "Spacious family living areas",
+      "Modern kitchen with pantry",
+      "4 washrooms for convenience",
+      "Big hall for entertaining",
+      "Recreational activity spaces",
+      "Prime Cantonments location",
+      "Secure neighborhood",
+      "Quality construction"
     ]
   },
-  "the-address": {
-    name: "The Address",
-    location: "East Legon, Accra",
-    type: "Apartment",
-    status: "Ready",
-    price: "$89,000",
-    bedrooms: "3 - 4",
-    bathrooms: "3 - 4",
-    sqft: "1,800 - 4,200",
-    parking: "2 Spaces",
-    description: "The Address sets a new standard for luxury living in East Legon. This exclusive development features contemporary architecture with clean lines and expansive glass facades that maximize natural light and offer stunning city views. Each residence is thoughtfully designed with open-concept living spaces, gourmet kitchens with premium appliances, and spa-inspired bathrooms.",
-    images: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
-    ],
-    amenities: ["Private Cinema", "Rooftop Terrace", "Infinity Pool", "Fitness Center", "24/7 Security", "Underground Parking"]
-  },
-  "pelican-hotel": {
-    name: "The Pelican Hotel Apartments",
+
+  // Project 2: 6 Bedroom Villa
+  "6-bedroom-villa": {
+    name: "6 Bedroom Villa",
     location: "Airport Residential, Accra",
-    type: "Hotel Apartments",
-    status: "Ready",
-    price: "$274,125",
-    bedrooms: "1 - 3",
-    bathrooms: "1 - 3",
-    sqft: "900 - 2,800",
-    parking: "1-2 Spaces",
-    description: "The Pelican Hotel Apartments combines the comfort of home with the luxury of hotel living. These fully-serviced apartments offer hotel amenities including housekeeping, room service, and concierge, making them perfect for business travelers and expatriates seeking a hassle-free lifestyle.",
+    type: "Villa",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "6",
+    bathrooms: "9",
+    sqft: "8,000+",
+    parking: "4+ Spaces",
+    description: "Fascinating Villa designed for special and exceptional people. On a little more than one Acre of land, this Villa features Rooftop Infinity pool, 3 halls, 2 kitchens, Cinema, Bar, Barbecue area, Outdoor jacuzzi, Large windows, Bedrooms: 6, Bathrooms: 9, And extras.",
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
+      "images/properties/PROJECT 2/2nd.png",
+      "images/properties/PROJECT 2/3rd.png",
+      "images/properties/PROJECT 2/4th.png",
+      "images/properties/PROJECT 2/5th.png"
     ],
-    amenities: ["Room Service", "Housekeeping", "Concierge", "Restaurant", "Business Center", "Spa Services"]
+    amenities: ["Rooftop Infinity Pool", "Cinema", "Bar", "Barbecue Area", "Outdoor Jacuzzi", "2 Kitchens", "3 Halls"],
+    features: [
+      "Over 1 acre of land",
+      "Rooftop infinity pool",
+      "Private cinema room",
+      "Bar and entertainment area",
+      "Outdoor jacuzzi",
+      "Large windows for natural light",
+      "6 en-suite bedrooms",
+      "9 bathrooms"
+    ]
   },
-  "nova": {
-    name: "NoVA",
-    location: "Roman Ridge, Accra",
-    type: "Apartments",
-    status: "Ready",
-    price: "$95,000",
-    bedrooms: "2 - 3",
-    bathrooms: "2 - 3",
-    sqft: "1,400 - 2,500",
-    parking: "2 Spaces",
-    description: "NoVA brings modern urban living to Roman Ridge with its striking contemporary design and premium finishes. These apartments feature smart home technology, energy-efficient systems, and thoughtfully designed spaces that cater to the modern professional's lifestyle.",
-    images: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
-    ],
-    amenities: ["Smart Home Tech", "Gym", "Rooftop Lounge", "Co-working Space", "24/7 Security", "Backup Power"]
-  },
-  "the-edge": {
-    name: "The Edge",
-    location: "Cantonments, Accra",
-    type: "Apartments",
-    status: "Ready",
-    price: "$120,000",
-    bedrooms: "2 - 4",
-    bathrooms: "2 - 4",
-    sqft: "1,600 - 3,800",
-    parking: "2 Spaces",
-    description: "The Edge redefines luxury living with its bold architectural statement and unparalleled attention to detail. Located in the heart of Cantonments, this development offers residents exclusive access to premium amenities and a lifestyle of sophistication.",
-    images: [
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80"
-    ],
-    amenities: ["Sky Lounge", "Infinity Pool", "Private Cinema", "Wine Cellar", "Concierge", "Valet Parking"]
-  },
-  "henrietta-residences": {
-    name: "Henrietta's Residences",
-    location: "Labone, Accra",
-    type: "Apartments",
-    status: "Ready",
-    price: "$78,000",
-    bedrooms: "2 - 3",
-    bathrooms: "2 - 3",
-    sqft: "1,300 - 2,200",
-    parking: "1-2 Spaces",
-    description: "Henrietta's Residences offers boutique luxury living in the charming Labone neighborhood. This intimate development features carefully crafted apartments with high-end finishes, private balconies, and a strong sense of community.",
-    images: [
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
-    ],
-    amenities: ["Community Garden", "Fitness Center", "Children's Play Area", "24/7 Security", "Guest Parking", "Storage Units"]
-  },
-  // Off-Plan Projects
-  "platinum-towers": {
-    name: "The Platinum Towers",
-    location: "Airport Residential, Accra",
-    type: "Apartments",
-    status: "Coming Soon",
-    price: "$85,000",
-    bedrooms: "1 - 3",
-    bathrooms: "1 - 3",
-    sqft: "850 - 2,200",
-    parking: "1-2 Spaces",
-    description: "The Platinum Towers offers an exclusive collection of luxury apartments in the prestigious Airport Residential area. This iconic development features contemporary architecture with floor-to-ceiling windows, providing breathtaking views of the city skyline.",
-    images: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
-    ],
-    amenities: ["Sky Bar", "Infinity Pool", "Business Lounge", "Fitness Center", "24/7 Concierge", "Helipad Access"]
-  },
-  "garden-estates": {
-    name: "Garden Estates",
-    location: "East Legon Hills, Accra",
-    type: "Villas",
-    status: "Pre-Launch",
-    price: "$150,000",
-    bedrooms: "4 - 5",
-    bathrooms: "4 - 5",
-    sqft: "3,500 - 5,500",
-    parking: "3-4 Spaces",
-    description: "Garden Estates is an exclusive villa community nestled in the serene East Legon Hills. Each villa is designed with expansive living spaces, private gardens, and premium finishes that exemplify luxury living.",
-    images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
-    ],
-    amenities: ["Private Gardens", "Clubhouse", "Tennis Court", "Swimming Pool", "Gated Community", "24/7 Security"]
-  },
-  "metro-heights": {
-    name: "Metro Heights",
-    location: "Tema Community 25",
-    type: "Apartments",
-    status: "Now Selling",
-    price: "$65,000",
-    bedrooms: "2 - 3",
-    bathrooms: "2 - 3",
-    sqft: "1,100 - 1,800",
-    parking: "1-2 Spaces",
-    description: "Metro Heights offers affordable luxury living in the rapidly developing Tema Community 25. These modern apartments provide excellent value with quality construction, modern amenities, and convenient access to major transport routes.",
-    images: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
-    ],
-    amenities: ["Playground", "Community Center", "Retail Shops", "Fitness Area", "24/7 Security", "Parking"]
-  },
-  "oceanview-residences": {
-    name: "Oceanview Residences",
-    location: "Labadi, Accra",
-    type: "Apartments",
-    status: "Coming Soon",
-    price: "$120,000",
-    bedrooms: "2 - 4",
-    bathrooms: "2 - 4",
-    sqft: "1,500 - 3,200",
-    parking: "2 Spaces",
-    description: "Oceanview Residences offers a rare opportunity to own a beachfront property in Labadi. These exclusive apartments feature private balconies with ocean views, resort-style amenities, and direct beach access.",
-    images: [
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80"
-    ],
-    amenities: ["Beach Access", "Resort Pool", "Beachfront Bar", "Water Sports", "Spa", "24/7 Security"]
-  },
-  // Additional Projects
-  "the-niiyo": {
-    name: "The Niiyo",
+
+  // Project 3: Family 3 Bedroom House
+  "family-3-bedroom-house": {
+    name: "Family 3 Bedroom House",
     location: "East Legon, Accra",
     type: "Apartments",
-    status: "Sold Out",
-    price: "$275,000",
-    bedrooms: "3 - 4",
-    bathrooms: "3 - 4",
-    sqft: "2,200 - 3,800",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "3",
+    bathrooms: "4",
+    sqft: "2,200",
     parking: "2 Spaces",
-    description: "The Niiyo represents the epitome of luxury apartment living in East Legon. This sold-out development features spacious residences with premium finishes, private terraces, and access to world-class amenities including a rooftop infinity pool and private cinema.",
+    description: "3 suites, Guest washroom, Living room, Dining hall, Kitchen, Pantry, Open garage, Compound with greens. Perfect family home designed for comfort and modern living in the prestigious East Legon area.",
     images: [
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
+      "images/properties/PROJECT 3/2nd.png",
+      "images/properties/PROJECT 3/3rd.png",
+      "images/properties/PROJECT 3/4th.png",
+      "images/properties/PROJECT 3/5th.png"
     ],
-    amenities: ["Rooftop Pool", "Private Cinema", "Gym", "Concierge", "Underground Parking", "Smart Home"]
+    amenities: ["3 Suites", "Guest Washroom", "Living Room", "Dining Hall", "Kitchen", "Pantry", "Open Garage"],
+    features: [
+      "All 3 bedrooms en-suite",
+      "Separate guest washroom",
+      "Spacious living room",
+      "Formal dining hall",
+      "Modern fitted kitchen",
+      "Pantry for storage",
+      "Open garage parking",
+      "Green compound landscaping"
+    ]
   },
-  "acasia-townhomes": {
-    name: "Acasia Townhomes",
-    location: "Cantonments, Accra",
-    type: "Townhomes",
-    status: "Sold Out",
-    price: "$850,000",
-    bedrooms: "4 - 5",
-    bathrooms: "4 - 5",
-    sqft: "4,500 - 6,500",
-    parking: "3-4 Spaces",
-    description: "Acasia Townhomes offers exclusive luxury living in the prestigious Cantonments area. These expansive townhomes feature private gardens, multiple living areas, and premium finishes throughout. A truly exceptional opportunity for discerning families.",
+
+  // Project 4: Family 3 Bedroom Bungalow
+  "family-3-bedroom-bungalow": {
+    name: "Family 3 Bedroom Bungalow",
+    location: "Community 25, Tema",
+    type: "Bungalow",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "3",
+    bathrooms: "3",
+    sqft: "2,000",
+    parking: "2 Spaces",
+    description: "On a 40ft by 100 feet plot, this 3 ensuite bedrooms bungalow features very elegant and minimalistic design with a modern touch and boys quarters. It's selling off-plan with options of semi furnished and fully furnished.",
     images: [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
+      "images/properties/PROJECT 4/2nd.png",
+      "images/properties/PROJECT 4/3rd.png",
+      "images/properties/PROJECT 4/4th.png",
+      "images/properties/PROJECT 4/5th.png"
     ],
-    amenities: ["Private Garden", "Clubhouse", "Tennis Court", "Swimming Pool", "Gated Community", "24/7 Security"]
+    amenities: ["3 En-suite Bedrooms", "Boys Quarters", "Modern Design", "Off-Plan Options", "Semi Furnished Option", "Fully Furnished Option"],
+    features: [
+      "40ft x 100ft plot size",
+      "All bedrooms en-suite",
+      "Elegant minimalistic design",
+      "Modern architectural touch",
+      "Separate boys quarters",
+      "Off-plan purchase available",
+      "Furnishing options available",
+      "Community 25 location"
+    ]
   },
-  "avant-garde": {
-    name: "Avant Garde",
-    location: "Airport Residential, Accra",
+
+  // Project 5: 4 Bedroom Duplex (East Legon)
+  "4-bedroom-duplex-east-legon": {
+    name: "4 Bedroom Duplex",
+    location: "East Legon, Accra",
+    type: "Duplex",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "4",
+    bathrooms: "5",
+    sqft: "3,500",
+    parking: "2 Spaces",
+    description: "Exclusive 4 bedroom duplex with all bedrooms ensuite, 2 halls, big kitchen with pantry, compound with greens, open garage, pool, child play area, and very spacious and comfortable. Perfect for family living with luxury amenities.",
+    images: [
+      "images/properties/PROJECT 5/2nd.png",
+      "images/properties/PROJECT 5/3rd.png",
+      "images/properties/PROJECT 5/4th.png",
+      "images/properties/PROJECT 5/5th.png"
+    ],
+    amenities: ["4 En-suite Bedrooms", "2 Halls", "Kitchen with Pantry", "Swimming Pool", "Child Play Area", "Open Garage"],
+    features: [
+      "All 4 bedrooms en-suite",
+      "Two spacious halls",
+      "Big kitchen with pantry",
+      "Private swimming pool",
+      "Children's play area",
+      "Green compound",
+      "Open garage parking",
+      "Spacious and comfortable design"
+    ]
+  },
+
+  // Project 6: 5+2 Bedroom House
+  "5-plus-2-bedroom-house": {
+    name: "5+2 Bedroom House",
+    location: "Community 25, Tema",
     type: "Apartments",
-    status: "Sold Out",
-    price: "$170,000",
-    bedrooms: "2 - 3",
-    bathrooms: "2 - 3",
-    sqft: "1,400 - 2,400",
-    parking: "2 Spaces",
-    description: "Avant Garde brings contemporary design to Airport Residential. This sold-out development features cutting-edge architecture, smart home technology, and sustainable design elements that set new standards for modern urban living.",
+    status: "available",
+    price: "$350,000",
+    bedrooms: "7",
+    bathrooms: "7",
+    sqft: "6,500",
+    parking: "4 Spaces",
+    description: "This 7 bedrooms Luxurious Contemporary Mansion comes with 5 master bedrooms all in En-suite and 2 En-suite Boy's Quarters each with kitchen and bathroom. Features include: 2 Spacious living rooms, Security room, Dining area, Fully Fitted Kitchen, Pantry, Guest Toilet, Walk-in-closet, Kitchen store, Balcony, Jacuzzi, Water heater, POP ceiling, Swimming Pool, CCTV, 24 hours electricity, Family Lounge, Walk-in Showers, Bath Tub.",
     images: [
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
+      "images/properties/PROJECT 6/2nd.png",
+      "images/properties/PROJECT 6/3rd.png",
+      "images/properties/PROJECT 6/4th.png",
+      "images/properties/PROJECT 6/5th.png"
     ],
-    amenities: ["Smart Home", "Co-working Space", "Gym", "Rooftop Terrace", "EV Charging", "24/7 Security"]
+    amenities: ["Swimming Pool", "Jacuzzi", "CCTV", "24hr Electricity", "Walk-in Closet", "Family Lounge", "Security Room", "Bath Tub"],
+    features: [
+      "5 master bedrooms all en-suite",
+      "2 Boy's Quarters with kitchen",
+      "2 spacious living rooms",
+      "Security room",
+      "Fully fitted kitchen with pantry",
+      "Walk-in closets",
+      "Private balcony",
+      "Swimming pool with jacuzzi"
+    ]
   },
-  "acasia-apartments": {
-    name: "Acasia Apartments",
+
+  // Project 7: 4 Bedroom Duplex Contemporary
+  "4-bedroom-duplex-contemporary": {
+    name: "4 Bedroom Duplex",
+    location: "East Legon, Accra",
+    type: "Duplex",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "4",
+    bathrooms: "5",
+    sqft: "3,200",
+    parking: "2 Spaces",
+    description: "This contemporary 4 bedroom duplex is designed to suit your family needs and provide comfort and a luxury lifestyle as well as child safety and recreational purposes. Features: 4 big ensuite bedrooms, Guest washroom, Big fitted kitchen, Storeroom, Laundry, Balcony, Boys quarters and an open garage.",
+    images: [
+      "images/properties/PROJECT 7/2nd.png",
+      "images/properties/PROJECT 7/3rd.png",
+      "images/properties/PROJECT 7/4th.png",
+      "images/properties/PROJECT 7/5th.png"
+    ],
+    amenities: ["4 En-suite Bedrooms", "Guest Washroom", "Fitted Kitchen", "Storeroom", "Laundry", "Balcony", "Boys Quarters"],
+    features: [
+      "4 big ensuite bedrooms",
+      "Guest washroom",
+      "Big fitted kitchen",
+      "Dedicated storeroom",
+      "Laundry room",
+      "Private balcony",
+      "Boys quarters",
+      "Open garage"
+    ]
+  },
+
+  // Project 8: 3 Bedroom Bungalow East Legon
+  "3-bedroom-bungalow-east-legon": {
+    name: "3 Bedroom Bungalow",
+    location: "East Legon, Accra",
+    type: "Bungalow",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "3",
+    bathrooms: "4",
+    sqft: "2,400",
+    parking: "2 Spaces",
+    description: "Beautiful 3 bedroom bungalow, comes with all rooms ensuite, guest washroom, big hall, dining hall, swimming pool and compound with lots of greens. A perfect blend of luxury and nature in prestigious East Legon.",
+    images: [
+      "images/properties/PROJECT 8/2nd.png",
+      "images/properties/PROJECT 8/3rd.png",
+      "images/properties/PROJECT 8/4th.png",
+      "images/properties/PROJECT 8/5th.png"
+    ],
+    amenities: ["3 En-suite Bedrooms", "Guest Washroom", "Big Hall", "Dining Hall", "Swimming Pool", "Green Compound"],
+    features: [
+      "All rooms ensuite",
+      "Guest washroom",
+      "Spacious big hall",
+      "Formal dining hall",
+      "Private swimming pool",
+      "Lush green compound",
+      "Single storey convenience",
+      "East Legon prime location"
+    ]
+  },
+
+  // Project 9: 3 Bedroom Bungalow Simple
+  "3-bedroom-bungalow-simple": {
+    name: "3 Bedroom Bungalow",
+    location: "East Legon, Accra",
+    type: "Bungalow",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "3",
+    bathrooms: "3",
+    sqft: "1,800",
+    parking: "2 Spaces",
+    description: "Simple 3 bedroom house for sale, each bedroom en-suite, visitors washroom, ample compound space. Selling now as off-plan. A great investment opportunity in the desirable East Legon area.",
+    images: [
+      "images/properties/PROJECT 9/2nd.png",
+      "images/properties/PROJECT 9/3rd.png",
+      "images/properties/PROJECT 9/4th.png",
+      "images/properties/PROJECT 9/5th.png"
+    ],
+    amenities: ["3 En-suite Bedrooms", "Visitors Washroom", "Ample Compound", "Off-Plan Sale", "East Legon Location"],
+    features: [
+      "Each bedroom en-suite",
+      "Visitors washroom",
+      "Ample compound space",
+      "Off-plan purchase available",
+      "Simple elegant design",
+      "Secure East Legon location",
+      "Great investment opportunity",
+      "Flexible payment options"
+    ]
+  },
+
+  // Project 10: 3 Bedroom House
+  "3-bedroom-house": {
+    name: "3 Bedroom House",
     location: "East Legon, Accra",
     type: "Apartments",
-    status: "Sold Out",
-    price: "$145,000",
-    bedrooms: "2 - 3",
-    bathrooms: "2 - 3",
-    sqft: "1,300 - 2,100",
-    parking: "1-2 Spaces",
-    description: "Acasia Apartments offers modern living in the heart of East Legon. This sold-out development features well-designed apartments with quality finishes, excellent security, and convenient access to shopping and entertainment.",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "3",
+    bathrooms: "4",
+    sqft: "2,600",
+    parking: "2 Spaces",
+    description: "Simple, detailed, minimalistic, and very well planned out and designed for great family experience. 3 suites with a guest washroom. Swimming Pool and compound with greens and children play area. Open garage and a nice fence wall design.",
     images: [
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
+      "images/properties/PROJECT 10/2nd.png",
+      "images/properties/PROJECT 10/3rd.png",
+      "images/properties/PROJECT 10/4th.png",
+      "images/properties/PROJECT 10/5th.png"
     ],
-    amenities: ["Swimming Pool", "Gym", "Children's Area", "24/7 Security", "Parking", "Backup Power"]
+    amenities: ["3 Suites", "Guest Washroom", "Swimming Pool", "Children Play Area", "Open Garage", "Green Compound"],
+    features: [
+      "Minimalistic design",
+      "Well planned layout",
+      "3 en-suite suites",
+      "Guest washroom",
+      "Private swimming pool",
+      "Children's play area",
+      "Green compound",
+      "Open garage parking"
+    ]
   },
-  "palmers-place": {
-    name: "Palmer's Place",
-    location: "Roman Ridge, Accra",
+
+  // Project 11: 3 Bedroom Vacation Home
+  "3-bedroom-vacation-home": {
+    name: "3 Bedroom Vacation Home",
+    location: "East Legon, Accra",
     type: "Apartments",
-    status: "Sold Out",
-    price: "$195,000",
-    bedrooms: "3 - 4",
-    bathrooms: "3 - 4",
-    sqft: "1,800 - 3,200",
+    status: "available",
+    price: "$83,000+",
+    bedrooms: "3",
+    bathrooms: "3",
+    sqft: "2,000",
     parking: "2 Spaces",
-    description: "Palmer's Place offers sophisticated urban living in Roman Ridge. This sold-out development features elegant apartments with premium finishes, spacious layouts, and excellent amenities for comfortable family living.",
+    description: "3 ensuite bedrooms designed for leisure and vacation purposes suitable for beaches and mountainous areas like Aburi. Now selling off-plan, you can also buy the plan from us. Perfect for holiday retreats or Airbnb investment.",
     images: [
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
+      "images/properties/PROJECT 11/2nd.png",
+      "images/properties/PROJECT 11/3rd.png",
+      "images/properties/PROJECT 11/4th.png",
+      "images/properties/PROJECT 11/5th.png"
     ],
-    amenities: ["Clubhouse", "Swimming Pool", "Gym", "Playground", "24/7 Security", "Guest Parking"]
+    amenities: ["3 En-suite Bedrooms", "Vacation Design", "Leisure Purpose", "Off-Plan Sale", "Plan Purchase Option"],
+    features: [
+      "Designed for vacation living",
+      "All 3 bedrooms en-suite",
+      "Perfect for beach locations",
+      "Suitable for mountain areas",
+      "Ideal for Airbnb investment",
+      "Off-plan purchase available",
+      "Architectural plans for sale",
+      "Leisure-focused design"
+    ]
   },
-  "accra-tema-houses": {
-    name: "2 to 4.5-bedroom houses for sale in Accra, Tema",
-    location: "Tema Community 25",
-    type: "Townhouses",
-    status: "Ready",
-    price: "$75,000",
-    bedrooms: "2 - 4.5",
-    bathrooms: "2 - 4",
-    sqft: "1,600 - 3,400",
+
+  // Project 12: 4 Bedroom House
+  "4-bedroom-house": {
+    name: "4 Bedroom House",
+    location: "Eastlegon-Ogbojo, Accra",
+    type: "Apartments",
+    status: "available",
+    price: "$250,000 - $280,000",
+    bedrooms: "4",
+    bathrooms: "4",
+    sqft: "2,800 - 3,200",
     parking: "2 Spaces",
-    description: "These beautifully designed townhouses in Tema Community 25 offer the perfect blend of comfort and affordability. Featuring spacious layouts, modern finishes, and a family-friendly community, these homes are ideal for first-time buyers and growing families.",
+    description: "All en-suites rooms, Good road network, Fully fitted kitchen, Land Title Certificate included. Premium property with excellent infrastructure and secure land ownership. Price: Without pool $250,000 / With pool $280,000.",
     images: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80"
+      "images/properties/PROJECT 12/2nd.png",
+      "images/properties/PROJECT 12/3rd.png",
+      "images/properties/PROJECT 12/4th.png",
+      "images/properties/PROJECT 12/5th.png"
     ],
-    amenities: ["Community Park", "Children's Playground", "24/7 Security", "Parking", "Backup Water", "Walled Community"]
+    amenities: ["4 En-suite Rooms", "Fully Fitted Kitchen", "Land Title Certificate", "Good Road Network", "Pool Option Available"],
+    features: [
+      "All rooms en-suite",
+      "Good road network access",
+      "Fully fitted modern kitchen",
+      "Land Title Certificate included",
+      "Secure land ownership",
+      "Pool option available",
+      "Premium location",
+      "Excellent infrastructure"
+    ]
   }
 };
 
