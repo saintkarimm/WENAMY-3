@@ -14,18 +14,26 @@
   background: linear-gradient(180deg, #0a101d 0%, #1b263b 100%);
   display: flex;
   flex-direction: column;
+  padding-top: 80px;
 }
 
-/* Navbar - Transparent to match original wenamytest design */
+/* Navbar - Sticky with blur effect */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 1000;
   font-size: 0.95rem;
-  padding: 2rem 4rem;
-  position: relative;
-  background: transparent;
+  padding: 1.5rem 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 16, 29, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .nav-left, .nav-right {
@@ -91,8 +99,10 @@
 
 /* Navbar Light Variant - For pages with light backgrounds */
 .navbar-light {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .navbar-light .nav-link {
@@ -381,11 +391,19 @@
 @media (max-width: 768px) {
   /* Navbar Mobile */
   .navbar {
-    padding: 1.5rem;
-    z-index: 60;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .hero-new-wrapper {
+    padding-top: 70px;
   }
   
   .nav-left {
