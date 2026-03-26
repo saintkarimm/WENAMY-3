@@ -428,8 +428,14 @@
   .mobile-menu-close {
     display: block;
     position: absolute;
-    top: 2rem;
+    top: 1.25rem;
     right: 1.5rem;
+    z-index: 2001;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
   }
   
   .mobile-nav-overlay {
@@ -444,7 +450,7 @@
     width: 100vw;
     height: 100vh;
     background: #0a101d;
-    z-index: 100;
+    z-index: 2000;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
@@ -455,7 +461,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    padding-top: calc(1.25rem + 70px);
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
