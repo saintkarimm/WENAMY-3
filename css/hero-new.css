@@ -502,20 +502,30 @@
   }
   
   .hero-new-container {
-    padding: 1rem 1.5rem;
-    min-height: calc(100vh - 80px);
+    padding: 0.5rem 1.5rem 1rem;
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+  
+  .hero-new-content {
+    margin-top: 0;
+    padding-top: 0;
   }
   
   .hero-new-headline {
-    font-size: 3rem;
-    margin-top: 1rem;
+    font-size: 3.2rem;
+    margin-top: 0.5rem;
+    line-height: 1.1;
   }
   
   .hero-new-bg-wrapper {
     width: 100%;
     right: 0;
-    opacity: 0.5;
-    height: 60vh;
+    opacity: 1;
+    height: 86vh;
+    top: 0;
+    bottom: auto;
   }
   
   /* Remove gradient mask on mobile */
@@ -528,20 +538,23 @@
   .hero-new-floating-bottom {
     position: relative;
     bottom: auto;
-    padding-top: 2rem;
+    padding-top: 1rem;
     z-index: 10;
     width: 100%;
     max-width: 100%;
+    margin-top: auto;
   }
   
   .hero-new-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
   
   .hero-new-btn {
     width: 100%;
     justify-content: center;
+    padding: 0.75rem 1rem;
   }
 }
 
