@@ -336,9 +336,6 @@
   height: 100%;
   object-fit: cover;
   object-position: bottom left;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-  opacity: 0.8;
 }
 
 /* Animations */
@@ -528,13 +525,6 @@
     bottom: auto;
   }
   
-  /* Remove gradient mask on mobile */
-  .hero-new-bg-image {
-    mask-image: none;
-    -webkit-mask-image: none;
-    opacity: 1;
-  }
-  
   .hero-new-floating-bottom {
     position: absolute;
     bottom: 3rem;
@@ -571,15 +561,18 @@
   }
 }
 
-/* Remove gradient mask on mobile devices */
-@media (max-width: 768px) {
-  .hero-new-bg-image {
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
-    opacity: 1 !important;
+/* Desktop-only hero image adjustments */
+@media (min-width: 769px) {
+  .hero-new-bg-wrapper {
+    bottom: -50px;   /* Move down - adjust this value as needed */
+    right: -15%;      /* Move left - adjust this value as needed */
+    width: 80%;      /* ← Desktop wrapper width (increase from 75%) */
+    height: 160vh;    /* ← Desktop wrapper height (increase from 85vh) */
   }
   
-  .hero-new-bg-wrapper {
-    opacity: 1 !important;
+  .hero-new-bg-image {
+    object-position: bottom left;
+    transform: scale(1.2) translateY(450px);  /* Zoom image 20% and move down 50px */
   }
 }
+
