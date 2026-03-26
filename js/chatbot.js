@@ -175,6 +175,11 @@ class WenamyChatbot {
     const widget = document.getElementById('wenamy-chatbot');
     widget.classList.toggle('chatbot-open', this.isOpen);
     
+    // Toggle toggle button visibility
+    if (this.elements.toggleBtn) {
+      this.elements.toggleBtn.style.display = this.isOpen ? 'none' : 'flex';
+    }
+    
     if (this.isOpen) {
       this.elements.input.focus();
       this.hideNotification();
