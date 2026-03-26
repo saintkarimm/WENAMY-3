@@ -118,8 +118,9 @@
           </div>
           <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
           <div class="footer-newsletter">
-            <form class="newsletter-panel" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-              <input type="email" placeholder="Enter your email" required>
+            <form class="newsletter-panel" action="https://formspree.io/f/mqegkgal" method="POST">
+              <input type="email" name="email" placeholder="Enter your email" required>
+              <input type="hidden" name="message" value="Newsletter subscription request">
               <button type="submit">Subscribe</button>
             </form>
           </div>
