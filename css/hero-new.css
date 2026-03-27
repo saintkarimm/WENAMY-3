@@ -137,7 +137,7 @@
 
 .mobile-basket-icon {
   position: relative;
-  color: #ffffff;
+  color: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,6 +172,14 @@
 
 .navbar-light .mobile-menu-toggle {
   color: #050505;
+}
+
+.basket-icon {
+  color: inherit;
+}
+
+.mobile-basket-icon {
+  color: inherit;
 }
 
 .navbar-light .btn-primary {
