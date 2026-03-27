@@ -30,7 +30,7 @@
 
 .auth-split-left {
   background-color: #1a1a1a;
-  background-image: url('../images/luxury_building.jpg?v=3');
+  background-image: url('../images/account-left.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -792,7 +792,16 @@
   }
 
   .auth-split-left {
-    display: none;
+    display: block;
+    height: 200px;
+    min-height: auto;
+    max-height: none;
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  .auth-split-left-inner {
+    display: none; /* Hide text overlay on mobile */
   }
 
   .auth-split-right {
@@ -800,7 +809,7 @@
     border-radius: 1rem;
     height: auto;
     max-height: none;
-    min-height: calc(100vh - 120px);
+    min-height: auto;
   }
 
   .auth-split-form-wrap {

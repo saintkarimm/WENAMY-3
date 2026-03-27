@@ -179,7 +179,11 @@
 }
 
 .mobile-basket-icon {
-  color: inherit;
+  color: #ffffff;
+}
+
+.navbar-light .mobile-basket-icon {
+  color: #050505;
 }
 
 .navbar-light .btn-primary {
