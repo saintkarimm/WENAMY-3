@@ -514,7 +514,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .account-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 
@@ -578,10 +578,14 @@
 @media (max-width: 768px) {
   .account-section {
     padding: 6rem 0 2rem;
+    overflow-x: hidden;
   }
 
   .account-container {
     padding: 0 1rem;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   .account-sidebar {
@@ -612,10 +616,14 @@
   .account-name {
     font-size: 1rem;
     margin-bottom: 0.125rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .account-email {
     font-size: 0.75rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .account-nav {
@@ -650,6 +658,10 @@
     padding: 1.25rem;
     border-radius: 0.75rem;
     min-height: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .tab-header h2 {
@@ -662,11 +674,13 @@
 
   .quick-actions {
     flex-direction: column;
+    width: 100%;
   }
 
   .quick-action-btn {
     width: 100%;
     justify-content: center;
+    box-sizing: border-box;
   }
 
   .inquiry-card {
