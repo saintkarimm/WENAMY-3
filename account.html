@@ -230,7 +230,7 @@
       <main class="account-main">
 
         <!-- Dashboard Tab -->
-        <div class="account-tab" id="tab-dashboard" style="display:none;">
+        <div class="account-tab" id="tab-dashboard">
           <div class="welcome-header">
             <h1>Hi, <span id="welcomeName">there</span>! 👋</h1>
             <p>Welcome back to your Wenamy dashboard</p>
@@ -360,7 +360,7 @@
             <h1>My Profile</h1>
             <p>Manage your personal information</p>
           </div>
-          <div class="dash-card" style="max-width: 600px;">
+          <div class="dash-card profile-card">
             <form class="profile-form" id="profileForm">
             <div class="profile-form-grid">
               <div class="profile-form-group">
@@ -446,7 +446,7 @@
           <div class="footer-links">
             <a href="projects.html">Projects</a>
             <a href="offplan.html">Off-Plan</a>
-            <a href="about.html">About Us</a>
+            <a href="about.html">About</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
           </div>
@@ -469,13 +469,13 @@
     </div>
   </footer>
 
-  <!-- Sidebar Edge Indicator (Mobile) -->
-  <div class="sidebar-edge-indicator" id="sidebarEdgeIndicator" aria-label="Open sidebar">
+  <!-- Sidebar Edge Indicator (Mobile) - Only visible when logged in -->
+  <div class="sidebar-edge-indicator" id="sidebarEdgeIndicator" aria-label="Open sidebar" style="display:none;">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <polyline points="15 18 9 12 15 6"/>
     </svg>
   </div>
-  <div class="sidebar-swipe-hint" id="sidebarSwipeHint">Swipe or tap</div>
+  <div class="sidebar-swipe-hint" id="sidebarSwipeHint" style="display:none;">Swipe or tap</div>
 
   <!-- Sidebar Overlay -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>

@@ -670,6 +670,7 @@ function togglePassword(inputId, btn) {
 
 // Initialize account manager
 const accountManager = new AccountManager();
+window.accountManager = accountManager;
 
 // Add CSS animation for notifications
 const style = document.createElement('style');
@@ -684,6 +685,20 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// Show swipe hint for 2 seconds on page load (mobile only, when logged in)
+document.addEventListener('DOMContentLoaded', () => {
+  const swipeHint = document.getElementById('sidebarSwipeHint');
+  const edgeIndicator = document.getElementById('sidebarEdgeIndicator');
+  const accountSection = document.getElementById('accountSection');
+  
+  if (swipeHint && edgeIndicator && accountSection && accountSection.classList.contains('active') && window.innerWidth <= 1024) {
+    swipeHint.classList.add('show');
+    setTimeout(() => {
+      swipeHint.classList.remove('show');
+    }, 2000);
+  }
+});
 
 // Subscribe to saved properties changes for real-time dashboard updates
 if (typeof savedPropertiesManager !== 'undefined') {
