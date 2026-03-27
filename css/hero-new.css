@@ -128,6 +128,28 @@
   display: none;
 }
 
+/* Mobile Nav Icons Container */
+.mobile-nav-icons {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-basket-icon {
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show mobile icons on smaller screens */
+@media (max-width: 1024px) {
+  .mobile-nav-icons {
+    display: flex;
+  }
+}
+
 /* Navbar Light Variant - For pages with light backgrounds */
 .navbar-light {
   background: rgba(255, 255, 255, 0.95);

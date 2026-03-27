@@ -69,8 +69,15 @@ class BasketManager {
   // Update basket count display in navbar
   updateBasketCount() {
     const countElements = document.querySelectorAll('#basketCount');
+    const mobileCountElements = document.querySelectorAll('#mobileBasketCount');
     const count = this.getBasketCount();
+    
     countElements.forEach(el => {
+      el.textContent = count > 0 ? count : '';
+      el.style.display = count > 0 ? 'flex' : 'none';
+    });
+    
+    mobileCountElements.forEach(el => {
       el.textContent = count > 0 ? count : '';
       el.style.display = count > 0 ? 'flex' : 'none';
     });
