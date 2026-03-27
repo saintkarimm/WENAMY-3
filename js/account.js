@@ -74,6 +74,41 @@ class AccountManager {
     if (profileForm) {
       profileForm.addEventListener('submit', (e) => this.handleProfileUpdate(e));
     }
+
+    // Mobile sidebar toggle
+    this.setupMobileSidebar();
+  }
+
+  // Setup mobile sidebar toggle
+  setupMobileSidebar() {
+    const sidebarToggle = document.getElementById('mobileSidebarToggle');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const sidebar = document.getElementById('accountSidebar');
+
+    if (sidebarToggle && sidebar && sidebarOverlay) {
+      // Toggle sidebar on button click
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+      });
+
+      // Close sidebar when clicking overlay
+      sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+      });
+
+      // Close sidebar when clicking a nav item (on mobile)
+      const navItems = sidebar.querySelectorAll('.account-nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth <= 1024) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+          }
+        });
+      });
+    }
   }
 
   // Switch between login and signup views (new split screen)
@@ -245,12 +280,16 @@ class AccountManager {
   updateDashboardStats() {
     const savedCount = document.getElementById('savedCount');
     const inquiryCount = document.getElementById('inquiryCount');
+    const welcomeName = document.getElementById('welcomeName');
 
     if (savedCount && this.currentUser) {
       savedCount.textContent = this.currentUser.savedProperties?.length || 0;
     }
     if (inquiryCount && this.currentUser) {
       inquiryCount.textContent = this.currentUser.inquiries?.length || 0;
+    }
+    if (welcomeName && this.currentUser) {
+      welcomeName.textContent = this.currentUser.name || 'there';
     }
   }
 
