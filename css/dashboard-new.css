@@ -540,38 +540,6 @@
   height: 24px;
 }
 
-/* ============================================
-   MOBILE SIDEBAR TOGGLE
-   ============================================ */
-.mobile-sidebar-toggle {
-  display: none; /* Hidden by default, shown via JS when logged in */
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 56px;
-  height: 56px;
-  background: var(--dash-primary);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  box-shadow: var(--dash-shadow-lg);
-  z-index: 200;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.mobile-sidebar-toggle:hover {
-  background: #4f46e5;
-  transform: scale(1.05);
-}
-
-.mobile-sidebar-toggle svg {
-  width: 24px;
-  height: 24px;
-}
-
 /* Sidebar Overlay */
 .sidebar-overlay {
   display: none;
@@ -677,10 +645,6 @@
   .account-main {
     margin-left: 0;
     padding: 1.5rem;
-  }
-  
-  .mobile-sidebar-toggle {
-    display: flex;
   }
   
   /* Show edge indicator on mobile */

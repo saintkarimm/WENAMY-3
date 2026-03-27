@@ -81,17 +81,11 @@ class AccountManager {
 
   // Setup mobile sidebar toggle with swipe gestures
   setupMobileSidebar() {
-    const sidebarToggle = document.getElementById('mobileSidebarToggle');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     const sidebar = document.getElementById('accountSidebar');
     const edgeIndicator = document.getElementById('sidebarEdgeIndicator');
 
     if (!sidebar) return;
-
-    // Toggle sidebar on button click
-    if (sidebarToggle) {
-      sidebarToggle.addEventListener('click', () => this.toggleSidebar(true));
-    }
 
     // Toggle sidebar on edge indicator click
     if (edgeIndicator) {
@@ -423,7 +417,6 @@ class AccountManager {
     const accountSection = document.getElementById('accountSection');
     const dashboardTab = document.getElementById('tab-dashboard');
     const sidebar = document.getElementById('accountSidebar');
-    const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
     const edgeIndicator = document.getElementById('sidebarEdgeIndicator');
     const swipeHint = document.getElementById('sidebarSwipeHint');
 
@@ -439,7 +432,6 @@ class AccountManager {
       }
       if (dashboardTab) dashboardTab.style.display = 'block';
       if (sidebar) sidebar.style.display = 'block';
-      if (mobileSidebarToggle) mobileSidebarToggle.style.display = 'flex';
       if (edgeIndicator) edgeIndicator.style.display = 'flex';
       if (swipeHint) swipeHint.style.display = 'block';
 
@@ -456,7 +448,6 @@ class AccountManager {
         accountSection.classList.remove('active');
       }
       if (sidebar) sidebar.style.display = 'none';
-      if (mobileSidebarToggle) mobileSidebarToggle.style.display = 'none';
       if (edgeIndicator) edgeIndicator.style.display = 'none';
       if (swipeHint) swipeHint.style.display = 'none';
       
