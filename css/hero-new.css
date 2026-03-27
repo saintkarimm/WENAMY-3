@@ -97,6 +97,37 @@
   transform: translateY(-2px);
 }
 
+/* Basket Icon Styles */
+.basket-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+}
+
+.basket-count:empty,
+.basket-count[data-count="0"],
+#basketCount:empty {
+  display: none;
+}
+
 /* Navbar Light Variant - For pages with light backgrounds */
 .navbar-light {
   background: rgba(255, 255, 255, 0.95);
