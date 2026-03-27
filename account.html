@@ -334,15 +334,8 @@
             <h1>Saved Properties</h1>
             <p>Your favorite properties in one place</p>
           </div>
-          <div class="property-grid" id="savedGrid">
-            <div class="empty-state">
-              <div class="empty-state-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </div>
-              <h3>No saved properties yet</h3>
-              <p>Browse our properties and tap the heart icon to save them here</p>
-              <a href="projects.html" class="btn-primary-soft">Browse Properties</a>
-            </div>
+          <div class="saved-properties-container" id="savedGrid">
+            <!-- Saved properties will be rendered here by JavaScript -->
           </div>
         </div>
 
@@ -493,7 +486,8 @@
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
   <script src="js/animations.js"></script>
-  <script src="js/account.js"></script>
+  <script src="js/saved-properties.js"></script>
+    <script src="js/account.js"></script>
   <script src="js/nav.js"></script>
   <script>
     // Mobile Menu Toggle

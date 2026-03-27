@@ -484,8 +484,9 @@ class AccountManager {
     const inquiryCount = document.getElementById('inquiryCount');
     const welcomeName = document.getElementById('welcomeName');
 
-    if (savedCount && this.currentUser) {
-      savedCount.textContent = this.currentUser.savedProperties?.length || 0;
+    // Use global savedPropertiesManager for saved count
+    if (savedCount) {
+      savedCount.textContent = savedPropertiesManager.getSavedCount();
     }
     if (inquiryCount && this.currentUser) {
       inquiryCount.textContent = this.currentUser.inquiries?.length || 0;
@@ -539,40 +540,16 @@ class AccountManager {
     return this.currentUser.savedProperties.some(p => p.id === propertyId);
   }
 
-  // Render saved properties
+  // Render saved properties using global state
   renderSavedProperties() {
     const grid = document.getElementById('savedGrid');
-    if (!grid || !this.currentUser) return;
+    if (!grid) return;
 
-    const properties = this.currentUser.savedProperties;
-
-    if (properties.length === 0) {
-      grid.innerHTML = `
-        <div class="saved-empty">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <h3>No saved properties yet</h3>
-          <p>Browse our properties and tap the heart icon to save them here</p>
-          <a href="projects.html" class="auth-submit" style="display:inline-flex;text-decoration:none;width:auto;padding:0.875rem 2rem;">Browse Properties</a>
-        </div>
-      `;
-      return;
-    }
-
-    grid.innerHTML = properties.map(prop => `
-      <div class="saved-property-card">
-        <div class="saved-property-img">
-          <img src="${prop.image}" alt="${prop.title}">
-          <button class="saved-property-remove" onclick="accountManager.removeSavedProperty('${prop.id}')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </button>
-        </div>
-        <div class="saved-property-info">
-          <h4>${prop.title}</h4>
-          <p class="saved-property-location">${prop.location}</p>
-          <p class="saved-property-price">${prop.price}</p>
-        </div>
-      </div>
-    `).join('');
+    // Use global savedPropertiesManager to render
+    savedPropertiesManager.renderSavedProperties('savedGrid', {
+      emptyMessage: 'Browse our properties and tap the basket icon to save them here',
+      showRemoveButton: true
+    });
   }
 
   // Add an inquiry
@@ -707,3 +684,19 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// Subscribe to saved properties changes for real-time dashboard updates
+if (typeof savedPropertiesManager !== 'undefined') {
+  savedPropertiesManager.subscribe(() => {
+    // Update dashboard stats when saved properties change
+    if (window.accountManager) {
+      window.accountManager.updateDashboardStats();
+      
+      // Re-render saved properties tab if visible
+      const savedTab = document.getElementById('tab-saved');
+      if (savedTab && savedTab.style.display !== 'none') {
+        window.accountManager.renderSavedProperties();
+      }
+    }
+  });
+}

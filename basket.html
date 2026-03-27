@@ -189,6 +189,7 @@
 
   <script src="js/animations.js"></script>
   <script src="js/basket.js"></script>
+  <script src="js/saved-properties.js"></script>
   <script src="js/chatbot.js"></script>
   <script src="js/nav.js"></script>
   <script>
@@ -205,16 +206,27 @@
         menuClose.addEventListener('click', () => mobileNav.classList.remove('active'));
       }
 
-      // Render basket items
-      basketManager.renderBasketItems();
+      // Render saved properties using new global state
+      const renderSaved = () => {
+        savedPropertiesManager.renderSavedProperties('basketItems', {
+          emptyMessage: 'No saved properties yet. Browse our properties and save them for later.',
+          showRemoveButton: true
+        });
+        
+        // Update summary
+        const summary = document.getElementById('basketSummary');
+        const count = savedPropertiesManager.getSavedCount();
+        if (summary) {
+          summary.style.display = count > 0 ? 'block' : 'none';
+          document.getElementById('summaryCount').textContent = count;
+        }
+      };
       
-      // Show summary if items exist
-      const summary = document.getElementById('basketSummary');
-      const count = basketManager.getBasketCount();
-      if (summary && count > 0) {
-        summary.style.display = 'block';
-        document.getElementById('summaryCount').textContent = count;
-      }
+      // Initial render
+      renderSaved();
+      
+      // Subscribe to changes for real-time updates
+      savedPropertiesManager.subscribe(renderSaved);
     });
   </script>
 </body>
