@@ -372,8 +372,18 @@ if (!document.getElementById('saved-properties-styles')) {
   document.head.appendChild(style);
 }
 
-// Auto-update button states on page load
+// Auto-update heart button states on page load
 document.addEventListener('DOMContentLoaded', () => {
-  savedPropertiesManager.updateAllButtonStates();
-  savedPropertiesManager.updateAllHeartStates();
+  // Small delay to ensure DOM is fully rendered
+  setTimeout(() => {
+    savedPropertiesManager.updateAllHeartStates();
+  }, 100);
+});
+
+// Also update when saved properties change (from other pages/tabs)
+window.addEventListener('storage', (e) => {
+  if (e.key === 'wenamy_saved_properties') {
+    savedPropertiesManager.loadFromStorage();
+    savedPropertiesManager.updateAllHeartStates();
+  }
 });

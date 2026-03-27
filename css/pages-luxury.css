@@ -915,3 +915,76 @@
     display: none;
   }
 }
+
+/* ========================================
+   CATEGORY FILTER SECTION
+   ======================================== */
+.category-filter-section {
+  padding: 2rem 4rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.category-filter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.category-pill {
+  padding: 0.625rem 1.25rem;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+}
+
+.category-pill:hover {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.category-pill.active {
+  background: #0a101d;
+  border-color: #0a101d;
+  color: #ffffff;
+}
+
+/* Responsive Category Filter */
+@media (max-width: 1024px) {
+  .category-filter-section {
+    padding: 1.5rem 2rem;
+  }
+  
+  .category-filter-pills {
+    gap: 0.5rem;
+  }
+  
+  .category-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-filter-section {
+    padding: 1rem;
+  }
+  
+  .category-pill {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.75rem;
+  }
+}

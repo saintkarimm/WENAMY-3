@@ -244,6 +244,15 @@
   border-color: #d1d5db;
 }
 
+.auth-social-btn.instagram-btn {
+  color: #e4405f;
+}
+
+.auth-social-btn.instagram-btn:hover {
+  background: #fdf2f4;
+  border-color: #e4405f;
+}
+
 /* Switch Text */
 .auth-switch-text {
   text-align: center;

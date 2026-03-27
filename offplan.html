@@ -121,6 +121,21 @@
     </div>
   </section>
 
+  <!-- Category Filter Section -->
+  <section class="category-filter-section">
+    <div class="category-filter-container">
+      <div class="category-filter-pills">
+        <button class="category-pill active" data-category="all">All</button>
+        <button class="category-pill" data-category="duplexes">Duplexes</button>
+        <button class="category-pill" data-category="triplexes">Triplexes</button>
+        <button class="category-pill" data-category="bungalows">Bungalows</button>
+        <button class="category-pill" data-category="villa">Villa</button>
+        <button class="category-pill" data-category="mansions">Mansions</button>
+        <button class="category-pill" data-category="townhouses">Townhouses</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
@@ -382,6 +397,39 @@
           });
         });
       }
+
+      // Category Filter Functionality
+      const categoryPills = document.querySelectorAll('.category-pill');
+      const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Remove active class from all pills
+          categoryPills.forEach(p => p.classList.remove('active'));
+          // Add active class to clicked pill
+          pill.classList.add('active');
+
+          const category = pill.dataset.category;
+
+          offplanCards.forEach(card => {
+            if (category === 'all') {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 10);
+            } else {
+              // Check if card matches category (you can add data-category to cards)
+              // For now, show all with animation
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 10);
+            }
+          });
+        });
+      });
     });
   </script>
 </body>
