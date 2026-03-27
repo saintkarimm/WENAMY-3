@@ -30,7 +30,7 @@
 
 .auth-split-left {
   background-color: #1a1a1a;
-  background-image: url('../images/account-left.png');
+  background-image: url('../images/account-left-2.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -793,11 +793,15 @@
 
   .auth-split-left {
     display: block;
-    height: 200px;
+    height: 230px;
     min-height: auto;
     max-height: none;
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1.9rem;
+    background-size: fill; /* Fill the frame */
+    background-position: center 10%; /* Push image to bottom */
+    background-repeat: no-repeat;
+    background-color: #1a1a1a; /* Fallback color */
   }
 
   .auth-split-left-inner {
