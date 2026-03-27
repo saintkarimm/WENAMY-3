@@ -84,6 +84,7 @@ class AccountManager {
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     const sidebar = document.getElementById('accountSidebar');
     const edgeIndicator = document.getElementById('sidebarEdgeIndicator');
+    const swipeHint = document.getElementById('sidebarSwipeHint');
 
     if (!sidebar) return;
 
@@ -105,6 +106,22 @@ class AccountManager {
           this.toggleSidebar(false);
         }
       });
+    });
+
+    // Handle window resize to show/hide edge indicator
+    window.addEventListener('resize', () => {
+      if (this.currentUser) {
+        if (edgeIndicator) {
+          edgeIndicator.style.display = window.innerWidth <= 1024 ? 'flex' : 'none';
+        }
+        if (swipeHint) {
+          swipeHint.style.display = window.innerWidth <= 1024 ? 'block' : 'none';
+        }
+        // Close sidebar when resizing to desktop
+        if (window.innerWidth > 1024) {
+          this.toggleSidebar(false);
+        }
+      }
     });
 
     // Setup swipe gestures
@@ -432,8 +449,13 @@ class AccountManager {
       }
       if (dashboardTab) dashboardTab.style.display = 'block';
       if (sidebar) sidebar.style.display = 'block';
-      if (edgeIndicator) edgeIndicator.style.display = 'flex';
-      if (swipeHint) swipeHint.style.display = 'block';
+      // Only show edge indicator on mobile (<= 1024px)
+      if (edgeIndicator) {
+        edgeIndicator.style.display = window.innerWidth <= 1024 ? 'flex' : 'none';
+      }
+      if (swipeHint) {
+        swipeHint.style.display = window.innerWidth <= 1024 ? 'block' : 'none';
+      }
 
       // Update stats
       this.updateDashboardStats();
