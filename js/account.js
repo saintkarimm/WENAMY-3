@@ -187,6 +187,8 @@ class AccountManager {
     const logoutBtn = document.getElementById('logoutBtn');
     const authView = document.getElementById('authView');
     const dashboardTab = document.getElementById('tab-dashboard');
+    const sidebar = document.getElementById('accountSidebar');
+    const container = document.getElementById('accountContainer');
 
     if (this.currentUser) {
       // User is logged in
@@ -195,6 +197,9 @@ class AccountManager {
       if (logoutBtn) logoutBtn.style.display = 'flex';
       if (authView) authView.style.display = 'none';
       if (dashboardTab) dashboardTab.style.display = 'block';
+      if (sidebar) sidebar.style.display = 'block';
+      // Reset to 2-column layout
+      if (container) container.style.gridTemplateColumns = '280px 1fr';
 
       // Update stats
       this.updateDashboardStats();
@@ -204,6 +209,9 @@ class AccountManager {
       if (userEmail) userEmail.textContent = 'Sign in to access your account';
       if (logoutBtn) logoutBtn.style.display = 'none';
       if (authView) authView.style.display = 'block';
+      if (sidebar) sidebar.style.display = 'none';
+      // Full width for login form
+      if (container) container.style.gridTemplateColumns = '1fr';
       
       const tabs = document.querySelectorAll('.account-tab');
       tabs.forEach(tab => tab.style.display = 'none');
