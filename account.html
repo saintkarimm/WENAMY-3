@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/account.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -25,35 +26,55 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="projects.html" class="nav-link">Projects</a>
       <a href="offplan.html" class="nav-link">Off-Plan</a>
+      <a href="about.html" class="nav-link">About Us</a>
     </div>
-    <a href="index.html" class="logo">
-      <img src="images/icons/logo.png" alt="Wenamy" class="nav-logo-img">
-      <span>Wenamy</span>
-    </a>
+    
+    <div class="nav-center">
+      <div class="logo">
+        <img src="images/icons/logo.png" alt="Wenamy" width="24" height="24" class="logo-icon">
+        Wenamy
+      </div>
+    </div>
+    
     <div class="nav-right">
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="account.html" class="nav-link active">Account</a>
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+    
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="logo">
+        <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
+        Wenamy
+      </a>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="offplan.html" class="nav-link">Off-Plan</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="contact.html" class="nav-link">Contact</a>
       <a href="account.html" class="nav-link active">Account</a>
-    </div>
-    <button class="mobile-menu-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav-overlay">
-    <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
-    <div class="mobile-nav-links">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="offplan.html">Off-Plan</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-      <a href="account.html" class="active">Account</a>
+      <a href="contact.html" class="nav-link btn btn-primary">Get in Touch</a>
     </div>
   </div>
 
@@ -319,14 +340,18 @@
   <script src="js/animations.js"></script>
   <script src="js/account.js"></script>
   <script src="js/chatbot.js"></script>
+  <script src="js/nav.js"></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const menuClose = document.querySelector('.mobile-menu-close');
-      const mobileNav = document.querySelector('.mobile-nav-overlay');
-      if (menuToggle && mobileNav && menuClose) {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const mobileNav = document.getElementById('mobileNavOverlay');
+      
+      if (menuToggle && mobileNav) {
         menuToggle.addEventListener('click', () => mobileNav.classList.add('active'));
+      }
+      if (menuClose && mobileNav) {
         menuClose.addEventListener('click', () => mobileNav.classList.remove('active'));
       }
     });
