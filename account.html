@@ -96,11 +96,120 @@
     </div>
   </div>
 
-  <!-- Account Section -->
-  <section class="account-section">
+  <!-- Auth Section (shown when logged out) -->
+  <section class="auth-split-section" id="authSplitSection">
+    <div class="auth-split-wrapper">
+
+      <!-- Left Panel: Gradient -->
+      <div class="auth-split-left">
+        <div class="auth-split-left-inner">
+          <div class="auth-asterisk">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>
+            </svg>
+          </div>
+          <div class="auth-split-left-text">
+            <p class="auth-split-tagline">You can easily</p>
+            <h2 class="auth-split-headline">Get access to your personal hub for luxury real estate</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Form -->
+      <div class="auth-split-right">
+        <!-- Login Form -->
+        <div class="auth-split-form-wrap" id="authView">
+          <div class="auth-form-header">
+            <div class="auth-asterisk-blue">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.5">
+                <line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>
+              </svg>
+            </div>
+            <h2 id="authTitle">Create an account</h2>
+            <p id="authSubtitle">Access your saved properties, notes, and inquiries anytime, anywhere — and keep everything in one place.</p>
+          </div>
+
+          <!-- Login Form -->
+          <form class="auth-split-form" id="loginForm">
+            <div class="auth-split-field">
+              <label for="loginEmail">Your email</label>
+              <input type="email" id="loginEmail" required placeholder="your@email.com">
+            </div>
+            <div class="auth-split-field">
+              <label for="loginPassword">Password</label>
+              <div class="auth-password-wrap">
+                <input type="password" id="loginPassword" required placeholder="••••••••••">
+                <button type="button" class="auth-eye-btn" onclick="togglePassword('loginPassword', this)" aria-label="Toggle password">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="auth-split-btn">Get Started</button>
+            <div class="auth-social-divider"><span>or continue with</span></div>
+            <div class="auth-social-btns">
+              <button type="button" class="auth-social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg>
+              </button>
+              <button type="button" class="auth-social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+              </button>
+              <button type="button" class="auth-social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </button>
+            </div>
+            <p class="auth-switch-text">Don't have an account? <button type="button" class="auth-switch-btn" id="switchToSignup">Sign up</button></p>
+          </form>
+
+          <!-- Signup Form -->
+          <form class="auth-split-form" id="signupForm" style="display:none;">
+            <div class="auth-split-field">
+              <label for="signupName">Full Name</label>
+              <input type="text" id="signupName" required placeholder="John Doe">
+            </div>
+            <div class="auth-split-field">
+              <label for="signupEmail">Your email</label>
+              <input type="email" id="signupEmail" required placeholder="your@email.com">
+            </div>
+            <div class="auth-split-field">
+              <label for="signupPhone">Phone Number</label>
+              <input type="tel" id="signupPhone" placeholder="+233 XX XXX XXXX">
+            </div>
+            <div class="auth-split-field">
+              <label for="signupPassword">Password</label>
+              <div class="auth-password-wrap">
+                <input type="password" id="signupPassword" required placeholder="••••••••••">
+                <button type="button" class="auth-eye-btn" onclick="togglePassword('signupPassword', this)" aria-label="Toggle password">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="auth-split-btn">Create Account</button>
+            <div class="auth-social-divider"><span>or continue with</span></div>
+            <div class="auth-social-btns">
+              <button type="button" class="auth-social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg>
+              </button>
+              <button type="button" class="auth-social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+              </button>
+              <button type="button" class="auth-social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </button>
+            </div>
+            <p class="auth-switch-text">Already have an account? <button type="button" class="auth-switch-btn" id="switchToLogin">Sign in</button></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Account Section (shown when logged in) -->
+  <section class="account-section" id="accountSection" style="display:none;">
     <div class="account-container" id="accountContainer">
-      <!-- Sidebar - Hidden when logged out -->
-      <aside class="account-sidebar" id="accountSidebar" style="display:none;">
+      <!-- Sidebar -->
+      <aside class="account-sidebar" id="accountSidebar">
         <div class="account-user">
           <div class="account-avatar">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -137,52 +246,6 @@
 
       <!-- Main Content -->
       <main class="account-main">
-        <!-- Login/Signup View -->
-        <div class="account-auth" id="authView">
-          <div class="auth-tabs">
-            <button class="auth-tab active" data-auth="login">Login</button>
-            <button class="auth-tab" data-auth="signup">Sign Up</button>
-          </div>
-          
-          <!-- Login Form -->
-          <form class="auth-form" id="loginForm">
-            <h2>Welcome Back</h2>
-            <p>Sign in to access your saved properties and inquiries</p>
-            <div class="form-group">
-              <label for="loginEmail">Email</label>
-              <input type="email" id="loginEmail" required placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-              <label for="loginPassword">Password</label>
-              <input type="password" id="loginPassword" required placeholder="••••••••">
-            </div>
-            <button type="submit" class="auth-submit">Sign In</button>
-            <p class="auth-demo">Demo: Use any email and password to login</p>
-          </form>
-
-          <!-- Signup Form -->
-          <form class="auth-form" id="signupForm" style="display:none;">
-            <h2>Create Account</h2>
-            <p>Join Wenamy to save properties and track your inquiries</p>
-            <div class="form-group">
-              <label for="signupName">Full Name</label>
-              <input type="text" id="signupName" required placeholder="John Doe">
-            </div>
-            <div class="form-group">
-              <label for="signupEmail">Email</label>
-              <input type="email" id="signupEmail" required placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-              <label for="signupPhone">Phone Number</label>
-              <input type="tel" id="signupPhone" placeholder="+233 XX XXX XXXX">
-            </div>
-            <div class="form-group">
-              <label for="signupPassword">Password</label>
-              <input type="password" id="signupPassword" required placeholder="••••••••">
-            </div>
-            <button type="submit" class="auth-submit">Create Account</button>
-          </form>
-        </div>
 
         <!-- Dashboard Tab -->
         <div class="account-tab" id="tab-dashboard" style="display:none;">

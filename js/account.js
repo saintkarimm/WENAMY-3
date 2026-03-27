@@ -34,11 +34,16 @@ class AccountManager {
 
   // Setup all event listeners
   setupEventListeners() {
-    // Auth tabs
-    const authTabs = document.querySelectorAll('.auth-tab');
-    authTabs.forEach(tab => {
-      tab.addEventListener('click', () => this.switchAuthTab(tab.dataset.auth));
-    });
+    // New auth switch buttons
+    const switchToSignup = document.getElementById('switchToSignup');
+    const switchToLogin = document.getElementById('switchToLogin');
+    
+    if (switchToSignup) {
+      switchToSignup.addEventListener('click', () => this.switchAuthView('signup'));
+    }
+    if (switchToLogin) {
+      switchToLogin.addEventListener('click', () => this.switchAuthView('login'));
+    }
 
     // Login form
     const loginForm = document.getElementById('loginForm');
@@ -68,6 +73,26 @@ class AccountManager {
     const profileForm = document.getElementById('profileForm');
     if (profileForm) {
       profileForm.addEventListener('submit', (e) => this.handleProfileUpdate(e));
+    }
+  }
+
+  // Switch between login and signup views (new split screen)
+  switchAuthView(view) {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const authTitle = document.getElementById('authTitle');
+    const authSubtitle = document.getElementById('authSubtitle');
+
+    if (view === 'signup') {
+      if (loginForm) loginForm.style.display = 'none';
+      if (signupForm) signupForm.style.display = 'flex';
+      if (authTitle) authTitle.textContent = 'Create an account';
+      if (authSubtitle) authSubtitle.textContent = 'Join Wenamy to save properties and track your inquiries.';
+    } else {
+      if (loginForm) loginForm.style.display = 'flex';
+      if (signupForm) signupForm.style.display = 'none';
+      if (authTitle) authTitle.textContent = 'Welcome back';
+      if (authSubtitle) authSubtitle.textContent = 'Access your saved properties, notes, and inquiries anytime, anywhere — and keep everything in one place.';
     }
   }
 
@@ -185,33 +210,31 @@ class AccountManager {
     const userName = document.getElementById('userName');
     const userEmail = document.getElementById('userEmail');
     const logoutBtn = document.getElementById('logoutBtn');
-    const authView = document.getElementById('authView');
+    const authSplitSection = document.getElementById('authSplitSection');
+    const accountSection = document.getElementById('accountSection');
     const dashboardTab = document.getElementById('tab-dashboard');
     const sidebar = document.getElementById('accountSidebar');
-    const container = document.getElementById('accountContainer');
 
     if (this.currentUser) {
-      // User is logged in
+      // User is logged in - show account section, hide auth section
       if (userName) userName.textContent = this.currentUser.name;
       if (userEmail) userEmail.textContent = this.currentUser.email;
       if (logoutBtn) logoutBtn.style.display = 'flex';
-      if (authView) authView.style.display = 'none';
+      if (authSplitSection) authSplitSection.style.display = 'none';
+      if (accountSection) accountSection.style.display = 'block';
       if (dashboardTab) dashboardTab.style.display = 'block';
       if (sidebar) sidebar.style.display = 'block';
-      // Reset to 2-column layout
-      if (container) container.style.gridTemplateColumns = '280px 1fr';
 
       // Update stats
       this.updateDashboardStats();
     } else {
-      // User is logged out
+      // User is logged out - show auth section, hide account section
       if (userName) userName.textContent = 'Welcome';
       if (userEmail) userEmail.textContent = 'Sign in to access your account';
       if (logoutBtn) logoutBtn.style.display = 'none';
-      if (authView) authView.style.display = 'block';
+      if (authSplitSection) authSplitSection.style.display = 'flex';
+      if (accountSection) accountSection.style.display = 'none';
       if (sidebar) sidebar.style.display = 'none';
-      // Full width for login form
-      if (container) container.style.gridTemplateColumns = '1fr';
       
       const tabs = document.querySelectorAll('.account-tab');
       tabs.forEach(tab => tab.style.display = 'none');
@@ -412,6 +435,18 @@ class AccountManager {
       notification.style.animation = 'slideOut 0.3s ease';
       setTimeout(() => notification.remove(), 300);
     }, 3000);
+  }
+}
+
+// Password toggle function
+function togglePassword(inputId, btn) {
+  const input = document.getElementById(inputId);
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+  } else {
+    input.type = 'password';
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
   }
 }
 
