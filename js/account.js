@@ -134,6 +134,10 @@ class AccountManager {
       if (sidebarOverlay) sidebarOverlay.classList.remove('active');
       if (edgeIndicator) edgeIndicator.classList.remove('hidden');
     }
+    
+    // Reset any inline transform styles from swiping
+    sidebar.style.transform = '';
+    if (sidebarOverlay) sidebarOverlay.style.opacity = '';
   }
 
   // Setup swipe gestures for sidebar
@@ -201,11 +205,19 @@ class AccountManager {
       
       isSwiping = false;
       sidebar.classList.remove('swiping');
-      sidebar.style.transform = '';
       
       const deltaX = touchCurrentX - touchStartX;
       const sidebarIsOpen = sidebar.classList.contains('active');
       const threshold = sidebarWidth * 0.3; // 30% threshold
+      
+      // Only process if there was actual movement
+      if (Math.abs(deltaX) < 5) {
+        // Just a tap, reset styles
+        sidebar.style.transform = '';
+        const overlay = document.getElementById('sidebarOverlay');
+        if (overlay) overlay.style.opacity = '';
+        return;
+      }
       
       if (sidebarIsOpen) {
         // Close if swiped left enough
@@ -220,15 +232,6 @@ class AccountManager {
           this.toggleSidebar(true);
         } else {
           this.toggleSidebar(false);
-        }
-      }
-      
-      // Reset overlay styles
-      const overlay = document.getElementById('sidebarOverlay');
-      if (overlay) {
-        overlay.style.opacity = '';
-        if (!sidebar.classList.contains('active')) {
-          overlay.style.display = '';
         }
       }
     });
@@ -274,11 +277,16 @@ class AccountManager {
       
       isDragging = false;
       sidebar.classList.remove('swiping');
-      sidebar.style.transform = '';
       
       const deltaX = touchCurrentX - touchStartX;
       const sidebarIsOpen = sidebar.classList.contains('active');
       const threshold = sidebarWidth * 0.3;
+      
+      // Only process if there was actual movement
+      if (Math.abs(deltaX) < 5) {
+        sidebar.style.transform = '';
+        return;
+      }
       
       if (sidebarIsOpen && deltaX < -threshold) {
         this.toggleSidebar(false);
@@ -416,6 +424,8 @@ class AccountManager {
     const dashboardTab = document.getElementById('tab-dashboard');
     const sidebar = document.getElementById('accountSidebar');
     const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+    const edgeIndicator = document.getElementById('sidebarEdgeIndicator');
+    const swipeHint = document.getElementById('sidebarSwipeHint');
 
     if (this.currentUser) {
       // User is logged in - show account section, hide auth section
@@ -430,6 +440,8 @@ class AccountManager {
       if (dashboardTab) dashboardTab.style.display = 'block';
       if (sidebar) sidebar.style.display = 'block';
       if (mobileSidebarToggle) mobileSidebarToggle.style.display = 'flex';
+      if (edgeIndicator) edgeIndicator.style.display = 'flex';
+      if (swipeHint) swipeHint.style.display = 'block';
 
       // Update stats
       this.updateDashboardStats();
@@ -445,6 +457,8 @@ class AccountManager {
       }
       if (sidebar) sidebar.style.display = 'none';
       if (mobileSidebarToggle) mobileSidebarToggle.style.display = 'none';
+      if (edgeIndicator) edgeIndicator.style.display = 'none';
+      if (swipeHint) swipeHint.style.display = 'none';
       
       const tabs = document.querySelectorAll('.account-tab');
       tabs.forEach(tab => tab.style.display = 'none');
