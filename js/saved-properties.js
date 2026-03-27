@@ -56,6 +56,11 @@ class SavedPropertiesManager {
     this.listeners.forEach(callback => {
       callback(this.state.savedProperties);
     });
+    
+    // Dispatch custom event for cross-component communication
+    window.dispatchEvent(new CustomEvent('savedPropertiesChanged', {
+      detail: { savedProperties: this.state.savedProperties }
+    }));
   }
 
   // Save a property
@@ -159,16 +164,17 @@ class SavedPropertiesManager {
       url: card.querySelector('.project-luxury-cta')?.href || `project-detail.html?id=${card.dataset.projectId}`
     };
 
-    const isSaved = this.isSaved(property.id);
+    // Use saveProperty which handles both add/remove and shows notifications
+    this.saveProperty(property);
     
-    if (isSaved) {
-      this.removeProperty(property.id);
-      button.classList.remove('saved');
-      button.setAttribute('aria-label', 'Save property');
-    } else {
-      this.saveProperty(property);
+    // Update button visual state based on current saved status
+    const isNowSaved = this.isSaved(property.id);
+    if (isNowSaved) {
       button.classList.add('saved');
       button.setAttribute('aria-label', 'Remove from saved');
+    } else {
+      button.classList.remove('saved');
+      button.setAttribute('aria-label', 'Save property');
     }
   }
 

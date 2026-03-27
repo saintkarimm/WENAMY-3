@@ -12,19 +12,33 @@ class BasketManager {
   init() {
     this.loadBasketFromStorage();
     this.updateBasketCount();
+    
+    // Listen for storage changes from other tabs/pages
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'wenamy_saved_properties') {
+        this.loadBasketFromStorage();
+        this.updateBasketCount();
+      }
+    });
+    
+    // Listen for saved properties changes from saved-properties.js
+    window.addEventListener('savedPropertiesChanged', (e) => {
+      this.basket = e.detail?.savedProperties || [];
+      this.updateBasketCount();
+    });
   }
 
-  // Load basket from localStorage
+  // Load basket from localStorage (uses saved properties storage)
   loadBasketFromStorage() {
-    const basketData = localStorage.getItem('wenamy_basket');
+    const basketData = localStorage.getItem('wenamy_saved_properties');
     if (basketData) {
       this.basket = JSON.parse(basketData);
     }
   }
 
-  // Save basket to localStorage
+  // Save basket to localStorage (uses saved properties storage)
   saveBasketToStorage() {
-    localStorage.setItem('wenamy_basket', JSON.stringify(this.basket));
+    localStorage.setItem('wenamy_saved_properties', JSON.stringify(this.basket));
   }
 
   // Add property to basket

@@ -442,14 +442,11 @@
   width: 20px;
   height: 20px;
   transition: all 0.2s ease;
-}
-
-.project-save-btn .heart-outline {
   stroke: #64748b;
   fill: none;
 }
 
-.project-save-btn:hover .heart-outline {
+.project-save-btn:hover svg {
   stroke: #ef4444;
 }
 
