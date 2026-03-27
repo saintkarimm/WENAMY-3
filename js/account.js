@@ -221,19 +221,6 @@ class AccountManager {
       tab.style.display = tab.id === `tab-${tabName}` ? 'block' : 'none';
     });
 
-    // Special handling for auth view
-    const authView = document.getElementById('authView');
-    if (authView) {
-      if (this.currentUser) {
-        authView.style.display = 'none';
-        const activeTab = document.getElementById(`tab-${tabName}`);
-        if (activeTab) activeTab.style.display = 'block';
-      } else {
-        authView.style.display = 'block';
-        tabs.forEach(tab => tab.style.display = 'none');
-      }
-    }
-
     // Load tab-specific data
     if (tabName === 'saved') this.renderSavedProperties();
     if (tabName === 'inquiries') this.renderInquiries();
@@ -249,6 +236,7 @@ class AccountManager {
     const accountSection = document.getElementById('accountSection');
     const dashboardTab = document.getElementById('tab-dashboard');
     const sidebar = document.getElementById('accountSidebar');
+    const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
 
     if (this.currentUser) {
       // User is logged in - show account section, hide auth section
@@ -256,9 +244,13 @@ class AccountManager {
       if (userEmail) userEmail.textContent = this.currentUser.email;
       if (logoutBtn) logoutBtn.style.display = 'flex';
       if (authSplitSection) authSplitSection.style.display = 'none';
-      if (accountSection) accountSection.style.display = 'block';
+      if (accountSection) {
+        accountSection.style.display = 'block';
+        accountSection.classList.add('active');
+      }
       if (dashboardTab) dashboardTab.style.display = 'block';
       if (sidebar) sidebar.style.display = 'block';
+      if (mobileSidebarToggle) mobileSidebarToggle.style.display = 'flex';
 
       // Update stats
       this.updateDashboardStats();
@@ -268,8 +260,12 @@ class AccountManager {
       if (userEmail) userEmail.textContent = 'Sign in to access your account';
       if (logoutBtn) logoutBtn.style.display = 'none';
       if (authSplitSection) authSplitSection.style.display = 'flex';
-      if (accountSection) accountSection.style.display = 'none';
+      if (accountSection) {
+        accountSection.style.display = 'none';
+        accountSection.classList.remove('active');
+      }
       if (sidebar) sidebar.style.display = 'none';
+      if (mobileSidebarToggle) mobileSidebarToggle.style.display = 'none';
       
       const tabs = document.querySelectorAll('.account-tab');
       tabs.forEach(tab => tab.style.display = 'none');

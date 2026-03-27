@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/hero-new.css?v=4">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/account.css?v=10">
+  <link rel="stylesheet" href="css/account.css?v=11">
   <link rel="stylesheet" href="css/dashboard-new.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -375,36 +375,38 @@
           </div>
           <div class="dash-card" style="max-width: 600px;">
             <form class="profile-form" id="profileForm">
-              <div style="display: grid; gap: 1.25rem;">
-                <div>
-                  <label style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--dash-text); margin-bottom: 0.5rem;">Full Name</label>
-                  <input type="text" id="profileName" placeholder="Your full name" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--dash-border); border-radius: var(--dash-radius-lg); font-size: 0.875rem; transition: all 0.2s;">
-                </div>
-                <div>
-                  <label style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--dash-text); margin-bottom: 0.5rem;">Email</label>
-                  <input type="email" id="profileEmail" placeholder="your@email.com" readonly style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--dash-border); border-radius: var(--dash-radius-lg); font-size: 0.875rem; background: #f8fafc;">
-                </div>
-                <div>
-                  <label style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--dash-text); margin-bottom: 0.5rem;">Phone Number</label>
-                  <input type="tel" id="profilePhone" placeholder="+233 XX XXX XXXX" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--dash-border); border-radius: var(--dash-radius-lg); font-size: 0.875rem; transition: all 0.2s;">
-                </div>
-                <div>
-                  <label style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--dash-text); margin-bottom: 0.5rem;">Location</label>
-                  <input type="text" id="profileLocation" placeholder="Accra, Ghana" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--dash-border); border-radius: var(--dash-radius-lg); font-size: 0.875rem; transition: all 0.2s;">
-                </div>
-                <div>
-                  <label style="display: block; font-size: 0.875rem; font-weight: 500; color: var(--dash-text); margin-bottom: 0.5rem;">Property Preference</label>
-                  <select id="profilePreference" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--dash-border); border-radius: var(--dash-radius-lg); font-size: 0.875rem; background: white; cursor: pointer;">
-                    <option value="">Select preference...</option>
-                    <option value="buy">Looking to Buy</option>
-                    <option value="invest">Investment</option>
-                    <option value="offplan">Off-Plan</option>
-                    <option value="both">Both</option>
-                  </select>
-                </div>
-                <button type="submit" class="btn-primary-soft" style="margin-top: 0.5rem;">Save Changes</button>
+            <div class="profile-form-grid">
+              <div class="profile-form-group">
+                <label class="profile-form-label">Full Name</label>
+                <input type="text" id="profileName" class="profile-form-input" placeholder="Your full name">
               </div>
-            </form>
+              <div class="profile-form-group">
+                <label class="profile-form-label">Email</label>
+                <input type="email" id="profileEmail" class="profile-form-input profile-form-input-readonly" placeholder="your@email.com" readonly>
+              </div>
+              <div class="profile-form-group">
+                <label class="profile-form-label">Phone Number</label>
+                <input type="tel" id="profilePhone" class="profile-form-input" placeholder="+233 XX XXX XXXX">
+              </div>
+              <div class="profile-form-group">
+                <label class="profile-form-label">Location</label>
+                <input type="text" id="profileLocation" class="profile-form-input" placeholder="Accra, Ghana">
+              </div>
+              <div class="profile-form-group profile-form-group-full">
+                <label class="profile-form-label">Property Preference</label>
+                <select id="profilePreference" class="profile-form-select">
+                  <option value="">Select preference...</option>
+                  <option value="buy">Looking to Buy</option>
+                  <option value="invest">Investment</option>
+                  <option value="offplan">Off-Plan</option>
+                  <option value="both">Both</option>
+                </select>
+              </div>
+              <div class="profile-form-group profile-form-group-full">
+                <button type="submit" class="btn-primary-soft">Save Changes</button>
+              </div>
+            </div>
+          </form>
           </div>
         </div>
       </main>
