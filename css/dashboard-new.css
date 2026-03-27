@@ -589,16 +589,89 @@
 }
 
 /* ============================================
+   MOBILE SWIPEABLE SIDEBAR
+   ============================================ */
+
+/* Edge Indicator - visible hint that sidebar can be opened */
+.sidebar-edge-indicator {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 80px;
+  background: var(--dash-primary);
+  border-radius: 0 12px 12px 0;
+  z-index: 95;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 0 8px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-edge-indicator:hover {
+  width: 28px;
+  background: #4f46e5;
+}
+
+.sidebar-edge-indicator svg {
+  width: 16px;
+  height: 16px;
+  color: white;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-edge-indicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(-100%);
+}
+
+/* Swipe hint text */
+.sidebar-swipe-hint {
+  display: none;
+  position: fixed;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--dash-primary);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  z-index: 94;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.sidebar-edge-indicator:hover + .sidebar-swipe-hint {
+  opacity: 1;
+  left: 36px;
+}
+
+/* ============================================
    MOBILE RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
   .account-sidebar {
     transform: translateX(-100%);
     box-shadow: var(--dash-shadow-lg);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
   }
   
   .account-sidebar.active {
     transform: translateX(0);
+  }
+  
+  .account-sidebar.swiping {
+    transition: none;
   }
   
   .account-main {
@@ -608,6 +681,15 @@
   
   .mobile-sidebar-toggle {
     display: flex;
+  }
+  
+  /* Show edge indicator on mobile */
+  .sidebar-edge-indicator {
+    display: flex;
+  }
+  
+  .sidebar-swipe-hint {
+    display: block;
   }
   
   .stat-card {

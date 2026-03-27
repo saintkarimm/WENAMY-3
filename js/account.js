@@ -79,36 +79,215 @@ class AccountManager {
     this.setupMobileSidebar();
   }
 
-  // Setup mobile sidebar toggle
+  // Setup mobile sidebar toggle with swipe gestures
   setupMobileSidebar() {
     const sidebarToggle = document.getElementById('mobileSidebarToggle');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     const sidebar = document.getElementById('accountSidebar');
+    const edgeIndicator = document.getElementById('sidebarEdgeIndicator');
 
-    if (sidebarToggle && sidebar && sidebarOverlay) {
-      // Toggle sidebar on button click
-      sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        sidebarOverlay.classList.toggle('active');
-      });
+    if (!sidebar) return;
 
-      // Close sidebar when clicking overlay
-      sidebarOverlay.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-        sidebarOverlay.classList.remove('active');
-      });
-
-      // Close sidebar when clicking a nav item (on mobile)
-      const navItems = sidebar.querySelectorAll('.account-nav-item');
-      navItems.forEach(item => {
-        item.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            sidebar.classList.remove('active');
-            sidebarOverlay.classList.remove('active');
-          }
-        });
-      });
+    // Toggle sidebar on button click
+    if (sidebarToggle) {
+      sidebarToggle.addEventListener('click', () => this.toggleSidebar(true));
     }
+
+    // Toggle sidebar on edge indicator click
+    if (edgeIndicator) {
+      edgeIndicator.addEventListener('click', () => this.toggleSidebar(true));
+    }
+
+    // Close sidebar when clicking overlay
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener('click', () => this.toggleSidebar(false));
+    }
+
+    // Close sidebar when clicking a nav item (on mobile)
+    const navItems = sidebar.querySelectorAll('.account-nav-item');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+          this.toggleSidebar(false);
+        }
+      });
+    });
+
+    // Setup swipe gestures
+    this.setupSwipeGestures(sidebar, edgeIndicator);
+  }
+
+  // Toggle sidebar open/close
+  toggleSidebar(open) {
+    const sidebar = document.getElementById('accountSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const edgeIndicator = document.getElementById('sidebarEdgeIndicator');
+
+    if (!sidebar) return;
+
+    if (open) {
+      sidebar.classList.add('active');
+      if (sidebarOverlay) sidebarOverlay.classList.add('active');
+      if (edgeIndicator) edgeIndicator.classList.add('hidden');
+    } else {
+      sidebar.classList.remove('active');
+      if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+      if (edgeIndicator) edgeIndicator.classList.remove('hidden');
+    }
+  }
+
+  // Setup swipe gestures for sidebar
+  setupSwipeGestures(sidebar, edgeIndicator) {
+    let touchStartX = 0;
+    let touchCurrentX = 0;
+    let isSwiping = false;
+    let sidebarWidth = 260;
+
+    // Touch start - detect swipe from edge
+    document.addEventListener('touchstart', (e) => {
+      if (window.innerWidth > 1024) return;
+      
+      touchStartX = e.touches[0].clientX;
+      const sidebarIsOpen = sidebar.classList.contains('active');
+      
+      // Allow swipe from left edge (0-30px) to open
+      // Allow swipe anywhere when sidebar is open to close
+      if ((!sidebarIsOpen && touchStartX < 30) || sidebarIsOpen) {
+        isSwiping = true;
+        sidebar.classList.add('swiping');
+        sidebarWidth = sidebar.offsetWidth || 260;
+      }
+    }, { passive: true });
+
+    // Touch move - follow finger
+    document.addEventListener('touchmove', (e) => {
+      if (!isSwiping || window.innerWidth > 1024) return;
+      
+      touchCurrentX = e.touches[0].clientX;
+      const deltaX = touchCurrentX - touchStartX;
+      const sidebarIsOpen = sidebar.classList.contains('active');
+      
+      if (sidebarIsOpen) {
+        // Swiping to close - move sidebar left
+        const translateX = Math.min(0, deltaX);
+        sidebar.style.transform = `translateX(${translateX}px)`;
+        
+        // Adjust overlay opacity
+        const overlay = document.getElementById('sidebarOverlay');
+        if (overlay) {
+          const opacity = Math.max(0, 0.5 + (translateX / sidebarWidth) * 0.5);
+          overlay.style.opacity = opacity;
+        }
+      } else {
+        // Swiping to open - move sidebar from left
+        const translateX = Math.min(0, -sidebarWidth + deltaX);
+        if (deltaX > 0) {
+          sidebar.style.transform = `translateX(${translateX}px)`;
+          
+          // Show overlay
+          const overlay = document.getElementById('sidebarOverlay');
+          if (overlay) {
+            overlay.style.display = 'block';
+            const opacity = Math.min(0.5, (deltaX / sidebarWidth) * 0.5);
+            overlay.style.opacity = opacity;
+          }
+        }
+      }
+    }, { passive: true });
+
+    // Touch end - complete or cancel swipe
+    document.addEventListener('touchend', () => {
+      if (!isSwiping || window.innerWidth > 1024) return;
+      
+      isSwiping = false;
+      sidebar.classList.remove('swiping');
+      sidebar.style.transform = '';
+      
+      const deltaX = touchCurrentX - touchStartX;
+      const sidebarIsOpen = sidebar.classList.contains('active');
+      const threshold = sidebarWidth * 0.3; // 30% threshold
+      
+      if (sidebarIsOpen) {
+        // Close if swiped left enough
+        if (deltaX < -threshold) {
+          this.toggleSidebar(false);
+        } else {
+          this.toggleSidebar(true);
+        }
+      } else {
+        // Open if swiped right enough
+        if (deltaX > threshold) {
+          this.toggleSidebar(true);
+        } else {
+          this.toggleSidebar(false);
+        }
+      }
+      
+      // Reset overlay styles
+      const overlay = document.getElementById('sidebarOverlay');
+      if (overlay) {
+        overlay.style.opacity = '';
+        if (!sidebar.classList.contains('active')) {
+          overlay.style.display = '';
+        }
+      }
+    });
+
+    // Mouse drag support for desktop testing
+    let isDragging = false;
+    
+    document.addEventListener('mousedown', (e) => {
+      if (window.innerWidth > 1024) return;
+      
+      const sidebarIsOpen = sidebar.classList.contains('active');
+      const clickX = e.clientX;
+      
+      if ((!sidebarIsOpen && clickX < 30) || (sidebarIsOpen && clickX < sidebarWidth)) {
+        isDragging = true;
+        touchStartX = clickX;
+        sidebar.classList.add('swiping');
+        sidebarWidth = sidebar.offsetWidth || 260;
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging || window.innerWidth > 1024) return;
+      
+      touchCurrentX = e.clientX;
+      const deltaX = touchCurrentX - touchStartX;
+      const sidebarIsOpen = sidebar.classList.contains('active');
+      
+      if (sidebarIsOpen) {
+        const translateX = Math.min(0, deltaX);
+        sidebar.style.transform = `translateX(${translateX}px)`;
+      } else {
+        const translateX = Math.min(0, -sidebarWidth + deltaX);
+        if (deltaX > 0) {
+          sidebar.style.transform = `translateX(${translateX}px)`;
+        }
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (!isDragging || window.innerWidth > 1024) return;
+      
+      isDragging = false;
+      sidebar.classList.remove('swiping');
+      sidebar.style.transform = '';
+      
+      const deltaX = touchCurrentX - touchStartX;
+      const sidebarIsOpen = sidebar.classList.contains('active');
+      const threshold = sidebarWidth * 0.3;
+      
+      if (sidebarIsOpen && deltaX < -threshold) {
+        this.toggleSidebar(false);
+      } else if (!sidebarIsOpen && deltaX > threshold) {
+        this.toggleSidebar(true);
+      } else {
+        this.toggleSidebar(sidebarIsOpen);
+      }
+    });
   }
 
   // Switch between login and signup views (new split screen)
