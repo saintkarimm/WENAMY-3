@@ -110,7 +110,13 @@ class BasketManager {
           </svg>
           <h3>Your basket is empty</h3>
           <p>Browse our properties and add them to your basket for later</p>
-          <a href="projects.html" class="btn btn-primary">Browse Properties</a>
+          <a href="projects.html" class="btn-primary-soft">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            Browse Properties
+          </a>
         </div>
       `;
       return;
@@ -123,12 +129,18 @@ class BasketManager {
         </div>
         <div class="basket-item-info">
           <h4>${item.title}</h4>
-          <p class="basket-item-location">${item.location}</p>
+          <p class="basket-item-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            ${item.location}
+          </p>
           <p class="basket-item-price">${item.price}</p>
         </div>
         <div class="basket-item-actions">
-          <a href="${item.url || 'project-detail.html?id=' + item.id}" class="btn btn-secondary">View Details</a>
-          <button class="btn btn-remove" onclick="basketManager.removeFromBasket('${item.id}')">
+          <a href="${item.url || 'project-detail.html?id=' + item.id}" class="btn-secondary">View Details</a>
+          <button class="btn-remove" onclick="basketManager.removeFromBasket('${item.id}')" aria-label="Remove from basket">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18"/>
               <line x1="6" y1="6" x2="18" y2="18"/>
