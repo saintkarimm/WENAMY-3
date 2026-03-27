@@ -145,6 +145,51 @@ class SavedPropertiesManager {
     });
   }
 
+  // Toggle heart icon save/unsave
+  toggleHeart(button) {
+    const card = button.closest('.project-luxury-card');
+    if (!card) return;
+
+    const property = {
+      id: card.dataset.projectId,
+      title: card.dataset.projectTitle,
+      location: card.dataset.projectLocation,
+      price: card.dataset.projectPrice,
+      image: card.dataset.projectImage,
+      url: card.querySelector('.project-luxury-cta')?.href || `project-detail.html?id=${card.dataset.projectId}`
+    };
+
+    const isSaved = this.isSaved(property.id);
+    
+    if (isSaved) {
+      this.removeProperty(property.id);
+      button.classList.remove('saved');
+      button.setAttribute('aria-label', 'Save property');
+    } else {
+      this.saveProperty(property);
+      button.classList.add('saved');
+      button.setAttribute('aria-label', 'Remove from saved');
+    }
+  }
+
+  // Update all heart buttons on page
+  updateAllHeartStates() {
+    document.querySelectorAll('.project-luxury-card').forEach(card => {
+      const projectId = card.dataset.projectId;
+      const heartBtn = card.querySelector('.project-save-btn');
+      
+      if (projectId && heartBtn) {
+        if (this.isSaved(projectId)) {
+          heartBtn.classList.add('saved');
+          heartBtn.setAttribute('aria-label', 'Remove from saved');
+        } else {
+          heartBtn.classList.remove('saved');
+          heartBtn.setAttribute('aria-label', 'Save property');
+        }
+      }
+    });
+  }
+
   // Show notification
   showNotification(message, type = 'info') {
     const notification = document.createElement('div');
@@ -366,4 +411,5 @@ if (!document.getElementById('saved-properties-styles')) {
 // Auto-update button states on page load
 document.addEventListener('DOMContentLoaded', () => {
   savedPropertiesManager.updateAllButtonStates();
+  savedPropertiesManager.updateAllHeartStates();
 });

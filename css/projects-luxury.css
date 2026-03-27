@@ -405,6 +405,71 @@
   transform: translateX(4px);
 }
 
+/* Card Actions Container */
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* Heart/Save Button */
+.project-save-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.project-save-btn:hover {
+  background: #fef2f2;
+  border-color: #fecaca;
+  transform: scale(1.05);
+}
+
+.project-save-btn:active {
+  transform: scale(0.95);
+}
+
+.project-save-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease;
+}
+
+.project-save-btn .heart-outline {
+  stroke: #64748b;
+  fill: none;
+}
+
+.project-save-btn:hover .heart-outline {
+  stroke: #ef4444;
+}
+
+.project-save-btn.saved {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+.project-save-btn.saved svg {
+  fill: #ef4444;
+  stroke: #ef4444;
+  animation: heartPulse 0.3s ease;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
 /* ========================================
    CTA SECTION - Conversion Focus
    ======================================== */
