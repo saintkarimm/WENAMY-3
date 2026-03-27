@@ -256,6 +256,47 @@
   height: 18px;
 }
 
+/* Basket Button */
+.project-basket-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-basket-btn:hover {
+  transform: scale(1.1);
+  background: #0a101d;
+}
+
+.project-basket-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.project-basket-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.project-basket-btn.in-basket {
+  background: #22c55e;
+}
+
+.project-basket-btn.in-basket img {
+  filter: brightness(0) invert(1);
+}
+
 /* Card Content */
 .project-luxury-content {
   padding: 1.5rem;

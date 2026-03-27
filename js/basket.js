@@ -178,8 +178,47 @@ class BasketManager {
   }
 }
 
+// Add property to basket from card element
+BasketManager.prototype.addToBasketFromCard = function(button) {
+  const card = button.closest('.project-luxury-card');
+  if (!card) return;
+  
+  const property = {
+    id: card.dataset.projectId,
+    title: card.dataset.projectTitle,
+    location: card.dataset.projectLocation,
+    price: card.dataset.projectPrice,
+    image: card.dataset.projectImage,
+    url: card.querySelector('a')?.href || 'project-detail.html?id=' + card.dataset.projectId
+  };
+  
+  const added = this.addToBasket(property);
+  if (added) {
+    button.classList.add('in-basket');
+    button.setAttribute('aria-label', 'Added to basket');
+  }
+};
+
+// Check and update basket button states on page load
+BasketManager.prototype.updateBasketButtonStates = function() {
+  document.querySelectorAll('.project-luxury-card').forEach(card => {
+    const projectId = card.dataset.projectId;
+    const basketBtn = card.querySelector('.project-basket-btn');
+    
+    if (projectId && basketBtn && this.isInBasket(projectId)) {
+      basketBtn.classList.add('in-basket');
+      basketBtn.setAttribute('aria-label', 'Added to basket');
+    }
+  });
+};
+
 // Initialize basket manager
 const basketManager = new BasketManager();
+
+// Update button states after initialization
+document.addEventListener('DOMContentLoaded', () => {
+  basketManager.updateBasketButtonStates();
+});
 
 // Add CSS animation for notifications
 if (!document.getElementById('basket-notification-styles')) {
