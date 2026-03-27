@@ -108,48 +108,6 @@ class SavedPropertiesManager {
     return this.state.savedProperties.length;
   }
 
-  // Toggle save/unsave from card element
-  toggleFromCard(button) {
-    const card = button.closest('.project-luxury-card');
-    if (!card) return;
-
-    const property = {
-      id: card.dataset.projectId,
-      title: card.dataset.projectTitle,
-      location: card.dataset.projectLocation,
-      price: card.dataset.projectPrice,
-      image: card.dataset.projectImage,
-      url: card.querySelector('a')?.href || `project-detail.html?id=${card.dataset.projectId}`
-    };
-
-    const isNowSaved = this.saveProperty(property);
-    this.updateButtonVisualState(button, isNowSaved);
-    return isNowSaved;
-  }
-
-  // Update button visual state
-  updateButtonVisualState(button, isSaved) {
-    if (isSaved) {
-      button.classList.add('in-basket');
-      button.setAttribute('aria-label', 'Remove from saved');
-    } else {
-      button.classList.remove('in-basket');
-      button.setAttribute('aria-label', 'Save property');
-    }
-  }
-
-  // Update all basket buttons on page
-  updateAllButtonStates() {
-    document.querySelectorAll('.project-luxury-card').forEach(card => {
-      const projectId = card.dataset.projectId;
-      const basketBtn = card.querySelector('.project-basket-btn');
-      
-      if (projectId && basketBtn) {
-        this.updateButtonVisualState(basketBtn, this.isSaved(projectId));
-      }
-    });
-  }
-
   // Toggle heart icon save/unsave
   toggleHeart(button) {
     const card = button.closest('.project-luxury-card');
