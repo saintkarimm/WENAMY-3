@@ -8,6 +8,7 @@ class AuthManager {
   constructor() {
     this.currentUser = null;
     this.listeners = [];
+    this.firebaseReady = false;
     this.init();
   }
 
@@ -15,8 +16,11 @@ class AuthManager {
   init() {
     this.setupNavbarListener();
     
-    // Listen to Firebase auth state changes
-    if (typeof firebaseAuthManager !== 'undefined') {
+    // Wait for Firebase to be ready, then subscribe
+    this.waitForFirebase().then(() => {
+      this.firebaseReady = true;
+      
+      // Listen to Firebase auth state changes
       firebaseAuthManager.subscribe((user) => {
         this.currentUser = user;
         this.updateNavbar();
@@ -24,9 +28,10 @@ class AuthManager {
       
       // Initial navbar update
       this.currentUser = firebaseAuthManager.getCurrentUser();
-    }
+      this.updateNavbar();
+    });
     
-    // Update navbar on page load
+    // Update navbar on page load (will show loading state)
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => {
         this.updateNavbar();
@@ -34,11 +39,20 @@ class AuthManager {
     } else {
       this.updateNavbar();
     }
-    
-    // Also update after a short delay
-    setTimeout(() => {
-      this.updateNavbar();
-    }, 100);
+  }
+  
+  // Wait for Firebase to be initialized
+  async waitForFirebase() {
+    return new Promise((resolve) => {
+      const checkFirebase = () => {
+        if (typeof firebaseAuthManager !== 'undefined') {
+          resolve();
+        } else {
+          setTimeout(checkFirebase, 50);
+        }
+      };
+      checkFirebase();
+    });
   }
 
   // Subscribe to auth state changes
@@ -122,15 +136,10 @@ class AuthManager {
     return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
   }
 
-  // Setup storage event listener for cross-tab sync
+  // Setup cross-tab sync via Firebase auth state
   setupNavbarListener() {
-    window.addEventListener('storage', (e) => {
-      if (e.key === this.STORAGE_KEY) {
-        this.loadUserFromStorage();
-        this.updateNavbar();
-        this.notifyListeners();
-      }
-    });
+    // Firebase handles cross-tab sync automatically
+    // This method is kept for backwards compatibility
   }
 
   // Update navbar UI based on auth state
@@ -140,6 +149,17 @@ class AuthManager {
     const mobileSignInBtn = document.getElementById('mobileSignInBtn');
     const mobileUserDisplay = document.getElementById('mobileUserDisplay');
     const mobileMenuSignInBtn = document.getElementById('mobileMenuSignInBtn');
+
+    // Don't show anything until Firebase auth state is determined
+    if (!this.firebaseReady) {
+      // Hide both states until we know the auth status
+      if (signInBtn) signInBtn.classList.remove('show');
+      if (mobileSignInBtn) mobileSignInBtn.classList.remove('show');
+      if (mobileMenuSignInBtn) mobileMenuSignInBtn.style.display = 'none';
+      if (userDisplay) userDisplay.classList.remove('show');
+      if (mobileUserDisplay) mobileUserDisplay.classList.remove('show');
+      return;
+    }
 
     if (this.isAuthenticated()) {
       // User is logged in - show user display, hide sign in buttons
