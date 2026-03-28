@@ -4,7 +4,7 @@
  */
 
 import { observeAuth, logout } from "./auth.js";
-import { getUserProfile } from "./user.js";
+import { getUserProfile, createUserProfile } from "./user.js";
 
 // Global state
 let currentUser = null;
@@ -15,18 +15,48 @@ let userProfile = null;
  * Call this on every page
  */
 export const initNavbar = () => {
+  // Show loading state initially
+  showNavbarLoadingState();
+  
   observeAuth(async (user) => {
     currentUser = user;
     
     if (user) {
       // Fetch user profile from Firestore
-      userProfile = await getUserProfile(user.uid);
+      try {
+        userProfile = await getUserProfile(user.uid);
+        // Create profile if missing
+        if (!userProfile) {
+          userProfile = await createUserProfile(user, { name: user.displayName || '' });
+        }
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+        userProfile = null;
+      }
     } else {
       userProfile = null;
     }
     
     renderNavbar();
   });
+};
+
+/**
+ * Show loading state before auth is determined
+ */
+const showNavbarLoadingState = () => {
+  const desktopSignInBtn = document.getElementById('navbarSignInBtn');
+  const mobileSignInBtn = document.getElementById('mobileSignInBtn');
+  const mobileMenuSignInBtn = document.getElementById('mobileMenuSignInBtn');
+  const desktopAuthContainer = document.getElementById('navbarUserDisplay');
+  const mobileAuthContainer = document.getElementById('mobileUserDisplay');
+  
+  // Hide everything until auth state is determined
+  if (desktopSignInBtn) desktopSignInBtn.classList.remove('show');
+  if (mobileSignInBtn) mobileSignInBtn.classList.remove('show');
+  if (mobileMenuSignInBtn) mobileMenuSignInBtn.style.display = 'none';
+  if (desktopAuthContainer) desktopAuthContainer.classList.remove('show');
+  if (mobileAuthContainer) mobileAuthContainer.classList.remove('show');
 };
 
 /**

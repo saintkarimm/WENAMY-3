@@ -12,18 +12,28 @@ let userData = null;
 
 /**
  * Initialize account page
+ * Note: navbar.js already calls observeAuth(), so we just listen for auth state updates
  */
 export const initAccount = () => {
   setupEventListeners();
   
-  // Listen for auth state
+  // Listen for auth state (navbar.js also listens, but that's fine - onAuthStateChanged supports multiple listeners)
   observeAuth(async (user) => {
     currentUser = user;
     
     if (user) {
       // Fetch user data from Firestore
-      userData = await getUserProfile(user.uid);
-      updateUI();
+      try {
+        userData = await getUserProfile(user.uid);
+        // If no user profile exists, create one
+        if (!userData) {
+          userData = await createUserProfile(user, { name: user.displayName || '' });
+        }
+        updateUI();
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+        showNotification('Error loading profile', 'error');
+      }
     } else {
       userData = null;
       showAuthSection();

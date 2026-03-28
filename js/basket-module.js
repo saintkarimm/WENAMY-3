@@ -1,0 +1,152 @@
+/**
+ * Basket Module
+ * Handles saved properties display and management
+ */
+
+import { observeAuth } from './auth.js';
+import { getSavedProperties, removeSavedProperty } from './user.js';
+
+// Global state
+let currentUser = null;
+let savedProperties = [];
+
+/**
+ * Initialize basket page
+ */
+export const initBasket = () => {
+  observeAuth(async (user) => {
+    currentUser = user;
+    
+    if (user) {
+      await loadSavedProperties();
+    } else {
+      savedProperties = [];
+      renderEmptyBasket();
+    }
+  });
+};
+
+/**
+ * Load saved properties from Firestore
+ */
+const loadSavedProperties = async () => {
+  if (!currentUser) return;
+  
+  try {
+    savedProperties = await getSavedProperties(currentUser.uid);
+    renderBasketItems();
+    updateBasketCount();
+  } catch (error) {
+    console.error('Error loading saved properties:', error);
+    showError('Failed to load saved properties');
+  }
+};
+
+/**
+ * Render basket items
+ */
+const renderBasketItems = () => {
+  const container = document.getElementById('basketItems');
+  if (!container) return;
+  
+  if (savedProperties.length === 0) {
+    renderEmptyBasket();
+    return;
+  }
+  
+  container.innerHTML = savedProperties.map(property => `
+    <div class="basket-item" data-property-id="${property.id}">
+      <div class="basket-item-img">
+        <img src="${property.image}" alt="${property.title}">
+      </div>
+      <div class="basket-item-info">
+        <h3>${property.title}</h3>
+        <p class="basket-item-location">${property.location}</p>
+        <p class="basket-item-price">${property.price}</p>
+      </div>
+      <div class="basket-item-actions">
+        <a href="${property.url}" class="btn-view">View</a>
+        <button class="btn-remove" onclick="removeFromBasket('${property.id}')" aria-label="Remove">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  `).join('');
+};
+
+/**
+ * Render empty basket state
+ */
+const renderEmptyBasket = () => {
+  const container = document.getElementById('basketItems');
+  if (!container) return;
+  
+  container.innerHTML = `
+    <div class="basket-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="64" height="64">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </svg>
+      <h3>Your basket is empty</h3>
+      <p>Browse our properties and add them to your basket for later</p>
+      <a href="projects.html" class="btn-primary-soft">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        Browse Properties
+      </a>
+    </div>
+  `;
+};
+
+/**
+ * Remove property from basket
+ * @param {string} propertyId - Property ID to remove
+ */
+window.removeFromBasket = async (propertyId) => {
+  if (!currentUser) return;
+  
+  try {
+    await removeSavedProperty(currentUser.uid, propertyId);
+    await loadSavedProperties();
+  } catch (error) {
+    console.error('Error removing property:', error);
+    showError('Failed to remove property');
+  }
+};
+
+/**
+ * Update basket count in navbar
+ */
+const updateBasketCount = () => {
+  const countElements = document.querySelectorAll('#basketCount, #mobileBasketCount');
+  const count = savedProperties.length;
+  
+  countElements.forEach(el => {
+    if (el) {
+      el.textContent = count > 0 ? count : '';
+      el.style.display = count > 0 ? 'flex' : 'none';
+    }
+  });
+};
+
+/**
+ * Show error message
+ * @param {string} message - Error message
+ */
+const showError = (message) => {
+  const container = document.getElementById('basketItems');
+  if (container) {
+    container.innerHTML = `
+      <div class="basket-error">
+        <p>${message}</p>
+        <button onclick="location.reload()" class="btn-primary-soft">Retry</button>
+      </div>
+    `;
+  }
+};
