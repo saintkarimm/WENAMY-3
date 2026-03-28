@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function: Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function: Check if user owns the document
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+    
+    // Helper function: Validate user profile data
+    function isValidUserProfile() {
+      return request.resource.data.keys().hasAll(['email', 'createdAt']) &&
+             request.resource.data.email is string &&
+             request.resource.data.email.matches('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$');
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Allow read if authenticated and is owner
+      allow read: if isAuthenticated() && isOwner(userId);
+      
+      // Allow create if authenticated and is owner
+      allow create: if isAuthenticated() && isOwner(userId) && isValidUserProfile();
+      
+      // Allow update if authenticated and is owner
+      allow update: if isAuthenticated() && isOwner(userId);
+      
+      // Allow delete if authenticated and is owner
+      allow delete: if isAuthenticated() && isOwner(userId);
+    }
+    
+    // Inquiries collection (if used separately)
+    match /inquiries/{inquiryId} {
+      // Allow read if authenticated and is owner
+      allow read: if isAuthenticated() && isOwner(resource.data.userId);
+      
+      // Allow create if authenticated and data belongs to user
+      allow create: if isAuthenticated() && isOwner(request.resource.data.userId);
+      
+      // No updates or deletes allowed for inquiries
+      allow update: if false;
+      allow delete: if false;
+    }
+    
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

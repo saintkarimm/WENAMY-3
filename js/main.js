@@ -1,5 +1,7 @@
 /* Main Entry Point - Initialize all functionality */
 
+import { initAuthState } from './auth-state.js';
+
 (function() {
   'use strict';
 
@@ -8,6 +10,9 @@
    */
   function init() {
     console.log('WENAMY website initialized');
+    
+    // Initialize global auth state manager (single source of truth)
+    initAuthState();
     
     // Add loaded class to body for CSS transitions
     document.body.classList.add('loaded');

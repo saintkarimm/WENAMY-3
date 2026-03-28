@@ -3,27 +3,32 @@
  * Handles property saving functionality on projects/offplan pages
  */
 
-import { observeAuth } from './auth.js';
 import { saveProperty, removeSavedProperty, getSavedProperties } from './user.js';
+import { subscribeToAuth } from './auth-state.js';
 
 // Global state
 let currentUser = null;
 let savedPropertyIds = new Set();
+let isLoading = false;
+
+// Track pending operations to prevent duplicate writes
+const pendingOperations = new Set();
 
 /**
  * Initialize properties page
  */
 export const initProperties = () => {
-  observeAuth(async (user) => {
-    currentUser = user;
+  subscribeToAuth(async (state) => {
+    currentUser = state.user;
     
-    if (user) {
-      await loadSavedPropertyIds();
-    } else {
-      savedPropertyIds.clear();
+    if (state.isReady) {
+      if (currentUser) {
+        await loadSavedPropertyIds();
+      } else {
+        savedPropertyIds.clear();
+        updateHeartButtons();
+      }
     }
-    
-    updateHeartButtons();
   });
   
   // Setup event delegation for heart buttons
@@ -86,13 +91,23 @@ const setupHeartButtonListeners = () => {
     const card = btn.closest('.project-luxury-card');
     if (!card) return;
     
+    const propertyId = card.dataset.projectId;
+    
+    // Prevent duplicate operations
+    if (pendingOperations.has(propertyId)) return;
+    pendingOperations.add(propertyId);
+    
+    // Lock button
+    btn.disabled = true;
+    btn.classList.add('loading');
+    
     const property = {
-      id: card.dataset.projectId,
+      id: propertyId,
       title: card.dataset.projectTitle,
       location: card.dataset.projectLocation,
       price: card.dataset.projectPrice,
       image: card.dataset.projectImage,
-      url: card.querySelector('.project-luxury-cta')?.href || `project-detail.html?id=${card.dataset.projectId}`
+      url: card.querySelector('.project-luxury-cta')?.href || `project-detail.html?id=${propertyId}`
     };
     
     try {
@@ -120,6 +135,11 @@ const setupHeartButtonListeners = () => {
       } else {
         showNotification('Error saving property', 'error');
       }
+    } finally {
+      // Unlock button
+      pendingOperations.delete(propertyId);
+      btn.disabled = false;
+      btn.classList.remove('loading');
     }
   });
 };

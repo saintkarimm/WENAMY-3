@@ -3,8 +3,8 @@
  * Handles dynamic navbar rendering based on auth state
  */
 
-import { observeAuth, logout } from "./auth.js";
-import { getUserProfile, createUserProfile } from "./user.js";
+import { logout } from "./auth.js";
+import { subscribeToAuth, getAuthState } from "./auth-state.js";
 
 // Global state
 let currentUser = null;
@@ -18,26 +18,14 @@ export const initNavbar = () => {
   // Show loading state initially
   showNavbarLoadingState();
   
-  observeAuth(async (user) => {
-    currentUser = user;
+  // Subscribe to global auth state
+  subscribeToAuth((state) => {
+    currentUser = state.user;
+    userProfile = state.profile;
     
-    if (user) {
-      // Fetch user profile from Firestore
-      try {
-        userProfile = await getUserProfile(user.uid);
-        // Create profile if missing
-        if (!userProfile) {
-          userProfile = await createUserProfile(user, { name: user.displayName || '' });
-        }
-      } catch (error) {
-        console.error('Error fetching user profile:', error);
-        userProfile = null;
-      }
-    } else {
-      userProfile = null;
+    if (state.isReady) {
+      renderNavbar();
     }
-    
-    renderNavbar();
   });
 };
 

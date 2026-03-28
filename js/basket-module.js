@@ -3,25 +3,31 @@
  * Handles saved properties display and management
  */
 
-import { observeAuth } from './auth.js';
 import { getSavedProperties, removeSavedProperty } from './user.js';
+import { subscribeToAuth, getCurrentUserId } from './auth-state.js';
 
 // Global state
 let currentUser = null;
 let savedProperties = [];
+let isLoading = false;
 
 /**
  * Initialize basket page
  */
 export const initBasket = () => {
-  observeAuth(async (user) => {
-    currentUser = user;
+  // Show skeleton loading state
+  renderSkeleton();
+  
+  subscribeToAuth(async (state) => {
+    currentUser = state.user;
     
-    if (user) {
-      await loadSavedProperties();
-    } else {
-      savedProperties = [];
-      renderEmptyBasket();
+    if (state.isReady) {
+      if (currentUser) {
+        await loadSavedProperties();
+      } else {
+        savedProperties = [];
+        renderEmptyBasket();
+      }
     }
   });
 };
@@ -30,7 +36,9 @@ export const initBasket = () => {
  * Load saved properties from Firestore
  */
 const loadSavedProperties = async () => {
-  if (!currentUser) return;
+  if (!currentUser || isLoading) return;
+  
+  isLoading = true;
   
   try {
     savedProperties = await getSavedProperties(currentUser.uid);
@@ -39,6 +47,8 @@ const loadSavedProperties = async () => {
   } catch (error) {
     console.error('Error loading saved properties:', error);
     showError('Failed to load saved properties');
+  } finally {
+    isLoading = false;
   }
 };
 
@@ -104,12 +114,46 @@ const renderEmptyBasket = () => {
   `;
 };
 
+// Track pending operations to prevent duplicates
+const pendingOperations = new Set();
+
+/**
+ * Render skeleton loading state
+ */
+const renderSkeleton = () => {
+  const container = document.getElementById('basketItems');
+  if (!container) return;
+  
+  container.innerHTML = `
+    <div class="basket-skeleton">
+      ${Array(3).fill(0).map(() => `
+        <div class="skeleton-item">
+          <div class="skeleton-image"></div>
+          <div class="skeleton-content">
+            <div class="skeleton-title"></div>
+            <div class="skeleton-text"></div>
+            <div class="skeleton-price"></div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+};
+
 /**
  * Remove property from basket
  * @param {string} propertyId - Property ID to remove
  */
 window.removeFromBasket = async (propertyId) => {
-  if (!currentUser) return;
+  if (!currentUser || pendingOperations.has(propertyId)) return;
+  
+  // Lock button
+  pendingOperations.add(propertyId);
+  const btn = document.querySelector(`button[onclick="removeFromBasket('${propertyId}')"]`);
+  if (btn) {
+    btn.disabled = true;
+    btn.classList.add('loading');
+  }
   
   try {
     await removeSavedProperty(currentUser.uid, propertyId);
@@ -117,6 +161,13 @@ window.removeFromBasket = async (propertyId) => {
   } catch (error) {
     console.error('Error removing property:', error);
     showError('Failed to remove property');
+  } finally {
+    // Unlock button
+    pendingOperations.delete(propertyId);
+    if (btn) {
+      btn.disabled = false;
+      btn.classList.remove('loading');
+    }
   }
 };
 

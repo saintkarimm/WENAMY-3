@@ -3,8 +3,9 @@
  * Handles account page functionality with Firebase
  */
 
-import { signUp, signIn, logout, observeAuth, getAuthErrorMessage } from './auth.js';
-import { createUserProfile, getUserProfile, updateUserProfile, getSavedProperties, getInquiries } from './user.js';
+import { signUp, signIn, logout, getAuthErrorMessage } from './auth.js';
+import { createUserProfile, updateUserProfile, getSavedProperties, getInquiries } from './user.js';
+import { subscribeToAuth, invalidateCache } from './auth-state.js';
 
 // Global state
 let currentUser = null;
@@ -12,31 +13,22 @@ let userData = null;
 
 /**
  * Initialize account page
- * Note: navbar.js already calls observeAuth(), so we just listen for auth state updates
+ * Uses global auth state manager
  */
 export const initAccount = () => {
   setupEventListeners();
   
-  // Listen for auth state (navbar.js also listens, but that's fine - onAuthStateChanged supports multiple listeners)
-  observeAuth(async (user) => {
-    currentUser = user;
+  // Subscribe to global auth state
+  subscribeToAuth((state) => {
+    currentUser = state.user;
+    userData = state.profile;
     
-    if (user) {
-      // Fetch user data from Firestore
-      try {
-        userData = await getUserProfile(user.uid);
-        // If no user profile exists, create one
-        if (!userData) {
-          userData = await createUserProfile(user, { name: user.displayName || '' });
-        }
+    if (state.isReady) {
+      if (currentUser) {
         updateUI();
-      } catch (error) {
-        console.error('Error fetching user profile:', error);
-        showNotification('Error loading profile', 'error');
+      } else {
+        showAuthSection();
       }
-    } else {
-      userData = null;
-      showAuthSection();
     }
   });
 };
@@ -153,6 +145,7 @@ const handleProfileUpdate = async (e) => {
   try {
     await updateUserProfile(currentUser.uid, updates);
     userData = { ...userData, ...updates };
+    invalidateCache(); // Invalidate global cache
     updateUI();
     showNotification('Profile updated!', 'success');
   } catch (error) {
