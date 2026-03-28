@@ -23,7 +23,8 @@ export const initNavbar = () => {
     currentUser = state.user;
     userProfile = state.profile;
     
-    if (state.isReady) {
+    // Render immediately when auth state is known (don't wait for Firestore)
+    if (state.isReady || state.user !== undefined) {
       renderNavbar();
     }
   });
@@ -56,6 +57,9 @@ const renderNavbar = () => {
   const desktopSignInBtn = document.getElementById('navbarSignInBtn');
   const mobileSignInBtn = document.getElementById('mobileSignInBtn');
   const mobileMenuSignInBtn = document.getElementById('mobileMenuSignInBtn');
+  
+  // Update basket count from user profile if available
+  updateBasketCountFromProfile();
   
   if (currentUser) {
     // User is logged in
@@ -179,5 +183,22 @@ document.addEventListener('click', (e) => {
   }
 });
 
+/**
+ * Update basket count from user profile
+ * Shows cached count immediately on page load
+ */
+const updateBasketCountFromProfile = () => {
+  const countElements = document.querySelectorAll('#basketCount, #mobileBasketCount');
+  const count = userProfile?.savedProperties?.length || 0;
+  
+  countElements.forEach(el => {
+    if (el) {
+      el.textContent = count > 0 ? count : '';
+      el.style.display = count > 0 ? 'flex' : 'none';
+    }
+  });
+};
+
 // Export for use in other modules
 export { currentUser, userProfile };
+export { updateBasketCountFromProfile as updateBasketCount };

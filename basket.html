@@ -223,28 +223,6 @@
       if (menuClose && mobileNav) {
         menuClose.addEventListener('click', () => mobileNav.classList.remove('active'));
       }
-
-      // Render saved properties using new global state
-      const renderSaved = () => {
-        savedPropertiesManager.renderSavedProperties('basketItems', {
-          emptyMessage: 'No saved properties yet. Browse our properties and save them for later.',
-          showRemoveButton: true
-        });
-        
-        // Update summary
-        const summary = document.getElementById('basketSummary');
-        const count = savedPropertiesManager.getSavedCount();
-        if (summary) {
-          summary.style.display = count > 0 ? 'block' : 'none';
-          document.getElementById('summaryCount').textContent = count;
-        }
-      };
-      
-      // Initial render
-      renderSaved();
-      
-      // Subscribe to changes for real-time updates
-      savedPropertiesManager.subscribe(renderSaved);
     });
   </script>
 </body>

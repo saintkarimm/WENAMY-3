@@ -188,41 +188,50 @@ export const initAuthState = () => {
     currentUser = user;
     lastUserId = user?.uid || null;
     
+    // IMMEDIATE: Notify subscribers that auth state is known (before Firestore)
+    // This prevents navbar flicker - shows auth state immediately
+    isAuthReady = true;
+    notifySubscribers();
+    
     if (user) {
       try {
-        // Check cache first
+        // Check cache first for instant display
         if (isCacheValid(user.uid)) {
           userProfile = cache.userProfile;
-        } else {
-          userProfile = await getUserProfile(user.uid);
-          
-          // Create profile if missing
-          if (!userProfile) {
-            const { createUserProfile } = await import('./user.js');
-            userProfile = await createUserProfile(user, { name: user.displayName || '' });
-          }
-          
-          // Update cache
-          cache.userProfile = userProfile;
-          cache.lastFetched = Date.now();
-          cache.userId = user.uid;
+          notifySubscribers(); // Update with cached profile
         }
+        
+        // Fetch fresh data from Firestore
+        const freshProfile = await getUserProfile(user.uid);
+        
+        if (freshProfile) {
+          userProfile = freshProfile;
+        } else {
+          // Create profile if missing
+          const { createUserProfile } = await import('./user.js');
+          userProfile = await createUserProfile(user, { name: user.displayName || '' });
+        }
+        
+        // Update cache
+        cache.userProfile = userProfile;
+        cache.lastFetched = Date.now();
+        cache.userId = user.uid;
         
         // Setup real-time listener for updates
         setupUserListener(user.uid);
+        
+        // Notify with fresh data
+        notifySubscribers();
       } catch (error) {
         console.error('Auth state: Error fetching profile:', error);
-        userProfile = null;
+        // Don't clear userProfile on error - keep cached version if available
       }
     } else {
       userProfile = null;
       clearCache();
     }
     
-    isAuthReady = true;
     isLoading = false;
-    
-    // Notify all subscribers
     notifySubscribers();
   });
   
