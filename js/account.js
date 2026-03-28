@@ -346,87 +346,60 @@ class AccountManager {
     }
   }
 
-  // Handle login
-  handleLogin(e) {
+  // Handle login with Firebase
+  async handleLogin(e) {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
 
-    // Demo login - accept any credentials
-    this.currentUser = {
-      id: Date.now().toString(),
-      name: email.split('@')[0],
-      email: email,
-      phone: '',
-      location: '',
-      preference: '',
-      savedProperties: [],
-      inquiries: [],
-      joinedAt: new Date().toISOString()
-    };
-
-    this.saveUserToStorage();
-    
-    // Also login to global auth system for navbar
-    if (typeof authManager !== 'undefined') {
-      authManager.login({
-        id: this.currentUser.id,
-        name: this.currentUser.name,
-        email: this.currentUser.email
-      });
+    // Use Firebase Auth
+    if (typeof firebaseAuthManager !== 'undefined') {
+      const result = await firebaseAuthManager.login(email, password);
+      
+      if (result.success) {
+        this.currentUser = result.user;
+        this.updateUI();
+        this.showNotification('Welcome back!', 'success');
+      } else {
+        this.showNotification(result.error, 'error');
+      }
+    } else {
+      this.showNotification('Authentication service not available', 'error');
     }
-    
-    this.updateUI();
-    this.showNotification('Welcome back!', 'success');
   }
 
-  // Handle signup
-  handleSignup(e) {
+  // Handle signup with Firebase
+  async handleSignup(e) {
     e.preventDefault();
     const name = document.getElementById('signupName').value;
     const email = document.getElementById('signupEmail').value;
     const phone = document.getElementById('signupPhone').value;
     const password = document.getElementById('signupPassword').value;
 
-    // Create new user
-    this.currentUser = {
-      id: Date.now().toString(),
-      name: name,
-      email: email,
-      phone: phone,
-      location: '',
-      preference: '',
-      savedProperties: [],
-      inquiries: [],
-      joinedAt: new Date().toISOString()
-    };
-
-    this.saveUserToStorage();
-    
-    // Also login to global auth system for navbar
-    if (typeof authManager !== 'undefined') {
-      authManager.login({
-        id: this.currentUser.id,
-        name: this.currentUser.name,
-        email: this.currentUser.email,
-        phone: this.currentUser.phone
-      });
+    // Use Firebase Auth
+    if (typeof firebaseAuthManager !== 'undefined') {
+      const result = await firebaseAuthManager.signup(email, password, { name, phone });
+      
+      if (result.success) {
+        this.currentUser = result.user;
+        this.updateUI();
+        this.showNotification('Account created successfully!', 'success');
+      } else {
+        this.showNotification(result.error, 'error');
+      }
+    } else {
+      this.showNotification('Authentication service not available', 'error');
     }
-    
-    this.updateUI();
-    this.showNotification('Account created successfully!', 'success');
   }
 
-  // Handle logout
-  logout() {
-    this.currentUser = null;
-    this.saveUserToStorage();
-    
-    // Also logout from global auth system
-    if (typeof authManager !== 'undefined') {
-      authManager.logout();
+  // Handle logout with Firebase
+  async logout() {
+    // Use Firebase Auth
+    if (typeof firebaseAuthManager !== 'undefined') {
+      await firebaseAuthManager.logout();
     }
     
+    this.currentUser = null;
     this.updateUI();
     this.switchTab('dashboard');
     this.showNotification('Logged out successfully', 'info');
@@ -640,19 +613,30 @@ class AccountManager {
     document.getElementById('profilePreference').value = this.currentUser.preference || '';
   }
 
-  // Handle profile update
-  handleProfileUpdate(e) {
+  // Handle profile update with Firebase
+  async handleProfileUpdate(e) {
     e.preventDefault();
     if (!this.currentUser) return;
 
-    this.currentUser.name = document.getElementById('profileName').value;
-    this.currentUser.phone = document.getElementById('profilePhone').value;
-    this.currentUser.location = document.getElementById('profileLocation').value;
-    this.currentUser.preference = document.getElementById('profilePreference').value;
+    const updates = {
+      name: document.getElementById('profileName').value,
+      phone: document.getElementById('profilePhone').value,
+      location: document.getElementById('profileLocation').value,
+      preference: document.getElementById('profilePreference').value
+    };
 
-    this.saveUserToStorage();
-    this.updateUI();
-    this.showNotification('Profile updated!', 'success');
+    // Use Firebase to update profile
+    if (typeof firebaseAuthManager !== 'undefined') {
+      const result = await firebaseAuthManager.updateProfile(updates);
+      
+      if (result.success) {
+        this.currentUser = result.user;
+        this.updateUI();
+        this.showNotification('Profile updated!', 'success');
+      } else {
+        this.showNotification(result.error, 'error');
+      }
+    }
   }
 
   // Show notification
