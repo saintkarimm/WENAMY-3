@@ -1,24 +1,33 @@
 /**
  * Basket Module
  * Handles saved properties display and management
+ * Optimized for performance and cost efficiency
  */
 
 import { getSavedProperties, removeSavedProperty } from './user.js';
-import { subscribeToAuth, getCurrentUserId } from './auth-state.js';
+import { subscribeToAuth } from './auth-state.js';
+import { withRateLimit } from './rate-limiter.js';
 
 // Global state
 let currentUser = null;
 let savedProperties = [];
 let isLoading = false;
+let unsubscribeAuth = null;
 
 /**
  * Initialize basket page
+ * Prevents duplicate initializations
  */
 export const initBasket = () => {
+  // Prevent duplicate initialization
+  if (unsubscribeAuth) {
+    return;
+  }
+  
   // Show skeleton loading state
   renderSkeleton();
   
-  subscribeToAuth(async (state) => {
+  unsubscribeAuth = subscribeToAuth(async (state) => {
     currentUser = state.user;
     
     if (state.isReady) {
@@ -30,6 +39,17 @@ export const initBasket = () => {
       }
     }
   });
+};
+
+/**
+ * Cleanup basket module
+ * Call when leaving page
+ */
+export const cleanupBasket = () => {
+  if (unsubscribeAuth) {
+    unsubscribeAuth();
+    unsubscribeAuth = null;
+  }
 };
 
 /**
@@ -156,7 +176,11 @@ window.removeFromBasket = async (propertyId) => {
   }
   
   try {
-    await removeSavedProperty(currentUser.uid, propertyId);
+    // Apply rate limiting
+    await withRateLimit(async () => {
+      await removeSavedProperty(currentUser.uid, propertyId);
+    }, `removeProperty:${currentUser.uid}:${propertyId}`, 'removeProperty');
+    
     await loadSavedProperties();
   } catch (error) {
     console.error('Error removing property:', error);

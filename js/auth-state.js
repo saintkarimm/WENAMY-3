@@ -2,6 +2,7 @@
  * Global Auth State Manager
  * Single source of truth for authentication state
  * Uses subscription pattern with real-time updates
+ * Optimized for performance and cost efficiency
  */
 
 import { observeAuth } from './auth.js';
@@ -18,9 +19,14 @@ let lastUserId = null;
 
 // Real-time listener unsubscribe function
 let unsubscribeUserDoc = null;
+let unsubscribeAuth = null;
 
 // Subscription registry
 const subscribers = new Set();
+
+// Debounce timer for notifications
+let notifyTimeout = null;
+const NOTIFY_DEBOUNCE = 50; // ms
 
 // Cache for user data to prevent repeated Firestore calls
 const cache = {
@@ -54,7 +60,31 @@ const isCacheValid = (userId) => {
 };
 
 /**
+ * Deep compare two objects for equality
+ * More efficient than JSON.stringify for large objects
+ */
+const deepEqual = (a, b) => {
+  if (a === b) return true;
+  if (!a || !b) return false;
+  if (typeof a !== typeof b) return false;
+  if (typeof a !== 'object') return false;
+  
+  const keysA = Object.keys(a);
+  const keysB = Object.keys(b);
+  
+  if (keysA.length !== keysB.length) return false;
+  
+  for (const key of keysA) {
+    if (!keysB.includes(key)) return false;
+    if (!deepEqual(a[key], b[key])) return false;
+  }
+  
+  return true;
+};
+
+/**
  * Setup real-time listener for user document
+ * Uses metadata comparison for performance
  */
 const setupUserListener = (uid) => {
   // Unsubscribe from previous listener
@@ -65,32 +95,80 @@ const setupUserListener = (uid) => {
   
   const userRef = doc(db, "users", uid);
   
-  unsubscribeUserDoc = onSnapshot(userRef, (doc) => {
-    if (doc.exists()) {
-      const newData = doc.data();
-      
-      // Only update if data actually changed
-      if (JSON.stringify(userProfile) !== JSON.stringify(newData)) {
-        userProfile = newData;
+  unsubscribeUserDoc = onSnapshot(
+    userRef,
+    { includeMetadataChanges: false }, // Only data changes, not metadata
+    (doc) => {
+      if (doc.exists()) {
+        const newData = doc.data();
         
-        // Update cache
-        cache.userProfile = newData;
-        cache.lastFetched = Date.now();
-        
-        notifySubscribers();
+        // Only update if data actually changed (deep compare)
+        if (!deepEqual(userProfile, newData)) {
+          userProfile = newData;
+          
+          // Update cache
+          cache.userProfile = newData;
+          cache.lastFetched = Date.now();
+          
+          notifySubscribers();
+        }
       }
+    },
+    (error) => {
+      console.error('Auth state: Real-time listener error:', error);
     }
-  }, (error) => {
-    console.error('Auth state: Real-time listener error:', error);
-  });
+  );
+};
+
+/**
+ * Cleanup all listeners and state
+ * Call when app is being destroyed or for testing
+ */
+export const cleanupAuthState = () => {
+  // Unsubscribe from auth listener
+  if (unsubscribeAuth) {
+    unsubscribeAuth();
+    unsubscribeAuth = null;
+  }
+  
+  // Unsubscribe from user document listener
+  if (unsubscribeUserDoc) {
+    unsubscribeUserDoc();
+    unsubscribeUserDoc = null;
+  }
+  
+  // Clear debounce timeout
+  if (notifyTimeout) {
+    clearTimeout(notifyTimeout);
+    notifyTimeout = null;
+  }
+  
+  // Remove storage event listener
+  window.removeEventListener('storage', handleStorageEvent);
+  
+  // Clear all state
+  clearCache();
+  currentUser = null;
+  userProfile = null;
+  isAuthReady = false;
+  isLoading = true;
+  lastUserId = null;
+  subscribers.clear();
 };
 
 /**
  * Initialize global auth state
  * Call this once at app startup
+ * @returns {Function} - Cleanup function
  */
 export const initAuthState = () => {
-  observeAuth(async (user) => {
+  // Prevent duplicate initialization
+  if (unsubscribeAuth) {
+    console.warn('Auth state: Already initialized');
+    return cleanupAuthState;
+  }
+  
+  unsubscribeAuth = observeAuth(async (user) => {
     isLoading = true;
     
     // Handle user switch - clear cache if different user
@@ -150,6 +228,9 @@ export const initAuthState = () => {
   
   // Listen for storage events (multi-tab sync)
   window.addEventListener('storage', handleStorageEvent);
+  
+  // Return cleanup function
+  return cleanupAuthState;
 };
 
 /**
@@ -175,22 +256,31 @@ export const subscribeToAuth = (callback) => {
 
 /**
  * Notify all subscribers of state change
+ * Debounced to prevent rapid re-renders
  */
 const notifySubscribers = () => {
-  const state = {
-    user: currentUser,
-    profile: userProfile,
-    isReady: isAuthReady,
-    isLoading
-  };
+  // Clear existing timeout
+  if (notifyTimeout) {
+    clearTimeout(notifyTimeout);
+  }
   
-  subscribers.forEach(callback => {
-    try {
-      callback(state);
-    } catch (error) {
-      console.error('Auth state: Subscriber error:', error);
-    }
-  });
+  // Debounce notifications
+  notifyTimeout = setTimeout(() => {
+    const state = {
+      user: currentUser,
+      profile: userProfile,
+      isReady: isAuthReady,
+      isLoading
+    };
+    
+    subscribers.forEach(callback => {
+      try {
+        callback(state);
+      } catch (error) {
+        console.error('Auth state: Subscriber error:', error);
+      }
+    });
+  }, NOTIFY_DEBOUNCE);
 };
 
 /**

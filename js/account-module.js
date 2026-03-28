@@ -1,25 +1,34 @@
 /**
  * Account Module
  * Handles account page functionality with Firebase
+ * Optimized for performance and cost efficiency
  */
 
 import { signUp, signIn, logout, getAuthErrorMessage } from './auth.js';
 import { createUserProfile, updateUserProfile, getSavedProperties, getInquiries } from './user.js';
 import { subscribeToAuth, invalidateCache } from './auth-state.js';
+import { withRateLimit } from './rate-limiter.js';
 
 // Global state
 let currentUser = null;
 let userData = null;
+let unsubscribeAuth = null;
 
 /**
  * Initialize account page
  * Uses global auth state manager
+ * Prevents duplicate initializations
  */
 export const initAccount = () => {
+  // Prevent duplicate initialization
+  if (unsubscribeAuth) {
+    return;
+  }
+  
   setupEventListeners();
   
   // Subscribe to global auth state
-  subscribeToAuth((state) => {
+  unsubscribeAuth = subscribeToAuth((state) => {
     currentUser = state.user;
     userData = state.profile;
     
@@ -31,6 +40,17 @@ export const initAccount = () => {
       }
     }
   });
+};
+
+/**
+ * Cleanup account module
+ * Call when leaving page
+ */
+export const cleanupAccount = () => {
+  if (unsubscribeAuth) {
+    unsubscribeAuth();
+    unsubscribeAuth = null;
+  }
 };
 
 /**
@@ -87,10 +107,18 @@ const handleLogin = async (e) => {
   const password = document.getElementById('loginPassword').value;
   
   try {
-    await signIn(email, password);
+    // Apply rate limiting
+    await withRateLimit(async () => {
+      await signIn(email, password);
+    }, `login:${email}`, 'login');
+    
     showNotification('Welcome back!', 'success');
   } catch (error) {
-    showNotification(getAuthErrorMessage(error.code), 'error');
+    if (error.code === 'rate-limited') {
+      showNotification(error.message, 'warning');
+    } else {
+      showNotification(getAuthErrorMessage(error.code), 'error');
+    }
   }
 };
 
@@ -105,14 +133,21 @@ const handleSignup = async (e) => {
   const password = document.getElementById('signupPassword').value;
   
   try {
-    const userCredential = await signUp(email, password, name);
+    // Apply rate limiting
+    const userCredential = await withRateLimit(async () => {
+      return await signUp(email, password, name);
+    }, `signup:${email}`, 'signup');
     
     // Create user profile in Firestore
     await createUserProfile(userCredential.user, { name, phone });
     
     showNotification('Account created successfully!', 'success');
   } catch (error) {
-    showNotification(getAuthErrorMessage(error.code), 'error');
+    if (error.code === 'rate-limited') {
+      showNotification(error.message, 'warning');
+    } else {
+      showNotification(getAuthErrorMessage(error.code), 'error');
+    }
   }
 };
 
@@ -143,13 +178,21 @@ const handleProfileUpdate = async (e) => {
   };
   
   try {
-    await updateUserProfile(currentUser.uid, updates);
+    // Apply rate limiting
+    await withRateLimit(async () => {
+      await updateUserProfile(currentUser.uid, updates);
+    }, `updateProfile:${currentUser.uid}`, 'updateProfile');
+    
     userData = { ...userData, ...updates };
     invalidateCache(); // Invalidate global cache
     updateUI();
     showNotification('Profile updated!', 'success');
   } catch (error) {
-    showNotification('Error updating profile', 'error');
+    if (error.code === 'rate-limited') {
+      showNotification(error.message, 'warning');
+    } else {
+      showNotification('Error updating profile', 'error');
+    }
   }
 };
 

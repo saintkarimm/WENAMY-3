@@ -1,24 +1,33 @@
 /**
  * Properties Module
  * Handles property saving functionality on projects/offplan pages
+ * Optimized for performance and cost efficiency
  */
 
 import { saveProperty, removeSavedProperty, getSavedProperties } from './user.js';
 import { subscribeToAuth } from './auth-state.js';
+import { withRateLimit } from './rate-limiter.js';
 
 // Global state
 let currentUser = null;
 let savedPropertyIds = new Set();
 let isLoading = false;
+let unsubscribeAuth = null;
 
 // Track pending operations to prevent duplicate writes
 const pendingOperations = new Set();
 
 /**
  * Initialize properties page
+ * Prevents duplicate initializations
  */
 export const initProperties = () => {
-  subscribeToAuth(async (state) => {
+  // Prevent duplicate initialization
+  if (unsubscribeAuth) {
+    return;
+  }
+  
+  unsubscribeAuth = subscribeToAuth(async (state) => {
     currentUser = state.user;
     
     if (state.isReady) {
@@ -31,8 +40,20 @@ export const initProperties = () => {
     }
   });
   
-  // Setup event delegation for heart buttons
+  // Setup event delegation for heart buttons (only once)
   setupHeartButtonListeners();
+};
+
+/**
+ * Cleanup properties module
+ * Call when leaving page
+ */
+export const cleanupProperties = () => {
+  if (unsubscribeAuth) {
+    unsubscribeAuth();
+    unsubscribeAuth = null;
+  }
+  pendingOperations.clear();
 };
 
 /**
@@ -111,26 +132,35 @@ const setupHeartButtonListeners = () => {
     };
     
     try {
-      if (savedPropertyIds.has(property.id)) {
-        // Remove from saved
-        await removeSavedProperty(currentUser.uid, property.id);
-        savedPropertyIds.delete(property.id);
-        btn.classList.remove('saved');
-        btn.setAttribute('aria-label', 'Save property');
-        showNotification('Removed from saved properties', 'info');
-      } else {
-        // Add to saved
-        await saveProperty(currentUser.uid, property);
-        savedPropertyIds.add(property.id);
-        btn.classList.add('saved');
-        btn.setAttribute('aria-label', 'Remove from saved');
-        showNotification('Property saved!', 'success');
-      }
+      const actionType = savedPropertyIds.has(property.id) ? 'removeProperty' : 'saveProperty';
+      const actionId = `${actionType}:${currentUser.uid}:${property.id}`;
       
-      updateBasketCount(savedPropertyIds.size);
+      // Apply rate limiting
+      await withRateLimit(async () => {
+        if (savedPropertyIds.has(property.id)) {
+          // Remove from saved
+          await removeSavedProperty(currentUser.uid, property.id);
+          savedPropertyIds.delete(property.id);
+          btn.classList.remove('saved');
+          btn.setAttribute('aria-label', 'Save property');
+          showNotification('Removed from saved properties', 'info');
+        } else {
+          // Add to saved
+          await saveProperty(currentUser.uid, property);
+          savedPropertyIds.add(property.id);
+          btn.classList.add('saved');
+          btn.setAttribute('aria-label', 'Remove from saved');
+          showNotification('Property saved!', 'success');
+        }
+        
+        updateBasketCount(savedPropertyIds.size);
+      }, actionId, actionType);
+      
     } catch (error) {
       console.error('Error saving property:', error);
-      if (error.message === 'Property already saved') {
+      if (error.code === 'rate-limited') {
+        showNotification(error.message, 'warning');
+      } else if (error.message === 'Property already saved') {
         showNotification('Property already saved', 'info');
       } else {
         showNotification('Error saving property', 'error');
