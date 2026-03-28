@@ -18,7 +18,7 @@ class SavedPropertiesManager {
   // Initialize - load from Firebase if user is logged in
   init() {
     // Wait for Firebase to be ready
-    if (typeof firebaseAuthManager !== 'undefined') {
+    this.waitForFirebase().then(() => {
       this.db = window.firebaseDb;
       
       // Subscribe to auth state changes
@@ -37,9 +37,23 @@ class SavedPropertiesManager {
       if (this.currentUser) {
         this.loadFromFirebase();
       }
-    }
+    });
     
     this.notifyListeners();
+  }
+  
+  // Wait for Firebase to be ready
+  waitForFirebase() {
+    return new Promise((resolve) => {
+      const check = () => {
+        if (typeof firebaseAuthManager !== 'undefined' && window.firebaseDb) {
+          resolve();
+        } else {
+          setTimeout(check, 50);
+        }
+      };
+      check();
+    });
   }
 
   // Load saved properties from Firebase

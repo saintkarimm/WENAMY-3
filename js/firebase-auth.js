@@ -5,15 +5,33 @@
 
 class FirebaseAuthManager {
   constructor() {
-    this.auth = window.firebaseAuth;
-    this.db = window.firebaseDb;
+    this.auth = null;
+    this.db = null;
     this.currentUser = null;
     this.listeners = [];
     this.init();
   }
+  
+  // Wait for Firebase to be ready
+  waitForFirebase() {
+    return new Promise((resolve) => {
+      const check = () => {
+        if (window.firebaseAuth && window.firebaseDb) {
+          this.auth = window.firebaseAuth;
+          this.db = window.firebaseDb;
+          resolve();
+        } else {
+          setTimeout(check, 50);
+        }
+      };
+      check();
+    });
+  }
 
   // Initialize auth state listener
-  init() {
+  async init() {
+    await this.waitForFirebase();
+    
     this.auth.onAuthStateChanged((user) => {
       if (user) {
         // User is signed in, fetch additional data from Firestore
