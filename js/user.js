@@ -4,6 +4,7 @@
  */
 
 import { db } from "./firebase.js";
+import { withRetry } from './network-resilience.js';
 import {
   doc,
   setDoc,
@@ -13,12 +14,28 @@ import {
   arrayRemove
 } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 
+// Validation helpers
+const validators = {
+  uid: (uid) => typeof uid === 'string' && uid.length > 0,
+  email: (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+  name: (name) => typeof name === 'string' && name.length <= 100,
+  property: (p) => p && typeof p.id === 'string' && p.id.length > 0
+};
+
 /**
  * Create a new user profile in Firestore
  * @param {Object} user - Firebase user object
  * @param {Object} additionalData - Additional user data (phone, etc.)
  */
 export const createUserProfile = async (user, additionalData = {}) => {
+  // Validate inputs
+  if (!validators.uid(user.uid)) {
+    throw new Error('Invalid user ID');
+  }
+  if (!validators.email(user.email)) {
+    throw new Error('Invalid email address');
+  }
+  
   const userRef = doc(db, "users", user.uid);
   
   const userData = {
@@ -34,8 +51,15 @@ export const createUserProfile = async (user, additionalData = {}) => {
     updatedAt: new Date().toISOString()
   };
   
-  await setDoc(userRef, userData);
-  return userData;
+  return await withRetry(async () => {
+    await setDoc(userRef, userData);
+    return userData;
+  }, {
+    maxRetries: 3,
+    onRetry: (attempt, max, error) => {
+      console.warn(`Retrying createUserProfile (${attempt}/${max}):`, error.message);
+    }
+  });
 };
 
 /**
@@ -44,13 +68,24 @@ export const createUserProfile = async (user, additionalData = {}) => {
  * @returns {Object|null} - User profile data
  */
 export const getUserProfile = async (uid) => {
-  const userRef = doc(db, "users", uid);
-  const userSnap = await getDoc(userRef);
-  
-  if (userSnap.exists()) {
-    return userSnap.data();
+  if (!validators.uid(uid)) {
+    throw new Error('Invalid user ID');
   }
-  return null;
+  
+  return await withRetry(async () => {
+    const userRef = doc(db, "users", uid);
+    const userSnap = await getDoc(userRef);
+    
+    if (userSnap.exists()) {
+      return userSnap.data();
+    }
+    return null;
+  }, {
+    maxRetries: 3,
+    onRetry: (attempt, max, error) => {
+      console.warn(`Retrying getUserProfile (${attempt}/${max}):`, error.message);
+    }
+  });
 };
 
 /**
@@ -72,20 +107,35 @@ export const updateUserProfile = async (uid, updates) => {
  * @param {Object} property - Property object to save
  */
 export const saveProperty = async (uid, property) => {
-  const userRef = doc(db, "users", uid);
-  
-  // Check if already saved
-  const userData = await getUserProfile(uid);
-  if (userData?.savedProperties?.some(p => p.id === property.id)) {
-    throw new Error('Property already saved');
+  // Validate inputs
+  if (!validators.uid(uid)) {
+    throw new Error('Invalid user ID');
+  }
+  if (!validators.property(property)) {
+    throw new Error('Invalid property data');
   }
   
-  await updateDoc(userRef, {
-    savedProperties: arrayUnion({
-      ...property,
-      savedAt: new Date().toISOString()
-    }),
-    updatedAt: new Date().toISOString()
+  const userRef = doc(db, "users", uid);
+  
+  return await withRetry(async () => {
+    // Check if already saved (inside retry to handle race conditions)
+    const userData = await getUserProfile(uid);
+    if (userData?.savedProperties?.some(p => p.id === property.id)) {
+      throw new Error('Property already saved');
+    }
+    
+    await updateDoc(userRef, {
+      savedProperties: arrayUnion({
+        ...property,
+        savedAt: new Date().toISOString()
+      }),
+      updatedAt: new Date().toISOString()
+    });
+  }, {
+    maxRetries: 3,
+    onRetry: (attempt, max, error) => {
+      console.warn(`Retrying saveProperty (${attempt}/${max}):`, error.message);
+    }
   });
 };
 
@@ -95,19 +145,34 @@ export const saveProperty = async (uid, property) => {
  * @param {string} propertyId - Property ID to remove
  */
 export const removeSavedProperty = async (uid, propertyId) => {
+  // Validate inputs
+  if (!validators.uid(uid)) {
+    throw new Error('Invalid user ID');
+  }
+  if (!propertyId || typeof propertyId !== 'string') {
+    throw new Error('Invalid property ID');
+  }
+  
   const userRef = doc(db, "users", uid);
   
-  // Get current saved properties
-  const userData = await getUserProfile(uid);
-  if (!userData?.savedProperties) return;
-  
-  // Find the property to remove
-  const propertyToRemove = userData.savedProperties.find(p => p.id === propertyId);
-  if (!propertyToRemove) return;
-  
-  await updateDoc(userRef, {
-    savedProperties: arrayRemove(propertyToRemove),
-    updatedAt: new Date().toISOString()
+  return await withRetry(async () => {
+    // Get current saved properties
+    const userData = await getUserProfile(uid);
+    if (!userData?.savedProperties) return;
+    
+    // Find the property to remove
+    const propertyToRemove = userData.savedProperties.find(p => p.id === propertyId);
+    if (!propertyToRemove) return;
+    
+    await updateDoc(userRef, {
+      savedProperties: arrayRemove(propertyToRemove),
+      updatedAt: new Date().toISOString()
+    });
+  }, {
+    maxRetries: 3,
+    onRetry: (attempt, max, error) => {
+      console.warn(`Retrying removeSavedProperty (${attempt}/${max}):`, error.message);
+    }
   });
 };
 

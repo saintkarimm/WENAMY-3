@@ -45,6 +45,14 @@ export const signIn = async (email, password) => {
  * @returns {Promise<void>}
  */
 export const logout = async () => {
+  // Broadcast logout to other tabs before signing out
+  try {
+    localStorage.setItem('wenamy_auth_logout', Date.now().toString());
+    localStorage.removeItem('wenamy_auth_logout');
+  } catch (e) {
+    // Ignore localStorage errors (private mode)
+  }
+  
   await signOut(auth);
 };
 
