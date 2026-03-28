@@ -569,13 +569,14 @@
   
   <script src="js/utils.js"></script>
   <script src="js/animations.js"></script>
-  <script src="js/firebase-config.js"></script>
-  <script src="js/firebase-auth.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/basket.js"></script>
-  <script src="js/saved-properties.js"></script>
   <script src="js/main.js"></script>
   <script src="js/chatbot.js"></script>
+  
+  <!-- Firebase Modules -->
+  <script type="module">
+    import { initNavbar } from './js/navbar.js';
+    initNavbar();
+  </script>
   
   <script>
     // Mobile Menu Toggle
