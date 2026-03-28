@@ -6,58 +6,39 @@
 
 class AuthManager {
   constructor() {
-    // Use same storage key as account.js for sync
-    this.STORAGE_KEY = 'wenamy_user';
     this.currentUser = null;
     this.listeners = [];
     this.init();
   }
 
-  // Initialize - load user from storage and setup listeners
+  // Initialize - listen to Firebase auth and setup listeners
   init() {
-    this.loadUserFromStorage();
     this.setupNavbarListener();
     
-    // Update navbar on page load - use multiple timing strategies
+    // Listen to Firebase auth state changes
+    if (typeof firebaseAuthManager !== 'undefined') {
+      firebaseAuthManager.subscribe((user) => {
+        this.currentUser = user;
+        this.updateNavbar();
+      });
+      
+      // Initial navbar update
+      this.currentUser = firebaseAuthManager.getCurrentUser();
+    }
+    
+    // Update navbar on page load
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => {
         this.updateNavbar();
       });
     } else {
-      // DOM already loaded
       this.updateNavbar();
     }
     
-    // Also update after a short delay to ensure all scripts have run
+    // Also update after a short delay
     setTimeout(() => {
       this.updateNavbar();
     }, 100);
-  }
-
-  // Load user from localStorage
-  loadUserFromStorage() {
-    try {
-      const stored = localStorage.getItem(this.STORAGE_KEY);
-      if (stored) {
-        this.currentUser = JSON.parse(stored);
-      }
-    } catch (e) {
-      console.error('Error loading auth user:', e);
-      this.currentUser = null;
-    }
-  }
-
-  // Save user to localStorage
-  saveUserToStorage() {
-    try {
-      if (this.currentUser) {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.currentUser));
-      } else {
-        localStorage.removeItem(this.STORAGE_KEY);
-      }
-    } catch (e) {
-      console.error('Error saving auth user:', e);
-    }
   }
 
   // Subscribe to auth state changes
@@ -81,33 +62,23 @@ class AuthManager {
     }));
   }
 
-  // Login user
+  // Login user - delegates to Firebase
   login(userData) {
-    this.currentUser = {
-      id: userData.id || Date.now().toString(),
-      name: userData.name || userData.email?.split('@')[0] || 'User',
-      email: userData.email,
-      avatar: userData.avatar || null,
-      phone: userData.phone || '',
-      token: userData.token || 'demo-token-' + Date.now(),
-      loggedInAt: new Date().toISOString()
-    };
-    
-    this.saveUserToStorage();
+    // Firebase auth is handled by firebaseAuthManager
+    // This method is kept for backwards compatibility
+    this.currentUser = userData;
     this.notifyListeners();
     this.updateNavbar();
-    
     return this.currentUser;
   }
 
-  // Logout user
+  // Logout user - delegates to Firebase
   logout() {
+    // Firebase auth is handled by firebaseAuthManager
+    // This method is kept for backwards compatibility
     this.currentUser = null;
-    this.saveUserToStorage();
     this.notifyListeners();
     this.updateNavbar();
-    
-    // Close any open dropdowns
     this.closeDropdown();
   }
 

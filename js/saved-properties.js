@@ -1,7 +1,7 @@
 /**
  * Saved Properties Global State Manager
  * Mimics React Context API for vanilla JavaScript
- * Provides global state for saved properties with localStorage persistence
+ * Provides global state for saved properties with Firebase persistence
  */
 
 class SavedPropertiesManager {
@@ -10,35 +10,66 @@ class SavedPropertiesManager {
       savedProperties: []
     };
     this.listeners = [];
-    this.STORAGE_KEY = 'wenamy_saved_properties';
+    this.db = null;
+    this.currentUser = null;
     this.init();
   }
 
-  // Initialize - load from localStorage
+  // Initialize - load from Firebase if user is logged in
   init() {
-    this.loadFromStorage();
+    // Wait for Firebase to be ready
+    if (typeof firebaseAuthManager !== 'undefined') {
+      this.db = window.firebaseDb;
+      
+      // Subscribe to auth state changes
+      firebaseAuthManager.subscribe((user) => {
+        this.currentUser = user;
+        if (user) {
+          this.loadFromFirebase();
+        } else {
+          this.state.savedProperties = [];
+          this.notifyListeners();
+        }
+      });
+      
+      // Initial load
+      this.currentUser = firebaseAuthManager.getCurrentUser();
+      if (this.currentUser) {
+        this.loadFromFirebase();
+      }
+    }
+    
     this.notifyListeners();
   }
 
-  // Load saved properties from localStorage
-  loadFromStorage() {
+  // Load saved properties from Firebase
+  async loadFromFirebase() {
+    if (!this.currentUser || !this.db) return;
+    
     try {
-      const stored = localStorage.getItem(this.STORAGE_KEY);
-      if (stored) {
-        this.state.savedProperties = JSON.parse(stored);
+      const doc = await this.db.collection('users').doc(this.currentUser.id).get();
+      if (doc.exists) {
+        const data = doc.data();
+        this.state.savedProperties = data.savedProperties || [];
+        this.notifyListeners();
       }
     } catch (e) {
-      console.error('Error loading saved properties:', e);
+      console.error('Error loading saved properties from Firebase:', e);
       this.state.savedProperties = [];
     }
   }
 
-  // Save to localStorage
-  saveToStorage() {
+  // Save to Firebase
+  async saveToFirebase() {
+    if (!this.currentUser || !this.db) return;
+    
     try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.state.savedProperties));
+      await this.db.collection('users').doc(this.currentUser.id).update({
+        savedProperties: this.state.savedProperties,
+        updatedAt: new Date().toISOString()
+      });
     } catch (e) {
-      console.error('Error saving properties:', e);
+      console.error('Error saving properties to Firebase:', e);
     }
   }
 
@@ -64,11 +95,11 @@ class SavedPropertiesManager {
   }
 
   // Save a property
-  saveProperty(property) {
+  async saveProperty(property) {
     const exists = this.isSaved(property.id);
     
     if (exists) {
-      this.removeProperty(property.id);
+      await this.removeProperty(property.id);
       this.showNotification('Removed from saved', 'info');
       return false;
     }
@@ -78,18 +109,18 @@ class SavedPropertiesManager {
       savedAt: new Date().toISOString()
     });
     
-    this.saveToStorage();
+    await this.saveToFirebase();
     this.notifyListeners();
     this.showNotification('Property saved!', 'success');
     return true;
   }
 
   // Remove a property
-  removeProperty(propertyId) {
+  async removeProperty(propertyId) {
     this.state.savedProperties = this.state.savedProperties.filter(
       p => p.id !== propertyId
     );
-    this.saveToStorage();
+    await this.saveToFirebase();
     this.notifyListeners();
   }
 
@@ -109,7 +140,7 @@ class SavedPropertiesManager {
   }
 
   // Toggle heart icon save/unsave
-  toggleHeart(button) {
+  async toggleHeart(button) {
     const card = button.closest('.project-luxury-card');
     if (!card) return;
 
@@ -123,7 +154,7 @@ class SavedPropertiesManager {
     };
 
     // Use saveProperty which handles both add/remove and shows notifications
-    this.saveProperty(property);
+    await this.saveProperty(property);
     
     // Update button visual state based on current saved status
     const isNowSaved = this.isSaved(property.id);
@@ -221,7 +252,7 @@ class SavedPropertiesManager {
         <div class="saved-property-actions">
           <a href="${property.url}" class="btn-view">View</a>
           ${showRemoveButton ? `
-            <button class="btn-remove-saved" onclick="savedPropertiesManager.removeProperty('${property.id}')" aria-label="Remove">
+            <button class="btn-remove-saved" onclick="savedPropertiesManager.removeProperty('${property.id}').catch(console.error)" aria-label="Remove">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="6" x2="6" y2="18"/>
                 <line x1="6" y1="6" x2="18" y2="18"/>

@@ -522,13 +522,15 @@ class AccountManager {
   }
 
   // Remove a saved property
-  removeSavedProperty(propertyId) {
+  async removeSavedProperty(propertyId) {
     if (!this.currentUser) return;
 
-    this.currentUser.savedProperties = this.currentUser.savedProperties.filter(
-      p => p.id !== propertyId
-    );
-    this.saveUserToStorage();
+    // Use savedPropertiesManager which syncs with Firebase
+    await savedPropertiesManager.removeProperty(propertyId);
+    
+    // Update local user data
+    this.currentUser.savedProperties = savedPropertiesManager.getSavedProperties();
+    
     this.updateDashboardStats();
     this.renderSavedProperties();
     this.showNotification('Property removed', 'info');
