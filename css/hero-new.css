@@ -805,7 +805,7 @@
     gap: 0.5rem;
   }
   
-  .navbar .nav-link:not(.btn-primary) {
+  .navbar .nav-link:not(.btn-primary):not(.mobile-basket-icon) {
     display: none;
   }
   
