@@ -89,7 +89,10 @@
           </svg>
           <span class="basket-count" id="basketCount">0</span>
         </a>
-        <a href="account.html" class="nav-link btn btn-primary">Sign In</a>
+        <!-- Sign In Button (shown when logged out) -->
+        <a href="account.html" class="nav-link btn btn-primary" id="navbarSignInBtn">Sign In</a>
+        <!-- User Display (shown when logged in) -->
+        <div class="navbar-user-display" id="navbarUserDisplay"></div>
       </div>
       <!-- Mobile Nav Icons -->
       <div class="mobile-nav-icons">
@@ -101,6 +104,10 @@
           </svg>
           <span class="basket-count" id="mobileBasketCount">0</span>
         </a>
+        <!-- Sign In Button (shown when logged out) -->
+        <a href="account.html" class="nav-link btn btn-primary mobile-signin-btn" id="mobileSignInBtn">Sign In</a>
+        <!-- User Display (shown when logged in) -->
+        <div class="navbar-user-display mobile-user-display" id="mobileUserDisplay"></div>
         <button class="mobile-menu-toggle" aria-label="Open menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -131,7 +138,7 @@
         <a href="about.html" class="nav-link">About</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="account.html" class="nav-link btn btn-primary">Sign In</a>
+        <a href="account.html" class="nav-link btn btn-primary" id="mobileMenuSignInBtn">Sign In</a>
       </div>
     </div>
 
@@ -570,6 +577,7 @@
   <!-- JavaScript Files -->
   <script src="js/utils.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/basket.js"></script>
   <script src="js/carousel.js"></script>
   <script src="js/main.js"></script>

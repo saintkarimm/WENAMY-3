@@ -366,6 +366,16 @@ class AccountManager {
     };
 
     this.saveUserToStorage();
+    
+    // Also login to global auth system for navbar
+    if (typeof authManager !== 'undefined') {
+      authManager.login({
+        id: this.currentUser.id,
+        name: this.currentUser.name,
+        email: this.currentUser.email
+      });
+    }
+    
     this.updateUI();
     this.showNotification('Welcome back!', 'success');
   }
@@ -392,6 +402,17 @@ class AccountManager {
     };
 
     this.saveUserToStorage();
+    
+    // Also login to global auth system for navbar
+    if (typeof authManager !== 'undefined') {
+      authManager.login({
+        id: this.currentUser.id,
+        name: this.currentUser.name,
+        email: this.currentUser.email,
+        phone: this.currentUser.phone
+      });
+    }
+    
     this.updateUI();
     this.showNotification('Account created successfully!', 'success');
   }
@@ -400,6 +421,12 @@ class AccountManager {
   logout() {
     this.currentUser = null;
     this.saveUserToStorage();
+    
+    // Also logout from global auth system
+    if (typeof authManager !== 'undefined') {
+      authManager.logout();
+    }
+    
     this.updateUI();
     this.switchTab('dashboard');
     this.showNotification('Logged out successfully', 'info');
