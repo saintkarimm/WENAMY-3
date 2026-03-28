@@ -1,6 +1,7 @@
 /**
  * Wenamy Basket/Cart System
  * Allows users to add properties to a basket for later viewing
+ * Syncs with saved-properties.js which uses Firebase
  */
 
 class BasketManager {
@@ -10,64 +11,76 @@ class BasketManager {
   }
 
   init() {
-    this.loadBasketFromStorage();
     this.updateBasketCount();
     
-    // Listen for storage changes from other tabs/pages
-    window.addEventListener('storage', (e) => {
-      if (e.key === 'wenamy_saved_properties') {
-        this.loadBasketFromStorage();
-        this.updateBasketCount();
-      }
-    });
-    
-    // Listen for saved properties changes from saved-properties.js
+    // Listen for saved properties changes from saved-properties.js (Firebase sync)
     window.addEventListener('savedPropertiesChanged', (e) => {
       this.basket = e.detail?.savedProperties || [];
       this.updateBasketCount();
+      this.renderBasketItems();
     });
-  }
-
-  // Load basket from localStorage (uses saved properties storage)
-  loadBasketFromStorage() {
-    const basketData = localStorage.getItem('wenamy_saved_properties');
-    if (basketData) {
-      this.basket = JSON.parse(basketData);
+    
+    // Initial sync from savedPropertiesManager if available
+    if (typeof savedPropertiesManager !== 'undefined') {
+      this.basket = savedPropertiesManager.getSavedProperties();
+      this.updateBasketCount();
     }
   }
 
-  // Save basket to localStorage (uses saved properties storage)
-  saveBasketToStorage() {
-    localStorage.setItem('wenamy_saved_properties', JSON.stringify(this.basket));
+  // Sync with saved-properties.js (Firebase)
+  syncWithSavedProperties() {
+    if (typeof savedPropertiesManager !== 'undefined') {
+      this.basket = savedPropertiesManager.getSavedProperties();
+      this.updateBasketCount();
+    }
   }
 
   // Add property to basket
   addToBasket(property) {
-    // Check if property already exists in basket
-    const exists = this.basket.find(item => item.id === property.id);
-    if (exists) {
-      this.showNotification('Property already in basket', 'info');
-      return false;
+    // Use saved-properties.js to save (which syncs with Firebase)
+    if (typeof savedPropertiesManager !== 'undefined') {
+      const result = savedPropertiesManager.saveProperty(property);
+      // Note: saveProperty returns true if added, false if removed (toggle behavior)
+      // For basket, we only want to add, not toggle
+      if (result) {
+        this.syncWithSavedProperties();
+        this.showNotification('Property added to basket!', 'success');
+      } else {
+        this.showNotification('Property already in basket', 'info');
+      }
+    } else {
+      // Fallback if savedPropertiesManager not available
+      const exists = this.basket.find(item => item.id === property.id);
+      if (exists) {
+        this.showNotification('Property already in basket', 'info');
+        return false;
+      }
+      this.basket.push({
+        ...property,
+        addedAt: new Date().toISOString()
+      });
+      this.updateBasketCount();
+      this.showNotification('Property added to basket!', 'success');
     }
-
-    this.basket.push({
-      ...property,
-      addedAt: new Date().toISOString()
-    });
-
-    this.saveBasketToStorage();
-    this.updateBasketCount();
-    this.showNotification('Property added to basket!', 'success');
     return true;
   }
 
   // Remove property from basket
   removeFromBasket(propertyId) {
-    this.basket = this.basket.filter(item => item.id !== propertyId);
-    this.saveBasketToStorage();
-    this.updateBasketCount();
-    this.renderBasketItems();
-    this.showNotification('Property removed from basket', 'info');
+    // Use saved-properties.js to remove (which syncs with Firebase)
+    if (typeof savedPropertiesManager !== 'undefined') {
+      savedPropertiesManager.removeProperty(propertyId).then(() => {
+        this.syncWithSavedProperties();
+        this.renderBasketItems();
+        this.showNotification('Property removed from basket', 'info');
+      });
+    } else {
+      // Fallback if savedPropertiesManager not available
+      this.basket = this.basket.filter(item => item.id !== propertyId);
+      this.updateBasketCount();
+      this.renderBasketItems();
+      this.showNotification('Property removed from basket', 'info');
+    }
   }
 
   // Check if property is in basket

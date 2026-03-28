@@ -10,26 +10,32 @@ class AccountManager {
   }
 
   init() {
-    this.loadUserFromStorage();
+    this.syncWithFirebaseAuth();
     this.setupEventListeners();
     this.updateUI();
   }
 
-  // Load user from localStorage
-  loadUserFromStorage() {
-    const userData = localStorage.getItem('wenamy_user');
-    if (userData) {
-      this.currentUser = JSON.parse(userData);
+  // Sync with Firebase Auth
+  syncWithFirebaseAuth() {
+    if (typeof firebaseAuthManager !== 'undefined') {
+      // Subscribe to auth state changes
+      firebaseAuthManager.subscribe((user) => {
+        this.currentUser = user;
+        this.updateUI();
+      });
+      
+      // Initial sync
+      this.currentUser = firebaseAuthManager.getCurrentUser();
     }
   }
 
-  // Save user to localStorage
+  // Legacy methods - kept for backwards compatibility but no longer use localStorage
+  loadUserFromStorage() {
+    // Firebase handles persistence - this method is deprecated
+  }
+
   saveUserToStorage() {
-    if (this.currentUser) {
-      localStorage.setItem('wenamy_user', JSON.stringify(this.currentUser));
-    } else {
-      localStorage.removeItem('wenamy_user');
-    }
+    // Firebase handles persistence - this method is deprecated
   }
 
   // Setup all event listeners
