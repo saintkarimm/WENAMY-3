@@ -515,6 +515,32 @@
         }
       }
     };
+    
+    // Login/Signup form toggle
+    const switchToSignup = document.getElementById('switchToSignup');
+    const switchToLogin = document.getElementById('switchToLogin');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const authTitle = document.getElementById('authTitle');
+    const authSubtitle = document.getElementById('authSubtitle');
+    
+    if (switchToSignup && loginForm && signupForm) {
+      switchToSignup.addEventListener('click', function() {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        if (authTitle) authTitle.textContent = 'Create Account';
+        if (authSubtitle) authSubtitle.textContent = 'Join Wenamy to save properties and track your inquiries.';
+      });
+    }
+    
+    if (switchToLogin && loginForm && signupForm) {
+      switchToLogin.addEventListener('click', function() {
+        signupForm.style.display = 'none';
+        loginForm.style.display = 'block';
+        if (authTitle) authTitle.textContent = 'Welcome back';
+        if (authSubtitle) authSubtitle.textContent = 'Access your saved properties and inquiries anytime, anywhere — and keep everything in one place.';
+      });
+    }
   </script>
 </body>
 </html>
