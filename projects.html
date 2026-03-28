@@ -60,11 +60,25 @@
       <a href="about.html" class="nav-link">About</a>
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="contact.html" class="nav-link">Contact</a>
+      <!-- Basket Icon -->
+      <a href="basket.html" class="nav-link basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="basket-count" id="basketCount">0</span>
+      </a>
       <!-- Sign In Button -->
       <a href="account.html" class="nav-link btn btn-primary" id="navbarSignInBtn">Sign In</a>
     </div>
     
     <div class="mobile-nav-icons">
+      <!-- Basket Icon -->
+      <a href="basket.html" class="nav-link basket-icon mobile-basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="basket-count" id="mobileBasketCount">0</span>
+      </a>
       <!-- Sign In Button -->
       <a href="account.html" class="nav-link btn btn-primary mobile-signin-btn" id="mobileSignInBtn">Sign In</a>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
@@ -149,7 +163,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=3-bedroom-bungalow" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="3-bedroom-bungalow" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -176,7 +190,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=6-bedroom-villa" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="6-bedroom-villa" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -203,7 +217,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=family-3-bedroom-house" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="family-3-bedroom-house" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -230,7 +244,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=family-3-bedroom-bungalow" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="family-3-bedroom-bungalow" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -257,7 +271,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=4-bedroom-duplex-east-legon" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="4-bedroom-duplex-east-legon" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -284,7 +298,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=5-plus-2-bedroom-house" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="5-plus-2-bedroom-house" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -311,7 +325,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=4-bedroom-duplex-contemporary" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="4-bedroom-duplex-contemporary" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -338,7 +352,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=3-bedroom-bungalow-east-legon" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="3-bedroom-bungalow-east-legon" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -365,7 +379,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=3-bedroom-bungalow-simple" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="3-bedroom-bungalow-simple" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -392,7 +406,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=3-bedroom-house" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="3-bedroom-house" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -419,7 +433,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=3-bedroom-vacation-home" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="3-bedroom-vacation-home" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -446,7 +460,7 @@
               </div>
               <div class="project-card-actions">
                 <a href="project-detail.html#id=4-bedroom-house" class="project-luxury-cta">View Details</a>
-                <button class="project-save-btn" aria-label="Save property">
+                <button class="project-save-btn" data-property-id="4-bedroom-house" aria-label="Save property">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
@@ -546,6 +560,7 @@
   <script src="js/utils.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/basket.js"></script>
   <script src="js/chatbot.js"></script>
   <script src="js/navbar.js"></script>
   

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Saved Properties | Wenamy Ghana</title>
+  <meta name="description" content="View and manage your saved properties. Compare prices, locations, and features of your favorite Wenamy properties.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://wenamy.com/basket.html">
+  
+  <!-- Mobile Optimization -->
+  <meta name="theme-color" content="#0a101d">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wenamy.com/basket.html">
+  <meta property="og:title" content="Saved Properties | Wenamy Ghana">
+  <meta property="og:description" content="View and manage your saved properties.">
+  <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
+  <meta property="og:site_name" content="Wenamy Ghana">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/icons/logo.png">
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/hero-new.css?v=4">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/projects-luxury.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    /* Basket Page Specific Styles */
+    .basket-section {
+      padding: 120px 5% 80px;
+      min-height: 60vh;
+    }
+    
+    .basket-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .basket-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--color-text-primary, #1a1a1a);
+      margin-bottom: 16px;
+    }
+    
+    .basket-header p {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary, #666);
+    }
+    
+    .basket-count-display {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-primary, #c8a45c);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-top: 16px;
+    }
+    
+    .basket-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .basket-item {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .basket-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    
+    .basket-item-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .basket-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .basket-item:hover .basket-item-image img {
+      transform: scale(1.05);
+    }
+    
+    .basket-item-remove {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.95);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    
+    .basket-item-remove:hover {
+      background: #ff4444;
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    .basket-item-content {
+      padding: 24px;
+    }
+    
+    .basket-item-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text-primary, #1a1a1a);
+      margin-bottom: 8px;
+    }
+    
+    .basket-item-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-text-secondary, #666);
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
+    
+    .basket-item-location svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    
+    .basket-item-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary, #c8a45c);
+      margin-bottom: 16px;
+    }
+    
+    .basket-item-actions {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .basket-item-view {
+      flex: 1;
+      padding: 12px 20px;
+      background: var(--color-primary, #c8a45c);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    
+    .basket-item-view:hover {
+      background: var(--color-primary-dark, #a88a4a);
+    }
+    
+    .basket-empty {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .basket-empty-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      color: var(--color-text-muted, #999);
+    }
+    
+    .basket-empty h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-text-primary, #1a1a1a);
+      margin-bottom: 12px;
+    }
+    
+    .basket-empty p {
+      color: var(--color-text-secondary, #666);
+      margin-bottom: 24px;
+    }
+    
+    .basket-empty-cta {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--color-primary, #c8a45c);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .basket-empty-cta:hover {
+      background: var(--color-primary-dark, #a88a4a);
+    }
+    
+    .basket-actions {
+      max-width: 1400px;
+      margin: 40px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    
+    .basket-clear-btn {
+      padding: 12px 24px;
+      background: transparent;
+      border: 1px solid #ddd;
+      color: var(--color-text-secondary, #666);
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .basket-clear-btn:hover {
+      border-color: #ff4444;
+      color: #ff4444;
+    }
+    
+    .basket-continue {
+      padding: 12px 24px;
+      background: var(--color-text-primary, #1a1a1a);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .basket-continue:hover {
+      background: var(--color-text-secondary, #333);
+    }
+    
+    @media (max-width: 768px) {
+      .basket-section {
+        padding: 100px 4% 60px;
+      }
+      
+      .basket-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .basket-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .basket-clear-btn,
+      .basket-continue {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-light">
+    <div class="nav-left">
+      <a href="index.html" class="logo">
+        <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
+        Wenamy
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="offplan.html" class="nav-link">Off-Plan</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <!-- Basket Icon -->
+      <a href="basket.html" class="nav-link basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="basket-count" id="basketCount">0</span>
+      </a>
+      <!-- Sign In Button -->
+      <a href="account.html" class="nav-link btn btn-primary" id="navbarSignInBtn">Sign In</a>
+    </div>
+    
+    <div class="mobile-nav-icons">
+      <!-- Basket Icon -->
+      <a href="basket.html" class="nav-link basket-icon mobile-basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="basket-count" id="mobileBasketCount">0</span>
+      </a>
+      <!-- Sign In Button -->
+      <a href="account.html" class="nav-link btn btn-primary mobile-signin-btn" id="mobileSignInBtn">Sign In</a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="logo">
+        <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
+        Wenamy
+      </a>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="offplan.html" class="nav-link">Off-Plan</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="account.html" class="nav-link btn btn-primary" id="mobileMenuSignInBtn">Sign In</a>
+    </div>
+  </div>
+
+  <!-- Basket Section -->
+  <section class="basket-section">
+    <div class="basket-header">
+      <h1>Saved Properties</h1>
+      <p>Your curated collection of favorite properties</p>
+      <div class="basket-count-display">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span id="savedCount">0 properties saved</span>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="basket-empty" id="emptyState">
+      <svg class="basket-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      <h2>No saved properties yet</h2>
+      <p>Browse our exclusive collection and save your favorite properties to compare later.</p>
+      <a href="projects.html" class="basket-empty-cta">Explore Properties</a>
+    </div>
+
+    <!-- Basket Grid -->
+    <div class="basket-grid" id="basketGrid" style="display: none;"></div>
+
+    <!-- Basket Actions -->
+    <div class="basket-actions" id="basketActions" style="display: none;">
+      <button class="basket-clear-btn" id="clearAllBtn">Clear All</button>
+      <a href="projects.html" class="basket-continue">Continue Browsing</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="images/icons/logo.png" alt="Wenamy" width="32" height="32">
+          <span>Wenamy</span>
+        </a>
+        <p class="footer-tagline">Just Exceptional</p>
+      </div>
+      <div class="footer-links">
+        <a href="projects.html">Projects</a>
+        <a href="offplan.html">Off-Plan</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Wenamy Ghana Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/animations.js"></script>
+  <script src="js/basket.js"></script>
+  <script src="js/navbar.js"></script>
+  
+  <script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const menuClose = document.querySelector('.mobile-menu-close');
+      const mobileNav = document.querySelector('.mobile-nav-overlay');
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener('click', () => mobileNav.classList.add('active'));
+      }
+      if (menuClose && mobileNav) {
+        menuClose.addEventListener('click', () => mobileNav.classList.remove('active'));
+      }
+    });
+
+    // Render basket items
+    function renderBasket() {
+      const basket = WenamyBasket.getBasket();
+      const grid = document.getElementById('basketGrid');
+      const emptyState = document.getElementById('emptyState');
+      const basketActions = document.getElementById('basketActions');
+      const savedCount = document.getElementById('savedCount');
+      
+      // Update count text
+      const count = basket.length;
+      savedCount.textContent = count + ' ' + (count === 1 ? 'property' : 'properties') + ' saved';
+      
+      if (count === 0) {
+        // Show empty state
+        emptyState.style.display = 'block';
+        grid.style.display = 'none';
+        basketActions.style.display = 'none';
+        return;
+      }
+      
+      // Show basket grid
+      emptyState.style.display = 'none';
+      grid.style.display = 'grid';
+      basketActions.style.display = 'flex';
+      
+      // Generate HTML for each item
+      grid.innerHTML = basket.map(item => `
+        <div class="basket-item" data-id="${item.id}">
+          <div class="basket-item-image">
+            <img src="${item.image || 'images/hero/hero-bg.jpg'}" alt="${item.title}">
+            <button class="basket-item-remove" data-id="${item.id}" aria-label="Remove from saved">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="basket-item-content">
+            <h3 class="basket-item-title">${item.title}</h3>
+            <div class="basket-item-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              ${item.location}
+            </div>
+            <div class="basket-item-price">${item.price}</div>
+            <div class="basket-item-actions">
+              <a href="project-detail.html#id=${item.id}" class="basket-item-view">View Details</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      // Add remove button listeners
+      document.querySelectorAll('.basket-item-remove').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const id = this.dataset.id;
+          WenamyBasket.removeFromBasket(id);
+          renderBasket();
+        });
+      });
+    }
+
+    // Clear all button
+    document.getElementById('clearAllBtn')?.addEventListener('click', function() {
+      if (confirm('Are you sure you want to remove all saved properties?')) {
+        WenamyBasket.clearBasket();
+        renderBasket();
+      }
+    });
+
+    // Initial render
+    renderBasket();
+  </script>
+</body>
+</html>

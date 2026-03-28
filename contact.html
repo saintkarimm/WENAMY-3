@@ -58,11 +58,25 @@
       <a href="about.html" class="nav-link">About</a>
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="contact.html" class="nav-link active">Contact</a>
+      <!-- Basket Icon -->
+      <a href="basket.html" class="nav-link basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="basket-count" id="basketCount">0</span>
+      </a>
       <!-- Sign In Button -->
       <a href="account.html" class="nav-link btn btn-primary" id="navbarSignInBtn">Sign In</a>
     </div>
     
     <div class="mobile-nav-icons">
+      <!-- Basket Icon -->
+      <a href="basket.html" class="nav-link basket-icon mobile-basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="basket-count" id="mobileBasketCount">0</span>
+      </a>
       <!-- Sign In Button -->
       <a href="account.html" class="nav-link btn btn-primary mobile-signin-btn" id="mobileSignInBtn">Sign In</a>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
@@ -305,6 +319,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
   
   <script src="js/animations.js"></script>
+  <script src="js/basket.js"></script>
   <script src="js/chatbot.js"></script>
   <script src="js/navbar.js"></script>
   <script>
