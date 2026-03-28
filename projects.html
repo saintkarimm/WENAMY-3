@@ -585,15 +585,6 @@
         });
       }
       
-      // Heart button visual toggle (no backend)
-      document.querySelectorAll('.project-save-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          btn.classList.toggle('saved');
-        });
-      });
-
       // Filter functionality
       const filterTabs = document.querySelectorAll('.filter-tab');
       const projectCards = document.querySelectorAll('.project-luxury-card');
