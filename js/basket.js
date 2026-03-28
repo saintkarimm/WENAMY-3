@@ -185,12 +185,12 @@
           if (!propertyId) return;
           
           // Get property data from the card
-          const card = heartBtn.closest('.project-card');
+          const card = heartBtn.closest('.project-luxury-card');
           const property = {
             id: propertyId,
-            title: card.querySelector('.project-title')?.textContent || 'Property',
-            price: card.querySelector('.project-price')?.textContent || '',
-            location: card.querySelector('.project-location')?.textContent || '',
+            title: card.querySelector('.project-luxury-name')?.textContent || 'Property',
+            price: card.querySelector('.project-luxury-price')?.textContent || '',
+            location: card.querySelector('.project-luxury-location')?.textContent || '',
             image: card.querySelector('img')?.src || ''
           };
           
