@@ -36,45 +36,80 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 | `offplan.html` | Off-plan investments | Investment opportunities |
 | `project-detail.html` | Dynamic project details | Loads from URL hash |
 | `account.html` | Sign In/Sign Up page | Forms only, no backend |
+| `basket.html` | Saved Properties page | Displays saved/bookmarked properties |
 
 ### CSS Files
 | File | Purpose |
 |------|---------|
-| `css/hero-new.css` | Hero section + navbar styles |
+| `css/hero-new.css` | Hero section + navbar styles (glassmorphism, adaptive colors) |
 | `css/base.css` | Base styles and typography |
 | `css/animations.css` | Animation utilities |
 | `css/footer.css` | Footer styles |
 | `css/account.css` | Account page auth forms |
 | `css/dashboard-new.css` | Dashboard/account page layout |
-| `css/projects-listing.css` | Project grid styles |
+| `css/projects-luxury.css` | Projects listing page styles |
+| `css/project-detail-luxury.css` | Project detail page styles |
+| `css/pages-luxury.css` | General page styles (about, contact, blog, offplan) |
+| `css/basket.css` | Basket/saved properties page |
+| `css/chatbot.css` | Chatbot widget styles |
+| `css/loading-states.css` | Loading animations and skeletons |
 | `css/responsive.css` | Responsive breakpoints |
+| `css/variables.css` | CSS custom properties |
+| `css/reset.css` | CSS reset/normalize |
+| `css/grid.css` | Grid system utilities |
+| `css/sections.css` | Section component styles |
+| `css/carousel.css` | Carousel/slider styles |
+| `css/features.css` | Feature section styles |
 
 ### JavaScript Files
 | File | Purpose |
 |------|---------|
 | `js/main.js` | Main site functionality |
-| `js/navbar.js` | Navbar initialization (simplified) |
-| `js/animations.js` | Scroll animations |
+| `js/navbar.js` | Navbar initialization and mobile menu |
+| `js/animations.js` | Scroll animations and reveal effects |
 | `js/utils.js` | Utility functions |
 | `js/projects-data.js` | Project data for dynamic pages |
-| `js/carousel.js` | Carousel functionality |
+| `js/carousel.js` | Carousel/slider functionality |
+| `js/basket.js` | Basket/saved properties functionality |
+| `js/chatbot.js` | Chatbot widget functionality |
+| `js/loading-states.js` | Loading state management |
 
 ---
 
 ## Navbar Structure
 
 ### Current Implementation
-- **Single transparent navbar** on all pages
+- **Premium Liquid Glass Design** - Ultra-transparent glassmorphism effect (2% white, 3px blur)
+- **Adaptive Color System** - Text color changes based on section background (dark/light)
 - **Links:** Home, Projects, Off-Plan, About, Blog, Contact
 - **CTA:** Sign In button (links to account.html)
 - **No basket icon** - Removed during simplification
 - **No user display** - Removed during simplification
-- **Mobile:** Hamburger menu with full-screen overlay
+- **Mobile:** Hamburger menu with full-screen overlay, rounded pill navbar
+
+### Navbar Features
+- **Glassmorphism Effect:** Semi-transparent background with backdrop blur
+- **Sticky Positioning:** Fixed at top with smooth scroll behavior
+- **Intersection Observer:** Detects dark/light sections and toggles text color
+- **Cache Busting:** CSS version parameters (`?v=5`) for updates
 
 ### Navbar Files
 - HTML: Inline in each page (consistent across all pages)
-- CSS: `css/hero-new.css`
-- JS: `js/navbar.js` (minimal, shows Sign In button only)
+- CSS: `css/hero-new.css` (glass effect, transparency, adaptive colors)
+- JS: `js/navbar.js` (minimal) + inline adaptive color script per page
+
+### Adaptive Color Behavior
+| Page | Dark Sections | Light Sections |
+|------|--------------|----------------|
+| index.html | hero-new-wrapper, property-carousel | featured-property, bento-grid, services-luxury |
+| projects.html | projects-hero | projects-section, projects-filter |
+| offplan.html | page-luxury-hero | offplan-luxury-section, offplan-benefits-section |
+| about.html | page-luxury-hero | about-intro-section, about-values-section, etc. |
+| contact.html | page-luxury-hero | contact-luxury-section, contact-map-section |
+| blog.html | page-luxury-hero | blog-luxury-section, page-cta-section |
+| project-detail.html | project-detail-hero | project-features-section, project-cta-section |
+| basket.html | — | All light (always dark text) |
+| account.html | — | All light (always dark text) |
 
 ---
 
@@ -94,6 +129,24 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 - No Firebase, no database, no real authentication
 - Forms are present but non-functional
 - Kept for future re-implementation of user accounts
+
+---
+
+## Basket Page (basket.html)
+
+### Current State
+- **Displays saved properties** - Grid of bookmarked properties
+- **Visual-only storage** - Uses localStorage, no backend
+- **Property cards** - Image, title, location, price, view details
+- **Remove functionality** - Can remove individual items or clear all
+- **Empty state** - Shows message when no saved properties
+
+### Features
+- Load saved properties from localStorage
+- Display property cards with key info
+- Remove individual properties
+- Clear all saved properties
+- Navigate to property detail page
 
 ---
 
@@ -144,7 +197,7 @@ Configuration in `vercel.json`:
 - ❌ Saved properties (basket) functionality
 - ❌ Real-time data synchronization
 - ❌ User dashboard
-- ❌ Basket page (basket.html deleted)
+- ❌ Basket functionality (visual only, no backend storage)
 
 ### Files Deleted
 - `js/firebase.js`
@@ -219,8 +272,10 @@ Configuration in `vercel.json`:
 - Add mobile menu script
 
 **Modifying navbar:**
-- Must update ALL 7 HTML files
+- Must update ALL 9 HTML files (index, about, blog, contact, projects, offplan, project-detail, account, basket)
 - Keep structure consistent
+- Each page has inline adaptive color script - update selectors if section classes change
+- CSS changes go in `css/hero-new.css`
 
 **Account page changes:**
 - Remember: Forms are visual-only
@@ -255,5 +310,5 @@ Configuration in `vercel.json`:
 
 ---
 
-*Last Updated: March 29, 2026*  
-*Project Status: Production-Ready Static Site*
+*Last Updated: March 30, 2026*  
+*Project Status: Production-Ready Static Site with Premium Glassmorphism UI*
