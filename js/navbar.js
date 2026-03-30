@@ -1,7 +1,7 @@
 /**
  * Navbar Module
  * Simplified version - no auth logic
- * Enhanced with premium glassmorphism scroll effects
+ * Enhanced with premium glassmorphism scroll effects and dynamic contrast
  */
 
 /**
@@ -40,6 +40,56 @@ function initNavbarScroll() {
 }
 
 /**
+ * Initialize dynamic navbar contrast based on background
+ * Detects light/dark backgrounds and switches navbar colors
+ */
+function initNavbarDynamicContrast() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  
+  // Check if we're on a category page with dark hero
+  const heroSection = document.querySelector('.category-hero');
+  if (!heroSection) return;
+  
+  let ticking = false;
+  let isDarkMode = true;
+  
+  function updateContrast() {
+    const scrollY = window.scrollY;
+    const heroHeight = heroSection.offsetHeight;
+    
+    // Switch to light mode when scrolled past hero (into light content area)
+    // Switch to dark mode when in hero area
+    const shouldBeDark = scrollY < (heroHeight - 100);
+    
+    if (shouldBeDark !== isDarkMode) {
+      isDarkMode = shouldBeDark;
+      
+      if (isDarkMode) {
+        navbar.classList.add('navbar-dark');
+        navbar.classList.remove('navbar-light');
+      } else {
+        navbar.classList.add('navbar-light');
+        navbar.classList.remove('navbar-dark');
+      }
+    }
+    
+    ticking = false;
+  }
+  
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(updateContrast);
+      ticking = true;
+    }
+  }, { passive: true });
+  
+  // Initial check - start with dark mode on category pages
+  navbar.classList.add('navbar-dark');
+  updateContrast();
+}
+
+/**
  * Initialize navbar
  * Shows static Sign In button only
  */
@@ -61,6 +111,9 @@ function initNavbar() {
   
   // Initialize scroll effects
   initNavbarScroll();
+  
+  // Initialize dynamic contrast for category pages
+  initNavbarDynamicContrast();
 }
 
 // Auto-initialize when DOM is ready

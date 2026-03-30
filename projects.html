@@ -46,6 +46,107 @@
   <style>
     /* Prevent FOUC - hide navbar until CSS loads */
     .navbar { visibility: hidden; }
+    
+    /* Override category nav to match category pages styling */
+    .category-nav-main {
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+      padding: 2rem 4rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    
+    .category-nav-main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .category-nav-main-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .category-nav-main-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .category-nav-main-link:hover {
+      color: #1e293b;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+    
+    .category-nav-main-link:hover::before {
+      opacity: 1;
+    }
+    
+    .category-nav-main-link.active {
+      color: #ffffff;
+      background: #1e293b;
+      border-color: #1e293b;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(30, 41, 59, 0.3);
+    }
+    
+    .category-nav-main-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: inherit;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .category-nav-main {
+        padding: 1.25rem 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      
+      .category-nav-main::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .category-nav-main-container {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0.75rem;
+      }
+      
+      .category-nav-main-link {
+        flex-shrink: 0;
+        padding: 0.875rem 1.25rem;
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -134,16 +235,30 @@
       </div>
     </section>
 
+    <!-- Category Navigation -->
+    <nav class="category-nav-main">
+      <div class="category-nav-main-container">
+        <a href="projects/completed.html" class="category-nav-main-link">
+          <span class="category-nav-main-label">Completed</span>
+        </a>
+        <a href="projects/ongoing.html" class="category-nav-main-link active">
+          <span class="category-nav-main-label">Ongoing</span>
+        </a>
+        <a href="projects/upcoming.html" class="category-nav-main-link">
+          <span class="category-nav-main-label">Upcoming</span>
+        </a>
+      </div>
+    </nav>
+
     <!-- Filter Tabs -->
     <section class="projects-filter">
       <div class="projects-filter-container">
         <div class="filter-tabs">
-          <button class="filter-tab active" data-filter="all">All Projects</button>
+          <button class="filter-tab active" data-filter="all">All Types</button>
           <button class="filter-tab" data-filter="apartments">Apartments</button>
           <button class="filter-tab" data-filter="bungalows">Bungalows</button>
           <button class="filter-tab" data-filter="villas">Villas</button>
           <button class="filter-tab" data-filter="duplexes">Duplexes</button>
-          <button class="filter-tab" data-filter="available">Available Now</button>
         </div>
         <span class="filter-results">12 Properties</span>
       </div>

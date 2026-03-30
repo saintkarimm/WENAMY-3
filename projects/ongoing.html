@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Ongoing Projects | Wenamy Ghana - Available Now</title>
+  <meta name="description" content="Explore Wenamy Ghana's ongoing luxury developments. Limited units available - secure your dream home today.">
+  <meta name="keywords" content="Wenamy ongoing projects, available properties Ghana, luxury homes for sale, real estate developments">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://wenamy.com/projects/ongoing">
+  
+  <!-- Mobile Optimization -->
+  <meta name="theme-color" content="#0a101d">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wenamy.com/projects/ongoing">
+  <meta property="og:title" content="Ongoing Projects | Wenamy Ghana - Available Now">
+  <meta property="og:description" content="Explore Wenamy Ghana's ongoing luxury developments. Limited units available.">
+  <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
+  <meta property="og:site_name" content="Wenamy Ghana">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ongoing Projects | Wenamy Ghana - Available Now">
+  <meta name="twitter:description" content="Explore Wenamy Ghana's ongoing luxury developments.">
+  <meta name="twitter:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../images/icons/logo.png">
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/hero-new.css?v=7">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/chatbot.css">
+  <link rel="stylesheet" href="../css/projects-luxury.css">
+  <link rel="stylesheet" href="../css/loading-states.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    /* Prevent FOUC - hide navbar until CSS loads */
+    .navbar { visibility: hidden; }
+    
+    /* ========================================
+       PREMIUM CATEGORY PAGE STYLES - ONGOING
+       ======================================== */
+    
+    /* Hero Section - Premium Dark Gradient with Red Accent */
+    .category-hero {
+      background: linear-gradient(rgba(10, 14, 23, 0.7), rgba(10, 14, 23, 0.7)), url('../images/bar-all.png') center/cover no-repeat;
+      padding: 10rem 4rem 6rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .category-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 80% 20%, rgba(220, 53, 69, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .category-hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+    }
+    
+    .category-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      animation: heroFadeIn 1s ease-out forwards;
+    }
+    
+    @keyframes heroFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .category-hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    .category-hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      line-height: 1.05;
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+    
+    .category-hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 400;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(220, 53, 69, 0.15);
+      color: #f87171;
+      padding: 0.75rem 1.5rem;
+      border-radius: 3rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      border: 1px solid rgba(220, 53, 69, 0.25);
+      backdrop-filter: blur(10px);
+      animation: fadeInUp 0.8s ease-out 0.5s both, pulse-urgency 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-urgency {
+      0%, 100% { 
+        opacity: 1; 
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4);
+      }
+      50% { 
+        opacity: 0.9;
+        box-shadow: 0 0 20px 5px rgba(220, 53, 69, 0.2);
+      }
+    }
+    
+    /* Category Navigation - Glassmorphism */
+    .category-nav {
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+      padding: 2rem 4rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    
+    .category-nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .category-nav-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .category-nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .category-nav-link:hover {
+      color: #1e293b;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+    
+    .category-nav-link:hover::before {
+      opacity: 1;
+    }
+    
+    .category-nav-link.active {
+      color: #ffffff;
+      background: #1e293b;
+      border-color: #1e293b;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(30, 41, 59, 0.3);
+    }
+    
+    /* Projects Section - Premium Background */
+    .projects-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      padding: 6rem 4rem;
+      position: relative;
+    }
+    
+    .projects-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.06), transparent);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .section-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.125rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    /* Project Cards - Premium Design */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .project-luxury-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.02),
+        0 2px 4px -1px rgba(0, 0, 0, 0.02),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .project-luxury-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 
+        0 20px 40px -10px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .project-luxury-image-wrap {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    
+    .project-luxury-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .project-luxury-card:hover .project-luxury-image-wrap img {
+      transform: scale(1.08);
+    }
+    
+    .project-luxury-image-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+      pointer-events: none;
+    }
+    
+    .project-status-badge.ongoing {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(220, 53, 69, 0.95);
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(10px);
+      z-index: 2;
+    }
+    
+    .project-luxury-content {
+      padding: 2rem;
+    }
+    
+    .project-luxury-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .project-luxury-type {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .project-luxury-price {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    
+    .project-luxury-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    
+    .project-luxury-location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+    
+    .project-luxury-location svg {
+      width: 16px;
+      height: 16px;
+      color: #94a3b8;
+    }
+    
+    .project-luxury-description {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-card-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .project-luxury-cta.ongoing {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      background: #0066cc;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 1rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .project-luxury-cta.ongoing:hover {
+      background: #0077ed;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+    }
+    
+    .project-save-btn {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .project-save-btn:hover {
+      background: #e2e8f0;
+      transform: scale(1.05);
+    }
+    
+    .project-save-btn svg {
+      width: 20px;
+      height: 20px;
+      color: #64748b;
+    }
+    
+    /* Dynamic Navbar Contrast */
+    .navbar {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .navbar.navbar-dark {
+      --nav-text: #ffffff;
+      --nav-text-muted: rgba(255, 255, 255, 0.7);
+      --nav-bg: rgba(10, 14, 23, 0.8);
+      --nav-border: rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar.navbar-light {
+      --nav-text: #1e293b;
+      --nav-text-muted: #64748b;
+      --nav-bg: rgba(255, 255, 255, 0.95);
+      --nav-border: rgba(0, 0, 0, 0.06);
+    }
+    
+    .navbar.navbar-dark .nav-link:not(.btn-primary),
+    .navbar.navbar-dark .logo {
+      color: var(--nav-text);
+    }
+    
+    .navbar.navbar-light .nav-link:not(.btn-primary),
+    .navbar.navbar-light .logo {
+      color: var(--nav-text);
+    }
+    
+    .navbar.navbar-dark .mobile-menu-toggle {
+      color: var(--nav-text);
+    }
+    
+    .navbar.navbar-light .mobile-menu-toggle {
+      color: var(--nav-text);
+    }
+    
+    .limited-units-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: rgba(220, 53, 69, 0.1);
+      color: #dc3545;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .category-hero {
+        padding: 6rem 1.5rem 3rem;
+        min-height: 300px;
+      }
+      
+      .category-nav {
+        padding: 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      
+      .category-nav::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .category-nav-container {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+      
+      .category-nav-link {
+        flex-shrink: 0;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      /* Mobile Project Cards */
+      .projects-section {
+        padding: 3rem 1rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+      }
+      
+      .project-luxury-card {
+        border-radius: 1rem;
+      }
+      
+      .project-luxury-image-wrap {
+        height: 220px;
+      }
+      
+      .project-luxury-content {
+        padding: 1.25rem;
+      }
+      
+      .project-luxury-name {
+        font-size: 1.25rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .back-navigation {
+        padding: 2rem 1rem;
+      }
+    }
+    
+    /* Back Navigation */
+    .back-navigation {
+      background: #f8fafc;
+      padding: 3rem 4rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    
+    .back-navigation-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-white, #ffffff);
+      text-decoration: none;
+      padding: 0.875rem 1.75rem;
+      background: var(--color-primary, #1a1a1a);
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .back-link:hover {
+      background: var(--color-primary-hover, #333333);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .back-link svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+    }
+    
+    .back-link:hover svg {
+      transform: translateX(-4px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Wrapper -->
+  <div class="hero-new-wrapper" style="min-height: auto; padding-top: 0;">
+    <!-- Navbar -->
+    <nav class="navbar" id="mainNavbar">
+    <div class="nav-left">
+      <a href="../index.html" class="logo">
+        <img src="../images/icons/logo.png" alt="Wenamy" width="28" height="28">
+        Wenamy
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../projects.html" class="nav-link active">Projects</a>
+      <a href="../offplan.html" class="nav-link">Off-Plan</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <a href="../basket.html" class="nav-link basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="basket-count" id="basketCount">0</span>
+      </a>
+      <a href="../account.html" class="nav-link btn btn-primary" id="navbarSignInBtn">Sign In</a>
+    </div>
+    
+    <div class="mobile-nav-icons">
+      <a href="../basket.html" class="nav-link basket-icon mobile-basket-icon" aria-label="Saved Properties">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="basket-count" id="mobileBasketCount">0</span>
+      </a>
+      <a href="../account.html" class="nav-link btn btn-primary mobile-signin-btn" id="mobileSignInBtn">Sign In</a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  </div><!-- /hero-new-wrapper -->
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-header">
+      <a href="../index.html" class="logo">
+        <img src="../images/icons/logo.png" alt="Wenamy" width="28" height="28">
+        Wenamy
+      </a>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../projects.html" class="nav-link active">Projects</a>
+      <a href="../offplan.html" class="nav-link">Off-Plan</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <a href="../account.html" class="nav-link btn btn-primary" id="mobileMenuSignInBtn">Sign In</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Category Hero -->
+    <section class="category-hero">
+      <div class="category-hero-content">
+        <p class="category-hero-label">Available Now</p>
+        <h1 class="category-hero-title">Ongoing Projects</h1>
+        <p class="category-hero-subtitle">Secure your dream home in our current developments. Limited units remaining - act fast.</p>
+        <div class="urgency-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          Limited Units Left
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+      <div class="category-nav-container">
+        <a href="completed.html" class="category-nav-link">Completed</a>
+        <a href="ongoing.html" class="category-nav-link active">Ongoing</a>
+        <a href="upcoming.html" class="category-nav-link">Upcoming</a>
+      </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+      <div class="projects-container">
+        <div class="section-header">
+          <h2 class="section-title">Available Properties</h2>
+          <p class="section-subtitle">Don't miss out on these exceptional homes currently under development</p>
+        </div>
+        
+        <div class="projects-grid">
+          <!-- Project 1: 3 Bedroom Bungalow -->
+          <article class="project-luxury-card" data-project-id="3-bedroom-bungalow">
+            <div class="project-luxury-image-wrap">
+              <img src="../images/properties/PROJECT 1/1st.png" alt="3 Bedroom Bungalow">
+              <span class="project-status-badge ongoing">Ongoing</span>
+            </div>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Bungalow</span>
+                <span class="project-luxury-price">$83,000+</span>
+              </div>
+              <h3 class="project-luxury-name">3 Bedroom Bungalow</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Cantonments, Accra
+              </div>
+              <p class="project-luxury-description">Spacious family bungalow with 3 bedrooms, 4 washrooms, kitchen, pantry, and big hall for entertaining.</p>
+              <div class="project-card-actions">
+                <a href="../project-detail.html#id=3-bedroom-bungalow" class="project-luxury-cta ongoing">Enquire Now</a>
+                <button class="project-save-btn" data-property-id="3-bedroom-bungalow" aria-label="Save property">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Modern Family Home -->
+          <article class="project-luxury-card" data-project-id="modern-family-home">
+            <div class="project-luxury-image-wrap">
+              <img src="../images/properties/PROJECT 9/1st.png" alt="Modern Family Home">
+              <span class="project-status-badge ongoing">Ongoing</span>
+            </div>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Family Home</span>
+                <span class="project-luxury-price">$95,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Modern Family Home</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Tema Community 25
+              </div>
+              <p class="project-luxury-description">Contemporary 4-bedroom family home with modern architecture, smart home features, and spacious garden.</p>
+              <div class="project-card-actions">
+                <a href="../project-detail.html#id=modern-family-home" class="project-luxury-cta ongoing">Book Viewing</a>
+                <button class="project-save-btn" data-property-id="modern-family-home" aria-label="Save property">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back Navigation -->
+    <div class="back-navigation">
+      <div class="back-navigation-container">
+        <a href="../projects.html" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to All Projects
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-main">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../images/icons/logo.png" alt="Wenamy" width="28" height="28">
+            Wenamy
+          </div>
+          <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
+          
+          <!-- Newsletter Panel -->
+          <div class="footer-newsletter">
+            <form class="newsletter-panel" action="https://formspree.io/f/mqegkgal" method="POST">
+              <input type="email" name="email" placeholder="Enter your email" required>
+              <input type="hidden" name="message" value="Newsletter subscription request">
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+          
+          <!-- WhatsApp Panel -->
+          <div class="footer-whatsapp">
+            <a href="https://wa.me/233243817969?text=Hello%20Wenamy%2C%20I%27m%20interested%20in%20your%20properties" class="whatsapp-panel" target="_blank" rel="noopener noreferrer">
+              <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <span class="whatsapp-text">Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="footer-contact">
+          <h4 class="footer-contact-title">Contact</h4>
+          <div class="footer-contact-info">
+            <a href="tel:0243817969">0243 817 969</a>
+            <a href="tel:0201050996">0201 050 996</a>
+            <a href="mailto:info@wenamy.com">info@wenamy.com</a>
+          </div>
+          <p class="footer-address-text">
+            Tema Community 25<br>
+            Greater Accra Region<br>
+            Ghana
+          </p>
+        </div>
+        
+        <!-- Links Column -->
+        <div class="footer-links-section">
+          <h4 class="footer-links-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="../projects.html">Projects</a>
+            <a href="../offplan.html">Off-Plan</a>
+            <a href="../about.html">About Us</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Wenamy Ghana Ltd. All rights reserved.</p>
+        
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/animations.js"></script>
+  <script src="../js/basket.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const mobileNav = document.getElementById('mobileNavOverlay');
+
+      if (menuToggle && mobileNav && menuClose) {
+        menuToggle.addEventListener('click', () => {
+          mobileNav.classList.add('active');
+        });
+        menuClose.addEventListener('click', () => {
+          mobileNav.classList.remove('active');
+        });
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+          });
+        });
+      }
+
+      // Scroll Animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements with animate-on-scroll class
+      document.querySelectorAll('.animate-on-scroll, .project-luxury-card, .section-header').forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+      });
+
+      // Stagger animation for cards
+      const cards = document.querySelectorAll('.project-luxury-card');
+      cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+      });
+    });
+  </script>
+</body>
+</html>

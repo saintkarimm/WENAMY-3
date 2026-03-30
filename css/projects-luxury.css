@@ -61,6 +61,102 @@
 }
 
 /* ========================================
+   CATEGORY NAVIGATION - Main Page
+   ======================================== */
+.category-nav-main {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.category-nav-main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-nav-main-link {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.category-nav-main-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+.category-nav-main-link.active {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.category-nav-main-link.active .category-nav-main-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.category-nav-main-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.category-nav-main-count {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.06);
+  color: #666;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Category Navigation */
+@media (max-width: 768px) {
+  .category-nav-main {
+    padding: 1.5rem 1rem;
+  }
+  
+  .category-nav-main-container {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .category-nav-main-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .category-nav-main-link {
+    flex-shrink: 0;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .category-nav-main-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================================
    FILTER TABS - Luxury Pills
    ======================================== */
 .projects-filter {
