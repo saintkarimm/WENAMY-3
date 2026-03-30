@@ -486,8 +486,8 @@
         <h2 class="projects-cta-title">Ready to Build Your Dream Home?</h2>
         <p class="projects-cta-subtitle">Let our experts guide you through our exclusive portfolio.</p>
         <div class="projects-cta-buttons">
-          <a href="contact.html" class="projects-cta-btn primary">Schedule a Viewing</a>
-          <a href="https://wa.me/233243817969?text=Hello,%20I'm%20interested%20in%20your%20properties%20at%20Wenamy" target="_blank" class="projects-cta-btn secondary">Chat on WhatsApp</a>
+          <a href="contact.html" class="projects-cta-btn primary">Book an Appointment Now</a>
+          <a href="https://wa.me/233243817969?text=Hello,%20I'm%20interested%20in%20your%20properties%20at%20Wenamy" target="_blank" class="projects-cta-btn secondary">Build Yours Now</a>
         </div>
       </div>
     </section>
@@ -617,6 +617,21 @@
           
           if (resultsCount) {
             resultsCount.textContent = `${visibleCount} Properties`;
+          }
+        });
+      });
+      
+      // Make entire property card clickable
+      projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          // Don't navigate if clicking the save button or View Details link
+          if (e.target.closest('.project-save-btn') || e.target.closest('.project-luxury-cta')) {
+            return;
+          }
+          // Get the project ID and navigate
+          const projectId = card.dataset.projectId;
+          if (projectId) {
+            window.location.href = `project-detail.html#id=${projectId}`;
           }
         });
       });

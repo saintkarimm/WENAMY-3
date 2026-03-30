@@ -17,24 +17,50 @@
   padding-top: 80px;
 }
 
-/* Navbar - Sticky with blur effect */
+/* Navbar - Liquid Glass Effect (Your Style) */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   font-size: 0.95rem;
-  padding: 1.5rem 4rem;
+  padding: 0.75rem 4rem;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(10, 16, 29, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 1400px;
+  border-radius: 1rem;
+  isolation: isolate;
+  
+  /* Your Liquid Glass Style - Ultra Transparent */
+  background: hsla(0, 0%, 100%, 0.02);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  
+  /* Thicker border with more transparency */
+  border: 2px solid hsla(0, 0%, 100%, 0.08);
+  
+  /* Inner glow shine effect - minimal */
+  box-shadow: 
+    inset 0 0 4px 1px hsla(0, 0%, 100%, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.15);
+  
+  /* Smooth transitions */
   transition: all 0.3s ease;
   visibility: visible !important;
+  will-change: transform;
+}
+
+/* Navbar on scroll - enhanced glass effect */
+.navbar.scrolled {
+  background: hsla(0, 0%, 100%, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 
+    inset 0 0 6px 1px hsla(0, 0%, 100%, 0.2),
+    0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .nav-left, .nav-right {
@@ -47,13 +73,39 @@
   color: #ffffff;
   text-decoration: none;
   font-weight: 400;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
+  opacity: 0.85;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Inter', sans-serif;
+  position: relative;
+  padding: 0.5rem 0;
 }
 
+/* Premium hover effect with glow */
 .navbar .nav-link:hover {
   opacity: 1;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Animated underline on hover */
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
 }
 
 .navbar .nav-link.active {
@@ -85,17 +137,55 @@
 }
 
 .navbar .btn-primary {
-  background-color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
   color: #050505;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   font-weight: 500;
   font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass shine effect */
+.navbar .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .navbar .btn-primary:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.navbar .btn-primary:hover::before {
+  left: 100%;
 }
 
 /* ========================================
@@ -475,14 +565,40 @@
 
 /* Navbar Light Variant - For pages with light backgrounds */
 .navbar-light {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: hsla(0, 0%, 100%, 0.02);
+  border: 2px solid hsla(0, 0%, 100%, 0.12);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 
+    inset 0 0 4px 1px hsla(0, 0%, 100%, 0.2),
+    0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-light.scrolled {
+  background: hsla(0, 0%, 100%, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 
+    inset 0 0 6px 1px hsla(0, 0%, 100%, 0.25),
+    0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .navbar-light .nav-link {
   color: #050505;
+  opacity: 0.8;
+}
+
+.navbar-light .nav-link:hover {
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-light .nav-link::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.3),
+    transparent
+  );
 }
 
 .navbar-light .logo {
@@ -510,12 +626,36 @@
 }
 
 .navbar-light .btn-primary {
-  background-color: #050505;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 5, 5, 0.95) 0%,
+    rgba(30, 30, 30, 0.9) 100%
+  );
   color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.navbar-light .btn-primary::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
 }
 
 .navbar-light .btn-primary:hover {
-  background-color: #333333;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 5, 5, 1) 0%,
+    rgba(40, 40, 40, 0.95) 100%
+  );
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* Mobile Menu Styles */
@@ -777,7 +917,7 @@
 }
 
 @media (max-width: 768px) {
-  /* Navbar Mobile */
+  /* Navbar Mobile - Full width with rounded corners */
   .navbar {
     padding: 1rem 1.5rem;
     z-index: 1000;
@@ -785,9 +925,20 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    max-width: none;
+    border-radius: 1rem;
+    border: 2px solid hsla(0, 0%, 100%, 0.08);
+    background: hsla(0, 0%, 100%, 0.02);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    box-shadow: 
+      inset 0 0 4px 1px hsla(0, 0%, 100%, 0.15),
+      0 4px 20px rgba(0, 0, 0, 0.15);
   }
   
   .hero-new-wrapper {

@@ -80,7 +80,7 @@
 .project-detail-location svg {
   width: 16px;
   height: 16px;
-  color: #c9a962;
+  color: #ffffff;
 }
 
 .project-detail-title {
@@ -97,7 +97,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #c9a962;
+  color: #ffffff;
 }
 
 .project-detail-price span {
@@ -247,7 +247,7 @@
 }
 
 .project-spec:hover .project-spec-icon {
-  color: #c9a962;
+  color: #ffffff;
 }
 
 .project-spec:hover .project-spec-label {
@@ -445,7 +445,7 @@
 }
 
 .project-feature:hover .project-feature-check {
-  background: #c9a962;
+  background: #ffffff;
 }
 
 .project-feature:hover .project-feature-text {
@@ -470,6 +470,56 @@
   font-size: 0.95rem;
   color: #0a101d;
   transition: color 0.3s ease;
+}
+
+/* Feature Tooltip */
+.project-feature {
+  position: relative;
+  cursor: help;
+}
+
+.project-feature::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: #0a101d;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 280px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.project-feature::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  border: 6px solid transparent;
+  border-top-color: #0a101d;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.project-feature:hover::after,
+.project-feature:hover::before {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ========================================
