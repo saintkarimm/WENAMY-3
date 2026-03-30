@@ -50,7 +50,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-light">
+  <nav class="navbar" id="mainNavbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
         <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
@@ -636,6 +636,43 @@
         });
       });
     });
+    
+    // Navbar adaptive color based on section background
+    // Detects when navbar overlaps with dark/light sections and toggles navbar-light class
+    (function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (!navbar) return;
+      
+      // Sections that should trigger light navbar (light backgrounds)
+      const lightSections = document.querySelectorAll('.projects-section, .projects-filter');
+      
+      // Sections that should trigger dark navbar (dark backgrounds)  
+      const darkSections = document.querySelectorAll('.projects-hero');
+      
+      const observerOptions = {
+        root: null,
+        rootMargin: '-10% 0px -85% 0px', // Trigger when section is near navbar
+        threshold: 0
+      };
+      
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains('projects-hero')) {
+              // Dark section - remove navbar-light (dark text on dark bg)
+              navbar.classList.remove('navbar-light');
+            } else {
+              // Light section - add navbar-light (dark text on light bg)
+              navbar.classList.add('navbar-light');
+            }
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all sections
+      lightSections.forEach(section => sectionObserver.observe(section));
+      darkSections.forEach(section => sectionObserver.observe(section));
+    })();
   </script>
 </body>
 </html>
