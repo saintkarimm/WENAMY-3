@@ -49,7 +49,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-light">
+  <nav class="navbar" id="mainNavbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
         <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
@@ -343,6 +343,38 @@
           });
         });
       });
+      
+      // Navbar adaptive color based on section background
+      (function() {
+        const navbar = document.getElementById('mainNavbar');
+        if (!navbar) return;
+        
+        // Dark hero section
+        const darkSections = document.querySelectorAll('.page-luxury-hero');
+        // Light content sections
+        const lightSections = document.querySelectorAll('.offplan-luxury-section, .offplan-benefits-section, .page-cta-section');
+        
+        const observerOptions = {
+          root: null,
+          rootMargin: '-10% 0px -85% 0px',
+          threshold: 0
+        };
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains('page-luxury-hero')) {
+                navbar.classList.remove('navbar-light');
+              } else {
+                navbar.classList.add('navbar-light');
+              }
+            }
+          });
+        }, observerOptions);
+        
+        lightSections.forEach(section => sectionObserver.observe(section));
+        darkSections.forEach(section => sectionObserver.observe(section));
+      })();
     });
   </script>
 </body>

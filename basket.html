@@ -293,7 +293,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-light">
+  <nav class="navbar" id="mainNavbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
         <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
@@ -575,6 +575,15 @@
 
     // Initial render
     renderBasket();
+    
+    // Navbar adaptive color based on section background
+    (function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (!navbar) return;
+      
+      // Basket page has light background, always use light navbar
+      navbar.classList.add('navbar-light');
+    })();
   </script>
 </body>
 </html>

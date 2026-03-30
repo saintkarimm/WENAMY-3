@@ -72,7 +72,7 @@
   <!-- HERO SECTION - Luxury Design -->
   <div class="hero-new-wrapper">
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="mainNavbar">
       <div class="nav-left">
         <a href="index.html" class="logo">
           <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
@@ -608,6 +608,43 @@
           });
         });
       }
+      
+      // Navbar adaptive color based on section background
+      // Detects when navbar overlaps with dark/light sections and toggles navbar-light class
+      (function() {
+        const navbar = document.getElementById('mainNavbar');
+        if (!navbar) return;
+        
+        // Sections that should trigger light navbar (light backgrounds)
+        const lightSections = document.querySelectorAll('.featured-property, .bento-grid, .services-luxury');
+        
+        // Sections that should trigger dark navbar (dark backgrounds)  
+        const darkSections = document.querySelectorAll('.hero-new-wrapper, .property-carousel');
+        
+        const observerOptions = {
+          root: null,
+          rootMargin: '-10% 0px -85% 0px',
+          threshold: 0
+        };
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const isDark = entry.target.classList.contains('hero-new-wrapper') || 
+                           entry.target.classList.contains('property-carousel') ||
+                           entry.target.classList.contains('section-dark');
+              if (isDark) {
+                navbar.classList.remove('navbar-light');
+              } else {
+                navbar.classList.add('navbar-light');
+              }
+            }
+          });
+        }, observerOptions);
+        
+        lightSections.forEach(section => sectionObserver.observe(section));
+        darkSections.forEach(section => sectionObserver.observe(section));
+      })();
     });
   </script>
 </body>

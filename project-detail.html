@@ -48,7 +48,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-light">
+  <nav class="navbar" id="mainNavbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
         <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28">
@@ -449,5 +449,36 @@
   <script src="js/basket.js"></script>
   <script src="js/chatbot.js"></script>
   <script src="js/navbar.js"></script>
+  <script>
+    // Navbar adaptive color based on section background
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (!navbar) return;
+      
+      const darkSections = document.querySelectorAll('.project-detail-hero');
+      const lightSections = document.querySelectorAll('.project-features-section, .project-cta-section');
+      
+      const observerOptions = {
+        root: null,
+        rootMargin: '-10% 0px -85% 0px',
+        threshold: 0
+      };
+      
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains('project-detail-hero')) {
+              navbar.classList.remove('navbar-light');
+            } else {
+              navbar.classList.add('navbar-light');
+            }
+          }
+        });
+      }, observerOptions);
+      
+      lightSections.forEach(section => sectionObserver.observe(section));
+      darkSections.forEach(section => sectionObserver.observe(section));
+    });
+  </script>
 </body>
 </html>
