@@ -2,7 +2,7 @@
 /* Matches hero section dark gradient aesthetic */
 
 .footer {
-  background: linear-gradient(rgba(10, 16, 29, 0.85), rgba(10, 16, 29, 0.9)), url('../images/footer-image.png') center/cover no-repeat;
+  background: linear-gradient(rgba(10, 16, 29, 0.6), rgba(10, 16, 29, 0.7)), url('../images/footer-image.png') center/cover no-repeat;
   color: #ffffff;
   padding: 5rem 4rem 2rem;
   font-family: 'Inter', sans-serif;
