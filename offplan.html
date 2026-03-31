@@ -45,6 +45,466 @@
   <style>
     /* Prevent FOUC - hide navbar until CSS loads */
     .navbar { visibility: hidden; }
+    
+    /* Off-Plan Modal Styles */
+    .offplan-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .offplan-modal.active {
+      display: flex;
+    }
+    
+    .offplan-modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+    }
+    
+    .offplan-modal-content {
+      position: relative;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      max-width: 900px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      animation: modalSlideIn 0.3s ease-out;
+    }
+    
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .offplan-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    
+    .offplan-modal-close:hover {
+      background: #ffffff;
+      transform: rotate(90deg);
+    }
+    
+    /* Carousel Styles */
+    .offplan-modal-carousel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 1.5rem 1.5rem 0 0;
+    }
+    
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+    }
+    
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    
+    .carousel-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 5;
+    }
+    
+    .carousel-btn:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .carousel-prev { left: 1rem; }
+    .carousel-next { right: 1rem; }
+    
+    .carousel-dots {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 5;
+    }
+    
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+      background: #ffffff;
+      width: 24px;
+      border-radius: 5px;
+    }
+    
+    /* Modal Details */
+    .offplan-modal-details {
+      padding: 2rem;
+    }
+    
+    .offplan-modal-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: #10b981;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .offplan-modal-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+    
+    .offplan-modal-location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .offplan-modal-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-item {
+      text-align: center;
+    }
+    
+    .feature-label {
+      display: block;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-bottom: 0.25rem;
+    }
+    
+    .feature-value {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    
+    .offplan-modal-description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
+    
+    .offplan-modal-highlights {
+      margin-bottom: 1.5rem;
+    }
+    
+    .offplan-modal-highlights h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.75rem;
+    }
+    
+    .offplan-modal-highlights ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .offplan-modal-highlights li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
+    
+    .offplan-modal-highlights li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: 700;
+    }
+    
+    .offplan-modal-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .offplan-modal-btn {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .offplan-modal-btn.primary {
+      background: #1a1a1a;
+      color: #ffffff;
+    }
+    
+    .offplan-modal-btn.primary:hover {
+      background: #333333;
+      transform: translateY(-2px);
+    }
+    
+    .offplan-modal-btn.secondary {
+      background: #f1f5f9;
+      color: #1a1a1a;
+    }
+    
+    .offplan-modal-btn.secondary:hover {
+      background: #e2e8f0;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .offplan-modal-content {
+        width: 95%;
+        max-height: 95vh;
+        border-radius: 1rem;
+      }
+      
+      .offplan-modal-carousel {
+        height: 250px;
+        border-radius: 1rem 1rem 0 0;
+      }
+      
+      .offplan-modal-details {
+        padding: 1.5rem;
+      }
+      
+      .offplan-modal-title {
+        font-size: 1.4rem;
+      }
+      
+      .offplan-modal-features {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+      
+      .feature-item {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+      }
+      
+      .offplan-modal-actions {
+        flex-direction: column;
+      }
+    }
+    
+    /* Image Lightbox Styles */
+    .image-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 2rem;
+    }
+    
+    .image-lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .lightbox-image {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 0.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    
+    .image-lightbox.active .lightbox-image {
+      transform: scale(1);
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 2001;
+    }
+    
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+    
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 2001;
+    }
+    
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .lightbox-prev {
+      left: 2rem;
+    }
+    
+    .lightbox-next {
+      right: 2rem;
+    }
+    
+    .lightbox-counter {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      z-index: 2001;
+    }
+    
+    @media (max-width: 768px) {
+      .lightbox-close {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .lightbox-image {
+        max-width: 95%;
+        max-height: 85vh;
+      }
+      
+      .lightbox-nav {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .lightbox-prev {
+        left: 0.5rem;
+      }
+      
+      .lightbox-next {
+        right: 0.5rem;
+      }
+      
+      .lightbox-counter {
+        bottom: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -143,6 +603,7 @@
         <button class="category-pill" data-category="villa">Villa</button>
         <button class="category-pill" data-category="mansions">Mansions</button>
         <button class="category-pill" data-category="townhouses">Townhouses</button>
+        <button class="category-pill" data-category="vacation-homes">Vacation Homes</button>
       </div>
     </div>
   </section>
@@ -150,28 +611,787 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
-      <!-- Luxury Multi-Unit Apartment Contemporary -->
-      <article class="offplan-luxury-card scroll-animate">
+      <!-- 4 Bedroom Townhouse with Boy's Quarters -->
+      <article class="offplan-luxury-card scroll-animate" data-category="townhouses" onclick="openTownhouseModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/hero 1st image.jpg" alt="Luxury Multi-Unit Apartment Contemporary">
-          <span class="offplan-luxury-badge available">Available Now</span>
+          <img src="images/offplan/OFFPLAN1/1st.jpg" alt="4 Bedroom Townhouse with Boy's Quarters">
         </div>
         <div class="offplan-luxury-content">
-          <h3 class="offplan-luxury-name">Luxury Multi-Unit Apartment Contemporary</h3>
-          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Sophisticated modern apartment building featuring multiple residential units, expansive balconies, floor-to-ceiling glass, and clean architectural lines. Designed for premium urban living, offering spacious layouts, high-end finishes, and integrated greenery for comfort and elegance.</p>
+          <h3 class="offplan-luxury-name">4 Bedroom Townhouse with Boy's Quarters</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Spacious 4 family bedroom townhouses with boy's quarters, featuring modern design, ample parking, and premium finishes. Perfect for families seeking comfort and elegance in a serene community.</p>
           <p class="offplan-luxury-location">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
               <circle cx="12" cy="10" r="3"/>
             </svg>
-            Accra, Ghana
+            Tema Community 25
           </p>
-          <div class="offplan-luxury-price">Contact for Pricing</div>
-          <a href="contact.html" class="offplan-luxury-btn">Inquire Now</a>
+          <div class="offplan-luxury-price">from $320,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openTownhouseModal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- 2 Bedroom Leisure Home -->
+      <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openVacationModal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN2/1st.jpeg" alt="2 Bedroom Leisure Home">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">2 Bedroom Leisure Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Beautiful 2 bedroom leisure home perfect for vacation getaways. Features modern amenities, scenic views, and comfortable living spaces ideal for relaxation and unwinding in Akosombo.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Akosombo
+          </p>
+          <div class="offplan-luxury-price">$220,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openVacationModal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- 2 Bedroom Leisure Home - Aburi -->
+      <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openAburiModal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN3/1st.jpeg" alt="2 Bedroom Leisure Home - Aburi">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">2 Bedroom Leisure Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Stunning 2 bedroom leisure home nestled in the serene hills of Aburi. Perfect for weekend retreats with beautiful mountain views, fresh air, and peaceful surroundings.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Aburi
+          </p>
+          <div class="offplan-luxury-price">$225,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openAburiModal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- 4 Bedroom Family Home Duplex - Aburi -->
+      <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplexModal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN4/1st.jpeg" alt="4 Bedroom Family Home Duplex">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">4 Bedroom Family Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">A residential project developed under a contemporary and functional vision. Architecture defined by sober volumes, clean lines, and carefully selected materials. Prioritizes natural lighting, right proportion of spaces, and balanced relationship between interior and exterior.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Aburi
+          </p>
+          <div class="offplan-luxury-price">$265,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openDuplexModal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- OFFPLAN7: 3 Bedroom Beach Home - Kokrobite -->
+      <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openBeach7Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN7/1st.jpeg" alt="3 Bedroom Beach Home">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3 Bedroom Beach Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Who decided bedrooms shouldn't feel like a beachfront observatory? And since when is marble allowed to look this soft? Is this still architecture, or already the world's calmest movie scene?</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Kokrobite
+          </p>
+          <div class="offplan-luxury-price">$355,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openBeach7Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- OFFPLAN6: Green Mountain Vacation Home - Aburi -->
+      <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openVacation6Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN6/1st.jpeg" alt="Green Mountain Vacation Home">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Green Mountain Vacation Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Concrete floating over a silent valley of Aburi. Warm timber behind cold mass. Glass framing mountains like artwork. Architecture is strongest when it does less.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Aburi
+          </p>
+          <div class="offplan-luxury-price">$325,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openVacation6Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- OFFPLAN5: 3 Bedroom Family Home Duplex - Aburi -->
+      <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplex5Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN5/1st.jpeg" alt="3 Bedroom Family Home Duplex">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3 Bedroom Family Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">A project born under a minimalist and contemporary vision, where every line and every volume stands out from its surroundings, creating a harmonious contrast with the surrounding landscape.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Aburi
+          </p>
+          <div class="offplan-luxury-price">$245,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openDuplex5Modal()">View Details</button>
         </div>
       </article>
     </div>
   </section>
+
+  <!-- Townhouse Modal -->
+  <div class="offplan-modal" id="townhouseModal">
+    <div class="offplan-modal-overlay" onclick="closeTownhouseModal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeTownhouseModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="townhouseCarouselContainer">
+          <img src="images/offplan/OFFPLAN1/1st.jpg" alt="Townhouse View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/2nd.jpg" alt="Townhouse View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/3rd.jpg" alt="Townhouse View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/4th.jpeg" alt="Townhouse View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/5th.jpeg" alt="Townhouse View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveTownhouseCarousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveTownhouseCarousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="townhouseCarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">4 Bedroom Townhouse with Boy's Quarters</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Tema Community 25
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">4</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">5</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Boy's Quarters</span>
+            <span class="feature-value">1</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Spacious 4 family bedroom townhouses with boy's quarters, featuring modern design, ample parking, and premium finishes. Perfect for families seeking comfort and elegance in a serene community.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>4 spacious family bedrooms</li>
+            <li>5 modern washrooms</li>
+            <li>1 boy's quarters</li>
+            <li>Modern architectural design</li>
+            <li>Ample parking space</li>
+            <li>Premium finishes throughout</li>
+            <li>Serene community setting</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vacation Home Modal -->
+  <div class="offplan-modal" id="vacationModal">
+    <div class="offplan-modal-overlay" onclick="closeVacationModal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeVacationModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="vacationCarouselContainer">
+          <img src="images/offplan/OFFPLAN2/1st.jpeg" alt="Vacation Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/2nd.jpeg" alt="Vacation Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/3rd.jpeg" alt="Vacation Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/4th.jpeg" alt="Vacation Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/5th.jpeg" alt="Vacation Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/6th.jpeg" alt="Vacation Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/7th.jpeg" alt="Vacation Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/8th.jpeg" alt="Vacation Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/9th.jpeg" alt="Vacation Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/10th.jpeg" alt="Vacation Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/11th.jpeg" alt="Vacation Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/12th.jpeg" alt="Vacation Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/13th.jpeg" alt="Vacation Home View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveVacationCarousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveVacationCarousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="vacationCarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">2 Bedroom Leisure Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Akosombo
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">2</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Vacation Homes</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Beautiful 2 bedroom leisure home perfect for vacation getaways. Features modern amenities, scenic views, and comfortable living spaces ideal for relaxation and unwinding in Akosombo.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>2 comfortable bedrooms</li>
+            <li>3 modern washrooms</li>
+            <li>Scenic Akosombo location</li>
+            <li>Perfect for vacation getaways</li>
+            <li>Modern amenities throughout</li>
+            <li>Relaxing living spaces</li>
+            <li>Ideal for unwinding</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aburi Vacation Home Modal -->
+  <div class="offplan-modal" id="aburiModal">
+    <div class="offplan-modal-overlay" onclick="closeAburiModal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeAburiModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="aburiCarouselContainer">
+          <img src="images/offplan/OFFPLAN3/1st.jpeg" alt="Aburi Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/2nd.jpeg" alt="Aburi Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/3rd.jpeg" alt="Aburi Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/4th.jpeg" alt="Aburi Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/5th.jpeg" alt="Aburi Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/6th.jpeg" alt="Aburi Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/7th.jpeg" alt="Aburi Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/8th.jpeg" alt="Aburi Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/9th.jpeg" alt="Aburi Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/10th.jpeg" alt="Aburi Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/11th.jpeg" alt="Aburi Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/12th.jpeg" alt="Aburi Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveAburiCarousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveAburiCarousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="aburiCarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">2 Bedroom Leisure Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Aburi
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">2</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Vacation Homes</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Stunning 2 bedroom leisure home nestled in the serene hills of Aburi. Perfect for weekend retreats with beautiful mountain views, fresh air, and peaceful surroundings.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>2 comfortable bedrooms</li>
+            <li>3 modern washrooms</li>
+            <li>Scenic Aburi mountain location</li>
+            <li>Perfect for weekend retreats</li>
+            <li>Beautiful mountain views</li>
+            <li>Fresh air and peaceful surroundings</li>
+            <li>Ideal relaxation getaway</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Duplex Family Home Modal -->
+  <div class="offplan-modal" id="duplexModal">
+    <div class="offplan-modal-overlay" onclick="closeDuplexModal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeDuplexModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="duplexCarouselContainer">
+          <img src="images/offplan/OFFPLAN4/1st.jpeg" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/2nd.jpeg" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/3rd.jpeg" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/4th.jpeg" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/5th.jpeg" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/6th.jpeg" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveDuplexCarousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveDuplexCarousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="duplexCarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">4 Bedroom Family Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Aburi
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">4</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">5</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Duplex</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          A residential project developed under a contemporary and functional vision. Architecture defined by sober volumes, clean lines, and carefully selected materials. The design prioritizes natural lighting, the right proportion of spaces, and a balanced relationship between interior and exterior, responding to the needs of everyday life and family living.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>4 spacious family bedrooms</li>
+            <li>5 modern washrooms</li>
+            <li>Contemporary architecture</li>
+            <li>Sober volumes and clean lines</li>
+            <li>Natural lighting prioritized</li>
+            <li>Balanced interior-exterior relationship</li>
+            <li>Perfect for family living</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN5 Modal: 3 Bedroom Family Home Duplex - Aburi -->
+  <div class="offplan-modal" id="duplex5Modal">
+    <div class="offplan-modal-overlay" onclick="closeDuplex5Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeDuplex5Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="duplex5CarouselContainer">
+          <img src="images/offplan/OFFPLAN5/1st.jpeg" alt="3 Bedroom Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/2nd.jpeg" alt="3 Bedroom Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/3rd.jpeg" alt="3 Bedroom Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/4th.jpeg" alt="3 Bedroom Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/5th.jpeg" alt="3 Bedroom Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/6th.jpeg" alt="3 Bedroom Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/7th.jpeg" alt="3 Bedroom Duplex View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/8th.jpeg" alt="3 Bedroom Duplex View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/9th.jpeg" alt="3 Bedroom Duplex View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveDuplex5Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveDuplex5Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="duplex5CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3 Bedroom Family Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Aburi
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">4</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Duplex</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          A project born under a minimalist and contemporary vision, where every line and every volume stands out from its surroundings, creating a harmonious contrast with the surrounding landscape. Light, proportion and purity in materials become the protagonists, giving life to spaces that inspire calm, identity and modernity.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>3 spacious family bedrooms</li>
+            <li>4 modern washrooms</li>
+            <li>Minimalist contemporary architecture</li>
+            <li>Land area: 144 m²</li>
+            <li>Building area: 200 m²</li>
+            <li>Purity in materials and proportions</li>
+            <li>Spaces that inspire calm and identity</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN6 Modal: Green Mountain Vacation Home - Aburi -->
+  <div class="offplan-modal" id="vacation6Modal">
+    <div class="offplan-modal-overlay" onclick="closeVacation6Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeVacation6Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="vacation6CarouselContainer">
+          <img src="images/offplan/OFFPLAN6/1st.jpeg" alt="Green Mountain View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/2nd.jpeg" alt="Green Mountain View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/3rd.jpeg" alt="Green Mountain View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/4th.jpeg" alt="Green Mountain View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/5th.jpeg" alt="Green Mountain View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/6th.jpeg" alt="Green Mountain View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/7th.jpeg" alt="Green Mountain View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/8th.jpeg" alt="Green Mountain View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/9th.jpeg" alt="Green Mountain View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/10th.jpeg" alt="Green Mountain View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/11th.jpeg" alt="Green Mountain View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/12th.jpeg" alt="Green Mountain View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/13th.jpeg" alt="Green Mountain View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveVacation6Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveVacation6Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="vacation6CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Green Mountain Vacation Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Aburi
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">4</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">5</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Vacation Home</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Concrete floating over a silent valley of Aburi. Warm timber behind cold mass. Glass framing mountains like artwork. Architecture is strongest when it does less. Large windows that merge indoors and outdoors together in harmony.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>4 spacious bedrooms</li>
+            <li>5 modern washrooms</li>
+            <li>Large windows merging indoors and outdoors</li>
+            <li>Warm timber and concrete architecture</li>
+            <li>Panoramic mountain views</li>
+            <li>Nestled in the serene Aburi hills</li>
+            <li>Contemporary minimalist design</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN7 Modal: 3 Bedroom Beach Home - Kokrobite -->
+  <div class="offplan-modal" id="beach7Modal">
+    <div class="offplan-modal-overlay" onclick="closeBeach7Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeBeach7Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="beach7CarouselContainer">
+          <img src="images/offplan/OFFPLAN7/1st.jpeg" alt="Beach Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/2nd.jpeg" alt="Beach Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/3rd.jpeg" alt="Beach Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/4th.jpeg" alt="Beach Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/5th.jpeg" alt="Beach Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/6th.jpeg" alt="Beach Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/7th.jpeg" alt="Beach Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveBeach7Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveBeach7Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="beach7CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3 Bedroom Beach Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Kokrobite
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">5</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Vacation Home</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Who decided bedrooms shouldn't feel like a beachfront observatory? And since when is marble allowed to look this soft? Is this still architecture, or already the world's calmest movie scene?
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>3 bedrooms with beachfront views</li>
+            <li>5 modern washrooms</li>
+            <li>Soft marble interiors</li>
+            <li>Beachfront observatory feel</li>
+            <li>Steps from Kokrobite beach</li>
+            <li>Calm and cinematic atmosphere</li>
+            <li>Premium vacation retreat</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Lightbox -->
+  <div class="image-lightbox" id="imageLightbox">
+    <button class="lightbox-close" onclick="closeLightbox(event)">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" onclick="moveLightbox(-1, event)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <img src="" alt="Full size image" class="lightbox-image" id="lightboxImage" onclick="event.stopPropagation()">
+    <button class="lightbox-nav lightbox-next" onclick="moveLightbox(1, event)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
+  </div>
 
   <!-- Benefits Section -->
   <section class="offplan-benefits-section">
@@ -325,20 +1545,20 @@
           const category = pill.dataset.category;
 
           offplanCards.forEach(card => {
-            if (category === 'all') {
+            const cardCategory = card.dataset.category;
+            
+            if (category === 'all' || cardCategory === category) {
               card.style.display = 'block';
               setTimeout(() => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
               }, 10);
             } else {
-              // Check if card matches category (you can add data-category to cards)
-              // For now, show all with animation
-              card.style.display = 'block';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
               setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-              }, 10);
+                card.style.display = 'none';
+              }, 300);
             }
           });
         });
@@ -375,6 +1595,455 @@
         lightSections.forEach(section => sectionObserver.observe(section));
         darkSections.forEach(section => sectionObserver.observe(section));
       })();
+    });
+    
+    // Townhouse Modal Functions
+    let townhouseCurrentSlide = 0;
+    const townhouseSlides = document.querySelectorAll('#townhouseCarouselContainer .carousel-slide');
+    const townhouseTotalSlides = townhouseSlides.length;
+    
+    function openTownhouseModal() {
+      document.getElementById('townhouseModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createTownhouseCarouselDots();
+      updateTownhouseCarousel();
+    }
+    
+    function closeTownhouseModal() {
+      document.getElementById('townhouseModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createTownhouseCarouselDots() {
+      const dotsContainer = document.getElementById('townhouseCarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < townhouseTotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === townhouseCurrentSlide ? ' active' : '');
+        dot.onclick = () => goToTownhouseSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateTownhouseCarousel() {
+      townhouseSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === townhouseCurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#townhouseCarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === townhouseCurrentSlide);
+      });
+    }
+    
+    function moveTownhouseCarousel(direction) {
+      townhouseCurrentSlide = (townhouseCurrentSlide + direction + townhouseTotalSlides) % townhouseTotalSlides;
+      updateTownhouseCarousel();
+    }
+    
+    function goToTownhouseSlide(index) {
+      townhouseCurrentSlide = index;
+      updateTownhouseCarousel();
+    }
+    
+    // Vacation Modal Functions
+    let vacationCurrentSlide = 0;
+    const vacationSlides = document.querySelectorAll('#vacationCarouselContainer .carousel-slide');
+    const vacationTotalSlides = vacationSlides.length;
+    
+    function openVacationModal() {
+      document.getElementById('vacationModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createVacationCarouselDots();
+      updateVacationCarousel();
+    }
+    
+    function closeVacationModal() {
+      document.getElementById('vacationModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createVacationCarouselDots() {
+      const dotsContainer = document.getElementById('vacationCarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < vacationTotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === vacationCurrentSlide ? ' active' : '');
+        dot.onclick = () => goToVacationSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateVacationCarousel() {
+      vacationSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === vacationCurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#vacationCarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === vacationCurrentSlide);
+      });
+    }
+    
+    function moveVacationCarousel(direction) {
+      vacationCurrentSlide = (vacationCurrentSlide + direction + vacationTotalSlides) % vacationTotalSlides;
+      updateVacationCarousel();
+    }
+    
+    function goToVacationSlide(index) {
+      vacationCurrentSlide = index;
+      updateVacationCarousel();
+    }
+    
+    // Aburi Modal Functions
+    let aburiCurrentSlide = 0;
+    const aburiSlides = document.querySelectorAll('#aburiCarouselContainer .carousel-slide');
+    const aburiTotalSlides = aburiSlides.length;
+    
+    function openAburiModal() {
+      document.getElementById('aburiModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createAburiCarouselDots();
+      updateAburiCarousel();
+    }
+    
+    function closeAburiModal() {
+      document.getElementById('aburiModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createAburiCarouselDots() {
+      const dotsContainer = document.getElementById('aburiCarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < aburiTotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === aburiCurrentSlide ? ' active' : '');
+        dot.onclick = () => goToAburiSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateAburiCarousel() {
+      aburiSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === aburiCurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#aburiCarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === aburiCurrentSlide);
+      });
+    }
+    
+    function moveAburiCarousel(direction) {
+      aburiCurrentSlide = (aburiCurrentSlide + direction + aburiTotalSlides) % aburiTotalSlides;
+      updateAburiCarousel();
+    }
+    
+    function goToAburiSlide(index) {
+      aburiCurrentSlide = index;
+      updateAburiCarousel();
+    }
+    
+    // Duplex Modal Functions
+    let duplexCurrentSlide = 0;
+    const duplexSlides = document.querySelectorAll('#duplexCarouselContainer .carousel-slide');
+    const duplexTotalSlides = duplexSlides.length;
+    
+    let duplex5CurrentSlide = 0;
+    const duplex5Slides = document.querySelectorAll('#duplex5CarouselContainer .carousel-slide');
+    const duplex5TotalSlides = duplex5Slides.length;
+    
+    let vacation6CurrentSlide = 0;
+    const vacation6Slides = document.querySelectorAll('#vacation6CarouselContainer .carousel-slide');
+    const vacation6TotalSlides = vacation6Slides.length;
+    
+    let beach7CurrentSlide = 0;
+    const beach7Slides = document.querySelectorAll('#beach7CarouselContainer .carousel-slide');
+    const beach7TotalSlides = beach7Slides.length;
+    
+    function openBeach7Modal() {
+      document.getElementById('beach7Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createBeach7CarouselDots();
+      updateBeach7Carousel();
+    }
+    
+    function closeBeach7Modal() {
+      document.getElementById('beach7Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createBeach7CarouselDots() {
+      const dotsContainer = document.getElementById('beach7CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < beach7TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === beach7CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToBeach7Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateBeach7Carousel() {
+      beach7Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === beach7CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#beach7CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === beach7CurrentSlide);
+      });
+    }
+    
+    function moveBeach7Carousel(direction) {
+      beach7CurrentSlide = (beach7CurrentSlide + direction + beach7TotalSlides) % beach7TotalSlides;
+      updateBeach7Carousel();
+    }
+    
+    function goToBeach7Slide(index) {
+      beach7CurrentSlide = index;
+      updateBeach7Carousel();
+    }
+    
+    function openVacation6Modal() {
+      document.getElementById('vacation6Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createVacation6CarouselDots();
+      updateVacation6Carousel();
+    }
+    
+    function closeVacation6Modal() {
+      document.getElementById('vacation6Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createVacation6CarouselDots() {
+      const dotsContainer = document.getElementById('vacation6CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < vacation6TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === vacation6CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToVacation6Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateVacation6Carousel() {
+      vacation6Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === vacation6CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#vacation6CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === vacation6CurrentSlide);
+      });
+    }
+    
+    function moveVacation6Carousel(direction) {
+      vacation6CurrentSlide = (vacation6CurrentSlide + direction + vacation6TotalSlides) % vacation6TotalSlides;
+      updateVacation6Carousel();
+    }
+    
+    function goToVacation6Slide(index) {
+      vacation6CurrentSlide = index;
+      updateVacation6Carousel();
+    }
+    
+    function openDuplex5Modal() {
+      document.getElementById('duplex5Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createDuplex5CarouselDots();
+      updateDuplex5Carousel();
+    }
+    
+    function closeDuplex5Modal() {
+      document.getElementById('duplex5Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createDuplex5CarouselDots() {
+      const dotsContainer = document.getElementById('duplex5CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < duplex5TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === duplex5CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToDuplex5Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateDuplex5Carousel() {
+      duplex5Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === duplex5CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#duplex5CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === duplex5CurrentSlide);
+      });
+    }
+    
+    function moveDuplex5Carousel(direction) {
+      duplex5CurrentSlide = (duplex5CurrentSlide + direction + duplex5TotalSlides) % duplex5TotalSlides;
+      updateDuplex5Carousel();
+    }
+    
+    function goToDuplex5Slide(index) {
+      duplex5CurrentSlide = index;
+      updateDuplex5Carousel();
+    }
+    
+    function openDuplexModal() {
+      document.getElementById('duplexModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createDuplexCarouselDots();
+      updateDuplexCarousel();
+    }
+    
+    function closeDuplexModal() {
+      document.getElementById('duplexModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createDuplexCarouselDots() {
+      const dotsContainer = document.getElementById('duplexCarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < duplexTotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === duplexCurrentSlide ? ' active' : '');
+        dot.onclick = () => goToDuplexSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateDuplexCarousel() {
+      duplexSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === duplexCurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#duplexCarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === duplexCurrentSlide);
+      });
+    }
+    
+    function moveDuplexCarousel(direction) {
+      duplexCurrentSlide = (duplexCurrentSlide + direction + duplexTotalSlides) % duplexTotalSlides;
+      updateDuplexCarousel();
+    }
+    
+    function goToDuplexSlide(index) {
+      duplexCurrentSlide = index;
+      updateDuplexCarousel();
+    }
+    
+    // Lightbox Functions
+    let lightboxImages = [];
+    let lightboxCurrentIndex = 0;
+    let lightboxCurrentModal = '';
+    
+    function openLightbox(src, e) {
+      if (e) e.stopPropagation();
+      
+      // Determine which modal is active and get its images
+      const townhouseModal = document.getElementById('townhouseModal');
+      const vacationModal = document.getElementById('vacationModal');
+      
+      if (townhouseModal.classList.contains('active')) {
+        lightboxCurrentModal = 'townhouse';
+        lightboxImages = Array.from(document.querySelectorAll('#townhouseCarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = townhouseCurrentSlide;
+      } else if (vacationModal.classList.contains('active')) {
+        lightboxCurrentModal = 'vacation';
+        lightboxImages = Array.from(document.querySelectorAll('#vacationCarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = vacationCurrentSlide;
+      } else {
+        // Check for Aburi modal
+        const aburiModal = document.getElementById('aburiModal');
+        const duplexModal = document.getElementById('duplexModal');
+        if (aburiModal.classList.contains('active')) {
+          lightboxCurrentModal = 'aburi';
+          lightboxImages = Array.from(document.querySelectorAll('#aburiCarouselContainer .carousel-slide')).map(img => img.src);
+          lightboxCurrentIndex = aburiCurrentSlide;
+        } else if (duplexModal.classList.contains('active')) {
+          lightboxCurrentModal = 'duplex';
+          lightboxImages = Array.from(document.querySelectorAll('#duplexCarouselContainer .carousel-slide')).map(img => img.src);
+          lightboxCurrentIndex = duplexCurrentSlide;
+        } else {
+          const duplex5Modal = document.getElementById('duplex5Modal');
+          const vacation6Modal = document.getElementById('vacation6Modal');
+          if (duplex5Modal.classList.contains('active')) {
+            lightboxCurrentModal = 'duplex5';
+            lightboxImages = Array.from(document.querySelectorAll('#duplex5CarouselContainer .carousel-slide')).map(img => img.src);
+            lightboxCurrentIndex = duplex5CurrentSlide;
+          } else if (vacation6Modal.classList.contains('active')) {
+            lightboxCurrentModal = 'vacation6';
+            lightboxImages = Array.from(document.querySelectorAll('#vacation6CarouselContainer .carousel-slide')).map(img => img.src);
+            lightboxCurrentIndex = vacation6CurrentSlide;
+          } else {
+            const beach7Modal = document.getElementById('beach7Modal');
+            if (beach7Modal.classList.contains('active')) {
+              lightboxCurrentModal = 'beach7';
+              lightboxImages = Array.from(document.querySelectorAll('#beach7CarouselContainer .carousel-slide')).map(img => img.src);
+              lightboxCurrentIndex = beach7CurrentSlide;
+            }
+          }
+        }
+      }
+      
+      updateLightbox();
+      const lightbox = document.getElementById('imageLightbox');
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function updateLightbox() {
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxCounter = document.getElementById('lightboxCounter');
+      lightboxImage.src = lightboxImages[lightboxCurrentIndex];
+      lightboxCounter.textContent = `${lightboxCurrentIndex + 1} / ${lightboxImages.length}`;
+    }
+    
+    function moveLightbox(direction, e) {
+      if (e) e.stopPropagation();
+      lightboxCurrentIndex = (lightboxCurrentIndex + direction + lightboxImages.length) % lightboxImages.length;
+      updateLightbox();
+    }
+    
+    function closeLightbox(e) {
+      if (e) e.stopPropagation();
+      const lightbox = document.getElementById('imageLightbox');
+      lightbox.classList.remove('active');
+    }
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const lightbox = document.getElementById('imageLightbox');
+        if (lightbox.classList.contains('active')) {
+          closeLightbox();
+        } else {
+          closeTownhouseModal();
+          closeVacationModal();
+          closeAburiModal();
+          closeDuplexModal();
+          closeDuplex5Modal();
+          closeVacation6Modal();
+          closeBeach7Modal();
+        }
+      }
+    });
+    
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', (e) => {
+      const lightbox = document.getElementById('imageLightbox');
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+          moveLightbox(-1);
+        } else if (e.key === 'ArrowRight') {
+          moveLightbox(1);
+        }
+      }
     });
   </script>
 </body>
