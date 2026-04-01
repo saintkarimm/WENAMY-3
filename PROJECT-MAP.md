@@ -310,5 +310,195 @@ Configuration in `vercel.json`:
 
 ---
 
-*Last Updated: March 30, 2026*  
-*Project Status: Production-Ready Static Site with Premium Glassmorphism UI*
+---
+
+## Off-Plan Properties (offplan.html)
+
+### Overview
+The offplan.html page displays investment properties with category filtering and detailed modal carousels. Each property has:
+- Property card in the main grid
+- Full-screen modal with image carousel
+- Lightbox for full-size image viewing
+- URL parameter support for direct linking
+
+### Categories
+| Category | data-category | Description |
+|----------|---------------|-------------|
+| All | `all` | Shows all properties |
+| Duplexes | `duplexes` | Two-story residential buildings |
+| Vacation Homes | `vacation` / `vacation-homes` | Holiday/retreat properties |
+| Environmentalists | `environmentalists` | Eco-friendly/sustainable designs |
+
+### Property List (16 Total)
+
+| # | Property Name | Category | Bedrooms | Washrooms | Price | Location | Images |
+|---|---------------|----------|----------|-----------|-------|----------|--------|
+| OFFPLAN1 | 3 Bedroom Townhouse | Townhouses | 3 | 3 | $285,000 | Tema Community 25 | 5 |
+| OFFPLAN2 | 4 Bedroom Vacation Home | Vacation Homes | 4 | 5 | $350,000 | Kokrobite | 5 |
+| OFFPLAN3 | 3 Bedroom Aburi Views | Vacation Homes | 3 | 3 | $275,000 | Aburi | 5 |
+| OFFPLAN4 | 3 Bedroom Duplex | Duplexes | 3 | 4 | $250,000 | East Legon Hills | 5 |
+| OFFPLAN5 | 4 Bedroom Duplex | Duplexes | 4 | 5 | $320,000 | East Legon Hills | 5 |
+| OFFPLAN6 | 3 Bedroom Vacation Home | Vacation Homes | 3 | 4 | $295,000 | Aburi | 5 |
+| OFFPLAN7 | 3 Bedroom Beach House | Vacation Homes | 3 | 3 | $410,000 | Kokrobite Beach | 5 |
+| OFFPLAN8 | 3 Bedroom Vacation Home | Vacation Homes | 3 | 4 | $365,000 | Aburi | 7 |
+| OFFPLAN9 | 3 Bedroom Vacation Home | Vacation Homes | 3 | 4 | $335,000 | Aburi | 11 |
+| OFFPLAN10 | 3 Bedroom Duplex | Duplexes | 3 | 4 | $250,000 | East Legon Hills | 20 |
+| OFFPLAN11 | 5 Bedroom Family Home | Environmentalists | 5 | 6 | $365,000 | East Legon Hills | 11 |
+| OFFPLAN12 | 4 Bedroom Duplex | Duplexes | 4 | 5 | $215,000 | Community 25 | 6 |
+| OFFPLAN13 | 4 Bedroom Duplex with Underground Garage | Duplexes | 4 | 5 | $310,000 | Peduasi | 11 |
+| OFFPLAN14 | 4 Bedroom Duplex | Environmentalists | 4 | 5 | $380,000 | East Legon Hills | 12 |
+| OFFPLAN15 | 5 Bedroom Home | Environmentalists | 5 | 6 | $530,000 | Peduasi | 14 |
+| OFFPLAN16 | 3 Bedroom Home | Vacation Homes | 3 | 4 | $310,000 | Peduasi | 13 |
+
+### URL Parameters for Direct Linking
+Append `?project={id}` to offplan.html to auto-open a specific property modal:
+
+| Parameter | Property | Category Filter Applied |
+|-----------|----------|------------------------|
+| `?project=vacation2` | OFFPLAN2 | Vacation Homes |
+| `?project=aburi3` | OFFPLAN3 | Vacation Homes |
+| `?project=duplex4` | OFFPLAN4 | Duplexes |
+| `?project=duplex5` | OFFPLAN5 | Duplexes |
+| `?project=vacation6` | OFFPLAN6 | Vacation Homes |
+| `?project=beach7` | OFFPLAN7 | Vacation Homes |
+| `?project=aburiviews8` | OFFPLAN8 | Vacation Homes |
+| `?project=aburimountain9` | OFFPLAN9 | Vacation Homes |
+| `?project=duplex10` | OFFPLAN10 | Duplexes |
+| `?project=environmental11` | OFFPLAN11 | Environmentalists |
+| `?project=duplex12` | OFFPLAN12 | Duplexes |
+| `?project=duplex13` | OFFPLAN13 | Duplexes |
+| `?project=environmental14` | OFFPLAN14 | Environmentalists |
+| `?project=environmental15` | OFFPLAN15 | Environmentalists |
+
+Example: `https://wenamy.com/offplan?project=duplex10`
+
+### Image Storage
+- **Location:** `images/offplan/OFFPLAN{1-16}/`
+- **Naming:** `1st.jpeg`, `2nd.jpeg`, `3rd.jpeg`, etc.
+- **Formats:** JPEG (primary), PNG (legacy projects)
+- **1st image:** Used for property card thumbnail
+- **All images:** Used in modal carousel
+
+---
+
+## Custom AI Skills (.qoder/skills/)
+
+This project includes custom AI skills that enable automated content management. These skills are located in `.qoder/skills/` and can be used by any AI assistant working on this project.
+
+### Available Skills
+
+#### 1. offplan-project Skill
+**Location:** `.qoder/skills/offplan-project/SKILL.md`
+
+**Purpose:** Adds new off-plan property projects to the offplan.html page with image carousel modal functionality.
+
+**Usage:**
+```
+/offplan-project
+Folder: C:\Users\...\WENAMY 3\images\offplan\OFFPLAN17
+Name: Property Name
+Description: Property description...
+Location: Location Name
+Price: $XXX,XXX
+Category: Duplexes|Vacation Homes|Environmentalists
+```
+
+**What It Does:**
+1. Verifies images exist in the folder (1st.jpeg, 2nd.jpeg, etc.)
+2. Adds property card to offplan-luxury-grid
+3. Creates modal with full image carousel
+4. Adds JavaScript functions for modal/carousel functionality
+5. Integrates with lightbox and escape key handler
+6. Updates URL parameter routing if needed
+
+**Requirements:**
+- Folder with images named `1st.jpeg`, `2nd.jpeg`, etc.
+- At least 1st.jpeg is required
+- Property details (name, description, location, price, category)
+
+---
+
+#### 2. project-image Skill
+**Location:** `.qoder/skills/project-image/SKILL.md`
+
+**Purpose:** Updates project images in projects.html and projects-data.js based on a project folder containing images.
+
+**Usage:**
+```
+/project-image C:\Users\...\WENAMY 3\images\properties\PROJECT X
+```
+
+**What It Does:**
+1. Extracts project name from folder path
+2. Maps project name to project ID in projects-data.js
+3. Verifies images 1st.png through 5th.png exist
+4. Updates projects.html card image (uses 1st.png)
+5. Updates projects-data.js gallery images (uses 2nd-5th.png)
+
+**Image Naming Convention:**
+- `1st.png` - Primary image for projects listing
+- `2nd.png` - First gallery image in project detail
+- `3rd.png` - Second gallery image
+- `4th.png` - Third gallery image
+- `5th.png` - Fourth gallery image
+
+**Requirements:**
+- Folder with images named `1st.png` through `5th.png`
+- Project must exist in projects-data.js
+
+---
+
+### How to Use These Skills
+
+**For AI Assistants:**
+1. Read the skill file: `.qoder/skills/{skill-name}/SKILL.md`
+2. Follow the workflow documented in the skill
+3. Use the exact command format specified
+4. Verify all requirements are met before executing
+
+**For Human Users:**
+1. Type the command (e.g., `/offplan-project` or `/project-image`)
+2. Provide the required information as prompted
+3. The AI will follow the skill's workflow automatically
+
+---
+
+## Image Assets Structure
+
+### Properties (`images/properties/`)
+| Folder | Contents | Usage |
+|--------|----------|-------|
+| `PROJECT 1/` | 1st.png - 5th.png | 3 Bedroom Bungalow |
+| `PROJECT 2/` | 1st.png - 5th.png | 6 Bedroom Villa |
+| `PROJECT 3/` | 1st.png - 5th.png | 4 Bedroom Townhouse |
+| `PROJECT 4/` | 1st.png - 5th.png | Luxury Apartment |
+| `PROJECT 5-12/` | 1st.png - 5th.png | Various properties |
+
+### Off-Plan (`images/offplan/`)
+| Folder | Contents | Property Count |
+|--------|----------|----------------|
+| `OFFPLAN1-7/` | 1st.png - 5th.png | 7 properties |
+| `OFFPLAN8/` | 1st.jpeg - 7th.jpeg | 1 property |
+| `OFFPLAN9/` | 1st.jpeg - 11th.jpeg | 1 property |
+| `OFFPLAN10/` | 1st.jpeg - 20th.jpeg | 1 property |
+| `OFFPLAN11/` | 1st.jpeg - 11th.jpeg | 1 property |
+| `OFFPLAN12/` | 1st.jpeg - 6th.jpeg | 1 property |
+| `OFFPLAN13/` | 1st.jpeg - 11th.jpeg | 1 property |
+| `OFFPLAN14/` | 1st.jpeg - 12th.jpeg | 1 property |
+| `OFFPLAN15/` | 1st.jpeg - 14th.jpeg | 1 property |
+| `OFFPLAN16/` | 1st.jpeg - 13th.jpeg | 1 property |
+
+### Icons (`images/icons/`)
+- `logo.png` - Company logo
+- `basket.png` - Saved properties icon
+- `Services Icons/` - Service category icons
+
+### Hero (`images/hero/`)
+- `modernarc-img.jpg`
+- `sky-img.jpg`
+- `viva-img.jpg`
+
+---
+
+*Last Updated: March 31, 2026*  
+*Project Status: Production-Ready Static Site with 16 Off-Plan Properties and Custom AI Skills*
