@@ -741,6 +741,7 @@
   gap: 1.5rem;
   animation: heroNewFadeIn 1.2s ease-out 0.3s forwards;
   opacity: 0;
+  display: none;
 }
 
 .hero-new-circles {
@@ -1136,18 +1137,51 @@
   }
 }
 
-/* Desktop-only hero image adjustments */
-@media (min-width: 769px) {
+/* Mobile-only hero image adjustments */
+@media (max-width: 768px) {
   .hero-new-bg-wrapper {
-    bottom: -50px;   /* Move down - adjust this value as needed */
-    right: -15%;      /* Move left - adjust this value as needed */
-    width: 80%;      /* ← Desktop wrapper width (increase from 75%) */
-    height: 160vh;    /* ← Desktop wrapper height (increase from 85vh) */
+    bottom: -20px;   /* Move down - adjust this value as needed */
+    right: -5%;      /* Move left - adjust this value as needed */
+    width: 110%;     /* ← Mobile wrapper width */
+    height: 90vh;    /* ← Mobile wrapper height */
   }
   
   .hero-new-bg-image {
     object-position: bottom left;
-    transform: scale(1.2) translateY(450px);  /* Zoom image 20% and move down 50px */
+    transform: scale(1.0) translateY(20px);  /* Zoom image 10% and move down 20px */
+  }
+  
+  /* Mobile hero text adjustments */
+  .hero-new-headline {
+    font-size: 3.0rem;        /* ← Mobile font size */
+    line-height: 1.0;         /* ← Mobile line height */
+    margin-top: 3rem;         /* ← Mobile top margin */
+    text-align: center;         /* ← Mobile text alignment */
+  }
+}
+
+/* Desktop-only hero text adjustments */
+@media (min-width: 769px) {
+  .hero-new-headline {
+    font-size: 7rem;          /* ← Desktop font size */
+    line-height: 1.05;        /* ← Desktop line height */
+    margin-top: 0;            /* ← Desktop top margin */
+    text-align: left;         /* ← Desktop text alignment */
+  }
+}
+
+/* Desktop-only hero image adjustments */
+@media (min-width: 769px) {
+  .hero-new-bg-wrapper {
+    bottom: 90px;   /* Move down - adjust this value as needed */
+    right: -20%;      /* Move left - adjust this value as needed */
+    width: 80%;      /* ← Desktop wrapper width (increase from 75%) */
+    height: 150vh;    /* ← Desktop wrapper height (increase from 85vh) */
+  }
+  
+  .hero-new-bg-image {
+    object-position: bottom left;
+    transform: scale(1.0) translateY(400px);  /* Zoom image 20% and move down 50px */
   }
 }
 

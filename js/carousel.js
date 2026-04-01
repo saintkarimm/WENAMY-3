@@ -11,15 +11,15 @@
 
   let currentIndex = 0;
   let isDragging = false;
-  let isPaused = false;
   let startPos = 0;
   let currentTranslate = 0;
   let prevTranslate = 0;
   let animationID;
   let autoScrollID;
   
-  // Auto-scroll settings
-  const scrollSpeed = 1.2; // pixels per frame
+  // Auto-scroll settings - continuous infinite scroll, no pause
+  const isMobile = window.innerWidth <= 768;
+  const scrollSpeed = isMobile ? 0.8 : 1.6; // slower on mobile (0.8), faster on desktop (1.6)
   const slideWidth = () => slides[0] ? slides[0].offsetWidth : 0;
   const totalWidth = () => slideWidth() * slides.length;
 
@@ -52,45 +52,28 @@
   }
 
   /**
-   * Start continuous auto-scroll (right to left)
+   * Start continuous infinite auto-scroll (right to left, never stops)
    */
   function startAutoScroll() {
     if (autoScrollID) cancelAnimationFrame(autoScrollID);
     
     function scroll() {
-      if (!isPaused && !isDragging) {
+      if (!isDragging) {
         currentTranslate -= scrollSpeed;
         
-        // Check if we need to reset position for infinite loop
+        // Seamless infinite loop - reset when we've scrolled past all original slides
         const originalWidth = slideWidth() * slides.length;
         if (Math.abs(currentTranslate) >= originalWidth) {
           currentTranslate = 0;
         }
         
         track.style.transform = `translateX(${currentTranslate}px)`;
-        
-        // Update indicators based on position
-        updateIndicatorFromPosition();
       }
       
       autoScrollID = requestAnimationFrame(scroll);
     }
     
     autoScrollID = requestAnimationFrame(scroll);
-  }
-
-  /**
-   * Stop auto-scroll
-   */
-  function stopAutoScroll() {
-    isPaused = true;
-  }
-
-  /**
-   * Resume auto-scroll
-   */
-  function resumeAutoScroll() {
-    isPaused = false;
   }
 
   /**
@@ -159,42 +142,9 @@
    * Initialize event listeners
    */
   function initEventListeners() {
-    // Previous button
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        stopAutoScroll();
-        prevSlide();
-        // Resume after 3 seconds
-        setTimeout(resumeAutoScroll, 3000);
-      });
-    }
+    // No navigation controls - decorative carousel only
 
-    // Next button
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        stopAutoScroll();
-        nextSlide();
-        // Resume after 3 seconds
-        setTimeout(resumeAutoScroll, 3000);
-      });
-    }
-
-    // Indicators
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        stopAutoScroll();
-        goToSlide(index);
-        // Resume after 3 seconds
-        setTimeout(resumeAutoScroll, 3000);
-      });
-    });
-
-    // Pause on hover
-    const container = document.querySelector('.carousel-container');
-    if (container) {
-      container.addEventListener('mouseenter', stopAutoScroll);
-      container.addEventListener('mouseleave', resumeAutoScroll);
-    }
+    // No pause on hover - continuous infinite scroll
 
     // Handle resize
     window.addEventListener('resize', () => {
@@ -204,87 +154,14 @@
       updateCarousel();
     }, { passive: true });
 
-    // Pause when tab is hidden
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        stopAutoScroll();
-      } else {
-        resumeAutoScroll();
-      }
-    });
+    // Continue scrolling even when tab is hidden (decorative carousel)
   }
 
   /**
-   * Initialize touch events for swipe
+   * No touch/drag events - purely decorative carousel
    */
   function initTouchEvents() {
-    if (!track) return;
-
-    track.addEventListener('touchstart', touchStart, { passive: true });
-    track.addEventListener('touchend', touchEnd, { passive: true });
-    track.addEventListener('touchmove', touchMove, { passive: true });
-
-    // Mouse events for desktop drag
-    track.addEventListener('mousedown', touchStart);
-    track.addEventListener('mouseup', touchEnd);
-    track.addEventListener('mouseleave', () => {
-      if (isDragging) touchEnd();
-    });
-    track.addEventListener('mousemove', touchMove);
-  }
-
-  function touchStart(e) {
-    isDragging = true;
-    startPos = getPositionX(e);
-    stopAutoScroll();
-    track.style.cursor = 'grabbing';
-  }
-
-  function touchEnd() {
-    isDragging = false;
-    track.style.cursor = 'grab';
-
-    const movedBy = currentTranslate - prevTranslate;
-    const sWidth = slideWidth();
-
-    // Snap to nearest slide
-    if (movedBy < -50) {
-      currentIndex = Math.ceil(Math.abs(currentTranslate) / sWidth);
-    } else if (movedBy > 50) {
-      currentIndex = Math.floor(Math.abs(currentTranslate) / sWidth);
-    }
-    
-    // Ensure index is within bounds
-    const originalCount = slides.length;
-    currentIndex = ((currentIndex % originalCount) + originalCount) % originalCount;
-    
-    currentTranslate = -currentIndex * sWidth;
-    prevTranslate = currentTranslate;
-    
-    track.style.transition = 'transform 0.3s ease-out';
-    updateCarousel();
-    updateIndicators();
-    
-    // Remove transition after animation completes
-    setTimeout(() => {
-      track.style.transition = '';
-    }, 300);
-
-    // Resume auto-scroll after 3 seconds
-    setTimeout(resumeAutoScroll, 3000);
-  }
-
-  function touchMove(e) {
-    if (isDragging) {
-      const currentPosition = getPositionX(e);
-      const diff = currentPosition - startPos;
-      currentTranslate = prevTranslate + diff;
-      track.style.transform = `translateX(${currentTranslate}px)`;
-    }
-  }
-
-  function getPositionX(e) {
-    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    // No interaction - decorative only
   }
 
   // Initialize when DOM is ready

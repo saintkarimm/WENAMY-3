@@ -36,12 +36,7 @@
 
 .carousel-track {
   display: flex;
-  cursor: grab;
   user-select: none;
-}
-
-.carousel-track:active {
-  cursor: grabbing;
 }
 
 .carousel-track .clone {
@@ -57,7 +52,6 @@
 .carousel-slide-image {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
@@ -67,99 +61,20 @@
   object-fit: cover;
 }
 
-.carousel-slide-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-8);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+/* Mobile: Adjust card height */
+@media(max-width: 734px) {
+  .carousel-slide {
+    flex: 0 0 50%; /* Each card takes 50% of screen width */
+    padding: 0 var(--space-1);
+  }
+  
+  .carousel-slide-image {
+    aspect-ratio: 3 / 4;
+    max-height: 250px;
+    border-radius: 0; /* No rounded corners */
+  }
 }
 
-.carousel-slide-location {
-  display: block;
-  font-size: var(--font-size-caption);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-gold);
-  margin-bottom: var(--space-1);
-}
 
-.carousel-slide-title {
-  font-size: var(--font-size-hero-md);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-light);
-  margin-bottom: var(--space-4);
-}
 
-.carousel-slide-overlay .btn {
-  margin-top: var(--space-2);
-}
 
-/* Carousel Controls */
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-full);
-  color: var(--text-light);
-  transition: background-color var(--transition-normal), opacity var(--transition-normal);
-  z-index: 10;
-}
-
-.carousel-control:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Remove disabled state for infinite loop */
-.carousel-control {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.carousel-prev {
-  left: var(--space-4);
-}
-
-.carousel-next {
-  right: var(--space-4);
-}
-
-.carousel-control svg {
-  width: 20px;
-  height: 20px;
-}
-
-/* Carousel Indicators */
-.carousel-indicators {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  margin-top: var(--space-8);
-}
-
-.carousel-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-full);
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: background-color var(--transition-normal), transform var(--transition-normal);
-}
-
-.carousel-indicator.active {
-  background-color: var(--text-light);
-  transform: scale(1.2);
-}
-
-.carousel-indicator:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-}

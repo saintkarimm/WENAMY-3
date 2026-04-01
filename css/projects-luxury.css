@@ -302,7 +302,7 @@
 }
 
 .project-status-badge.off-plan {
-  background: #c9a962;
+  background: #0f172a;
   color: #ffffff;
 }
 
@@ -578,7 +578,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at center, rgba(201, 169, 98, 0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 

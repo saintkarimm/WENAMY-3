@@ -2518,6 +2518,153 @@
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
+      // Check URL parameters for auto-opening modal
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectParam = urlParams.get('project');
+      
+      if (projectParam === 'duplex10') {
+        setTimeout(() => {
+          // Select Duplexes category filter
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          
+          categoryPills.forEach(p => p.classList.remove('active'));
+          const duplexPill = document.querySelector('.category-pill[data-category="duplexes"]');
+          if (duplexPill) duplexPill.classList.add('active');
+          
+          offplanCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            card.style.display = (cardCategory === 'duplexes') ? 'block' : 'none';
+          });
+          
+          openDuplex10Modal();
+        }, 500);
+      } else if (projectParam === 'environmental14') {
+        setTimeout(() => {
+          // Select Environmentalists category filter
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          
+          categoryPills.forEach(p => p.classList.remove('active'));
+          const envPill = document.querySelector('.category-pill[data-category="environmentalists"]');
+          if (envPill) envPill.classList.add('active');
+          
+          offplanCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            card.style.display = (cardCategory === 'environmentalists') ? 'block' : 'none';
+          });
+          
+          openEnvironmental14Modal();
+        }, 500);
+      } else if (projectParam === 'duplex13') {
+        setTimeout(() => {
+          // Select Duplexes category filter
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          
+          categoryPills.forEach(p => p.classList.remove('active'));
+          const duplexPill = document.querySelector('.category-pill[data-category="duplexes"]');
+          if (duplexPill) duplexPill.classList.add('active');
+          
+          offplanCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            card.style.display = (cardCategory === 'duplexes') ? 'block' : 'none';
+          });
+          
+          openDuplex13Modal();
+        }, 500);
+      } else if (projectParam === 'duplex12') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="duplexes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'duplexes') ? 'block' : 'none'; });
+          openDuplex12Modal();
+        }, 500);
+      } else if (projectParam === 'beach7') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="vacation-homes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'vacation-homes') ? 'block' : 'none'; });
+          openBeach7Modal();
+        }, 500);
+      } else if (projectParam === 'vacation6') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="vacation-homes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'vacation-homes') ? 'block' : 'none'; });
+          openVacation6Modal();
+        }, 500);
+      } else if (projectParam === 'duplex4') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="duplexes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'duplexes') ? 'block' : 'none'; });
+          openDuplexModal();
+        }, 500);
+      } else if (projectParam === 'aburi3') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="vacation-homes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'vacation-homes') ? 'block' : 'none'; });
+          openAburiModal();
+        }, 500);
+      } else if (projectParam === 'duplex5') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="duplexes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'duplexes') ? 'block' : 'none'; });
+          openDuplex5Modal();
+        }, 500);
+      } else if (projectParam === 'vacation2') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="vacation-homes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'vacation-homes') ? 'block' : 'none'; });
+          openVacationModal();
+        }, 500);
+      } else if (projectParam === 'aburiviews8') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="vacation-homes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'vacation-homes') ? 'block' : 'none'; });
+          openAburiViews8Modal();
+        }, 500);
+      } else if (projectParam === 'aburimountain9') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="vacation-homes"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'vacation-homes') ? 'block' : 'none'; });
+          openAburiMountain9Modal();
+        }, 500);
+      } else if (projectParam === 'environmental11') {
+        setTimeout(() => {
+          const categoryPills = document.querySelectorAll('.category-pill');
+          const offplanCards = document.querySelectorAll('.offplan-luxury-card');
+          categoryPills.forEach(p => p.classList.remove('active'));
+          document.querySelector('.category-pill[data-category="environmentalists"]')?.classList.add('active');
+          offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'environmentalists') ? 'block' : 'none'; });
+          openEnvironmental11Modal();
+        }, 500);
+      }
+
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const menuClose = document.querySelector('.mobile-menu-close');
       const mobileNav = document.querySelector('.mobile-nav-overlay');
