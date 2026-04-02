@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>Our Projects | Wenamy Ghana - Luxury Properties & Developments</title>
-  <meta name="description" content="Explore Wenamy Ghana's portfolio of luxury properties. View our completed and off-plan developments in Tema, Accra & beyond.">
+  <title>Completed Projects | Wenamy Ghana - Delivered Excellence</title>
+  <meta name="description" content="View Wenamy Ghana's completed luxury properties. Trusted delivery of exceptional quality homes in Tema, Accra & beyond.">
   <meta name="keywords" content="Wenamy projects, luxury properties Ghana, real estate portfolio, homes for sale Ghana, off-plan properties Tema">
   <meta name="robots" content="index, follow">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://wenamy.com/projects.html">
+  <link rel="canonical" href="https://wenamy.com/projects">
   
   <!-- Mobile Optimization -->
   <meta name="theme-color" content="#0a101d">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wenamy.com/projects.html">
-  <meta property="og:title" content="Our Projects | Wenamy Ghana - Luxury Properties & Developments">
-  <meta property="og:description" content="Explore Wenamy Ghana's portfolio of luxury properties. View our completed and off-plan developments.">
+  <meta property="og:url" content="https://wenamy.com/projects">
+  <meta property="og:title" content="Completed Projects | Wenamy Ghana - Delivered Excellence">
+  <meta property="og:description" content="View Wenamy Ghana's completed luxury properties. Trusted delivery of exceptional quality homes.">
   <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
   <meta property="og:site_name" content="Wenamy Ghana">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Our Projects | Wenamy Ghana - Luxury Properties & Developments">
-  <meta name="twitter:description" content="Explore Wenamy Ghana's portfolio of luxury properties.">
+  <meta name="twitter:title" content="Completed Projects | Wenamy Ghana - Delivered Excellence">
+  <meta name="twitter:description" content="View Wenamy Ghana's completed luxury properties.">
   <meta name="twitter:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
   
   <!-- Favicon -->
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=6">
-  <link rel="stylesheet" href="css/footer.css?v=3">
+  <link rel="stylesheet" href="css/hero-new.css?v=8">
+  <link rel="stylesheet" href="css/footer.css?v=8">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/projects-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -147,6 +147,79 @@
         font-size: 0.85rem;
       }
     }
+    
+    /* ========================================
+       CATEGORY FILTER PILLS (from offplan)
+       ======================================== */
+    .category-filter-section {
+      padding: 2rem 4rem;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .category-filter-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .category-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    
+    .category-pill {
+      padding: 0.625rem 1.25rem;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #374151;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: capitalize;
+    }
+    
+    .category-pill:hover {
+      background: #e5e7eb;
+      border-color: #d1d5db;
+    }
+    
+    .category-pill.active {
+      background: #0a101d;
+      border-color: #0a101d;
+      color: #ffffff;
+    }
+    
+    /* Responsive Category Filter */
+    @media (max-width: 1024px) {
+      .category-filter-section {
+        padding: 1.5rem 2rem;
+      }
+      
+      .category-filter-pills {
+        gap: 0.5rem;
+      }
+      
+      .category-pill {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .category-filter-section {
+        padding: 1rem;
+      }
+      
+      .category-pill {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -230,18 +303,18 @@
     <section class="projects-hero">
       <div class="projects-hero-content">
         <p class="projects-hero-label">Our Portfolio</p>
-        <h1 class="projects-hero-title">Exceptional Properties</h1>
-        <p class="projects-hero-subtitle">Discover our curated collection of luxury residences, from modern apartments to elegant townhouses.</p>
+        <h1 class="projects-hero-title">Completed Projects</h1>
+        <p class="projects-hero-subtitle">Trusted delivery of exceptional quality homes. Every project delivered on time, exceeding expectations.</p>
       </div>
     </section>
 
     <!-- Category Navigation -->
     <nav class="category-nav-main">
       <div class="category-nav-main-container">
-        <a href="projects/completed.html" class="category-nav-main-link">
+        <a href="projects.html" class="category-nav-main-link active">
           <span class="category-nav-main-label">Completed</span>
         </a>
-        <a href="projects/ongoing.html" class="category-nav-main-link active">
+        <a href="projects/ongoing.html" class="category-nav-main-link">
           <span class="category-nav-main-label">Ongoing</span>
         </a>
         <a href="projects/upcoming.html" class="category-nav-main-link">
@@ -250,17 +323,20 @@
       </div>
     </nav>
 
-    <!-- Filter Tabs -->
-    <section class="projects-filter">
-      <div class="projects-filter-container">
-        <div class="filter-tabs">
-          <button class="filter-tab active" data-filter="all">All Types</button>
-          <button class="filter-tab" data-filter="apartments">Apartments</button>
-          <button class="filter-tab" data-filter="bungalows">Bungalows</button>
-          <button class="filter-tab" data-filter="villas">Villas</button>
-          <button class="filter-tab" data-filter="duplexes">Duplexes</button>
+    <!-- Category Filter Pills -->
+    <section class="category-filter-section">
+      <div class="category-filter-container">
+        <div class="category-filter-pills">
+          <button class="category-pill active" data-category="all">All</button>
+          <button class="category-pill" data-category="duplexes">Duplexes</button>
+          <button class="category-pill" data-category="triplexes">Triplexes</button>
+          <button class="category-pill" data-category="bungalows">Bungalows</button>
+          <button class="category-pill" data-category="villa">Villa</button>
+          <button class="category-pill" data-category="mansions">Mansions</button>
+          <button class="category-pill" data-category="townhouses">Townhouses</button>
+          <button class="category-pill" data-category="vacation-homes">Vacation Homes</button>
+          <button class="category-pill" data-category="environmentalists">Environmentalists</button>
         </div>
-        <span class="filter-results">12 Properties</span>
       </div>
     </section>
 
@@ -269,10 +345,10 @@
       <div class="projects-container">
         <div class="projects-grid">
           <!-- Project 1: 3 Bedroom Bungalow -->
-          <article class="project-luxury-card" data-category="bungalows available" data-project-id="3-bedroom-bungalow" data-project-title="3 Bedroom Bungalow" data-project-location="Cantonments, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 1/1st.png">
+          <article class="project-luxury-card" data-category="bungalows" data-project-id="3-bedroom-bungalow" data-project-title="3 Bedroom Bungalow" data-project-location="Cantonments, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 1/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 1/1st.png" alt="3 Bedroom Bungalow">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -296,10 +372,10 @@
           </article>
 
           <!-- Project 2: 6 Bedroom Villa -->
-          <article class="project-luxury-card" data-category="villas available" data-project-id="6-bedroom-villa" data-project-title="6 Bedroom Villa" data-project-location="Airport Residential, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 2/1st.png">
+          <article class="project-luxury-card" data-category="villas" data-project-id="6-bedroom-villa" data-project-title="6 Bedroom Villa" data-project-location="Airport Residential, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 2/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 2/1st.png" alt="6 Bedroom Villa">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -323,10 +399,10 @@
           </article>
 
           <!-- Project 3: Family 3 Bedroom House -->
-          <article class="project-luxury-card" data-category="apartments available" data-project-id="family-3-bedroom-house" data-project-title="Family 3 Bedroom House" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 3/1st.png">
+          <article class="project-luxury-card" data-category="townhouses" data-project-id="family-3-bedroom-house" data-project-title="Family 3 Bedroom House" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 3/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 3/1st.png" alt="Family 3 Bedroom House">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -350,10 +426,10 @@
           </article>
 
           <!-- Project 4: Family 3 Bedroom Bungalow -->
-          <article class="project-luxury-card" data-category="bungalows available" data-project-id="family-3-bedroom-bungalow" data-project-title="Family 3 Bedroom Bungalow" data-project-location="Community 25, Tema" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 4/1st.png">
+          <article class="project-luxury-card" data-category="bungalows" data-project-id="family-3-bedroom-bungalow" data-project-title="Family 3 Bedroom Bungalow" data-project-location="Community 25, Tema" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 4/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 4/1st.png" alt="Family 3 Bedroom Bungalow">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -377,10 +453,10 @@
           </article>
 
           <!-- Project 5: 4 Bedroom Duplex -->
-          <article class="project-luxury-card" data-category="duplexes available" data-project-id="4-bedroom-duplex" data-project-title="4 Bedroom Duplex" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 5/1st.png">
+          <article class="project-luxury-card" data-category="duplexes" data-project-id="4-bedroom-duplex" data-project-title="4 Bedroom Duplex" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 5/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 5/1st.png" alt="4 Bedroom Duplex">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -404,10 +480,10 @@
           </article>
 
           <!-- Project 6: 5+2 Bedroom House -->
-          <article class="project-luxury-card" data-category="apartments available" data-project-id="5-plus-2-bedroom-house" data-project-title="5+2 Bedroom House" data-project-location="Community 25, Tema" data-project-price="$350,000" data-project-image="images/properties/PROJECT 6/1st.png">
+          <article class="project-luxury-card" data-category="townhouses" data-project-id="5-plus-2-bedroom-house" data-project-title="5+2 Bedroom House" data-project-location="Community 25, Tema" data-project-price="$350,000" data-project-image="images/properties/PROJECT 6/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 6/1st.png" alt="5+2 Bedroom House">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -431,10 +507,10 @@
           </article>
 
           <!-- Project 7: 4 Bedroom Duplex (East Legon) -->
-          <article class="project-luxury-card" data-category="duplexes available" data-project-id="4-bedroom-duplex-contemporary" data-project-title="4 Bedroom Duplex" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 7/1st.png">
+          <article class="project-luxury-card" data-category="duplexes" data-project-id="4-bedroom-duplex-contemporary" data-project-title="4 Bedroom Duplex" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 7/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 7/1st.png" alt="4 Bedroom Duplex Contemporary">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -458,10 +534,10 @@
           </article>
 
           <!-- Project 8: 3 Bedroom Bungalow (East Legon) -->
-          <article class="project-luxury-card" data-category="bungalows available" data-project-id="3-bedroom-bungalow-east-legon" data-project-title="3 Bedroom Bungalow" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 8/1st.png">
+          <article class="project-luxury-card" data-category="bungalows" data-project-id="3-bedroom-bungalow-east-legon" data-project-title="3 Bedroom Bungalow" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 8/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 8/1st.png" alt="3 Bedroom Bungalow East Legon">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -485,10 +561,10 @@
           </article>
 
           <!-- Project 9: 3 Bedroom Bungalow (Simple) -->
-          <article class="project-luxury-card" data-category="bungalows available" data-project-id="3-bedroom-bungalow-simple" data-project-title="3 Bedroom Bungalow" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 9/1st.png">
+          <article class="project-luxury-card" data-category="bungalows" data-project-id="3-bedroom-bungalow-simple" data-project-title="3 Bedroom Bungalow" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 9/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 9/1st.png" alt="3 Bedroom Bungalow Simple">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -512,10 +588,10 @@
           </article>
 
           <!-- Project 10: 3 Bedroom House -->
-          <article class="project-luxury-card" data-category="apartments available" data-project-id="3-bedroom-house" data-project-title="3 Bedroom House" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 10/1st.png">
+          <article class="project-luxury-card" data-category="townhouses" data-project-id="3-bedroom-house" data-project-title="3 Bedroom House" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 10/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 10/1st.png" alt="3 Bedroom House">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -539,10 +615,10 @@
           </article>
 
           <!-- Project 11: 3 Bedroom Vacation Home -->
-          <article class="project-luxury-card" data-category="apartments available" data-project-id="3-bedroom-vacation-home" data-project-title="3 Bedroom Vacation Home" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 11/1st.png">
+          <article class="project-luxury-card" data-category="townhouses" data-project-id="3-bedroom-vacation-home" data-project-title="3 Bedroom Vacation Home" data-project-location="East Legon, Accra" data-project-price="$83,000+" data-project-image="images/properties/PROJECT 11/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 11/1st.png" alt="3 Bedroom Vacation Home">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -566,10 +642,10 @@
           </article>
 
           <!-- Project 12: 4 Bedroom House -->
-          <article class="project-luxury-card" data-category="apartments available" data-project-id="4-bedroom-house" data-project-title="4 Bedroom House" data-project-location="Eastlegon-Ogbojo, Accra" data-project-price="$250,000 - $280,000" data-project-image="images/properties/PROJECT 12/1st.png">
+          <article class="project-luxury-card" data-category="townhouses" data-project-id="4-bedroom-house" data-project-title="4 Bedroom House" data-project-location="Eastlegon-Ogbojo, Accra" data-project-price="$250,000 - $280,000" data-project-image="images/properties/PROJECT 12/1st.png">
             <div class="project-luxury-image-wrap">
               <img src="images/properties/PROJECT 12/1st.png" alt="4 Bedroom House">
-              <span class="project-status-badge available">Available</span>
+              <span class="project-status-badge completed">Completed</span>
             </div>
             <div class="project-luxury-content">
               <div class="project-luxury-meta">
@@ -708,25 +784,37 @@
         });
       }
       
-      // Filter functionality
-      const filterTabs = document.querySelectorAll('.filter-tab');
+      // Category Filter Pills Functionality
+      const categoryPills = document.querySelectorAll('.category-pill');
       const projectCards = document.querySelectorAll('.project-luxury-card');
       const resultsCount = document.querySelector('.filter-results');
 
-      filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          filterTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          
-          const filter = tab.dataset.filter;
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Remove active class from all pills
+          categoryPills.forEach(p => p.classList.remove('active'));
+          // Add active class to clicked pill
+          pill.classList.add('active');
+
+          const category = pill.dataset.category;
           let visibleCount = 0;
-          
+
           projectCards.forEach(card => {
-            if (filter === 'all' || card.dataset.category.includes(filter)) {
+            const cardCategory = card.dataset.category;
+            
+            if (category === 'all' || cardCategory === category) {
               card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 10);
               visibleCount++;
             } else {
-              card.style.display = 'none';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
             }
           });
           

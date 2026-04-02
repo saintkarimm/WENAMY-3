@@ -9,7 +9,7 @@
 
 ---
 
-## Current State (As of March 25, 2026)
+## Current State (As of March 31, 2026)
 
 ### Architecture Overview
 This is a **static HTML/CSS/JS website** with no backend dependencies. Previously had Firebase Authentication and user accounts, but these have been removed for simplification.
@@ -20,6 +20,8 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 - **Responsive design** - Mobile-first approach
 - **No user accounts** - Sign In page shows forms only (non-functional)
 - **Visual-only interactions** - Heart icons on properties toggle visually but don't save
+- **Apple-style carousels** - Two-tiered hero carousel with deep-linking to offplan projects
+- **Unified background** - Consistent #fafbf4 color across homepage sections
 
 ---
 
@@ -28,7 +30,7 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 ### Root HTML Pages
 | File | Purpose | Notes |
 |------|---------|-------|
-| `index.html` | Homepage with hero section | Clean navbar, no basket |
+| `index.html` | Homepage with hero section, Apple-style carousels, EXCLUSIVE COLLECTIONS | Clean navbar, two-tiered carousel with deep links, decorative infinite scroll carousel |
 | `about.html` | About Us page | Company info, team, values |
 | `blog.html` | Blog/News page | Articles and updates |
 | `contact.html` | Contact page | Contact form, map, details |
@@ -41,7 +43,7 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 ### CSS Files
 | File | Purpose |
 |------|---------|
-| `css/hero-new.css` | Hero section + navbar styles (glassmorphism, adaptive colors) |
+| `css/hero-new.css` | Hero section + navbar styles (glassmorphism, adaptive colors, responsive text/image adjustments) |
 | `css/base.css` | Base styles and typography |
 | `css/animations.css` | Animation utilities |
 | `css/footer.css` | Footer styles |
@@ -69,7 +71,7 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 | `js/animations.js` | Scroll animations and reveal effects |
 | `js/utils.js` | Utility functions |
 | `js/projects-data.js` | Project data for dynamic pages |
-| `js/carousel.js` | Carousel/slider functionality |
+| `js/carousel.js` | Carousel/slider functionality (time-based animation, momentum swiping, continuous scroll) |
 | `js/basket.js` | Basket/saved properties functionality |
 | `js/chatbot.js` | Chatbot widget functionality |
 | `js/loading-states.js` | Loading state management |
@@ -91,7 +93,7 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 - **Glassmorphism Effect:** Semi-transparent background with backdrop blur
 - **Sticky Positioning:** Fixed at top with smooth scroll behavior
 - **Intersection Observer:** Detects dark/light sections and toggles text color
-- **Cache Busting:** CSS version parameters (`?v=5`) for updates
+- **Cache Busting:** CSS version parameters (`?v=7`) for updates
 
 ### Navbar Files
 - HTML: Inline in each page (consistent across all pages)
@@ -101,7 +103,7 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 ### Adaptive Color Behavior
 | Page | Dark Sections | Light Sections |
 |------|--------------|----------------|
-| index.html | hero-new-wrapper, property-carousel | featured-property, bento-grid, services-luxury |
+| index.html | hero-new-wrapper, property-carousel | featured-property, endless-entertainment-section, property-carousel, services-luxury |
 | projects.html | projects-hero | projects-section, projects-filter |
 | offplan.html | page-luxury-hero | offplan-luxury-section, offplan-benefits-section |
 | about.html | page-luxury-hero | about-intro-section, about-values-section, etc. |
@@ -308,7 +310,84 @@ Configuration in `vercel.json`:
 
 ---
 
+## Homepage Carousels (index.html)
+
+### Apple-Style Two-Tiered Carousel (OFF-PLAN PROJECTS)
+**Section ID:** `properties` / `endless-entertainment-section`
+
+**Features:**
+- **Hero tier:** 4 large cards with deep links to offplan.html
+- **Secondary tier:** 12 smaller cards with deep links
+- **Synchronized scrolling:** Both tiers move together
+- **Auto-play:** Continuous with 4160ms interval
+- **Desktop navigation:** Mouse wheel (horizontal only) + drag support
+- **Deep linking:** Click any card → offplan.html with auto-open modal + category filter
+
+**Hero Card Deep Links:**
+| Card | Image | Project | Category |
+|------|-------|---------|----------|
+| 1 | OFFPLAN10/1st.jpg | duplex10 | Duplexes |
+| 2 | OFFPLAN14/9th.jpg | environmental14 | Environmentalists |
+| 3 | OFFPLAN13/6th.jpg | duplex13 | Duplexes |
+| 4 | OFFPLAN12/1st.jpg | duplex12 | Duplexes |
+
+**Secondary Card Deep Links:**
+All 12 secondary cards link to respective OFFPLAN projects (beach7, vacation6, duplex4, aburi3, duplex5, vacation2, aburiviews8, aburimountain9, duplex10, environmental11, duplex12, duplex13)
+
+### EXCLUSIVE COLLECTIONS Decorative Carousel
+**Section ID:** `offplan-projects` / `property-carousel`
+
+**Features:**
+- **Infinite scroll:** Continuous right-to-left movement
+- **Time-based animation:** Smooth speed regardless of frame rate
+- **Swipe support:** Touch/mouse drag with momentum
+- **Continuous when off-screen:** Animation doesn't pause when scrolled away
+- **Mobile speed:** 0.8px/frame (slower than desktop 1.6px)
+- **7 slides:** images/DISCOVER/ (villa, water-front, penthouse, appartment, apart, etc.)
+
+**Files:**
+- HTML: Lines 1081-1140 in index.html
+- CSS: css/carousel.css
+- JS: js/carousel.js
+
 ---
+
+## Homepage Sections Background Color
+
+All sections from Featured Development to Our Services use unified background color **#fafbf4**:
+
+| Section | Element | Background |
+|---------|---------|------------|
+| Featured Development | `#featured` | `#fafbf4 !important` |
+| OFF-PLAN PROJECTS (Apple Carousel) | `#properties` | `#fafbf4` |
+| EXCLUSIVE COLLECTIONS | `#offplan-projects` | `#fafbf4` |
+| Our Services | `#services` | `#fafbf4` (inline + page-clean.css) |
+
+### Hero Section Responsive Adjustments
+
+The hero section has device-specific styling for optimal display:
+
+**Desktop (min-width: 769px):**
+| Property | Value |
+|----------|-------|
+| Hero image scale | 1.0 |
+| Hero image translateY | 20px |
+| Headline font size | 7rem |
+| Headline line height | 1.05 |
+| JUST EXCEPTIONAL text | Visible |
+
+**Mobile (max-width: 768px):**
+| Property | Value |
+|----------|-------|
+| Hero image scale | 1.0 |
+| Hero image translateY | 20px |
+| Headline font size | 3.0rem |
+| Headline line height | 1.0 |
+| Headline text align | center |
+| JUST EXCEPTIONAL text | Hidden |
+
+**Files:**
+- CSS: `css/hero-new.css` (lines 1095-1180)
 
 ---
 
@@ -501,4 +580,4 @@ Category: Duplexes|Vacation Homes|Environmentalists
 ---
 
 *Last Updated: March 31, 2026*  
-*Project Status: Production-Ready Static Site with 16 Off-Plan Properties and Custom AI Skills*
+*Project Status: Production-Ready Static Site with Apple-Style Carousels, 16 Off-Plan Properties, and Custom AI Skills*

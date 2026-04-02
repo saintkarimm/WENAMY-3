@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/animations.css">
-  <link rel="stylesheet" href="../css/hero-new.css?v=7">
-  <link rel="stylesheet" href="../css/footer.css?v=3">
+  <link rel="stylesheet" href="../css/hero-new.css?v=8">
+  <link rel="stylesheet" href="../css/footer.css?v=8">
   <link rel="stylesheet" href="../css/chatbot.css">
   <link rel="stylesheet" href="../css/projects-luxury.css">
   <link rel="stylesheet" href="../css/loading-states.css">
@@ -627,6 +627,79 @@
     .back-link:hover svg {
       transform: translateX(-4px);
     }
+    
+    /* ========================================
+       CATEGORY FILTER PILLS
+       ======================================== */
+    .category-filter-section {
+      padding: 2rem 4rem;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .category-filter-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .category-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    
+    .category-pill {
+      padding: 0.625rem 1.25rem;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #374151;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: capitalize;
+    }
+    
+    .category-pill:hover {
+      background: #e5e7eb;
+      border-color: #d1d5db;
+    }
+    
+    .category-pill.active {
+      background: #0a101d;
+      border-color: #0a101d;
+      color: #ffffff;
+    }
+    
+    /* Responsive Category Filter */
+    @media (max-width: 1024px) {
+      .category-filter-section {
+        padding: 1.5rem 2rem;
+      }
+      
+      .category-filter-pills {
+        gap: 0.5rem;
+      }
+      
+      .category-pill {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .category-filter-section {
+        padding: 1rem;
+      }
+      
+      .category-pill {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -725,11 +798,28 @@
     <!-- Category Navigation -->
     <nav class="category-nav">
       <div class="category-nav-container">
-        <a href="completed.html" class="category-nav-link">Completed</a>
+        <a href="../projects.html" class="category-nav-link">Completed</a>
         <a href="ongoing.html" class="category-nav-link active">Ongoing</a>
         <a href="upcoming.html" class="category-nav-link">Upcoming</a>
       </div>
     </nav>
+
+    <!-- Category Filter Pills -->
+    <section class="category-filter-section">
+      <div class="category-filter-container">
+        <div class="category-filter-pills">
+          <button class="category-pill active" data-category="all">All</button>
+          <button class="category-pill" data-category="duplexes">Duplexes</button>
+          <button class="category-pill" data-category="triplexes">Triplexes</button>
+          <button class="category-pill" data-category="bungalows">Bungalows</button>
+          <button class="category-pill" data-category="villa">Villa</button>
+          <button class="category-pill" data-category="mansions">Mansions</button>
+          <button class="category-pill" data-category="townhouses">Townhouses</button>
+          <button class="category-pill" data-category="vacation-homes">Vacation Homes</button>
+          <button class="category-pill" data-category="environmentalists">Environmentalists</button>
+        </div>
+      </div>
+    </section>
 
     <!-- Projects Section -->
     <section class="projects-section">
@@ -740,61 +830,6 @@
         </div>
         
         <div class="projects-grid">
-          <!-- Project 1: 3 Bedroom Bungalow -->
-          <article class="project-luxury-card" data-project-id="3-bedroom-bungalow">
-            <div class="project-luxury-image-wrap">
-              <img src="../images/properties/PROJECT 1/1st.png" alt="3 Bedroom Bungalow">
-              <span class="project-status-badge ongoing">Ongoing</span>
-            </div>
-            <div class="project-luxury-content">
-              <div class="project-luxury-meta">
-                <span class="project-luxury-type">Bungalow</span>
-                <span class="project-luxury-price">$83,000+</span>
-              </div>
-              <h3 class="project-luxury-name">3 Bedroom Bungalow</h3>
-              <div class="project-luxury-location">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Cantonments, Accra
-              </div>
-              <p class="project-luxury-description">Spacious family bungalow with 3 bedrooms, 4 washrooms, kitchen, pantry, and big hall for entertaining.</p>
-              <div class="project-card-actions">
-                <a href="../project-detail.html#id=3-bedroom-bungalow" class="project-luxury-cta ongoing">Enquire Now</a>
-                <button class="project-save-btn" data-property-id="3-bedroom-bungalow" aria-label="Save property">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Modern Family Home -->
-          <article class="project-luxury-card" data-project-id="modern-family-home">
-            <div class="project-luxury-image-wrap">
-              <img src="../images/properties/PROJECT 9/1st.png" alt="Modern Family Home">
-              <span class="project-status-badge ongoing">Ongoing</span>
-            </div>
-            <div class="project-luxury-content">
-              <div class="project-luxury-meta">
-                <span class="project-luxury-type">Family Home</span>
-                <span class="project-luxury-price">$95,000+</span>
-              </div>
-              <h3 class="project-luxury-name">Modern Family Home</h3>
-              <div class="project-luxury-location">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Tema Community 25
-              </div>
-              <p class="project-luxury-description">Contemporary 4-bedroom family home with modern architecture, smart home features, and spacious garden.</p>
-              <div class="project-card-actions">
-                <a href="../project-detail.html#id=modern-family-home" class="project-luxury-cta ongoing">Book Viewing</a>
-                <button class="project-save-btn" data-property-id="modern-family-home" aria-label="Save property">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -806,7 +841,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
-          Back to All Projects
+          Back to Completed Projects
         </a>
       </div>
     </div>
@@ -918,6 +953,39 @@
           });
         });
       }
+
+      // Category Filter Pills Functionality
+      const categoryPills = document.querySelectorAll('.category-pill');
+      const projectCards = document.querySelectorAll('.project-luxury-card');
+
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Remove active class from all pills
+          categoryPills.forEach(p => p.classList.remove('active'));
+          // Add active class to clicked pill
+          pill.classList.add('active');
+
+          const category = pill.dataset.category;
+
+          projectCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            
+            if (category === 'all' || cardCategory === category) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
 
       // Scroll Animations
       const observerOptions = {
