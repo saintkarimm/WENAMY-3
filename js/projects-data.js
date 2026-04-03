@@ -370,7 +370,124 @@ const projectsData = {
       "Premium location",
       "Excellent infrastructure"
     ]
-  }
+  },
+
+  // Project 13: Hotel Apartments - Ongoing
+  "hotel-apartments-community-26": {
+    name: "Hotel Apartments",
+    location: "Community 26",
+    type: "Apartments",
+    status: "ongoing",
+    price: "Contact for Pricing",
+    bedrooms: "",
+    bathrooms: "",
+    sqft: "",
+    parking: "",
+    description: "",
+    images: [
+      "images/properties/ONGOING/Project 1/2nd.jpeg",
+      "images/properties/ONGOING/Project 1/3rd.jpeg",
+      "images/properties/ONGOING/Project 1/4th.jpeg",
+      "images/properties/ONGOING/Project 1/5th.jpeg",
+      "images/properties/ONGOING/Project 1/6th.jpeg",
+      "images/properties/ONGOING/Project 1/7th.jpeg",
+      "images/properties/ONGOING/Project 1/8th.jpeg",
+      "images/properties/ONGOING/Project 1/9th.jpeg",
+      "images/properties/ONGOING/Project 1/10th.jpeg",
+      "images/properties/ONGOING/Project 1/11th.jpeg",
+      "images/properties/ONGOING/Project 1/12th.jpeg",
+      "images/properties/ONGOING/Project 1/13th.jpeg"
+    ],
+    amenities: [],
+    features: []
+  },
+
+  // Project 14: 5 Bedroom House - Ongoing
+  "5-bedroom-house-community-25": {
+    name: "5 Bedroom House",
+    location: "Community 25",
+    type: "House",
+    status: "ongoing",
+    price: "Contact for Pricing",
+    bedrooms: "5",
+    bathrooms: "",
+    sqft: "",
+    parking: "",
+    description: "",
+    images: [
+      "images/properties/ONGOING/Project 2/2nd.jpeg",
+      "images/properties/ONGOING/Project 2/3rd.jpeg",
+      "images/properties/ONGOING/Project 2/4th.jpeg",
+      "images/properties/ONGOING/Project 2/5th.jpeg",
+      "images/properties/ONGOING/Project 2/6th.jpeg",
+      "images/properties/ONGOING/Project 2/7th.jpeg",
+      "images/properties/ONGOING/Project 2/8th.jpeg",
+      "images/properties/ONGOING/Project 2/9th.jpeg",
+      "images/properties/ONGOING/Project 2/10th.jpeg",
+      "images/properties/ONGOING/Project 2/11th.jpeg",
+      "images/properties/ONGOING/Project 2/12th.jpeg",
+      "images/properties/ONGOING/Project 2/13th.jpeg",
+      "images/properties/ONGOING/Project 2/14th.jpeg"
+    ],
+    videos: [
+      "images/properties/ONGOING/Project 2/video 1.mp4",
+      "images/properties/ONGOING/Project 2/video 2.mp4",
+      "images/properties/ONGOING/Project 2/video 3.mp4"
+    ],
+    amenities: [],
+    features: []
+  },
+
+  // Project 15: Farm Sky-Summer Hut - Ongoing
+  "farm-sky-summer-hut-abutia-ho": {
+    name: "Farm Sky-Summer Hut",
+    location: "Abutia - Ho",
+    type: "Hut",
+    status: "ongoing",
+    price: "Contact for Pricing",
+    bedrooms: "",
+    bathrooms: "",
+    sqft: "",
+    parking: "",
+    description: "",
+    images: [
+      "images/properties/ONGOING/Project 3/2nd.jpeg",
+      "images/properties/ONGOING/Project 3/3rd.jpeg",
+      "images/properties/ONGOING/Project 3/4th.jpeg",
+      "images/properties/ONGOING/Project 3/5th.jpeg",
+      "images/properties/ONGOING/Project 3/6th.jpeg",
+      "images/properties/ONGOING/Project 3/7th.jpeg",
+      "images/properties/ONGOING/Project 3/8th.jpeg",
+      "images/properties/ONGOING/Project 3/9th.jpeg",
+      "images/properties/ONGOING/Project 3/10th.jpeg",
+      "images/properties/ONGOING/Project 3/11th.jpeg",
+      "images/properties/ONGOING/Project 3/12th.jpeg",
+      "images/properties/ONGOING/Project 3/13th.jpeg",
+      "images/properties/ONGOING/Project 3/14th.jpeg",
+      "images/properties/ONGOING/Project 3/15th.jpeg",
+      "images/properties/ONGOING/Project 3/16th.jpeg",
+      "images/properties/ONGOING/Project 3/17th.jpeg",
+      "images/properties/ONGOING/Project 3/18th.jpeg",
+      "images/properties/ONGOING/Project 3/19th.jpeg",
+      "images/properties/ONGOING/Project 3/20th.jpeg",
+      "images/properties/ONGOING/Project 3/21th.jpeg",
+      "images/properties/ONGOING/Project 3/22th.jpeg",
+      "images/properties/ONGOING/Project 3/23th.jpeg",
+      "images/properties/ONGOING/Project 3/24th.jpeg",
+      "images/properties/ONGOING/Project 3/25th.jpeg",
+      "images/properties/ONGOING/Project 3/26th.jpeg",
+      "images/properties/ONGOING/Project 3/27th.jpeg",
+      "images/properties/ONGOING/Project 3/28th.jpeg",
+      "images/properties/ONGOING/Project 3/29th.jpeg"
+    ],
+    videos: [
+      "images/properties/ONGOING/Project 3/video.mp4",
+      "images/properties/ONGOING/Project 3/video 2.mp4",
+      "images/properties/ONGOING/Project 3/video 3.mp4"
+    ],
+    amenities: [],
+    features: []
+  },
 };
 
 // Export for use in other files
