@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>Upcoming Projects | Wenamy Ghana - Early Access</title>
-  <meta name="description" content="Get early access to Wenamy Ghana's upcoming luxury developments. Register your interest in exclusive pre-launch opportunities.">
-  <meta name="keywords" content="Wenamy upcoming projects, pre-launch properties Ghana, luxury developments, early access real estate">
+  <title>Completed Projects | Wenamy Ghana - Delivered Excellence</title>
+  <meta name="description" content="View Wenamy Ghana's completed luxury properties. Trusted delivery, exceptional quality homes in Tema, Accra & beyond.">
+  <meta name="keywords" content="Wenamy completed projects, delivered properties Ghana, luxury homes built, real estate portfolio">
   <meta name="robots" content="index, follow">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://wenamy.com/projects/upcoming">
+  <link rel="canonical" href="https://wenamy.com/projects/completed">
   
   <!-- Mobile Optimization -->
   <meta name="theme-color" content="#0a101d">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wenamy.com/projects/upcoming">
-  <meta property="og:title" content="Upcoming Projects | Wenamy Ghana - Early Access">
-  <meta property="og:description" content="Get early access to Wenamy Ghana's upcoming luxury developments. Register your interest.">
+  <meta property="og:url" content="https://wenamy.com/projects/completed">
+  <meta property="og:title" content="Completed Projects | Wenamy Ghana - Delivered Excellence">
+  <meta property="og:description" content="View Wenamy Ghana's completed luxury properties. Trusted delivery, exceptional quality homes.">
   <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
   <meta property="og:site_name" content="Wenamy Ghana">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Upcoming Projects | Wenamy Ghana - Early Access">
-  <meta name="twitter:description" content="Get early access to Wenamy Ghana's upcoming luxury developments.">
+  <meta name="twitter:title" content="Completed Projects | Wenamy Ghana - Delivered Excellence">
+  <meta name="twitter:description" content="View Wenamy Ghana's completed luxury properties.">
   <meta name="twitter:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
   
   <!-- Favicon -->
@@ -48,10 +48,10 @@
     .navbar { visibility: hidden; }
     
     /* ========================================
-       PREMIUM CATEGORY PAGE STYLES - UPCOMING
+       PREMIUM CATEGORY PAGE STYLES
        ======================================== */
     
-    /* Hero Section - Premium Dark Gradient with Purple Accent */
+    /* Hero Section - Premium Dark Gradient */
     .category-hero {
       background: linear-gradient(rgba(10, 14, 23, 0.7), rgba(10, 14, 23, 0.7)), url('../images/bar-all.png') center/cover no-repeat;
       padding: 10rem 4rem 6rem;
@@ -71,8 +71,8 @@
       right: 0;
       bottom: 0;
       background: 
-        radial-gradient(ellipse at 50% 30%, rgba(111, 66, 193, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 50%, rgba(40, 167, 69, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
       pointer-events: none;
     }
     
@@ -152,18 +152,18 @@
       }
     }
     
-    .exclusive-badge {
+    .trust-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(111, 66, 193, 0.15);
-      color: #a78bfa;
+      background: rgba(40, 167, 69, 0.12);
+      color: #4ade80;
       padding: 0.75rem 1.5rem;
       border-radius: 3rem;
       font-size: 0.875rem;
       font-weight: 600;
       margin-top: 2rem;
-      border: 1px solid rgba(111, 66, 193, 0.25);
+      border: 1px solid rgba(40, 167, 69, 0.2);
       backdrop-filter: blur(10px);
       animation: fadeInUp 0.8s ease-out 0.5s both;
     }
@@ -330,11 +330,11 @@
       pointer-events: none;
     }
     
-    .project-status-badge.upcoming {
+    .project-status-badge.completed {
       position: absolute;
       top: 1.25rem;
       left: 1.25rem;
-      background: rgba(111, 66, 193, 0.95);
+      background: rgba(40, 167, 69, 0.95);
       color: #ffffff;
       padding: 0.5rem 1rem;
       border-radius: 2rem;
@@ -408,7 +408,7 @@
       align-items: center;
     }
     
-    .project-luxury-cta.upcoming {
+    .project-luxury-cta.completed {
       flex: 1;
       display: inline-flex;
       align-items: center;
@@ -425,7 +425,7 @@
       cursor: pointer;
     }
     
-    .project-luxury-cta.upcoming:hover {
+    .project-luxury-cta.completed:hover {
       background: #0077ed;
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
@@ -453,6 +453,65 @@
       width: 20px;
       height: 20px;
       color: #64748b;
+    }
+    
+    /* Back Navigation */
+    .back-navigation {
+      background: #f8fafc;
+      padding: 3rem 4rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    
+    .back-navigation-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-white, #ffffff);
+      text-decoration: none;
+      padding: 0.875rem 1.75rem;
+      background: var(--color-primary, #1a1a1a);
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .back-link:hover {
+      background: var(--color-primary-hover, #333333);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .back-link svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+    }
+    
+    .back-link:hover svg {
+      transform: translateX(-4px);
+    }
+    
+    /* Scroll Animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     /* Dynamic Navbar Contrast */
@@ -492,28 +551,19 @@
       color: var(--nav-text);
     }
     
-    .early-access-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      background: rgba(111, 66, 193, 0.1);
-      color: #6f42c1;
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-left: 0.5rem;
-    }
-    
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .category-hero {
-        padding: 6rem 1.5rem 3rem;
-        min-height: 300px;
+        padding: 8rem 1.5rem 4rem;
+        min-height: 400px;
+      }
+      
+      .category-hero-title {
+        font-size: 2.5rem;
       }
       
       .category-nav {
-        padding: 1rem;
+        padding: 1.25rem 1rem;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
@@ -567,126 +617,6 @@
       
       .back-navigation {
         padding: 2rem 1rem;
-      }
-    }
-    
-    /* Back Navigation */
-    .back-navigation {
-      background: #f8fafc;
-      padding: 3rem 4rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.04);
-    }
-    
-    .back-navigation-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--color-white, #ffffff);
-      text-decoration: none;
-      padding: 0.875rem 1.75rem;
-      background: var(--color-primary, #1a1a1a);
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .back-link:hover {
-      background: var(--color-primary-hover, #333333);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      transform: translateY(-2px);
-    }
-    
-    .back-link svg {
-      width: 18px;
-      height: 18px;
-      transition: transform 0.3s ease;
-    }
-    
-    .back-link:hover svg {
-      transform: translateX(-4px);
-    }
-    
-    /* ========================================
-       CATEGORY FILTER PILLS
-       ======================================== */
-    .category-filter-section {
-      padding: 2rem 4rem;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .category-filter-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .category-filter-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-    }
-    
-    .category-pill {
-      padding: 0.625rem 1.25rem;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      border-radius: 100px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #374151;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-transform: capitalize;
-    }
-    
-    .category-pill:hover {
-      background: #e5e7eb;
-      border-color: #d1d5db;
-    }
-    
-    .category-pill.active {
-      background: #0a101d;
-      border-color: #0a101d;
-      color: #ffffff;
-    }
-    
-    /* Responsive Category Filter */
-    @media (max-width: 1024px) {
-      .category-filter-section {
-        padding: 1.5rem 2rem;
-      }
-      
-      .category-filter-pills {
-        gap: 0.5rem;
-      }
-      
-      .category-pill {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-      }
-    }
-    
-    @media (max-width: 640px) {
-      .category-filter-section {
-        padding: 1rem;
-      }
-      
-      .category-pill {
-        padding: 0.5rem 0.875rem;
-        font-size: 0.75rem;
       }
     }
   </style>
@@ -771,14 +701,14 @@
     <!-- Category Hero -->
     <section class="category-hero">
       <div class="category-hero-content">
-        <p class="category-hero-label">Coming Soon</p>
-        <h1 class="category-hero-title">Upcoming Projects</h1>
-        <p class="category-hero-subtitle">Be the first to know about our exclusive new developments. Register your interest for early access and priority selection.</p>
-        <div class="exclusive-badge">
+        <p class="category-hero-label">Our Portfolio</p>
+        <h1 class="category-hero-title">Completed Projects</h1>
+        <p class="category-hero-subtitle">Trusted delivery of exceptional quality homes. Every project delivered on time, exceeding expectations.</p>
+        <div class="trust-badge">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Early Access Opportunity
+          100% Delivery Rate
         </div>
       </div>
     </section>
@@ -786,38 +716,76 @@
     <!-- Category Navigation -->
     <nav class="category-nav">
       <div class="category-nav-container">
-        <a href="../projects.html" class="category-nav-link">Completed</a>
+        <a href="../projects.html" class="category-nav-link active">Completed</a>
         <a href="ongoing.html" class="category-nav-link">Ongoing</a>
-        <a href="upcoming.html" class="category-nav-link active">Upcoming</a>
+        <a href="upcoming.html" class="category-nav-link">Upcoming</a>
       </div>
     </nav>
-
-    <!-- Category Filter Pills -->
-    <section class="category-filter-section">
-      <div class="category-filter-container">
-        <div class="category-filter-pills">
-          <button class="category-pill active" data-category="all">All</button>
-          <button class="category-pill" data-category="duplexes">Duplexes</button>
-          <button class="category-pill" data-category="triplexes">Triplexes</button>
-          <button class="category-pill" data-category="bungalows">Bungalows</button>
-          <button class="category-pill" data-category="villa">Villa</button>
-          <button class="category-pill" data-category="mansions">Mansions</button>
-          <button class="category-pill" data-category="townhouses">Townhouses</button>
-          <button class="category-pill" data-category="vacation-homes">Vacation Homes</button>
-          <button class="category-pill" data-category="environmentalists">Environmentalists</button>
-        </div>
-      </div>
-    </section>
 
     <!-- Projects Section -->
     <section class="projects-section">
       <div class="projects-container">
         <div class="section-header">
-          <h2 class="section-title">Future Developments</h2>
-          <p class="section-subtitle">Secure your place in our upcoming luxury projects before public launch</p>
+          <h2 class="section-title">Delivered Excellence</h2>
+          <p class="section-subtitle">Browse our portfolio of successfully completed luxury properties</p>
         </div>
         
         <div class="projects-grid">
+          <!-- Project 1: 6 Bedroom Villa -->
+          <article class="project-luxury-card" data-project-id="6-bedroom-villa">
+            <div class="project-luxury-image-wrap">
+              <img src="../images/properties/PROJECT 2/1st.png" alt="6 Bedroom Villa">
+              <span class="project-status-badge completed">Completed</span>
+            </div>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Villa</span>
+                <span class="project-luxury-price">$83,000+</span>
+              </div>
+              <h3 class="project-luxury-name">6 Bedroom Villa</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Airport Residential, Accra
+              </div>
+              <p class="project-luxury-description">Fascinating Villa on over one acre with rooftop infinity pool, cinema, bar, and 6 en-suite bedrooms.</p>
+              <div class="project-card-actions">
+                <a href="../project-detail.html#id=6-bedroom-villa" class="project-luxury-cta completed">View Project</a>
+                <button class="project-save-btn" data-property-id="6-bedroom-villa" aria-label="Save property">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Luxury Apartment Complex -->
+          <article class="project-luxury-card" data-project-id="luxury-apartment-complex">
+            <div class="project-luxury-image-wrap">
+              <img src="../images/properties/PROJECT 7/1st.png" alt="Luxury Apartment Complex">
+              <span class="project-status-badge completed">Completed</span>
+            </div>
+            <div class="project-luxury-content">
+              <div class="project-luxury-meta">
+                <span class="project-luxury-type">Apartments</span>
+                <span class="project-luxury-price">$65,000+</span>
+              </div>
+              <h3 class="project-luxury-name">Luxury Apartment Complex</h3>
+              <div class="project-luxury-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                East Legon, Accra
+              </div>
+              <p class="project-luxury-description">Modern apartment complex featuring premium finishes, 24/7 security, and world-class amenities.</p>
+              <div class="project-card-actions">
+                <a href="../project-detail.html#id=luxury-apartment-complex" class="project-luxury-cta completed">View Project</a>
+                <button class="project-save-btn" data-property-id="luxury-apartment-complex" aria-label="Save property">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -829,7 +797,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
-          Back to Completed Projects
+          View All Completed Projects
         </a>
       </div>
     </div>
@@ -941,39 +909,6 @@
           });
         });
       }
-
-      // Category Filter Pills Functionality
-      const categoryPills = document.querySelectorAll('.category-pill');
-      const projectCards = document.querySelectorAll('.project-luxury-card');
-
-      categoryPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          // Remove active class from all pills
-          categoryPills.forEach(p => p.classList.remove('active'));
-          // Add active class to clicked pill
-          pill.classList.add('active');
-
-          const category = pill.dataset.category;
-
-          projectCards.forEach(card => {
-            const cardCategory = card.dataset.category;
-            
-            if (category === 'all' || cardCategory === category) {
-              card.style.display = 'block';
-              setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-              }, 10);
-            } else {
-              card.style.opacity = '0';
-              card.style.transform = 'translateY(20px)';
-              setTimeout(() => {
-                card.style.display = 'none';
-              }, 300);
-            }
-          });
-        });
-      });
 
       // Scroll Animations
       const observerOptions = {

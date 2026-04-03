@@ -1,5 +1,18 @@
 /* Base Styles - Global element styling */
 
+/* Global Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+  background-color: var(--bg-secondary, #1a1f2e);
+}
+
 /* Selection styling */
 ::selection {
   background-color: var(--color-blue);

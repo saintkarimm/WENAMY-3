@@ -666,6 +666,18 @@ body {
   transform: translateY(-50%) translateX(4px) !important;
 }
 
+/* Image Loading Optimization */
+.gallery-item img,
+.hero-bg-slide img {
+  will-change: transform;
+  content-visibility: auto;
+}
+
+/* Smooth image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
 /* Video Card Mobile Responsive */
 @media (max-width: 768px) {
   .video-card .video-card-label {

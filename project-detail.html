@@ -33,14 +33,17 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/icons/logo.png">
   
+  <!-- Preload first project image for faster hero loading -->
+  <link rel="preload" as="image" href="" id="heroImagePreload">
+  
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=8">
-  <link rel="stylesheet" href="css/footer.css?v=8">
+  <link rel="stylesheet" href="css/hero-new.css?v=9">
+  <link rel="stylesheet" href="css/footer.css?v=9">
   <link rel="stylesheet" href="css/chatbot.css">
-  <link rel="stylesheet" href="css/project-detail-cinematic.css?v=2">
+  <link rel="stylesheet" href="css/project-detail-cinematic.css?v=3">
   <style>
     /* Prevent FOUC - hide navbar until CSS loads */
     .navbar { visibility: visible; }
@@ -199,7 +202,7 @@
     </div>
   </footer>
 
-  <script src="js/projects-data.js?v=2"></script>
+  <script src="js/projects-data.js?v=3"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile Menu Toggle
@@ -272,17 +275,17 @@
         </div>
       `}).join('');
       
-      // Generate gallery strip
+      // Generate gallery strip with lazy loading
       const galleryStripHtml = project.images.map((img, index) => `
         <div class="gallery-item" onclick="openGalleryWithIndex(${index})">
-          <img src="${img}" alt="${project.name} ${index + 1}">
+          <img src="${img}" alt="${project.name} ${index + 1}" loading="lazy" decoding="async">
         </div>
       `).join('');
       
-      // Generate hero slides
+      // Generate hero slides - first image eager, rest lazy
       const heroSlidesHtml = project.images.map((img, index) => `
         <div class="hero-bg-slide ${index === 0 ? 'active' : ''}" data-slide="${index}">
-          <img src="${img}" alt="${project.name} ${index + 1}">
+          <img src="${img}" alt="${project.name} ${index + 1}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
         </div>
       `).join('');
       
@@ -582,6 +585,12 @@
         document.body.style.overflow = '';
       };
 
+      // Set preload for first image
+      const heroPreload = document.getElementById('heroImagePreload');
+      if (heroPreload && project.images.length > 0) {
+        heroPreload.href = project.images[0];
+      }
+      
       // Video Modal Functions
       window.currentVideoIndex = 0;
       window.projectVideos = project.videos || (project.video ? [project.video] : []);
