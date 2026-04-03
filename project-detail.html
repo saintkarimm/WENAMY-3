@@ -308,11 +308,11 @@
           
           <!-- Hero Content -->
           <div class="hero-content">
-            <a href="${project.status === 'ongoing' ? 'projects/ongoing.html' : (project.status === 'completed' ? 'projects/completed.html' : (project.status === 'upcoming' ? 'projects/upcoming.html' : 'projects.html'))}" class="back-link">
+            <a href="${project.status === 'ongoing' ? 'projects/ongoing.html' : (project.status === 'upcoming' ? 'projects/upcoming.html' : 'projects.html')}" class="back-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M19 12H5M12 19l-7-7 7-7"/>
               </svg>
-              Back to ${project.status === 'ongoing' ? 'Ongoing' : (project.status === 'completed' ? 'Completed' : (project.status === 'upcoming' ? 'Upcoming' : ''))} Projects
+              Back to ${project.status === 'ongoing' ? 'Ongoing' : (project.status === 'upcoming' ? 'Upcoming' : 'Completed')} Projects
             </a>
             
             <div class="property-meta">

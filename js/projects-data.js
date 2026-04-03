@@ -488,6 +488,107 @@ const projectsData = {
     amenities: [],
     features: []
   },
+
+  // Project 18: 2 Bedroom Townhomes at Tema - Completed
+  "2-bedroom-townhomes-tema": {
+    name: "2 Bedroom Townhomes at Tema",
+    location: "Community 25 - Tema",
+    type: "Townhouse",
+    status: "completed",
+    price: "Contact for Pricing",
+    bedrooms: "2",
+    bathrooms: "",
+    sqft: "",
+    parking: "",
+    description: "",
+    images: [
+      "images/properties/PROJECT 15/2nd.jpeg",
+      "images/properties/PROJECT 15/3rd.jpeg",
+      "images/properties/PROJECT 15/4th.jpeg",
+      "images/properties/PROJECT 15/5th.jpeg",
+      "images/properties/PROJECT 15/6th.jpeg",
+      "images/properties/PROJECT 15/7th.jpeg",
+      "images/properties/PROJECT 15/8th.jpeg",
+      "images/properties/PROJECT 15/9th.jpeg",
+      "images/properties/PROJECT 15/10th.jpeg",
+      "images/properties/PROJECT 15/11th.jpeg"
+    ],
+    video: "images/properties/PROJECT 15/video 1.mp4",
+    amenities: [],
+    features: []
+  },
+
+  // Project 17: 5 Bedroom Semi-Finished House - Completed
+  "5-bedroom-semi-finished-tema": {
+    name: "5 Bedroom Semi-Finished House",
+    location: "Tema",
+    type: "House",
+    status: "completed",
+    price: "Contact for Pricing",
+    bedrooms: "5",
+    bathrooms: "",
+    sqft: "",
+    parking: "",
+    description: "Semi finished 5 bedroom house. Comes with a pergola summer hut and kitsbif greenery.",
+    images: [
+      "images/properties/PROJECT 14/2nd.jpeg",
+      "images/properties/PROJECT 14/3rd.jpeg",
+      "images/properties/PROJECT 14/4th.jpeg",
+      "images/properties/PROJECT 14/5th.jpeg",
+      "images/properties/PROJECT 14/6th.jpeg",
+      "images/properties/PROJECT 14/7th.jpeg",
+      "images/properties/PROJECT 14/8th.jpeg",
+      "images/properties/PROJECT 14/9th.jpeg",
+      "images/properties/PROJECT 14/10th.jpeg",
+      "images/properties/PROJECT 14/11th.jpeg",
+      "images/properties/PROJECT 14/12th.jpeg",
+      "images/properties/PROJECT 14/13th.jpeg",
+      "images/properties/PROJECT 14/14th.jpeg"
+    ],
+    amenities: [],
+    features: []
+  },
+
+  // Project 16: Restaurant at Community Tema - Completed
+  "restaurant-community-tema": {
+    name: "Restaurant at Community Tema",
+    location: "Community 3 - Tema",
+    type: "Commercial",
+    status: "completed",
+    price: "Contact for Pricing",
+    bedrooms: "",
+    bathrooms: "",
+    sqft: "",
+    parking: "",
+    description: "",
+    images: [
+      "images/properties/PROJECT 13/2nd.jpeg",
+      "images/properties/PROJECT 13/3rd.jpeg",
+      "images/properties/PROJECT 13/4th.jpeg",
+      "images/properties/PROJECT 13/5th.jpeg",
+      "images/properties/PROJECT 13/6th.jpeg",
+      "images/properties/PROJECT 13/7th.jpeg",
+      "images/properties/PROJECT 13/8th.jpeg",
+      "images/properties/PROJECT 13/9th.jpeg",
+      "images/properties/PROJECT 13/10th.jpeg",
+      "images/properties/PROJECT 13/11th.jpeg",
+      "images/properties/PROJECT 13/12th.jpeg",
+      "images/properties/PROJECT 13/13th.jpeg",
+      "images/properties/PROJECT 13/14th.jpeg",
+      "images/properties/PROJECT 13/15th.jpeg",
+      "images/properties/PROJECT 13/16th.jpeg",
+      "images/properties/PROJECT 13/17th.jpeg",
+      "images/properties/PROJECT 13/18th.jpeg",
+      "images/properties/PROJECT 13/19th.jpeg",
+      "images/properties/PROJECT 13/20th.jpeg"
+    ],
+    videos: [
+      "images/properties/PROJECT 13/video 1.mp4",
+      "images/properties/PROJECT 13/video 2.mp4"
+    ],
+    amenities: [],
+    features: []
+  }
 };
 
 // Export for use in other files
