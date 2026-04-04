@@ -23,8 +23,29 @@
     <!-- Custom Admin CSS -->
     <link rel="stylesheet" href="/admin/admin.css">
     
-    <!-- Auth Check - Must be before any content loads -->
-    <script>
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+        
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBZOvpdfQU0nyZgeVFptZHzPNtLCPbQm28",
+            authDomain: "wenamy-e49c5.firebaseapp.com",
+            projectId: "wenamy-e49c5",
+            storageBucket: "wenamy-e49c5.firebasestorage.app",
+            messagingSenderId: "506298664664",
+            appId: "1:506298664664:web:98266f4bd3d0c7d50879ad"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+        // Allowed admin emails
+        const ALLOWED_ADMIN_EMAILS = ['ceo@wenamy.com', 'admin@wenamy.com'];
+        
+        // Auth Check - Must be before any content loads
         (function() {
             const session = localStorage.getItem('wenamyAdminSession');
             if (!session) {
@@ -44,6 +65,14 @@
                     window.location.replace('/admin/login');
                     return;
                 }
+                
+                // Also verify Firebase auth state
+                onAuthStateChanged(auth, (user) => {
+                    if (!user || !ALLOWED_ADMIN_EMAILS.includes(user.email.toLowerCase())) {
+                        localStorage.removeItem('wenamyAdminSession');
+                        window.location.replace('/admin/login');
+                    }
+                });
             } catch (e) {
                 localStorage.removeItem('wenamyAdminSession');
                 window.location.replace('/admin/login');
@@ -502,6 +531,37 @@
                     </div>
                     
                     <div class="settings-card card-white">
+                        <h3 class="settings-title">GitHub Integration</h3>
+                        <p class="settings-desc">Configure GitHub API access for data storage and image uploads.</p>
+                        
+                        <div class="form-group">
+                            <label>GitHub Personal Access Token</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="github-token" class="input-field" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                                <button type="button" class="btn btn-outline" onclick="testGitHubConnection()">Test</button>
+                            </div>
+                            <small class="input-help">Create token at GitHub → Settings → Developer settings → Personal access tokens</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Repository</label>
+                            <input type="text" id="github-repo" class="input-field" value="saintkarimm/WENAMY-3" disabled>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Branch</label>
+                            <input type="text" id="github-branch" class="input-field" value="main" disabled>
+                        </div>
+                        
+                        <div id="github-status" class="github-status"></div>
+                        
+                        <div class="form-actions mt-40">
+                            <button type="button" class="btn btn-primary" onclick="saveGitHubToken()">Save Token</button>
+                            <button type="button" class="btn btn-outline" onclick="syncDataFromGitHub()">Sync Data</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card card-white">
                         <h3 class="settings-title">Company Info</h3>
                         <div class="company-info">
                             <div class="company-logo">
@@ -641,6 +701,7 @@
     </div>
 
     <script src="/js/projects-data.js"></script>
+    <script src="/admin/github-api.js"></script>
     <script src="/admin/admin.js"></script>
     <script src="/admin/search.js"></script>
 </body>

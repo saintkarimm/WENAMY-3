@@ -1,0 +1,66 @@
+{
+  "3-bedroom-bungalow": {
+    "name": "3 Bedroom Bungalow",
+    "location": "Cantonments, Accra",
+    "type": "Apartments",
+    "status": "available",
+    "price": "$83,000+",
+    "bedrooms": "3",
+    "bathrooms": "4",
+    "sqft": "1,800",
+    "parking": "2 Spaces",
+    "description": "3 bedrooms, 4 washrooms, kitchens, pantry, and a big hall. Designed and built for family living and recreational activities. This beautiful bungalow offers spacious living areas perfect for entertaining guests and creating lasting family memories.",
+    "images": [
+      "images/properties/PROJECT 1/2nd.png",
+      "images/properties/PROJECT 1/3rd.png",
+      "images/properties/PROJECT 1/4th.png",
+      "images/properties/PROJECT 1/5th.png"
+    ],
+    "thumbnail": "images/properties/PROJECT 1/1st.png",
+    "amenities": ["3 Bedrooms", "4 Washrooms", "Kitchen", "Pantry", "Big Hall", "Family Living", "Recreational Space"],
+    "features": [
+      "Spacious family living areas",
+      "Modern kitchen with pantry",
+      "4 washrooms for convenience",
+      "Big hall for entertaining",
+      "Recreational activity spaces",
+      "Prime Cantonments location",
+      "Secure neighborhood",
+      "Quality construction"
+    ],
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  "6-bedroom-villa": {
+    "name": "6 Bedroom Villa",
+    "location": "Airport Residential, Accra",
+    "type": "Villa",
+    "status": "available",
+    "price": "$83,000+",
+    "bedrooms": "6",
+    "bathrooms": "9",
+    "sqft": "8,000+",
+    "parking": "4+ Spaces",
+    "description": "Fascinating Villa designed for special and exceptional people. On a little more than one Acre of land, this Villa features Rooftop Infinity pool, 3 halls, 2 kitchens, Cinema, Bar, Barbecue area, Outdoor jacuzzi, Large windows, Bedrooms: 6, Bathrooms: 9, And extras.",
+    "images": [
+      "images/properties/PROJECT 2/2nd.png",
+      "images/properties/PROJECT 2/3rd.png",
+      "images/properties/PROJECT 2/4th.png",
+      "images/properties/PROJECT 2/5th.png"
+    ],
+    "thumbnail": "images/properties/PROJECT 2/1st.png",
+    "amenities": ["Rooftop Infinity Pool", "Cinema", "Bar", "Barbecue Area", "Outdoor Jacuzzi", "2 Kitchens", "3 Halls"],
+    "features": [
+      "Over 1 acre of land",
+      "Rooftop infinity pool",
+      "Private cinema room",
+      "Bar and entertainment area",
+      "Outdoor jacuzzi",
+      "Large windows for natural light",
+      "6 en-suite bedrooms",
+      "9 bathrooms"
+    ],
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  }
+}

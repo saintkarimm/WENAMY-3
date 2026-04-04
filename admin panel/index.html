@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenamy Admin Dashboard</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <!-- Mobile Overlay for Sidebars -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="right-panel-overlay" id="right-panel-overlay" onclick="document.querySelector('.right-panel').classList.remove('active'); this.classList.remove('active');"></div>
+
+    <!-- Mobile Floating Task Toggle Button -->
+    <button id="task-panel-toggle" class="floating-task-btn" onclick="document.querySelector('.right-panel').classList.add('active'); document.getElementById('right-panel-overlay').classList.add('active');">
+        <i class="ph ph-list-checks"></i>
+    </button>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- ======================= -->
+        <!-- 1. FLOATING SIDEBAR -->
+        <!-- ======================= -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list" id="nav-list">
+                    <li class="nav-item active" data-target="dashboard">
+                        <a href="#" class="nav-link">
+                            <i class="ph ph-squares-four"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-target="properties">
+                        <a href="#" class="nav-link">
+                            <i class="ph ph-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-target="leads">
+                        <a href="#" class="nav-link">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span class="badge count-badge" id="nav-lead-count"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-target="clients">
+                        <a href="#" class="nav-link">
+                            <i class="ph ph-list-dashes"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-target="blog">
+                        <a href="#" class="nav-link">
+                            <i class="ph ph-chat-teardrop-dots"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <ul class="nav-list footer-list">
+                    <li class="nav-item" data-target="settings">
+                        <a href="#" class="nav-link">
+                            <i class="ph ph-gear"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-danger">
+                            <i class="ph ph-sign-out"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- ======================= -->
+        <!-- 2. MAIN CONTENT AREA -->
+        <!-- ======================= -->
+        <main class="main-content" id="main-content">
+            
+            <!-- GLOBAL HEADER -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="hamburger-menu" id="hamburger-menu">
+                        <i class="ph ph-list"></i>
+                    </button>
+                    <div>
+                        <h1 class="greeting" id="header-title">Welcome, Admin!</h1>
+                        <p class="subtitle" id="current-date">Fri, 16 May 2025</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="ph ph-magnifying-glass"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <button class="btn-notification">
+                        <i class="ph ph-bell"></i>
+                        <span class="notification-dot">1</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- ========================= -->
+            <!--   SPA PAGES / ROUTES      -->
+            <!-- ========================= -->
+
+            <!-- PAGE: DASHBOARD -->
+            <div id="page-dashboard" class="page-section active">
+                
+                <div class="dashboard-grid">
+                    
+                    <!-- L1: Profile Card -->
+                    <div class="profile-hero-card">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop" id="right-profile-img" alt="Admin Avatar" class="profile-hero-img">
+                        <div class="profile-hero-info">
+                            <h2 id="right-profile-name">Megan Norton</h2>
+                            <p id="right-profile-handle">System Admin</p>
+                            
+                            <!-- Circular Progress Simulation -->
+                            <div class="circular-progress">
+                                <svg width="60" height="60" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="8"></circle>
+                                    <circle cx="50" cy="50" r="45" fill="none" class="progress-ring" stroke-dasharray="283" stroke-dashoffset="14" stroke-width="8" stroke-linecap="round"></circle>
+                                </svg>
+                                <span class="progress-text">95%</span>
+                            </div>
+                        </div>
+                        <div class="profile-pill">
+                            <i class="ph-fill ph-sparkle"></i> Update your preferences!
+                        </div>
+                    </div>
+
+                    <!-- R1: Stats Row (Top Right) -->
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Properties</span>
+                                <i class="ph ph-arrows-clockwise text-muted"></i>
+                            </div>
+                            <div class="stat-body">
+                                <h1 class="stat-number" id="stat-properties">0</h1>
+                                <div class="progress-bar-container">
+                                    <span class="progress-value">80%</span>
+                                    <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Leads</span>
+                                <i class="ph ph-arrows-clockwise text-muted"></i>
+                            </div>
+                            <div class="stat-body">
+                                <h1 class="stat-number" id="stat-leads">0</h1>
+                                <div class="progress-bar-container">
+                                    <span class="progress-value">45%</span>
+                                    <div class="progress-track"><div class="progress-fill" style="width: 45%;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card hidden" style="display:none;"><span id="stat-blogs"></span><span id="stat-clients"></span></div>
+                    </div>
+
+                    <!-- R2: Chart (Middle Right) -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <span class="chart-title">Progress</span>
+                                <div class="chart-total">
+                                    <h1>7h 22m</h1>
+                                    <span class="text-muted">Average<br>activity</span>
+                                </div>
+                            </div>
+                            <button class="btn-dropdown">A week <i class="ph ph-caret-down"></i></button>
+                        </div>
+                        <div class="chart-container-inner">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section -->
+                <div class="dashboard-bottom-grid mt-24">
+                    <!-- Bottom Left: Recent Listings -->
+                    <div class="bottom-card">
+                        <div class="card-title-row">
+                            <h3>Recent Listings</h3>
+                            <a href="#" class="show-all" onclick="navigateTo('properties')">Show all</a>
+                        </div>
+                        <div class="recent-listings-list" id="dashboard-recent-properties">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Right: Documents / Courses -->
+                    <div class="bottom-card documents-card">
+                         <div class="card-title-row">
+                            <h3>Documents</h3>
+                            <a href="#" class="show-all">Show all</a>
+                        </div>
+                        <div class="documents-grid">
+                            <div class="doc-icon"><i class="ph-fill ph-folder text-blue-light"></i><span class="doc-label">Contracts.doc</span></div>
+                            <div class="doc-icon"><i class="ph-fill ph-folder text-blue-light"></i><span class="doc-label">Brand Style.doc</span></div>
+                            <div class="doc-icon"><i class="ph-fill ph-folder text-blue-light"></i><span class="doc-label">New Project.doc</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PAGE: PROPERTIES -->
+            <div id="page-properties" class="page-section">
+                <div class="section-header">
+                    <h2 class="page-heading">Manage Properties</h2>
+                    <button class="btn btn-primary" onclick="openPropertyModal()"><i class="ph ph-plus"></i> Add Property</button>
+                </div>
+                <div class="filter-bar">
+                    <div class="search-bar w-full">
+                        <i class="ph ph-magnifying-glass"></i>
+                        <input type="text" id="property-search" placeholder="Search properties..." onkeyup="renderProperties()">
+                    </div>
+                    <select id="property-filter" class="input-select" onchange="renderProperties()">
+                        <option value="All">All Categories</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="House">House</option>
+                        <option value="Offplan">Offplan</option>
+                    </select>
+                </div>
+                <div class="data-grid" id="properties-grid">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+
+            <!-- PAGE: LEADS -->
+            <div id="page-leads" class="page-section">
+                <div class="section-header">
+                    <h2 class="page-heading">Inquiries & Leads</h2>
+                </div>
+                <div class="data-table-container card-white">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Property</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leads-table-body">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: CLIENTS -->
+            <div id="page-clients" class="page-section">
+                <div class="section-header">
+                    <h2 class="page-heading">Registered Clients</h2>
+                </div>
+                <div class="data-table-container card-white">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Date Registered</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clients-table-body">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: BLOG -->
+            <div id="page-blog" class="page-section">
+                <div class="section-header">
+                    <h2 class="page-heading">Blog Posts</h2>
+                    <button class="btn btn-primary" onclick="openBlogModal()"><i class="ph ph-plus"></i> Create Post</button>
+                </div>
+                <div class="blog-grid" id="blog-grid">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+
+            <!-- PAGE: SETTINGS -->
+            <div id="page-settings" class="page-section">
+                <div class="section-header">
+                    <h2 class="page-heading">System Settings</h2>
+                </div>
+                <div class="settings-card card-white">
+                    <form id="settings-form" onsubmit="saveSettings(event)">
+                        <h3 class="settings-title">Admin Profile</h3>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="setting-name" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label>System Handle</label>
+                            <input type="text" id="setting-handle" class="input-field" required>
+                        </div>
+                        
+                        <h3 class="settings-title mt-40">Preferences</h3>
+                        <div class="form-group toggle-group">
+                            <label>Dark Mode</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions mt-40">
+                            <button type="submit" class="btn btn-primary">Save Settings</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ======================= -->
+        <!-- 3. RIGHT PANEL -->
+        <!-- ======================= -->
+        <style>
+            .right-panel { 
+                position: fixed; top: 0; right: 0; width: 85%; max-width: 350px; height: 100vh;
+                background: var(--color-bg-white); z-index: 9999; transform: translateX(100%);
+                transition: transform 0.3s ease; overflow-y: auto; border-radius: 20px 0 0 20px;
+                margin: 0; padding: 24px; visibility: hidden;
+            }
+            .right-panel.active { transform: translateX(0) !important; visibility: visible !important; box-shadow: -10px 0 40px rgba(0,0,0,0.2) !important;}
+            .floating-task-btn { display: flex; z-index: 9998; }
+        </style>
+        <aside class="right-panel">
+            
+            <!-- Task Tracker -->
+            <div class="right-panel-section">
+                <div class="panel-header">
+                    <h2>Task tracker</h2>
+                    <button class="btn btn-outline" style="padding: 6px 12px; font-size: 12px;" onclick="openTaskModal()"><i class="ph ph-plus"></i> Add</button>
+                </div>
+                <div class="task-tabs">
+                    <button class="task-tab active" onclick="setTaskFilter('all', this)">All</button>
+                    <button class="task-tab" onclick="setTaskFilter('uncompleted', this)">Uncompleted</button>
+                    <button class="task-tab" onclick="setTaskFilter('completed', this)">Completed</button>
+                </div>
+                
+                <div class="task-list" id="task-list-container">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+
+            <!-- Goals Tracker -->
+            <div class="right-panel-section mt-40">
+                <div class="panel-header">
+                    <h2>Goals tracker</h2>
+                </div>
+                <p class="panel-desc">These goals are designed to support your onboarding during the first 2 weeks</p>
+                
+                <div class="goal-list">
+                    <div class="goal-item">
+                        <div class="goal-icon"><i class="ph ph-users"></i></div>
+                        <div class="goal-details">
+                            <div class="goal-top">
+                                <h4>Get to know your team</h4>
+                                <span>72%</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill fill-green" style="width: 72%;"></div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-item">
+                        <div class="goal-icon"><i class="ph ph-user-circle-gear"></i></div>
+                        <div class="goal-details">
+                            <div class="goal-top">
+                                <h4>Set up your work tools</h4>
+                                <span>12%</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill fill-green" style="width: 12%;"></div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-item">
+                        <div class="goal-icon"><i class="ph ph-file-text"></i></div>
+                        <div class="goal-details">
+                            <div class="goal-top">
+                                <h4>Complete your profile</h4>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill fill-green" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </aside>
+
+    </div>
+
+    <!-- ======================= -->
+    <!-- GLOBAL UI COMPONENTS -->
+    <!-- ======================= -->
+    
+    <!-- Modal Container -->
+    <div class="modal-overlay" id="modal-container" style="display: none;">
+        <div class="modal-box" id="modal-content">
+            <!-- Modal Body Injected by JS -->
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

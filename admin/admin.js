@@ -535,6 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initTheme();
     initTaskTrackerUI();
+    initGitHubSettings();
     
     // Initial renders
     renderDashboard();
@@ -1515,7 +1516,7 @@ function removeOffplanImage(index) {
     updateOffplanImagePreview();
 }
 
-function saveProperty(e, id) {
+async function saveProperty(e, id) {
     e.preventDefault();
     
     // Get price values
@@ -1547,7 +1548,7 @@ function saveProperty(e, id) {
         price: priceDisplay,
         priceUSD: priceUSD,
         priceGHS: priceGHS,
-        type: subCategory, // Type is now the sub-category
+        type: subCategory,
         mainCategory: document.getElementById('prop-main-category').value,
         subCategory: subCategory,
         status: document.getElementById('prop-status').value,
@@ -1556,29 +1557,69 @@ function saveProperty(e, id) {
         measurement: document.getElementById('prop-measurement').value || '',
         description: document.getElementById('prop-description').value || '',
         image: mainImage,
-        images: uploadedPropertyImages, // Store all images
-        videos: uploadedPropertyVideos // Store all videos
+        images: uploadedPropertyImages,
+        videos: uploadedPropertyVideos
     };
 
+    // Save to local state first
     if (id) {
         let index = state.properties.findIndex(p => p.id === id);
         state.properties[index] = { ...state.properties[index], ...payload };
         addActivity(`Updated property: ${payload.title}`, 'edit');
-        showToast('Property updated successfully.');
     } else {
         payload.id = Date.now();
         state.properties.unshift(payload);
         addActivity(`Added new property: ${payload.title}`, 'add');
-        showToast('Property created successfully.');
     }
     
     saveState();
+    
+    // Sync to GitHub if authenticated
+    if (window.githubAPI.isAuthenticated()) {
+        try {
+            showToast('Syncing to GitHub...', 'info');
+            await syncPropertiesToGitHub();
+            showToast(id ? 'Property updated and synced!' : 'Property created and synced!');
+        } catch (error) {
+            console.error('GitHub sync error:', error);
+            showToast('Saved locally but GitHub sync failed', 'error');
+        }
+    } else {
+        showToast(id ? 'Property updated successfully.' : 'Property created successfully.');
+    }
+    
     closeModal();
     renderProperties();
     renderDashboard();
 }
 
-function deleteProperty(id) {
+// Sync all properties to GitHub
+async function syncPropertiesToGitHub() {
+    const projects = {};
+    state.properties.forEach(prop => {
+        const projectId = prop.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        projects[projectId] = {
+            name: prop.title,
+            location: prop.location,
+            type: prop.type,
+            status: prop.status,
+            price: prop.price,
+            bedrooms: prop.bedrooms,
+            bathrooms: prop.bathrooms,
+            sqft: prop.measurement,
+            description: prop.description,
+            images: prop.images || [],
+            thumbnail: prop.image,
+            mainCategory: prop.mainCategory,
+            subCategory: prop.subCategory,
+            updatedAt: new Date().toISOString()
+        };
+    });
+    
+    await window.githubAPI.saveProjects(projects);
+}
+
+async function deleteProperty(id) {
     if (!confirm('Are you sure you want to delete this property?')) return;
     
     const property = state.properties.find(p => p.id === id);
@@ -1588,8 +1629,21 @@ function deleteProperty(id) {
         renderProperties();
         renderDashboard();
         addActivity(`Deleted property: ${property.title}`, 'delete');
-        showToast('Property deleted successfully.');
         saveState();
+        
+        // Sync to GitHub if authenticated
+        if (window.githubAPI.isAuthenticated()) {
+            try {
+                showToast('Syncing deletion to GitHub...', 'info');
+                await syncPropertiesToGitHub();
+                showToast('Property deleted and synced!');
+            } catch (error) {
+                console.error('GitHub sync error:', error);
+                showToast('Deleted locally but GitHub sync failed', 'error');
+            }
+        } else {
+            showToast('Property deleted successfully.');
+        }
     }
 }
 
@@ -1918,6 +1972,97 @@ function saveSettings(e) {
     showToast('Settings saved successfully!');
 }
 
+// =========================================
+// GITHUB INTEGRATION FUNCTIONS
+// =========================================
+
+function saveGitHubToken() {
+    const token = document.getElementById('github-token').value.trim();
+    if (!token) {
+        showToast('Please enter a GitHub token', 'error');
+        return;
+    }
+    
+    window.githubAPI.setToken(token);
+    showToast('GitHub token saved successfully!');
+    updateGitHubStatus('Token saved', 'success');
+}
+
+async function testGitHubConnection() {
+    const token = document.getElementById('github-token').value.trim();
+    if (!token) {
+        showToast('Please enter a GitHub token first', 'error');
+        return;
+    }
+    
+    window.githubAPI.setToken(token);
+    updateGitHubStatus('Testing connection...', 'info');
+    
+    try {
+        const result = await window.githubAPI.testConnection();
+        if (result.success) {
+            updateGitHubStatus('Connected to GitHub successfully!', 'success');
+            showToast('GitHub connection successful!');
+        } else {
+            updateGitHubStatus(`Connection failed: ${result.message}`, 'error');
+            showToast('GitHub connection failed', 'error');
+        }
+    } catch (error) {
+        updateGitHubStatus(`Error: ${error.message}`, 'error');
+        showToast('GitHub connection failed', 'error');
+    }
+}
+
+function updateGitHubStatus(message, type) {
+    const statusEl = document.getElementById('github-status');
+    if (statusEl) {
+        statusEl.textContent = message;
+        statusEl.className = `github-status ${type}`;
+    }
+}
+
+async function syncDataFromGitHub() {
+    if (!window.githubAPI.isAuthenticated()) {
+        showToast('Please configure GitHub token first', 'error');
+        return;
+    }
+    
+    updateGitHubStatus('Syncing data...', 'info');
+    
+    try {
+        // Load projects
+        const projects = await window.githubAPI.loadProjects();
+        state.projects = Object.entries(projects).map(([id, data]) => ({
+            id,
+            ...data
+        }));
+        
+        // Load off-plan projects
+        const offplanData = await window.githubAPI.loadOffplanProjects();
+        state.offplan = offplanData.offplan || [];
+        
+        saveState();
+        renderProperties();
+        renderOffplan();
+        updateStats();
+        
+        updateGitHubStatus('Data synced successfully!', 'success');
+        showToast('Data synced from GitHub!');
+    } catch (error) {
+        updateGitHubStatus(`Sync failed: ${error.message}`, 'error');
+        showToast('Failed to sync data', 'error');
+    }
+}
+
+// Initialize GitHub token on load
+function initGitHubSettings() {
+    const token = window.githubAPI.getToken();
+    const tokenInput = document.getElementById('github-token');
+    if (tokenInput && token) {
+        tokenInput.value = token;
+    }
+}
+
 function initTheme() {
     const toggle = document.getElementById('theme-toggle');
     if(toggle) toggle.checked = state.settings.darkMode;
@@ -1970,7 +2115,17 @@ function toggleTheme(isInit = false) {
 // =========================================
 // AUTHENTICATION & LOGOUT
 // =========================================
-function logoutAdmin() {
+async function logoutAdmin() {
+    // Sign out from Firebase if available
+    if (window.firebaseAuth) {
+        try {
+            const { signOut } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js');
+            await signOut(window.firebaseAuth);
+        } catch (error) {
+            console.error('Firebase signout error:', error);
+        }
+    }
+    
     // Clear the session
     localStorage.removeItem('wenamyAdminSession');
     

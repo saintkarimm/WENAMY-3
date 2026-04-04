@@ -1,0 +1,36 @@
+{
+  "offplan": [
+    {
+      "id": "offplan-1",
+      "title": "Luxury Apartments - East Legon",
+      "location": "East Legon, Accra",
+      "price": "$150,000",
+      "category": "apartments",
+      "subcategory": "luxury",
+      "description": "Premium luxury apartments in the heart of East Legon with modern amenities and stunning views.",
+      "features": ["3 Bedrooms", "3 Bathrooms", "Swimming Pool", "Gym", "24/7 Security"],
+      "image": "images/offplan/OFFPLAN1/1st.jpg",
+      "gallery": [
+        "images/offplan/OFFPLAN1/2nd.jpg",
+        "images/offplan/OFFPLAN1/3rd.jpg",
+        "images/offplan/OFFPLAN1/4th.jpeg",
+        "images/offplan/OFFPLAN1/5th.jpeg"
+      ],
+      "status": "selling",
+      "completionDate": "2025-12-01",
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z"
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "All Projects", "count": 0 },
+    { "id": "apartments", "name": "Apartments", "count": 0 },
+    { "id": "villas", "name": "Villas", "count": 0 },
+    { "id": "townhouses", "name": "Townhouses", "count": 0 },
+    { "id": "land", "name": "Land", "count": 0 }
+  ],
+  "metadata": {
+    "lastUpdated": "2024-01-15T10:00:00Z",
+    "version": "1.0"
+  }
+}

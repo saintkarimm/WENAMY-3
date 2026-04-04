@@ -1,12 +1,21 @@
 // =========================================
-// WENAMY ADMIN LOGIN - JAVASCRIPT
+// WENAMY ADMIN LOGIN - FIREBASE AUTH
 // =========================================
 
-// Admin Credentials (Hardcoded as requested)
-const ADMIN_CREDENTIALS = {
-    email: 'ceo@wenamy.com',
-    password: 'CEOWENAMY2026'
-};
+// Import Firebase Auth functions (loaded via module script in HTML)
+import { 
+    signInWithEmailAndPassword, 
+    sendPasswordResetEmail,
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+// Allowed admin emails (whitelist)
+const ALLOWED_ADMIN_EMAILS = [
+    'ceo@wenamy.com',
+    'admin@wenamy.com'
+];
 
 // DOM Elements
 const loginForm = document.getElementById('loginForm');
@@ -42,7 +51,7 @@ togglePasswordBtn.addEventListener('click', () => {
 });
 
 // =========================================
-// FORM SUBMISSION
+// FORM SUBMISSION - FIREBASE AUTH
 // =========================================
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -59,20 +68,25 @@ loginForm.addEventListener('submit', async (e) => {
     // Show loading state
     setLoading(true);
     
-    // Simulate network delay for realism
-    await simulateDelay(800);
-    
-    // Check credentials
-    if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+    try {
+        // Check if email is in allowed admin list
+        if (!ALLOWED_ADMIN_EMAILS.includes(email.toLowerCase())) {
+            throw new Error('Unauthorized email address');
+        }
+        
+        // Sign in with Firebase
+        const userCredential = await signInWithEmailAndPassword(window.firebaseAuth, email, password);
+        const user = userCredential.user;
+        
         // Successful login
-        handleSuccessfulLogin();
-    } else {
-        // Failed login
-        handleFailedLogin();
+        handleSuccessfulLogin(user);
+    } catch (error) {
+        console.error('Login error:', error);
+        handleFailedLogin(error);
+    } finally {
+        // Hide loading state
+        setLoading(false);
     }
-    
-    // Hide loading state
-    setLoading(false);
 });
 
 // =========================================
@@ -111,14 +125,15 @@ function isValidEmail(email) {
 }
 
 // =========================================
-// LOGIN HANDLERS
+// LOGIN HANDLERS - FIREBASE
 // =========================================
-function handleSuccessfulLogin() {
-    // Create session
+function handleSuccessfulLogin(user) {
+    // Create session with Firebase user data
     const session = {
-        email: ADMIN_CREDENTIALS.email,
+        email: user.email,
+        uid: user.uid,
         loginTime: new Date().toISOString(),
-        token: generateToken()
+        token: user.accessToken || generateToken()
     };
     
     // Store in localStorage
@@ -133,8 +148,36 @@ function handleSuccessfulLogin() {
     }, 1000);
 }
 
-function handleFailedLogin() {
-    showError('Invalid login credentials');
+function handleFailedLogin(error) {
+    // Map Firebase error codes to user-friendly messages
+    let errorMessage = 'Invalid login credentials';
+    
+    switch (error.code) {
+        case 'auth/user-not-found':
+            errorMessage = 'No account found with this email';
+            break;
+        case 'auth/wrong-password':
+            errorMessage = 'Incorrect password';
+            break;
+        case 'auth/invalid-email':
+            errorMessage = 'Please enter a valid email address';
+            break;
+        case 'auth/user-disabled':
+            errorMessage = 'This account has been disabled';
+            break;
+        case 'auth/too-many-requests':
+            errorMessage = 'Too many failed attempts. Please try again later';
+            break;
+        case 'auth/invalid-credential':
+            errorMessage = 'Invalid email or password';
+            break;
+        default:
+            if (error.message === 'Unauthorized email address') {
+                errorMessage = 'This email is not authorized for admin access';
+            }
+    }
+    
+    showError(errorMessage);
     
     // Shake animation on inputs
     emailInput.parentElement.classList.add('shake');
@@ -151,31 +194,44 @@ function handleFailedLogin() {
 }
 
 // =========================================
-// SESSION MANAGEMENT
+// SESSION MANAGEMENT - FIREBASE
 // =========================================
 function checkExistingSession() {
-    const session = localStorage.getItem('wenamyAdminSession');
-    
-    if (session) {
-        try {
-            const sessionData = JSON.parse(session);
-            const loginTime = new Date(sessionData.loginTime);
-            const now = new Date();
-            const hoursSinceLogin = (now - loginTime) / (1000 * 60 * 60);
-            
-            // Session expires after 24 hours
-            if (hoursSinceLogin < 24) {
-                // Auto-redirect to dashboard
-                window.location.href = '/admin';
+    // Check Firebase auth state
+    onAuthStateChanged(window.firebaseAuth, (user) => {
+        if (user) {
+            // User is signed in, check if email is authorized
+            if (ALLOWED_ADMIN_EMAILS.includes(user.email.toLowerCase())) {
+                // Check local session expiry
+                const session = localStorage.getItem('wenamyAdminSession');
+                if (session) {
+                    try {
+                        const sessionData = JSON.parse(session);
+                        const loginTime = new Date(sessionData.loginTime);
+                        const now = new Date();
+                        const hoursSinceLogin = (now - loginTime) / (1000 * 60 * 60);
+                        
+                        // Session expires after 24 hours
+                        if (hoursSinceLogin < 24 && sessionData.uid === user.uid) {
+                            // Auto-redirect to dashboard
+                            window.location.href = '/admin';
+                            return;
+                        }
+                    } catch (e) {
+                        console.error('Session parse error:', e);
+                    }
+                }
+                
+                // Valid Firebase user but no/expired local session - create new session
+                handleSuccessfulLogin(user);
             } else {
-                // Clear expired session
+                // User not authorized - sign them out
+                signOut(window.firebaseAuth);
                 localStorage.removeItem('wenamyAdminSession');
             }
-        } catch (e) {
-            // Invalid session data
-            localStorage.removeItem('wenamyAdminSession');
         }
-    }
+        // If no user, stay on login page
+    });
 }
 
 function generateToken() {
@@ -218,7 +274,7 @@ function simulateDelay(ms) {
 }
 
 // =========================================
-// MODAL FUNCTIONS
+// FORGOT PASSWORD - FIREBASE
 // =========================================
 function showForgotPassword() {
     forgotModal.classList.add('active');
@@ -226,6 +282,80 @@ function showForgotPassword() {
 
 function closeForgotModal() {
     forgotModal.classList.remove('active');
+}
+
+// Handle password reset
+async function sendPasswordReset() {
+    const resetEmailInput = forgotModal.querySelector('input[type="email"]');
+    const resetEmail = resetEmailInput.value.trim();
+    
+    if (!resetEmail) {
+        showToast('Please enter your email address', 'error');
+        return;
+    }
+    
+    if (!isValidEmail(resetEmail)) {
+        showToast('Please enter a valid email address', 'error');
+        return;
+    }
+    
+    // Check if email is authorized
+    if (!ALLOWED_ADMIN_EMAILS.includes(resetEmail.toLowerCase())) {
+        showToast('This email is not authorized for admin access', 'error');
+        return;
+    }
+    
+    try {
+        await sendPasswordResetEmail(window.firebaseAuth, resetEmail);
+        showToast('Password reset email sent! Check your inbox.', 'success');
+        closeForgotModal();
+        resetEmailInput.value = '';
+    } catch (error) {
+        console.error('Password reset error:', error);
+        let message = 'Failed to send reset email';
+        if (error.code === 'auth/user-not-found') {
+            message = 'No account found with this email';
+        }
+        showToast(message, 'error');
+    }
+}
+
+// Toast notification helper
+function showToast(message, type = 'info') {
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast-notification ${type}`;
+    toast.innerHTML = `
+        <i class="ph ${type === 'success' ? 'ph-check-circle' : type === 'error' ? 'ph-warning-circle' : 'ph-info'}"></i>
+        <span>${message}</span>
+    `;
+    
+    // Add styles
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#22c55e' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(toast);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
 }
 
 function showSignUp() {
