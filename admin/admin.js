@@ -705,6 +705,22 @@ function closeModal() {
 // =========================================
 // DASHBOARD VIEW - WITH REAL DATA
 // =========================================
+function updateStats() {
+    const stats = calculateRealStats();
+    
+    const statTotal = document.getElementById('stat-total-properties');
+    const statOngoing = document.getElementById('stat-ongoing');
+    const statCompleted = document.getElementById('stat-completed');
+    const statLeads = document.getElementById('stat-leads');
+    const navLeadCount = document.getElementById('nav-lead-count');
+    
+    if (statTotal) statTotal.textContent = stats.totalProperties;
+    if (statOngoing) statOngoing.textContent = stats.ongoing;
+    if (statCompleted) statCompleted.textContent = stats.completed;
+    if (statLeads) statLeads.textContent = stats.totalLeads;
+    if (navLeadCount) navLeadCount.textContent = stats.totalLeads > 0 ? `+${stats.totalLeads}` : '';
+}
+
 function renderDashboard() {
     // Get real stats from data
     const stats = calculateRealStats();
