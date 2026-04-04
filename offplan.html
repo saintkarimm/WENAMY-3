@@ -620,6 +620,22 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- 3+1 Bedroom Retirement Home - OFFPLAN17 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes" onclick="openRetirementHomeModal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN17/1st.jpeg" alt="3+1 Bedroom Retirement Home" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <span class="offplan-luxury-category">Retirement Homes</span>
+          <h3 class="offplan-luxury-title">3+1 Bedroom House</h3>
+          <p class="offplan-luxury-desc">Very nice and simple 3 bedroom house with one bedroom Boy's Quarters and a garden. All bedrooms en-suite with huge living room.</p>
+          <div class="offplan-luxury-footer">
+            <span class="offplan-luxury-price">Contact for Pricing</span>
+            <span class="offplan-luxury-status available">Available Now</span>
+          </div>
+        </div>
+      </article>
+
       <!-- 4 Bedroom Townhouse with Boy's Quarters -->
       <article class="offplan-luxury-card scroll-animate" data-category="townhouses" onclick="openTownhouseModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -1015,6 +1031,94 @@
             <li>Ample parking space</li>
             <li>Premium finishes throughout</li>
             <li>Serene community setting</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Retirement Home Modal (OFFPLAN17) -->
+  <div class="offplan-modal" id="retirementHomeModal">
+    <div class="offplan-modal-overlay" onclick="closeRetirementHomeModal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeRetirementHomeModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="retirementHomeCarouselContainer">
+          <img src="images/offplan/OFFPLAN17/1st.jpeg" alt="Retirement Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/2nd.jpeg" alt="Retirement Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/3rd.jpeg" alt="Retirement Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/4th.jpeg" alt="Retirement Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/5th.jpeg" alt="Retirement Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/6th.jpeg" alt="Retirement Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/7th.jpeg" alt="Retirement Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/8th.jpeg" alt="Retirement Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveRetirementHomeCarousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveRetirementHomeCarousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="retirementHomeCarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3+1 Bedroom Retirement Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Available for Off-Plan Purchase
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">3+1</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Land Size</span>
+            <span class="feature-value">90x100</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Status</span>
+            <span class="feature-value">Off-Plan</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Very nice and simple 3 bedroom house with a one bedroom Boy's Quarters and a garden. All bedrooms en-suite with huge living room and guest washroom. Provisions made for a swimming pool and summer hut.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>3 bedrooms all en-suite</li>
+            <li>1 bedroom Boy's Quarters</li>
+            <li>Beautiful garden</li>
+            <li>Huge living room</li>
+            <li>Guest washroom</li>
+            <li>Provision for swimming pool</li>
+            <li>Summer hut</li>
+            <li>Land size: 90 by 100</li>
           </ul>
         </div>
         
@@ -2804,6 +2908,55 @@
     function goToTownhouseSlide(index) {
       townhouseCurrentSlide = index;
       updateTownhouseCarousel();
+    }
+    
+    // Retirement Home Modal Functions (OFFPLAN17)
+    let retirementHomeCurrentSlide = 0;
+    const retirementHomeSlides = document.querySelectorAll('#retirementHomeCarouselContainer .carousel-slide');
+    const retirementHomeTotalSlides = retirementHomeSlides.length;
+    
+    function openRetirementHomeModal() {
+      document.getElementById('retirementHomeModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createRetirementHomeCarouselDots();
+      updateRetirementHomeCarousel();
+    }
+    
+    function closeRetirementHomeModal() {
+      document.getElementById('retirementHomeModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createRetirementHomeCarouselDots() {
+      const dotsContainer = document.getElementById('retirementHomeCarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < retirementHomeTotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === retirementHomeCurrentSlide ? ' active' : '');
+        dot.onclick = () => goToRetirementHomeSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateRetirementHomeCarousel() {
+      retirementHomeSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === retirementHomeCurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#retirementHomeCarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === retirementHomeCurrentSlide);
+      });
+    }
+    
+    function moveRetirementHomeCarousel(direction) {
+      retirementHomeCurrentSlide = (retirementHomeCurrentSlide + direction + retirementHomeTotalSlides) % retirementHomeTotalSlides;
+      updateRetirementHomeCarousel();
+    }
+    
+    function goToRetirementHomeSlide(index) {
+      retirementHomeCurrentSlide = index;
+      updateRetirementHomeCarousel();
     }
     
     // Vacation Modal Functions
