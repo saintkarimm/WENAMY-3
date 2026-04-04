@@ -2914,7 +2914,7 @@
           offplanCards.forEach(card => {
             const cardCategory = card.dataset.category;
             
-            if (category === 'all' || cardCategory === category) {
+            if (category === 'all' || cardCategory.includes(category)) {
               card.style.display = 'block';
               setTimeout(() => {
                 card.style.opacity = '1';
