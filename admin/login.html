@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenamy Admin - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Background Image Container -->
+    <div class="background-container">
+        <div class="gradient-bg"></div>
+    </div>
+
+    <!-- Main Login Container -->
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Glossy Reflection Effect -->
+            <div class="card-gloss"></div>
+            
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <img src="../images/icons/logo.png" alt="Wenamy" class="wenamy-logo">
+                </div>
+            </div>
+
+            <!-- Welcome Title -->
+            <h2 class="welcome-title">Welcome Back, Admin</h2>
+
+            <!-- Login Form -->
+            <form class="login-form" id="loginForm">
+                <!-- Error Message -->
+                <div class="error-message" id="errorMessage">
+                    <i class="ph ph-warning-circle"></i>
+                    <span>Invalid login credentials</span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="input-group">
+                    <label for="email">Email address</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-envelope input-icon"></i>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email"
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-lock-key input-icon"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="current-password"
+                        >
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="ph ph-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Forgot Password -->
+                <div class="forgot-password">
+                    <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-button" id="loginButton">
+                    <span class="button-text">Login</span>
+                    <span class="button-loader">
+                        <i class="ph ph-spinner animate-spin"></i>
+                    </span>
+                </button>
+
+                <!-- Sign Up Link -->
+                <div class="signup-link">
+                    <span>Are you new?</span>
+                    <a href="#" onclick="showSignUp()">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal-overlay" id="forgotModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeForgotModal()">
+                <i class="ph ph-x"></i>
+            </button>
+            <div class="modal-icon">
+                <i class="ph ph-key"></i>
+            </div>
+            <h3>Reset Password</h3>
+            <p>Enter your email address and we'll send you a link to reset your password.</p>
+            <div class="input-wrapper">
+                <i class="ph ph-envelope input-icon"></i>
+                <input type="email" placeholder="Enter your email">
+            </div>
+            <button class="login-button" onclick="closeForgotModal()">Send Reset Link</button>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeSignUpModal()">
+                <i class="ph ph-x"></i>
+            </button>
+            <div class="modal-icon">
+                <i class="ph ph-user-plus"></i>
+            </div>
+            <h3>Create Account</h3>
+            <p>Contact the system administrator to create a new admin account.</p>
+            <button class="login-button" onclick="closeSignUpModal()">Got it</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
