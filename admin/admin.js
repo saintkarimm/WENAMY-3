@@ -2131,27 +2131,26 @@ function toggleTheme(isInit = false) {
 // =========================================
 // AUTHENTICATION & LOGOUT
 // =========================================
-async function logoutAdmin() {
+function logoutAdmin() {
     // Sign out from Firebase if available
     if (window.firebaseAuth) {
-        try {
-            const { signOut } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js');
-            await signOut(window.firebaseAuth);
-        } catch (error) {
-            console.error('Firebase signout error:', error);
-        }
+        import('https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js')
+            .then(({ signOut }) => signOut(window.firebaseAuth))
+            .catch(error => console.error('Firebase signout error:', error))
+            .finally(() => {
+                completeLogout();
+            });
+    } else {
+        completeLogout();
     }
-    
+}
+
+function completeLogout() {
     // Clear the session
     localStorage.removeItem('wenamyAdminSession');
     
-    // Show logout message (optional)
-    if (typeof showToast === 'function') {
-        showToast('Logged out successfully');
-    }
-    
-    // Redirect to login page
-    window.location.replace('/admin/login');
+    // Redirect to login page immediately
+    window.location.href = '/admin/login';
 }
 
 // Check authentication status periodically (every 5 minutes)
