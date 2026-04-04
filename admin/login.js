@@ -129,7 +129,7 @@ function handleSuccessfulLogin() {
     
     // Redirect to dashboard after delay
     setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = '/admin';
     }, 1000);
 }
 
@@ -166,7 +166,7 @@ function checkExistingSession() {
             // Session expires after 24 hours
             if (hoursSinceLogin < 24) {
                 // Auto-redirect to dashboard
-                window.location.href = 'index.html';
+                window.location.href = '/admin';
             } else {
                 // Clear expired session
                 localStorage.removeItem('wenamyAdminSession');

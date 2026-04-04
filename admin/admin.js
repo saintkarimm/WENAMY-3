@@ -1980,14 +1980,14 @@ function logoutAdmin() {
     }
     
     // Redirect to login page
-    window.location.replace('login.html');
+    window.location.replace('/admin/login');
 }
 
 // Check authentication status periodically (every 5 minutes)
 setInterval(() => {
     const session = localStorage.getItem('wenamyAdminSession');
     if (!session) {
-        window.location.replace('login.html');
+        window.location.replace('/admin/login');
         return;
     }
     
@@ -1999,10 +1999,10 @@ setInterval(() => {
         
         if (hoursSinceLogin >= 24) {
             localStorage.removeItem('wenamyAdminSession');
-            window.location.replace('login.html');
+            window.location.replace('/admin/login');
         }
     } catch (e) {
         localStorage.removeItem('wenamyAdminSession');
-        window.location.replace('login.html');
+        window.location.replace('/admin/login');
     }
 }, 300000); // Check every 5 minutes

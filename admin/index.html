@@ -28,7 +28,7 @@
         (function() {
             const session = localStorage.getItem('wenamyAdminSession');
             if (!session) {
-                window.location.replace('login.html');
+                window.location.replace('/admin/login');
                 return;
             }
             
@@ -41,12 +41,12 @@
                 // Session expires after 24 hours
                 if (hoursSinceLogin >= 24) {
                     localStorage.removeItem('wenamyAdminSession');
-                    window.location.replace('login.html');
+                    window.location.replace('/admin/login');
                     return;
                 }
             } catch (e) {
                 localStorage.removeItem('wenamyAdminSession');
-                window.location.replace('login.html');
+                window.location.replace('/admin/login');
                 return;
             }
         })();
