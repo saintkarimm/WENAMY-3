@@ -605,6 +605,7 @@
     <div class="category-filter-container">
       <div class="category-filter-pills">
         <button class="category-pill active" data-category="all">All</button>
+        <button class="category-pill" data-category="retirement-homes">Retirement Homes</button>
         <button class="category-pill" data-category="duplexes">Duplexes</button>
         <button class="category-pill" data-category="triplexes">Triplexes</button>
         <button class="category-pill" data-category="bungalows">Bungalows</button>
@@ -3700,10 +3701,15 @@
       if (e) e.stopPropagation();
       
       // Determine which modal is active and get its images
+      const retirementHomeModal = document.getElementById('retirementHomeModal');
       const townhouseModal = document.getElementById('townhouseModal');
       const vacationModal = document.getElementById('vacationModal');
       
-      if (townhouseModal.classList.contains('active')) {
+      if (retirementHomeModal && retirementHomeModal.classList.contains('active')) {
+        lightboxCurrentModal = 'retirementHome';
+        lightboxImages = Array.from(document.querySelectorAll('#retirementHomeCarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = retirementHomeCurrentSlide;
+      } else if (townhouseModal.classList.contains('active')) {
         lightboxCurrentModal = 'townhouse';
         lightboxImages = Array.from(document.querySelectorAll('#townhouseCarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = townhouseCurrentSlide;
