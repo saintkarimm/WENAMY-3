@@ -621,6 +621,22 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- Modern Retirement Bungalow - OFFPLAN18 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openModernRetirementModal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN18/1st.jpeg" alt="Modern Retirement Bungalow" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <span class="offplan-luxury-category">Retirement Homes, Bungalows</span>
+          <h3 class="offplan-luxury-title">Modern Retirement Bungalow</h3>
+          <p class="offplan-luxury-desc">Precision engineered modern map with optimal space planning, natural light & ventilation, premium layout with master bedroom, open kitchen, and future-ready design.</p>
+          <div class="offplan-luxury-footer">
+            <span class="offplan-luxury-price">$185,000</span>
+            <span class="offplan-luxury-status available">Available Now</span>
+          </div>
+        </div>
+      </article>
+
       <!-- 3+1 Bedroom Retirement Home - OFFPLAN17 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes" onclick="openRetirementHomeModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -2489,6 +2505,92 @@
     </div>
   </div>
 
+  <!-- OFFPLAN18 Modal: Modern Retirement Bungalow -->
+  <div class="offplan-modal" id="modernRetirementModal">
+    <div class="offplan-modal-overlay" onclick="closeModernRetirementModal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeModernRetirementModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="modernRetirementCarouselContainer">
+          <img src="images/offplan/OFFPLAN18/1st.jpeg" alt="Modern Retirement Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/2nd.jpeg" alt="Modern Retirement Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/3rd.jpeg" alt="Modern Retirement Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/4th.jpeg" alt="Modern Retirement Bungalow View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/5th.jpeg" alt="Modern Retirement Bungalow View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/6th.jpeg" alt="Modern Retirement Bungalow View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveModernRetirementCarousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveModernRetirementCarousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="modernRetirementCarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Modern Retirement Bungalow</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Price</span>
+            <span class="feature-value">$185,000</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Retirement/Bungalow</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Status</span>
+            <span class="feature-value">Off-Plan</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          This modern map has been designed with precision engineering, focusing on optimal space planning where every room and corridor is planned efficiently. Features natural light & ventilation for the comfort and health of the family, premium layout with master bedroom with a beautiful view, open kitchen, and modern sitting areas. Future-ready design includes parking space, storage, and extensions.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>Optimal Space Planning - every room and corridor planned efficiently</li>
+            <li>Natural Light & Ventilation for family comfort and health</li>
+            <li>Premium Layout with master bedroom and beautiful view</li>
+            <li>Open kitchen design</li>
+            <li>Modern sitting areas</li>
+            <li>Future-Ready Design with parking space</li>
+            <li>Storage and extension provisions</li>
+            <li>Blueprint for modern lifestyle, elegance and high class</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Image Lightbox -->
   <div class="image-lightbox" id="imageLightbox">
     <button class="lightbox-close" onclick="closeLightbox(event)">
@@ -2958,6 +3060,55 @@
     function goToRetirementHomeSlide(index) {
       retirementHomeCurrentSlide = index;
       updateRetirementHomeCarousel();
+    }
+    
+    // Modern Retirement Modal Functions (OFFPLAN18)
+    let modernRetirementCurrentSlide = 0;
+    const modernRetirementSlides = document.querySelectorAll('#modernRetirementCarouselContainer .carousel-slide');
+    const modernRetirementTotalSlides = modernRetirementSlides.length;
+    
+    function openModernRetirementModal() {
+      document.getElementById('modernRetirementModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createModernRetirementCarouselDots();
+      updateModernRetirementCarousel();
+    }
+    
+    function closeModernRetirementModal() {
+      document.getElementById('modernRetirementModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createModernRetirementCarouselDots() {
+      const dotsContainer = document.getElementById('modernRetirementCarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < modernRetirementTotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === modernRetirementCurrentSlide ? ' active' : '');
+        dot.onclick = () => goToModernRetirementSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateModernRetirementCarousel() {
+      modernRetirementSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === modernRetirementCurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#modernRetirementCarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === modernRetirementCurrentSlide);
+      });
+    }
+    
+    function moveModernRetirementCarousel(direction) {
+      modernRetirementCurrentSlide = (modernRetirementCurrentSlide + direction + modernRetirementTotalSlides) % modernRetirementTotalSlides;
+      updateModernRetirementCarousel();
+    }
+    
+    function goToModernRetirementSlide(index) {
+      modernRetirementCurrentSlide = index;
+      updateModernRetirementCarousel();
     }
     
     // Vacation Modal Functions
@@ -3701,11 +3852,16 @@
       if (e) e.stopPropagation();
       
       // Determine which modal is active and get its images
+      const modernRetirementModal = document.getElementById('modernRetirementModal');
       const retirementHomeModal = document.getElementById('retirementHomeModal');
       const townhouseModal = document.getElementById('townhouseModal');
       const vacationModal = document.getElementById('vacationModal');
       
-      if (retirementHomeModal && retirementHomeModal.classList.contains('active')) {
+      if (modernRetirementModal && modernRetirementModal.classList.contains('active')) {
+        lightboxCurrentModal = 'modernRetirement';
+        lightboxImages = Array.from(document.querySelectorAll('#modernRetirementCarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = modernRetirementCurrentSlide;
+      } else if (retirementHomeModal && retirementHomeModal.classList.contains('active')) {
         lightboxCurrentModal = 'retirementHome';
         lightboxImages = Array.from(document.querySelectorAll('#retirementHomeCarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = retirementHomeCurrentSlide;
