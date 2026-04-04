@@ -45,8 +45,8 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=11">
-  <link rel="stylesheet" href="css/footer.css?v=11">
+  <link rel="stylesheet" href="css/hero-new.css?v=12">
+  <link rel="stylesheet" href="css/footer.css?v=12">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -613,6 +613,7 @@
         <button class="category-pill" data-category="mansions">Mansions</button>
         <button class="category-pill" data-category="townhouses">Townhouses</button>
         <button class="category-pill" data-category="vacation-homes">Vacation Homes</button>
+        <button class="category-pill" data-category="cabins">Cabins</button>
         <button class="category-pill" data-category="environmentalists">Environmentalists</button>
       </div>
     </div>
@@ -621,6 +622,126 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- 3 Bedroom Bungalow - OFFPLAN24 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="bungalows" onclick="openBungalow24Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN24/1st.jpeg" alt="3 Bedroom Bungalow" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3 Bedroom Bungalow</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">3 bedroom bungalow on a 70 by 100 plot of land. Comes with 3 bedrooms, 4 washrooms, pool and a large compound. Natural facade with stones, wood and lots of greenery.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price">$145,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openBungalow24Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- Modern Scandi Cabin - OFFPLAN23 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="cabins" onclick="openCabin23Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN23/1st.jpeg" alt="Modern Scandi Cabin" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Modern Scandi Cabin</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Compact cabin with vertical timber cladding, metal roof, open-plan layout with high ceilings, extensive glazing, and modern Scandi aesthetic. Features master bedroom, single bedroom, and lofted double bedroom.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Peduasi
+          </p>
+          <div class="offplan-luxury-price">$95,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openCabin23Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- T-Shaped Cabin - OFFPLAN22 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="cabins" onclick="openCabin22Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN22/1st.jpeg" alt="T-Shaped Cabin" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">T-Shaped Cabin</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Single-family house with T-shaped design, where one wing contains common and service areas, and the perpendicular wing contains private areas. 2 bedrooms, 3 washrooms.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Aburi
+          </p>
+          <div class="offplan-luxury-price">$165,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openCabin22Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- 3 Bedroom Duplex - OFFPLAN21 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplex21Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN21/1st.jpeg" alt="3 Bedroom Duplex" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3 Bedroom Duplex</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">3 bedroom, 4 washrooms, 2 living rooms with every bedroom ensuite. Features large windows, pool, serene outdoor spaces, greens, and large 270° balcony for great views.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price">$225,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openDuplex21Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- 3 Bedroom Bungalow - OFFPLAN20 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openBungalow20Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN20/1st.jpeg" alt="3 Bedroom Bungalow" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3 Bedroom Bungalow</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Master bedroom with toilet and closet area, 2 standard bedrooms with toilet, large living room with space, dining, modern kitchen with store, public toilet for visitors, veranda and laundry area.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price">$195,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openBungalow20Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- 3 Bedroom Family Home - OFFPLAN19 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openFamilyHome19Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN19/1st.jpg" alt="3 Bedroom Family Home" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3 Bedroom Family Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Designed for calm and peaceful living, with features that make retirement feel better. Great floor plan with ease in moving, sunlight, fresh natural air and low maintenance cost.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price">$179,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openFamilyHome19Modal()">View Details</button>
+        </div>
+      </article>
+
       <!-- Modern Retirement Bungalow - OFFPLAN18 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openModernRetirementModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -2599,6 +2720,524 @@
     </div>
   </div>
 
+  <!-- OFFPLAN19 Modal: 3 Bedroom Family Home -->
+  <div class="offplan-modal" id="familyHome19Modal">
+    <div class="offplan-modal-overlay" onclick="closeFamilyHome19Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeFamilyHome19Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="familyHome19CarouselContainer">
+          <img src="images/offplan/OFFPLAN19/1st.jpg" alt="Family Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/2nd.jpg" alt="Family Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/3rd.jpg" alt="Family Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/4th.jpg" alt="Family Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/5th.jpg" alt="Family Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveFamilyHome19Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveFamilyHome19Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="familyHome19CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3 Bedroom Family Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Price</span>
+            <span class="feature-value">$179,000</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Retirement/Bungalow</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Status</span>
+            <span class="feature-value">Off-Plan</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          3 bedroom family home designed for calm and peaceful living, with features that also make retirement feel better. Great floor plan with ease in moving, sunlight, fresh natural air and with low maintenance cost.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>3 bedroom family home</li>
+            <li>Designed for calm and peaceful living</li>
+            <li>Retirement-friendly features</li>
+            <li>Great floor plan with ease in moving</li>
+            <li>Natural sunlight throughout</li>
+            <li>Fresh natural air ventilation</li>
+            <li>Low maintenance cost</li>
+            <li>Perfect for family living</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN20 Modal: 3 Bedroom Bungalow -->
+  <div class="offplan-modal" id="bungalow20Modal">
+    <div class="offplan-modal-overlay" onclick="closeBungalow20Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeBungalow20Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="bungalow20CarouselContainer">
+          <img src="images/offplan/OFFPLAN20/1st.jpeg" alt="Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN20/2nd.jpeg" alt="Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN20/3rd.jpeg" alt="Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveBungalow20Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveBungalow20Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="bungalow20CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3 Bedroom Bungalow</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Price</span>
+            <span class="feature-value">$195,000</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Category</span>
+            <span class="feature-value">Retirement/Bungalow</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Status</span>
+            <span class="feature-value">Off-Plan</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          3 bedroom bungalow with master bedroom featuring toilet and closet area, 2 standard bedrooms with toilet, one room plain, large living room with space, dining area, modern kitchen with store, public toilet for visitors, veranda and laundry area. Modern look with attractive finishing.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>Master bedroom with toilet and closet area</li>
+            <li>2 standard bedrooms with toilet</li>
+            <li>One room plain</li>
+            <li>Large living room with space</li>
+            <li>Dining area</li>
+            <li>Modern kitchen with store</li>
+            <li>Public toilet for visitors</li>
+            <li>Veranda and laundry area</li>
+            <li>Modern look with attractive finishing</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN21 Modal: 3 Bedroom Duplex -->
+  <div class="offplan-modal" id="duplex21Modal">
+    <div class="offplan-modal-overlay" onclick="closeDuplex21Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeDuplex21Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="duplex21CarouselContainer">
+          <img src="images/offplan/OFFPLAN21/1st.jpeg" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN21/2nd.jpeg" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN21/3rd.jpeg" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN21/4th.jpeg" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveDuplex21Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveDuplex21Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="duplex21CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3 Bedroom Duplex</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">4</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Price</span>
+            <span class="feature-value">$225,000</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          3 bedroom duplex with 4 washrooms and 2 living rooms with every bedroom ensuite. Features large windows, pool, serene outdoor spaces, greens, and large 270° balcony for great views.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>3 bedrooms all ensuite</li>
+            <li>4 washrooms</li>
+            <li>2 living rooms</li>
+            <li>Large windows for natural light</li>
+            <li>Swimming pool</li>
+            <li>Serene outdoor spaces</li>
+            <li>Green surroundings</li>
+            <li>Large 270° balcony for great views</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN22 Modal: T-Shaped Cabin -->
+  <div class="offplan-modal" id="cabin22Modal">
+    <div class="offplan-modal-overlay" onclick="closeCabin22Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeCabin22Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="cabin22CarouselContainer">
+          <img src="images/offplan/OFFPLAN22/1st.jpeg" alt="Cabin View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN22/2nd.jpeg" alt="Cabin View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN22/3rd.jpeg" alt="Cabin View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN22/4th.jpeg" alt="Cabin View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveCabin22Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveCabin22Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="cabin22CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">T-Shaped Cabin</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Aburi
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">2</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Price</span>
+            <span class="feature-value">$165,000</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Single-family house developed at a level prioritizing horizontal in the ground, organizing in T-shaped design, where one wing contains common and service areas, and perpendicularly the one containing areas of greater privacy.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>T-shaped architectural design</li>
+            <li>2 bedrooms</li>
+            <li>3 washrooms</li>
+            <li>Horizontal ground-level development</li>
+            <li>Common and service areas in one wing</li>
+            <li>Private areas in perpendicular wing</li>
+            <li>Single-family cabin design</li>
+            <li>Perfect for peaceful living in Aburi</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN23 Modal: Modern Scandi Cabin -->
+  <div class="offplan-modal" id="cabin23Modal">
+    <div class="offplan-modal-overlay" onclick="closeCabin23Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeCabin23Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="cabin23CarouselContainer">
+          <img src="images/offplan/OFFPLAN23/1st.jpeg" alt="Scandi Cabin View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/2nd.jpeg" alt="Scandi Cabin View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/3rd.jpeg" alt="Scandi Cabin View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/4th.jpeg" alt="Scandi Cabin View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/5th.jpeg" alt="Scandi Cabin View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/6th.jpeg" alt="Scandi Cabin View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/7th.jpeg" alt="Scandi Cabin View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/8th.jpeg" alt="Scandi Cabin View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/9th.jpeg" alt="Scandi Cabin View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveCabin23Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveCabin23Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="cabin23CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Modern Scandi Cabin</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Peduasi
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Dimensions</span>
+            <span class="feature-value">9m x 6m x 4.6m</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Price</span>
+            <span class="feature-value">$95,000</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          Compact cabin with vertical timber cladding paired with a metal roof for a modern Scandi aesthetic. Features open-plan layout with high ceilings and extensive glazing to maximise natural light and views to the outdoors. Soft, earthy interior colour palette complemented by warm natural stone and wood accents.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>Vertical timber cladding with metal roof</li>
+            <li>Modern Scandi aesthetic</li>
+            <li>Open-plan layout with high ceilings</li>
+            <li>Extensive glazing for natural light</li>
+            <li>Soft, earthy interior colour palette</li>
+            <li>Warm natural stone and wood accents</li>
+            <li>Central feature wall as decorative focal point</li>
+            <li>Spacious kitchen with breakfast bar</li>
+            <li>Ground-floor master bedroom & single bedroom</li>
+            <li>Lofted double bedroom above</li>
+            <li>Elegant stone bathroom with walk-in shower</li>
+            <li>Built-in cabinets throughout</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFPLAN24 Modal: 3 Bedroom Bungalow -->
+  <div class="offplan-modal" id="bungalow24Modal">
+    <div class="offplan-modal-overlay" onclick="closeBungalow24Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeBungalow24Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <!-- Image Carousel -->
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="bungalow24CarouselContainer">
+          <img src="images/offplan/OFFPLAN24/1st.jpeg" alt="Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN24/2nd.jpeg" alt="Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN24/3rd.jpeg" alt="Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveBungalow24Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveBungalow24Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="bungalow24CarouselDots"></div>
+      </div>
+      
+      <!-- Project Details -->
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3 Bedroom Bungalow</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item">
+            <span class="feature-label">Plot Size</span>
+            <span class="feature-value">70 x 100</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Bedrooms</span>
+            <span class="feature-value">3</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Washrooms</span>
+            <span class="feature-value">4</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-label">Price</span>
+            <span class="feature-value">$145,000</span>
+          </div>
+        </div>
+        
+        <p class="offplan-modal-description">
+          3 bedroom bungalow on a 70 by 100 plot of land. Comes with 3 bedrooms, 4 washrooms, pool and a large compound. Natural facade with stones, wood and lots of greenery.
+        </p>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>70 x 100 plot of land</li>
+            <li>3 spacious bedrooms</li>
+            <li>4 washrooms</li>
+            <li>Swimming pool</li>
+            <li>Large compound</li>
+            <li>Natural facade with stones</li>
+            <li>Wood accents</li>
+            <li>Beautiful greenery</li>
+            <li>Perfect family home</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="contact.html" class="offplan-modal-btn primary">Inquire Now</a>
+          <a href="tel:+233201234567" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Image Lightbox -->
   <div class="image-lightbox" id="imageLightbox">
     <button class="lightbox-close" onclick="closeLightbox(event)">
@@ -3117,6 +3756,300 @@
     function goToModernRetirementSlide(index) {
       modernRetirementCurrentSlide = index;
       updateModernRetirementCarousel();
+    }
+    
+    // Family Home 19 Modal Functions (OFFPLAN19)
+    let familyHome19CurrentSlide = 0;
+    const familyHome19Slides = document.querySelectorAll('#familyHome19CarouselContainer .carousel-slide');
+    const familyHome19TotalSlides = familyHome19Slides.length;
+    
+    function openFamilyHome19Modal() {
+      document.getElementById('familyHome19Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createFamilyHome19CarouselDots();
+      updateFamilyHome19Carousel();
+    }
+    
+    function closeFamilyHome19Modal() {
+      document.getElementById('familyHome19Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createFamilyHome19CarouselDots() {
+      const dotsContainer = document.getElementById('familyHome19CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < familyHome19TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === familyHome19CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToFamilyHome19Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateFamilyHome19Carousel() {
+      familyHome19Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === familyHome19CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#familyHome19CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === familyHome19CurrentSlide);
+      });
+    }
+    
+    function moveFamilyHome19Carousel(direction) {
+      familyHome19CurrentSlide = (familyHome19CurrentSlide + direction + familyHome19TotalSlides) % familyHome19TotalSlides;
+      updateFamilyHome19Carousel();
+    }
+    
+    function goToFamilyHome19Slide(index) {
+      familyHome19CurrentSlide = index;
+      updateFamilyHome19Carousel();
+    }
+    
+    // Bungalow 20 Modal Functions (OFFPLAN20)
+    let bungalow20CurrentSlide = 0;
+    const bungalow20Slides = document.querySelectorAll('#bungalow20CarouselContainer .carousel-slide');
+    const bungalow20TotalSlides = bungalow20Slides.length;
+    
+    function openBungalow20Modal() {
+      document.getElementById('bungalow20Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createBungalow20CarouselDots();
+      updateBungalow20Carousel();
+    }
+    
+    function closeBungalow20Modal() {
+      document.getElementById('bungalow20Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createBungalow20CarouselDots() {
+      const dotsContainer = document.getElementById('bungalow20CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < bungalow20TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === bungalow20CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToBungalow20Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateBungalow20Carousel() {
+      bungalow20Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === bungalow20CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#bungalow20CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === bungalow20CurrentSlide);
+      });
+    }
+    
+    function moveBungalow20Carousel(direction) {
+      bungalow20CurrentSlide = (bungalow20CurrentSlide + direction + bungalow20TotalSlides) % bungalow20TotalSlides;
+      updateBungalow20Carousel();
+    }
+    
+    function goToBungalow20Slide(index) {
+      bungalow20CurrentSlide = index;
+      updateBungalow20Carousel();
+    }
+    
+    // Duplex 21 Modal Functions (OFFPLAN21)
+    let duplex21CurrentSlide = 0;
+    const duplex21Slides = document.querySelectorAll('#duplex21CarouselContainer .carousel-slide');
+    const duplex21TotalSlides = duplex21Slides.length;
+    
+    function openDuplex21Modal() {
+      document.getElementById('duplex21Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createDuplex21CarouselDots();
+      updateDuplex21Carousel();
+    }
+    
+    function closeDuplex21Modal() {
+      document.getElementById('duplex21Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createDuplex21CarouselDots() {
+      const dotsContainer = document.getElementById('duplex21CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < duplex21TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === duplex21CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToDuplex21Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateDuplex21Carousel() {
+      duplex21Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === duplex21CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#duplex21CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === duplex21CurrentSlide);
+      });
+    }
+    
+    function moveDuplex21Carousel(direction) {
+      duplex21CurrentSlide = (duplex21CurrentSlide + direction + duplex21TotalSlides) % duplex21TotalSlides;
+      updateDuplex21Carousel();
+    }
+    
+    function goToDuplex21Slide(index) {
+      duplex21CurrentSlide = index;
+      updateDuplex21Carousel();
+    }
+    
+    // Cabin 22 Modal Functions (OFFPLAN22)
+    let cabin22CurrentSlide = 0;
+    const cabin22Slides = document.querySelectorAll('#cabin22CarouselContainer .carousel-slide');
+    const cabin22TotalSlides = cabin22Slides.length;
+    
+    function openCabin22Modal() {
+      document.getElementById('cabin22Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createCabin22CarouselDots();
+      updateCabin22Carousel();
+    }
+    
+    function closeCabin22Modal() {
+      document.getElementById('cabin22Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createCabin22CarouselDots() {
+      const dotsContainer = document.getElementById('cabin22CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < cabin22TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === cabin22CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToCabin22Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateCabin22Carousel() {
+      cabin22Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === cabin22CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#cabin22CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === cabin22CurrentSlide);
+      });
+    }
+    
+    function moveCabin22Carousel(direction) {
+      cabin22CurrentSlide = (cabin22CurrentSlide + direction + cabin22TotalSlides) % cabin22TotalSlides;
+      updateCabin22Carousel();
+    }
+    
+    function goToCabin22Slide(index) {
+      cabin22CurrentSlide = index;
+      updateCabin22Carousel();
+    }
+    
+    // Cabin 23 Modal Functions (OFFPLAN23)
+    let cabin23CurrentSlide = 0;
+    const cabin23Slides = document.querySelectorAll('#cabin23CarouselContainer .carousel-slide');
+    const cabin23TotalSlides = cabin23Slides.length;
+    
+    function openCabin23Modal() {
+      document.getElementById('cabin23Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createCabin23CarouselDots();
+      updateCabin23Carousel();
+    }
+    
+    function closeCabin23Modal() {
+      document.getElementById('cabin23Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createCabin23CarouselDots() {
+      const dotsContainer = document.getElementById('cabin23CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < cabin23TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === cabin23CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToCabin23Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateCabin23Carousel() {
+      cabin23Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === cabin23CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#cabin23CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === cabin23CurrentSlide);
+      });
+    }
+    
+    function moveCabin23Carousel(direction) {
+      cabin23CurrentSlide = (cabin23CurrentSlide + direction + cabin23TotalSlides) % cabin23TotalSlides;
+      updateCabin23Carousel();
+    }
+    
+    function goToCabin23Slide(index) {
+      cabin23CurrentSlide = index;
+      updateCabin23Carousel();
+    }
+    
+    // Bungalow 24 Modal Functions (OFFPLAN24)
+    let bungalow24CurrentSlide = 0;
+    const bungalow24Slides = document.querySelectorAll('#bungalow24CarouselContainer .carousel-slide');
+    const bungalow24TotalSlides = bungalow24Slides.length;
+    
+    function openBungalow24Modal() {
+      document.getElementById('bungalow24Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createBungalow24CarouselDots();
+      updateBungalow24Carousel();
+    }
+    
+    function closeBungalow24Modal() {
+      document.getElementById('bungalow24Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function createBungalow24CarouselDots() {
+      const dotsContainer = document.getElementById('bungalow24CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < bungalow24TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === bungalow24CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToBungalow24Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateBungalow24Carousel() {
+      bungalow24Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === bungalow24CurrentSlide);
+      });
+      
+      const dots = document.querySelectorAll('#bungalow24CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === bungalow24CurrentSlide);
+      });
+    }
+    
+    function moveBungalow24Carousel(direction) {
+      bungalow24CurrentSlide = (bungalow24CurrentSlide + direction + bungalow24TotalSlides) % bungalow24TotalSlides;
+      updateBungalow24Carousel();
+    }
+    
+    function goToBungalow24Slide(index) {
+      bungalow24CurrentSlide = index;
+      updateBungalow24Carousel();
     }
     
     // Vacation Modal Functions
@@ -3860,12 +4793,42 @@
       if (e) e.stopPropagation();
       
       // Determine which modal is active and get its images
+      const bungalow24Modal = document.getElementById('bungalow24Modal');
+      const cabin23Modal = document.getElementById('cabin23Modal');
+      const cabin22Modal = document.getElementById('cabin22Modal');
+      const duplex21Modal = document.getElementById('duplex21Modal');
+      const bungalow20Modal = document.getElementById('bungalow20Modal');
+      const familyHome19Modal = document.getElementById('familyHome19Modal');
       const modernRetirementModal = document.getElementById('modernRetirementModal');
       const retirementHomeModal = document.getElementById('retirementHomeModal');
       const townhouseModal = document.getElementById('townhouseModal');
       const vacationModal = document.getElementById('vacationModal');
       
-      if (modernRetirementModal && modernRetirementModal.classList.contains('active')) {
+      if (bungalow24Modal && bungalow24Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'bungalow24';
+        lightboxImages = Array.from(document.querySelectorAll('#bungalow24CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = bungalow24CurrentSlide;
+      } else if (cabin23Modal && cabin23Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'cabin23';
+        lightboxImages = Array.from(document.querySelectorAll('#cabin23CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = cabin23CurrentSlide;
+      } else if (cabin22Modal && cabin22Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'cabin22';
+        lightboxImages = Array.from(document.querySelectorAll('#cabin22CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = cabin22CurrentSlide;
+      } else if (duplex21Modal && duplex21Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'duplex21';
+        lightboxImages = Array.from(document.querySelectorAll('#duplex21CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = duplex21CurrentSlide;
+      } else if (bungalow20Modal && bungalow20Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'bungalow20';
+        lightboxImages = Array.from(document.querySelectorAll('#bungalow20CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = bungalow20CurrentSlide;
+      } else if (familyHome19Modal && familyHome19Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'familyHome19';
+        lightboxImages = Array.from(document.querySelectorAll('#familyHome19CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = familyHome19CurrentSlide;
+      } else if (modernRetirementModal && modernRetirementModal.classList.contains('active')) {
         lightboxCurrentModal = 'modernRetirement';
         lightboxImages = Array.from(document.querySelectorAll('#modernRetirementCarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = modernRetirementCurrentSlide;
