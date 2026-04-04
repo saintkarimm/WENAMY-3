@@ -372,6 +372,40 @@ const projectsData = {
     ]
   },
 
+  // Project 16: 5 Bedroom Duplex - Ongoing
+  "5-bedroom-duplex-community-6": {
+    name: "5 Bedroom Duplex",
+    location: "Community 6 - Tema",
+    type: "Duplex",
+    status: "ongoing",
+    price: "Contact for Pricing",
+    bedrooms: "5",
+    bathrooms: "6",
+    sqft: "",
+    parking: "",
+    livingRooms: "2",
+    description: "Spacious 5 bedroom duplex at Community 6, Tema featuring 6 washrooms and 2 living rooms. Modern design with premium finishes perfect for family living.",
+    images: [
+      "images/properties/ONGOING/Project 4/2nd.jpeg",
+      "images/properties/ONGOING/Project 4/3rd.jpeg",
+      "images/properties/ONGOING/Project 4/4th.jpeg",
+      "images/properties/ONGOING/Project 4/5th.jpeg",
+      "images/properties/ONGOING/Project 4/6th.jpeg"
+    ],
+    video: "images/properties/ONGOING/Project 4/video 1.mp4",
+    amenities: ["5 Bedrooms", "6 Washrooms", "2 Living Rooms", "Modern Design", "Premium Finishes"],
+    features: [
+      "Spacious 5 bedroom layout",
+      "6 washrooms for convenience",
+      "2 living rooms for entertaining",
+      "Modern architectural design",
+      "Premium quality finishes",
+      "Prime Community 6 location",
+      "Family-friendly environment",
+      "Secure neighborhood"
+    ]
+  },
+
   // Project 13: Hotel Apartments - Ongoing
   "hotel-apartments-community-26": {
     name: "Hotel Apartments",
