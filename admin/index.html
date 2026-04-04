@@ -56,10 +56,10 @@
 
     <!-- Mobile Overlay for Sidebars -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
-    <div class="right-panel-overlay" id="right-panel-overlay" onclick="document.querySelector('.right-panel').classList.remove('active'); this.classList.remove('active');"></div>
+    <div class="right-panel-overlay" id="right-panel-overlay" onclick="closeRightPanel();"></div>
 
     <!-- Mobile Floating Task Toggle Button -->
-    <button id="task-panel-toggle" class="floating-task-btn" onclick="document.querySelector('.right-panel').classList.add('active'); document.getElementById('right-panel-overlay').classList.add('active');">
+    <button id="task-panel-toggle" class="floating-task-btn" onclick="openRightPanel();">
         <i class="ph ph-list-checks"></i>
     </button>
 
@@ -93,18 +93,18 @@
                     </li>
                     <li class="nav-item" data-target="leads">
                         <a href="#" class="nav-link" title="Leads">
-                            <img src="Leads & Inquiries-icon.png" alt="Leads" class="nav-icon-img">
+                            <img src="/admin/Leads & Inquiries-icon.png" alt="Leads" class="nav-icon-img">
                             <span class="badge count-badge" id="nav-lead-count"></span>
                         </a>
                     </li>
                     <li class="nav-item" data-target="clients">
                         <a href="#" class="nav-link" title="Clients">
-                            <img src="registeredclient-icon.png" alt="Clients" class="nav-icon-img">
+                            <img src="/admin/registeredclient-icon.png" alt="Clients" class="nav-icon-img">
                         </a>
                     </li>
                     <li class="nav-item" data-target="blog">
                         <a href="#" class="nav-link" title="Blog">
-                            <img src="blogpost-icon.png" alt="Blog" class="nav-icon-img">
+                            <img src="/admin/blogpost-icon.png" alt="Blog" class="nav-icon-img">
                         </a>
                     </li>
                 </ul>
@@ -376,7 +376,7 @@
             <div id="page-leads" class="page-section">
                 <div class="section-header">
                     <div class="heading-with-icon">
-                        <img src="Leads & Inquiries-icon.png" alt="Leads" class="page-heading-icon">
+                        <img src="/admin/Leads & Inquiries-icon.png" alt="Leads" class="page-heading-icon">
                         <div>
                             <h2 class="page-heading">Leads & Inquiries</h2>
                             <p class="page-subtitle">Manage client inquiries and follow-ups</p>
@@ -408,7 +408,7 @@
             <div id="page-clients" class="page-section">
                 <div class="section-header">
                     <div class="heading-with-icon">
-                        <img src="registeredclient-icon.png" alt="Clients" class="page-heading-icon">
+                        <img src="/admin/registeredclient-icon.png" alt="Clients" class="page-heading-icon">
                         <div>
                             <h2 class="page-heading">Registered Clients</h2>
                             <p class="page-subtitle">Client accounts and saved properties</p>
@@ -439,7 +439,7 @@
             <div id="page-blog" class="page-section">
                 <div class="section-header">
                     <div class="heading-with-icon">
-                        <img src="blogpost-icon.png" alt="Blog" class="page-heading-icon">
+                        <img src="/admin/blogpost-icon.png" alt="Blog" class="page-heading-icon">
                         <div>
                             <h2 class="page-heading">Blog Posts</h2>
                             <p class="page-subtitle">Manage content and articles</p>

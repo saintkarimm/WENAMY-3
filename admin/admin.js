@@ -2006,3 +2006,25 @@ setInterval(() => {
         window.location.replace('/admin/login');
     }
 }, 300000); // Check every 5 minutes
+
+// =========================================
+// RIGHT PANEL SCROLL CONTROL
+// =========================================
+function openRightPanel() {
+    document.querySelector('.right-panel').classList.add('active');
+    document.getElementById('right-panel-overlay').classList.add('active');
+    document.body.classList.add('panel-open');
+}
+
+function closeRightPanel() {
+    document.querySelector('.right-panel').classList.remove('active');
+    document.getElementById('right-panel-overlay').classList.remove('active');
+    document.body.classList.remove('panel-open');
+}
+
+// Close right panel on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeRightPanel();
+    }
+});

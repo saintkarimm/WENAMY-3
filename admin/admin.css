@@ -2207,9 +2207,14 @@ input:checked + .slider:before {
     z-index: 900;
 }
 
-.right-panel-overlay.active { 
-    opacity: 1; 
-    pointer-events: all; 
+.right-panel-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Prevent body scroll when task panel is open */
+body.panel-open {
+    overflow: hidden;
 }
 
 .floating-task-btn {
@@ -2425,3 +2430,98 @@ input:checked + .slider:before {
         padding: 16px 8px;
     }
 }
+
+/* =========================================
+   MOBILE FORM RESPONSIVENESS
+   ========================================= */
+@media screen and (max-width: 640px) {
+    /* Modal box full width on mobile */
+    .modal-box {
+        width: 95%;
+        padding: 20px;
+        max-height: 85vh;
+    }
+    
+    /* Form grid stacks vertically on mobile */
+    .modal-box form [style*='grid'] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    /* Form inputs full width */
+    .modal-box .input-field,
+    .modal-box .input-select {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    /* Form groups margin */
+    .modal-box .form-group {
+        margin-bottom: 16px;
+    }
+    
+    /* Image upload grid */
+    .modal-box [style*='display: flex'][style*='flex-wrap'] {
+        gap: 8px !important;
+    }
+    
+    /* Thumbnail size reduction */
+    .modal-box img[style*='width: 80px'] {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+/* =========================================
+   PROPERTIES/OFFPLAN GRID SCROLL FIX
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* Ensure grid doesn't overflow */
+    .data-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 100px; /* Space for bottom actions */
+    }
+    
+    /* Property/Offplan cards */
+    .property-card,
+    .offplan-card {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    /* Action buttons always visible */n    .property-card .card-actions,
+    .offplan-card .card-actions {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        background: transparent;
+        padding: 12px 0 0 0;
+        justify-content: flex-end;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+    .modal-box {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        padding: 16px;
+    }
+    
+    .modal-title {
+        font-size: 18px;
+    }
+    
+    /* Smaller inputs */
+    .modal-box .input-field,
+    .modal-box .input-select {
+        padding: 10px 12px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
