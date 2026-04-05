@@ -23,19 +23,6 @@
       ]
     },
     {
-      "source": "/admin/config.yml",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
-        {
-          "key": "Content-Type",
-          "value": "text/yaml; charset=utf-8"
-        }
-      ]
-    },
-    {
       "source": "/css/(.*)",
       "headers": [
         {
