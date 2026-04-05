@@ -28,13 +28,16 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Status", name: "status", widget: "select", options: ["ongoing", "upcoming", "completed"] }
       - { label: "Location", name: "location", widget: "string" }
-      - { label: "Type", name: "type", widget: "select", options: ["Apartments", "Villa", "Duplex", "Bungalow", "House", "Penthouse"] }
+      - { label: "Type", name: "type", widget: "select", options: ["Apartments", "Villa", "Duplex", "Bungalow", "House", "Penthouse", "Hut"] }
       - { label: "Price", name: "price", widget: "string", required: false }
       - { label: "Bedrooms", name: "bedrooms", widget: "number", required: false }
       - { label: "Bathrooms", name: "bathrooms", widget: "number", required: false }
-      - { label: "Area (sqft)", name: "area", widget: "number", required: false }
+      - { label: "Area (sqft)", name: "sqft", widget: "string", required: false }
+      - { label: "Parking", name: "parking", widget: "string", required: false }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Video URL", name: "video", widget: "string", required: false, hint: "Direct URL to an mp4 video file" }
+      - { label: "Features / Amenities", name: "features", widget: "list", required: false, hint: "One feature per line e.g. Rooftop Pool" }
       - { label: "Description", name: "description", widget: "markdown", required: false }
 
   - name: "offplan"

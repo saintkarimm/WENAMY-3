@@ -921,7 +921,42 @@
   <script src="../js/animations.js"></script>
   <script src="../js/basket.js"></script>
   <script src="../js/navbar.js"></script>
+  <script src="../js/contentLoader.js"></script>
   <script>
+    // ---- CMS UPCOMING CARD INJECTOR ----
+    function renderCMSUpcomingCard(prop) {
+      const slug = prop.slug || prop.title.toLowerCase().replace(/\s+/g, '-');
+      const img = prop.image || '../images/icons/logo.png';
+      const category = (prop.type || 'property').toLowerCase();
+      const price = prop.price || 'Contact for Pricing';
+      const location = prop.location || '';
+      return `
+      <article class="project-luxury-card cms-property" data-category="${category}" data-project-id="${slug}" data-project-title="${prop.title}" data-project-location="${location}" data-project-price="${price}" data-project-image="${img}">
+        <div class="project-luxury-image-wrap">
+          <img src="${img}" alt="${prop.title}" loading="lazy" decoding="async">
+          <span class="project-status-badge upcoming">Upcoming</span>
+        </div>
+        <div class="project-luxury-content">
+          <div class="project-luxury-meta">
+            <span class="project-luxury-type">${prop.type || 'Property'}</span>
+            <span class="project-luxury-price">${price}</span>
+          </div>
+          <h3 class="project-luxury-name">${prop.title}</h3>
+          <div class="project-luxury-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${location}
+          </div>
+          <div class="project-card-actions">
+            <a href="../project-detail.html#id=${slug}" class="project-luxury-cta">View Details</a>
+            <button class="project-save-btn" data-property-id="${slug}" aria-label="Save property">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>`;
+    }
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
       const menuToggle = document.getElementById('mobileMenuToggle');
@@ -1002,6 +1037,27 @@
       cards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 100}ms`;
       });
+
+      // ---- CMS upcoming cards ----
+      (async () => {
+        try {
+          const allProps = await window.CMS.getProperties();
+          const upcoming = allProps.filter(p => (p.status || '').toLowerCase() === 'upcoming');
+          if (!upcoming.length) return;
+          const grid = document.querySelector('.projects-grid');
+          if (!grid) return;
+          upcoming.forEach(prop => grid.insertAdjacentHTML('beforeend', renderCMSUpcomingCard(prop)));
+          // Make injected cards visible and clickable
+          grid.querySelectorAll('.cms-property').forEach(card => {
+            card.classList.add('visible');
+            card.addEventListener('click', (e) => {
+              if (e.target.closest('.project-save-btn') || e.target.closest('.project-luxury-cta')) return;
+              const id = card.dataset.projectId;
+              if (id) window.location.href = `../project-detail.html#id=${id}`;
+            });
+          });
+        } catch(e) { console.warn('CMS upcoming load failed:', e); }
+      })();
     });
   </script>
 </body>

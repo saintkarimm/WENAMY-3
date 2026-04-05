@@ -211,6 +211,73 @@
   </footer>
 
   <script src="js/projects-data.js?v=11" defer></script>
+  <script src="js/contentLoader.js"></script>
+  <script>
+    // ---- CMS PROPERTY LOADER ----
+    // Fetches a single property markdown by slug from /content/properties/
+    async function loadCMSProperty(slug) {
+      try {
+        const text = await fetch(`/content/properties/${slug}.md?_=${Date.now()}`).then(r => {
+          if (!r.ok) throw new Error('not found');
+          return r.text();
+        });
+        const { data, content } = parseFrontmatter ? parseFrontmatter(text) : window._parseFM(text);
+        if (!data.title) return null;
+        // Build images array: featured image + gallery
+        const images = [];
+        if (data.image) images.push(data.image);
+        if (Array.isArray(data.gallery)) data.gallery.forEach(g => {
+          const src = typeof g === 'string' ? g : (g.image || g);
+          if (src && src !== data.image) images.push(src);
+        });
+        if (!images.length) images.push('images/icons/logo.png');
+        return {
+          name: data.title,
+          location: data.location || '',
+          type: data.type || 'Property',
+          status: data.status || 'available',
+          price: data.price || 'Contact for Pricing',
+          bedrooms: data.bedrooms ? String(data.bedrooms) : '—',
+          bathrooms: data.bathrooms ? String(data.bathrooms) : '—',
+          sqft: data.sqft || data.area ? String(data.sqft || data.area) : '—',
+          parking: data.parking || '—',
+          description: data.description || content || '',
+          images,
+          amenities: Array.isArray(data.features) ? data.features : [],
+          features: Array.isArray(data.features) ? data.features : [],
+          video: data.video || null,
+          videos: data.video ? [data.video] : []
+        };
+      } catch (e) {
+        return null;
+      }
+    }
+
+    // Expose parseFrontmatter for use above (contentLoader.js defines it but scoped)
+    // We re-declare a minimal version here for safety
+    function _parseFMLocal(text) {
+      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+      if (!match) return { data: {}, content: text };
+      const data = {};
+      match[1].split('\n').forEach(line => {
+        const idx = line.indexOf(':');
+        if (idx === -1) return;
+        const key = line.slice(0, idx).trim();
+        let val = line.slice(idx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) val = val.slice(1, -1);
+        if (val.startsWith('[') && val.endsWith(']')) {
+          try { data[key] = JSON.parse(val.replace(/'/g, '"')); } catch(e) { data[key] = val.slice(1,-1).split(',').map(s=>s.trim()); }
+          return;
+        }
+        if (!isNaN(val) && val !== '') { data[key] = Number(val); return; }
+        data[key] = val;
+      });
+      return { data, content: match[2].trim() };
+    }
+    window._parseFM = _parseFMLocal;
+    // Also alias parseFrontmatter if contentLoader.js didn't expose it globally
+    if (typeof parseFrontmatter === 'undefined') window.parseFrontmatter = _parseFMLocal;
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile Menu Toggle
@@ -238,25 +305,18 @@
         const hashParams = new URLSearchParams(window.location.hash.substring(1));
         projectId = hashParams.get('id');
       }
-      
+
       const mainContent = document.getElementById('mainContent');
-      
-      if (!projectId || !projectsData[projectId]) {
-        mainContent.innerHTML = `
-          <div class="project-not-found">
-            <h1>Project Not Found</h1>
-            <p>The project you're looking for doesn't exist or has been removed.</p>
-            <a href="projects.html" class="project-btn project-btn-primary">View All Projects</a>
-          </div>
-        `;
-        return;
-      }
-      
-      const project = projectsData[projectId];
-      const isAvailable = project.status === 'available' || project.status === 'ongoing';
+
+      // Show loading state while checking CMS
+      mainContent.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:60vh;"><p style="color:#94a3b8;font-family:Inter,sans-serif;">Loading...</p></div>';
+
+      // ---- RENDER FUNCTION ----
+      function renderProject(project) {
+        const isAvailable = project.status === 'available' || project.status === 'ongoing';
       
       // Generate features cards
-      const featuresCardsHtml = (project.features || project.amenities.slice(0, 6)).map((feature, index) => {
+        const featuresCardsHtml = (project.features && project.features.length ? project.features : (project.amenities || []).slice(0, 6)).map((feature, index) => {
         const featureIcons = [
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3M3 13h18M5 17h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z"/></svg>',
@@ -283,27 +343,24 @@
         </div>
       `}).join('');
       
-      // Generate gallery strip with lazy loading
-      const galleryStripHtml = project.images.map((img, index) => `
-        <div class="gallery-item" onclick="openGalleryWithIndex(${index})">
-          <img src="${img}" alt="${project.name} ${index + 1}" loading="lazy" decoding="async">
-        </div>
-      `).join('');
+        const galleryStripHtml = project.images.map((img, index) => `
+          <div class="gallery-item" onclick="openGalleryWithIndex(${index})">
+            <img src="${img}" alt="${project.name} ${index + 1}" loading="lazy" decoding="async">
+          </div>
+        `).join('');
       
-      // Generate hero slides - first image eager, rest lazy
-      const heroSlidesHtml = project.images.map((img, index) => `
-        <div class="hero-bg-slide ${index === 0 ? 'active' : ''}" data-slide="${index}">
-          <img src="${img}" alt="${project.name} ${index + 1}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
-        </div>
-      `).join('');
+        const heroSlidesHtml = project.images.map((img, index) => `
+          <div class="hero-bg-slide ${index === 0 ? 'active' : ''}" data-slide="${index}">
+            <img src="${img}" alt="${project.name} ${index + 1}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
+          </div>
+        `).join('');
       
-      // Generate slide dots
-      const slideDotsHtml = project.images.map((_, index) => `
-        <div class="slide-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})"></div>
-      `).join('');
-      
-      // Render content
-      mainContent.innerHTML = `
+        const slideDotsHtml = project.images.map((_, index) => `
+          <div class="slide-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})"></div>
+        `).join('');
+
+        // Render content
+        mainContent.innerHTML = `
         <!-- Cinematic Hero Section -->
         <section class="cinematic-hero">
           <div class="hero-bg-slider">
@@ -556,12 +613,13 @@
           </div>
         </div>
       `;
-      
-      // Store images for gallery
-      window.projectImages = project.images;
-      
-      // Global functions for gallery
-      window.goToSlide = function(index) {
+
+        // ---- end renderProject
+        // Store images for gallery
+        window.projectImages = project.images;
+
+        // Global functions for gallery
+        window.goToSlide = function(index) {
         const slides = document.querySelectorAll('.hero-bg-slide');
         const dots = document.querySelectorAll('.slide-dot');
         slides.forEach((slide, i) => {
@@ -572,139 +630,157 @@
         });
       };
       
-      window.openGallery = function() {
-        window.currentGalleryIndex = 0;
-        document.getElementById('galleryMainImage').src = window.projectImages[0];
-        document.getElementById('galleryModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
-        updateGalleryThumbnails();
-      };
+        window.openGallery = function() {
+          window.currentGalleryIndex = 0;
+          document.getElementById('galleryMainImage').src = window.projectImages[0];
+          document.getElementById('galleryModal').classList.add('active');
+          document.body.style.overflow = 'hidden';
+          updateGalleryThumbnails();
+        };
       
-      window.openGalleryWithIndex = function(index) {
-        window.currentGalleryIndex = index;
-        document.getElementById('galleryMainImage').src = window.projectImages[index];
-        document.getElementById('galleryModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
-        updateGalleryThumbnails();
-      };
-      
-      window.closeGallery = function() {
-        document.getElementById('galleryModal').classList.remove('active');
-        document.body.style.overflow = '';
-      };
+        window.openGalleryWithIndex = function(index) {
+          window.currentGalleryIndex = index;
+          document.getElementById('galleryMainImage').src = window.projectImages[index];
+          document.getElementById('galleryModal').classList.add('active');
+          document.body.style.overflow = 'hidden';
+          updateGalleryThumbnails();
+        };
+        
+        window.closeGallery = function() {
+          document.getElementById('galleryModal').classList.remove('active');
+          document.body.style.overflow = '';
+        };
 
-      // Set preload for first image
-      const heroPreload = document.getElementById('heroImagePreload');
-      if (heroPreload && project.images.length > 0) {
-        heroPreload.href = project.images[0];
-      }
-      
-      // Video Modal Functions
-      window.currentVideoIndex = 0;
-      window.projectVideos = project.videos || (project.video ? [project.video] : []);
-      
-      window.openVideoModal = function(index) {
-        window.currentVideoIndex = index;
-        const modal = document.getElementById('videoModal');
-        const video = document.getElementById('videoPlayer');
-        const source = video.querySelector('source');
-        source.src = window.projectVideos[index];
-        video.load();
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        // Autoplay video when modal opens
-        video.play().catch(e => console.log('Autoplay prevented:', e));
-      };
-
-      window.closeVideoModal = function() {
-        const modal = document.getElementById('videoModal');
-        const video = document.getElementById('videoPlayer');
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-        video.pause();
-      };
-
-      window.prevVideo = function() {
-        const video = document.getElementById('videoPlayer');
-        const source = video.querySelector('source');
-        window.currentVideoIndex = (window.currentVideoIndex - 1 + window.projectVideos.length) % window.projectVideos.length;
-        source.src = window.projectVideos[window.currentVideoIndex];
-        video.load();
-        video.play().catch(e => console.log('Autoplay prevented:', e));
-        document.getElementById('videoCurrent').textContent = window.currentVideoIndex + 1;
-      };
-
-      window.nextVideo = function() {
-        const video = document.getElementById('videoPlayer');
-        const source = video.querySelector('source');
-        window.currentVideoIndex = (window.currentVideoIndex + 1) % window.projectVideos.length;
-        source.src = window.projectVideos[window.currentVideoIndex];
-        video.load();
-        video.play().catch(e => console.log('Autoplay prevented:', e));
-        document.getElementById('videoCurrent').textContent = window.currentVideoIndex + 1;
-      };
-
-      // Close video modal on backdrop click
-      document.addEventListener('click', function(e) {
-        const modal = document.getElementById('videoModal');
-        if (modal && e.target === modal) {
-          closeVideoModal();
+        // Set preload for first image
+        const heroPreload = document.getElementById('heroImagePreload');
+        if (heroPreload && project.images.length > 0) {
+          heroPreload.href = project.images[0];
         }
-      });
-
-      // Close video modal on Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
+        
+        // Video Modal Functions
+        window.currentVideoIndex = 0;
+        window.projectVideos = project.videos || (project.video ? [project.video] : []);
+        
+        window.openVideoModal = function(index) {
+          window.currentVideoIndex = index;
           const modal = document.getElementById('videoModal');
-          if (modal && modal.style.display === 'flex') {
-            closeVideoModal();
-          }
-        }
-      });
-      
-      window.prevImage = function() {
-        window.currentGalleryIndex = (window.currentGalleryIndex - 1 + window.projectImages.length) % window.projectImages.length;
-        document.getElementById('galleryMainImage').src = window.projectImages[window.currentGalleryIndex];
-        updateGalleryThumbnails();
-      };
-      
-      window.nextImage = function() {
-        window.currentGalleryIndex = (window.currentGalleryIndex + 1) % window.projectImages.length;
-        document.getElementById('galleryMainImage').src = window.projectImages[window.currentGalleryIndex];
-        updateGalleryThumbnails();
-      };
-      
-      window.goToGalleryImage = function(index) {
-        window.currentGalleryIndex = index;
-        document.getElementById('galleryMainImage').src = window.projectImages[index];
-        updateGalleryThumbnails();
-      };
-      
-      function updateGalleryThumbnails() {
-        const thumbs = document.querySelectorAll('.gallery-thumb');
-        thumbs.forEach((thumb, i) => {
-          thumb.classList.toggle('active', i === window.currentGalleryIndex);
+          const video = document.getElementById('videoPlayer');
+          const source = video.querySelector('source');
+          source.src = window.projectVideos[index];
+          video.load();
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          video.play().catch(e => console.log('Autoplay prevented:', e));
+        };
+
+        window.closeVideoModal = function() {
+          const modal = document.getElementById('videoModal');
+          const video = document.getElementById('videoPlayer');
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+          video.pause();
+        };
+
+        window.prevVideo = function() {
+          const video = document.getElementById('videoPlayer');
+          const source = video.querySelector('source');
+          window.currentVideoIndex = (window.currentVideoIndex - 1 + window.projectVideos.length) % window.projectVideos.length;
+          source.src = window.projectVideos[window.currentVideoIndex];
+          video.load();
+          video.play().catch(e => console.log('Autoplay prevented:', e));
+          document.getElementById('videoCurrent').textContent = window.currentVideoIndex + 1;
+        };
+
+        window.nextVideo = function() {
+          const video = document.getElementById('videoPlayer');
+          const source = video.querySelector('source');
+          window.currentVideoIndex = (window.currentVideoIndex + 1) % window.projectVideos.length;
+          source.src = window.projectVideos[window.currentVideoIndex];
+          video.load();
+          video.play().catch(e => console.log('Autoplay prevented:', e));
+          document.getElementById('videoCurrent').textContent = window.currentVideoIndex + 1;
+        };
+
+        // Close video modal on backdrop click
+        document.addEventListener('click', function(e) {
+          const modal = document.getElementById('videoModal');
+          if (modal && e.target === modal) closeVideoModal();
         });
-      }
-      
-      // Auto-advance slides
-      let currentSlide = 0;
-      setInterval(() => {
-        const slides = document.querySelectorAll('.hero-bg-slide');
-        if (slides.length > 1) {
-          currentSlide = (currentSlide + 1) % slides.length;
-          window.goToSlide(currentSlide);
+
+        // Close video modal on Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            const modal = document.getElementById('videoModal');
+            if (modal && modal.style.display === 'flex') closeVideoModal();
+          }
+        });
+        
+        window.prevImage = function() {
+          window.currentGalleryIndex = (window.currentGalleryIndex - 1 + window.projectImages.length) % window.projectImages.length;
+          document.getElementById('galleryMainImage').src = window.projectImages[window.currentGalleryIndex];
+          updateGalleryThumbnails();
+        };
+        
+        window.nextImage = function() {
+          window.currentGalleryIndex = (window.currentGalleryIndex + 1) % window.projectImages.length;
+          document.getElementById('galleryMainImage').src = window.projectImages[window.currentGalleryIndex];
+          updateGalleryThumbnails();
+        };
+        
+        window.goToGalleryImage = function(index) {
+          window.currentGalleryIndex = index;
+          document.getElementById('galleryMainImage').src = window.projectImages[index];
+          updateGalleryThumbnails();
+        };
+        
+        function updateGalleryThumbnails() {
+          const thumbs = document.querySelectorAll('.gallery-thumb');
+          thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === window.currentGalleryIndex);
+          });
         }
-      }, 5000);
-      
-      // Keyboard navigation for gallery
-      document.addEventListener('keydown', (e) => {
-        if (!document.getElementById('galleryModal').classList.contains('active')) return;
-        if (e.key === 'Escape') window.closeGallery();
-        if (e.key === 'ArrowLeft') window.prevImage();
-        if (e.key === 'ArrowRight') window.nextImage();
-      });
-    });
+        
+        // Auto-advance slides
+        let currentSlide = 0;
+        setInterval(() => {
+          const slides = document.querySelectorAll('.hero-bg-slide');
+          if (slides.length > 1) {
+            currentSlide = (currentSlide + 1) % slides.length;
+            window.goToSlide(currentSlide);
+          }
+        }, 5000);
+        
+        // Keyboard navigation for gallery
+        document.addEventListener('keydown', (e) => {
+          if (!document.getElementById('galleryModal').classList.contains('active')) return;
+          if (e.key === 'Escape') window.closeGallery();
+          if (e.key === 'ArrowLeft') window.prevImage();
+          if (e.key === 'ArrowRight') window.nextImage();
+        });
+      } // end renderProject
+
+      // ---- LOAD DATA: static first, CMS fallback ----
+      async function initPage() {
+        if (!projectId) {
+          mainContent.innerHTML = '<div class="project-not-found"><h1>Project Not Found</h1><p>No project ID specified.</p><a href="projects.html" class="project-btn project-btn-primary">View All Projects</a></div>';
+          return;
+        }
+        // 1. Try static data
+        if (typeof projectsData !== 'undefined' && projectsData[projectId]) {
+          renderProject(projectsData[projectId]);
+          return;
+        }
+        // 2. Try CMS markdown
+        const cmsProject = await loadCMSProperty(projectId);
+        if (cmsProject) {
+          renderProject(cmsProject);
+          return;
+        }
+        // 3. Not found
+        mainContent.innerHTML = '<div class="project-not-found"><h1>Project Not Found</h1><p>The project you are looking for does not exist or has been removed.</p><a href="projects.html" class="project-btn project-btn-primary">View All Projects</a></div>';
+      }
+      initPage();
+    }); // end DOMContentLoaded
   </script>
   <script src="js/basket.js?v=11" defer></script>
   <script src="js/chatbot.js?v=11" defer></script>
