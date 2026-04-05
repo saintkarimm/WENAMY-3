@@ -872,6 +872,8 @@
           properties.forEach(prop => {
             grid.insertAdjacentHTML('beforeend', renderCMSProjectCard(prop));
           });
+          // Make newly injected cards visible (animations.js observer ran before these existed)
+          grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
           // Re-apply click handlers to new CMS cards
           grid.querySelectorAll('.cms-property').forEach(card => {
             card.addEventListener('click', (e) => {

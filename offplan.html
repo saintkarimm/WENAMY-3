@@ -3516,6 +3516,8 @@
           projects.forEach(proj => {
             grid.insertAdjacentHTML('beforeend', renderCMSOffplanCard(proj));
           });
+          // Make newly injected cards visible (animations.js observer ran before these existed)
+          grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
         }
       } catch (err) {
         console.warn('CMS off-plan load failed, showing static content only:', err);
