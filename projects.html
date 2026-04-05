@@ -851,7 +851,7 @@
             ${location}
           </div>
           <div class="project-card-actions">
-            <a href="project-detail.html#id=${slug}" class="project-luxury-cta">View Details</a>
+            <a href="https://wa.me/233243817969?text=I'm%20interested%20in%20${encodeURIComponent(prop.title)}" target="_blank" rel="noopener" class="project-luxury-cta">Enquire Now</a>
             <button class="project-save-btn" data-property-id="${slug}" aria-label="Save property">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="heart-icon">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -874,12 +874,12 @@
           });
           // Make newly injected cards visible (animations.js observer ran before these existed)
           grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
-          // Re-apply click handlers to new CMS cards
+          // Re-apply click handlers to new CMS cards (no detail page — open WhatsApp)
           grid.querySelectorAll('.cms-property').forEach(card => {
             card.addEventListener('click', (e) => {
               if (e.target.closest('.project-save-btn') || e.target.closest('.project-luxury-cta')) return;
-              const projectId = card.dataset.projectId;
-              if (projectId) window.location.href = `project-detail.html#id=${projectId}`;
+              const title = card.dataset.projectTitle || 'a property';
+              window.open(`https://wa.me/233243817969?text=${encodeURIComponent('I\'m interested in ' + title)}`, '_blank');
             });
           });
         }
