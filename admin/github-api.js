@@ -66,13 +66,21 @@ class GitHubAPI {
         const data = await this.request(`/repos/${this.owner}/${this.repo}/contents/${path}?ref=${this.branch}`);
         
         if (data.content) {
-            // Decode base64 content
-            const content = atob(data.content.replace(/\n/g, ''));
-            return {
-                content: JSON.parse(content),
-                sha: data.sha,
-                path: data.path
-            };
+            try {
+                // Decode base64 content
+                const base64Content = data.content.replace(/\n/g, '');
+                const content = atob(base64Content);
+                console.log('Decoded content for', path, ':', content.substring(0, 100));
+                return {
+                    content: JSON.parse(content),
+                    sha: data.sha,
+                    path: data.path
+                };
+            } catch (parseError) {
+                console.error('Error parsing JSON from', path, ':', parseError);
+                console.error('Raw content:', data.content.substring(0, 200));
+                throw new Error('Invalid JSON in file: ' + parseError.message);
+            }
         }
         
         throw new Error('File content not found');
