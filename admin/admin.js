@@ -445,13 +445,46 @@ const defaultState = {
 // =========================================
 let state = JSON.parse(localStorage.getItem('wenamyAdminState'));
 
-function initializeState() {
+async function initializeState() {
     if (!state) {
         state = defaultState;
     }
     
-    // Always refresh with real data from projectsData
-    state.properties = getRealProperties();
+    // Try to load properties from GitHub if token is configured
+    if (window.githubAPI && window.githubAPI.isAuthenticated()) {
+        try {
+            const projects = await window.githubAPI.loadProjects();
+            if (projects && Object.keys(projects).length > 0) {
+                // Convert GitHub format to admin format
+                state.properties = Object.entries(projects).map(([key, project], index) => ({
+                    id: index + 1,
+                    key: key,
+                    title: project.name,
+                    location: project.location,
+                    price: project.price,
+                    type: project.type,
+                    status: project.status || 'available',
+                    bedrooms: project.bedrooms,
+                    bathrooms: project.bathrooms,
+                    measurement: project.sqft,
+                    image: project.thumbnail ? '../' + project.thumbnail : (project.images && project.images.length > 0 ? '../' + project.images[0] : '../images/icons/logo.png'),
+                    images: project.images || [],
+                    description: project.description,
+                    amenities: project.amenities || [],
+                    mainCategory: project.mainCategory,
+                    subCategory: project.subCategory
+                }));
+            } else {
+                state.properties = getRealProperties();
+            }
+        } catch (error) {
+            console.error('Failed to load from GitHub:', error);
+            state.properties = getRealProperties();
+        }
+    } else {
+        // Fallback to local data
+        state.properties = getRealProperties();
+    }
     
     // Load leads from saved properties (basket)
     const savedProperties = getSavedProperties();
@@ -528,9 +561,9 @@ let currentTaskFilter = 'all';
 // =========================================
 // INITIALIZATION
 // =========================================
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize state with real data
-    initializeState();
+document.addEventListener('DOMContentLoaded', async () => {
+    // Initialize state with real data (async)
+    await initializeState();
     
     initNavigation();
     initTheme();
