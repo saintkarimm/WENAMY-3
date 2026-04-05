@@ -134,16 +134,6 @@
   <!-- Blog Section -->
   <section class="blog-luxury-section">
     <div class="blog-luxury-grid" id="blog-cms-grid">
-      <!-- CMS posts are injected here by contentLoader.js -->
-      <!-- Loading skeleton shown while fetching -->
-      <div id="blog-loading" style="grid-column:1/-1;text-align:center;padding:4rem 0;color:#94a3b8;font-family:Inter,sans-serif;">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="animation:spin 1s linear infinite;display:inline-block;"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        <p style="margin-top:1rem;">Loading articles...</p>
-        <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
-      </div>
-
-      <!-- STATIC FALLBACK — shown only if CMS returns no posts -->
-      <template id="blog-static-fallback">
       <!-- Article 1 -->
       <article class="blog-luxury-card scroll-animate">
         <div class="blog-luxury-image">
@@ -216,7 +206,6 @@
           <span class="blog-luxury-meta">February 8, 2026</span>
         </div>
       </article>
-      </template>
     </div>
   </section>
 
@@ -311,72 +300,6 @@
   <script src="js/basket.js?v=11" defer></script>
   <script src="js/chatbot.js?v=11" defer></script>
   <script src="js/navbar.js?v=11" defer></script>
-  <script src="js/contentLoader.js"></script>
-  <script>
-    // ---- CMS BLOG LOADER ----
-    function formatBlogDate(dateStr) {
-      if (!dateStr) return '';
-      try {
-        return new Date(dateStr).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-      } catch (e) { return dateStr; }
-    }
-
-    function renderBlogCard(post) {
-      const img = post.image
-        ? `<img src="${post.image}" alt="${post.title || ''}" loading="lazy">`
-        : `<img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="${post.title || ''}" loading="lazy">`;
-      const category = (post.tags && post.tags[0]) || 'News';
-      const dateStr = formatBlogDate(post.date);
-      const excerpt = post.summary || (post.body ? post.body.replace(/[#*`>\[\]]/g, '').slice(0, 140) + '...' : '');
-      return `
-      <article class="blog-luxury-card scroll-animate">
-        <div class="blog-luxury-image">${img}</div>
-        <div class="blog-luxury-content">
-          <span class="blog-luxury-category">${category}</span>
-          <h3 class="blog-luxury-title">${post.title || 'Untitled'}</h3>
-          <p class="blog-luxury-excerpt">${excerpt}</p>
-          <span class="blog-luxury-meta">${dateStr}</span>
-        </div>
-      </article>`;
-    }
-
-    document.addEventListener('DOMContentLoaded', async () => {
-      const grid = document.getElementById('blog-cms-grid');
-      const loader = document.getElementById('blog-loading');
-      const fallback = document.getElementById('blog-static-fallback');
-
-      try {
-        const posts = await window.CMS.getBlogPosts();
-        loader.remove();
-
-        if (posts && posts.length > 0) {
-          // Remove fallback template
-          if (fallback) fallback.remove();
-          // Inject CMS cards
-          posts.forEach(post => {
-            grid.insertAdjacentHTML('beforeend', renderBlogCard(post));
-          });
-          // Make newly injected cards visible (animations.js observer ran before these existed)
-          grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
-        } else {
-          // No CMS posts — show static fallback
-          if (fallback) {
-            grid.insertAdjacentHTML('beforeend', fallback.innerHTML);
-            fallback.remove();
-            grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
-          }
-        }
-      } catch (err) {
-        console.warn('CMS blog load failed, using static fallback:', err);
-        loader.remove();
-        if (fallback) {
-          grid.insertAdjacentHTML('beforeend', fallback.innerHTML);
-          fallback.remove();
-          grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
-        }
-      }
-    });
-  </script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {

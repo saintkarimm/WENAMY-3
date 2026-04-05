@@ -211,73 +211,6 @@
   </footer>
 
   <script src="js/projects-data.js?v=11" defer></script>
-  <script src="js/contentLoader.js"></script>
-  <script>
-    // ---- CMS PROPERTY LOADER ----
-    // Fetches a single property markdown by slug from /content/properties/
-    async function loadCMSProperty(slug) {
-      try {
-        const text = await fetch(`/content/properties/${slug}.md?_=${Date.now()}`).then(r => {
-          if (!r.ok) throw new Error('not found');
-          return r.text();
-        });
-        const { data, content } = parseFrontmatter ? parseFrontmatter(text) : window._parseFM(text);
-        if (!data.title) return null;
-        // Build images array: featured image + gallery
-        const images = [];
-        if (data.image) images.push(data.image);
-        if (Array.isArray(data.gallery)) data.gallery.forEach(g => {
-          const src = typeof g === 'string' ? g : (g.image || g);
-          if (src && src !== data.image) images.push(src);
-        });
-        if (!images.length) images.push('images/icons/logo.png');
-        return {
-          name: data.title,
-          location: data.location || '',
-          type: data.type || 'Property',
-          status: data.status || 'available',
-          price: data.price || 'Contact for Pricing',
-          bedrooms: data.bedrooms ? String(data.bedrooms) : '—',
-          bathrooms: data.bathrooms ? String(data.bathrooms) : '—',
-          sqft: data.sqft || data.area ? String(data.sqft || data.area) : '—',
-          parking: data.parking || '—',
-          description: data.description || content || '',
-          images,
-          amenities: Array.isArray(data.features) ? data.features : [],
-          features: Array.isArray(data.features) ? data.features : [],
-          video: data.video || null,
-          videos: data.video ? [data.video] : []
-        };
-      } catch (e) {
-        return null;
-      }
-    }
-
-    // Expose parseFrontmatter for use above (contentLoader.js defines it but scoped)
-    // We re-declare a minimal version here for safety
-    function _parseFMLocal(text) {
-      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-      if (!match) return { data: {}, content: text };
-      const data = {};
-      match[1].split('\n').forEach(line => {
-        const idx = line.indexOf(':');
-        if (idx === -1) return;
-        const key = line.slice(0, idx).trim();
-        let val = line.slice(idx + 1).trim();
-        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) val = val.slice(1, -1);
-        if (val.startsWith('[') && val.endsWith(']')) {
-          try { data[key] = JSON.parse(val.replace(/'/g, '"')); } catch(e) { data[key] = val.slice(1,-1).split(',').map(s=>s.trim()); }
-          return;
-        }
-        if (!isNaN(val) && val !== '') { data[key] = Number(val); return; }
-        data[key] = val;
-      });
-      return { data, content: match[2].trim() };
-    }
-    window._parseFM = _parseFMLocal;
-    // Also alias parseFrontmatter if contentLoader.js didn't expose it globally
-    if (typeof parseFrontmatter === 'undefined') window.parseFrontmatter = _parseFMLocal;
-  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile Menu Toggle
@@ -759,27 +692,14 @@
         });
       } // end renderProject
 
-      // ---- LOAD DATA: static first, CMS fallback ----
-      async function initPage() {
-        if (!projectId) {
-          mainContent.innerHTML = '<div class="project-not-found"><h1>Project Not Found</h1><p>No project ID specified.</p><a href="projects.html" class="project-btn project-btn-primary">View All Projects</a></div>';
-          return;
-        }
-        // 1. Try static data
-        if (typeof projectsData !== 'undefined' && projectsData[projectId]) {
-          renderProject(projectsData[projectId]);
-          return;
-        }
-        // 2. Try CMS markdown
-        const cmsProject = await loadCMSProperty(projectId);
-        if (cmsProject) {
-          renderProject(cmsProject);
-          return;
-        }
-        // 3. Not found
+      // ---- LOAD DATA: static only ----
+      if (!projectId) {
+        mainContent.innerHTML = '<div class="project-not-found"><h1>Project Not Found</h1><p>No project ID specified.</p><a href="projects.html" class="project-btn project-btn-primary">View All Projects</a></div>';
+      } else if (typeof projectsData !== 'undefined' && projectsData[projectId]) {
+        renderProject(projectsData[projectId]);
+      } else {
         mainContent.innerHTML = '<div class="project-not-found"><h1>Project Not Found</h1><p>The project you are looking for does not exist or has been removed.</p><a href="projects.html" class="project-btn project-btn-primary">View All Projects</a></div>';
       }
-      initPage();
     }); // end DOMContentLoaded
   </script>
   <script src="js/basket.js?v=11" defer></script>
