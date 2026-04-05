@@ -356,11 +356,14 @@
           posts.forEach(post => {
             grid.insertAdjacentHTML('beforeend', renderBlogCard(post));
           });
+          // Make newly injected cards visible (animations.js observer ran before these existed)
+          grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
         } else {
           // No CMS posts — show static fallback
           if (fallback) {
             grid.insertAdjacentHTML('beforeend', fallback.innerHTML);
             fallback.remove();
+            grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
           }
         }
       } catch (err) {
@@ -369,6 +372,7 @@
         if (fallback) {
           grid.insertAdjacentHTML('beforeend', fallback.innerHTML);
           fallback.remove();
+          grid.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
         }
       }
     });
