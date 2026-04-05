@@ -33,6 +33,8 @@ class GitHubAPI {
         if (!this.token) {
             throw new Error('GitHub token not set. Please configure in Settings.');
         }
+        
+        console.log('GitHub API Request:', endpoint, 'Token exists:', !!this.token);
 
         const url = `${this.baseUrl}${endpoint}`;
         const headers = {

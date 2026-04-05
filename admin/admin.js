@@ -1677,7 +1677,7 @@ async function saveProperty(e, id) {
             showToast(id ? 'Property updated and synced!' : 'Property created and synced!');
         } catch (error) {
             console.error('GitHub sync error:', error);
-            showToast('Saved locally but GitHub sync failed', 'error');
+            showToast('GitHub sync failed: ' + error.message, 'error');
         }
     } else {
         showToast(id ? 'Property updated successfully.' : 'Property created successfully.');
