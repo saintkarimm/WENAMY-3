@@ -2211,17 +2211,10 @@ function toggleTheme(isInit = false) {
 // AUTHENTICATION & LOGOUT
 // =========================================
 function logoutAdmin() {
-    // Clear the session first to prevent auth check from redirecting back
+    // Clear the session
     localStorage.removeItem('wenamyAdminSession');
     
-    // Sign out from Firebase if available (non-blocking)
-    if (window.firebaseAuth) {
-        import('https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js')
-            .then(({ signOut }) => signOut(window.firebaseAuth))
-            .catch(error => console.error('Firebase signout error:', error));
-    }
-    
-    // Redirect to login page immediately
+    // Redirect to login page
     window.location.replace('/admin/login');
 }
 

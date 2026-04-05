@@ -9,26 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <!-- Firebase SDK -->
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
-        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-        
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBZOvpdfQU0nyZgeVFptZHzPNtLCPbQm28",
-            authDomain: "wenamy-e49c5.firebaseapp.com",
-            projectId: "wenamy-e49c5",
-            storageBucket: "wenamy-e49c5.firebasestorage.app",
-            messagingSenderId: "506298664664",
-            appId: "1:506298664664:web:98266f4bd3d0c7d50879ad"
-        };
-        
-        // Initialize Firebase
-        window.firebaseApp = initializeApp(firebaseConfig);
-        window.firebaseAuth = getAuth(window.firebaseApp);
-    </script>
 </head>
 <body>
     <!-- Background Image Container -->
@@ -151,6 +131,6 @@
         </div>
     </div>
 
-    <script type="module" src="/admin/login.js"></script>
+    <script src="/admin/login.js"></script>
 </body>
 </html>

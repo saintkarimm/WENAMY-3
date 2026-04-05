@@ -1,21 +1,12 @@
 // =========================================
-// WENAMY ADMIN LOGIN - FIREBASE AUTH
+// WENAMY ADMIN LOGIN
 // =========================================
 
-// Import Firebase Auth functions (loaded via module script in HTML)
-import { 
-    signInWithEmailAndPassword, 
-    sendPasswordResetEmail,
-    createUserWithEmailAndPassword,
-    onAuthStateChanged,
-    signOut
-} from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-
-// Allowed admin emails (whitelist)
-const ALLOWED_ADMIN_EMAILS = [
-    'ceo@wenamy.com',
-    'admin@wenamy.com'
-];
+// Admin Credentials (Hardcoded for simple auth)
+const ADMIN_CREDENTIALS = {
+    email: 'ceo@wenamy.com',
+    password: 'CEOWENAMY2026'
+};
 
 // DOM Elements
 const loginForm = document.getElementById('loginForm');
@@ -68,25 +59,20 @@ loginForm.addEventListener('submit', async (e) => {
     // Show loading state
     setLoading(true);
     
-    try {
-        // Check if email is in allowed admin list
-        if (!ALLOWED_ADMIN_EMAILS.includes(email.toLowerCase())) {
-            throw new Error('Unauthorized email address');
-        }
-        
-        // Sign in with Firebase
-        const userCredential = await signInWithEmailAndPassword(window.firebaseAuth, email, password);
-        const user = userCredential.user;
-        
+    // Simulate network delay for realism
+    await simulateDelay(800);
+    
+    // Check credentials
+    if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
         // Successful login
-        handleSuccessfulLogin(user);
-    } catch (error) {
-        console.error('Login error:', error);
-        handleFailedLogin(error);
-    } finally {
-        // Hide loading state
-        setLoading(false);
+        handleSuccessfulLogin();
+    } else {
+        // Failed login
+        handleFailedLogin();
     }
+    
+    // Hide loading state
+    setLoading(false);
 });
 
 // =========================================
@@ -127,13 +113,12 @@ function isValidEmail(email) {
 // =========================================
 // LOGIN HANDLERS - FIREBASE
 // =========================================
-function handleSuccessfulLogin(user) {
-    // Create session with Firebase user data
+function handleSuccessfulLogin() {
+    // Create session
     const session = {
-        email: user.email,
-        uid: user.uid,
+        email: ADMIN_CREDENTIALS.email,
         loginTime: new Date().toISOString(),
-        token: user.accessToken || generateToken()
+        token: generateToken()
     };
     
     // Store in localStorage
@@ -148,36 +133,8 @@ function handleSuccessfulLogin(user) {
     }, 1000);
 }
 
-function handleFailedLogin(error) {
-    // Map Firebase error codes to user-friendly messages
-    let errorMessage = 'Invalid login credentials';
-    
-    switch (error.code) {
-        case 'auth/user-not-found':
-            errorMessage = 'No account found with this email';
-            break;
-        case 'auth/wrong-password':
-            errorMessage = 'Incorrect password';
-            break;
-        case 'auth/invalid-email':
-            errorMessage = 'Please enter a valid email address';
-            break;
-        case 'auth/user-disabled':
-            errorMessage = 'This account has been disabled';
-            break;
-        case 'auth/too-many-requests':
-            errorMessage = 'Too many failed attempts. Please try again later';
-            break;
-        case 'auth/invalid-credential':
-            errorMessage = 'Invalid email or password';
-            break;
-        default:
-            if (error.message === 'Unauthorized email address') {
-                errorMessage = 'This email is not authorized for admin access';
-            }
-    }
-    
-    showError(errorMessage);
+function handleFailedLogin() {
+    showError('Invalid login credentials');
     
     // Shake animation on inputs
     emailInput.parentElement.classList.add('shake');
@@ -194,44 +151,31 @@ function handleFailedLogin(error) {
 }
 
 // =========================================
-// SESSION MANAGEMENT - FIREBASE
+// SESSION MANAGEMENT
 // =========================================
 function checkExistingSession() {
-    // Check Firebase auth state
-    onAuthStateChanged(window.firebaseAuth, (user) => {
-        if (user) {
-            // User is signed in, check if email is authorized
-            if (ALLOWED_ADMIN_EMAILS.includes(user.email.toLowerCase())) {
-                // Check local session expiry
-                const session = localStorage.getItem('wenamyAdminSession');
-                if (session) {
-                    try {
-                        const sessionData = JSON.parse(session);
-                        const loginTime = new Date(sessionData.loginTime);
-                        const now = new Date();
-                        const hoursSinceLogin = (now - loginTime) / (1000 * 60 * 60);
-                        
-                        // Session expires after 24 hours
-                        if (hoursSinceLogin < 24 && sessionData.uid === user.uid) {
-                            // Auto-redirect to dashboard
-                            window.location.href = '/admin';
-                            return;
-                        }
-                    } catch (e) {
-                        console.error('Session parse error:', e);
-                    }
-                }
-                
-                // Valid Firebase user but no/expired local session - create new session
-                handleSuccessfulLogin(user);
+    const session = localStorage.getItem('wenamyAdminSession');
+    
+    if (session) {
+        try {
+            const sessionData = JSON.parse(session);
+            const loginTime = new Date(sessionData.loginTime);
+            const now = new Date();
+            const hoursSinceLogin = (now - loginTime) / (1000 * 60 * 60);
+            
+            // Session expires after 24 hours
+            if (hoursSinceLogin < 24) {
+                // Auto-redirect to dashboard
+                window.location.href = '/admin';
             } else {
-                // User not authorized - sign them out
-                signOut(window.firebaseAuth);
+                // Clear expired session
                 localStorage.removeItem('wenamyAdminSession');
             }
+        } catch (e) {
+            // Invalid session data
+            localStorage.removeItem('wenamyAdminSession');
         }
-        // If no user, stay on login page
-    });
+    }
 }
 
 function generateToken() {
@@ -285,39 +229,9 @@ function closeForgotModal() {
 }
 
 // Handle password reset
-async function sendPasswordReset() {
-    const resetEmailInput = forgotModal.querySelector('input[type="email"]');
-    const resetEmail = resetEmailInput.value.trim();
-    
-    if (!resetEmail) {
-        showToast('Please enter your email address', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(resetEmail)) {
-        showToast('Please enter a valid email address', 'error');
-        return;
-    }
-    
-    // Check if email is authorized
-    if (!ALLOWED_ADMIN_EMAILS.includes(resetEmail.toLowerCase())) {
-        showToast('This email is not authorized for admin access', 'error');
-        return;
-    }
-    
-    try {
-        await sendPasswordResetEmail(window.firebaseAuth, resetEmail);
-        showToast('Password reset email sent! Check your inbox.', 'success');
-        closeForgotModal();
-        resetEmailInput.value = '';
-    } catch (error) {
-        console.error('Password reset error:', error);
-        let message = 'Failed to send reset email';
-        if (error.code === 'auth/user-not-found') {
-            message = 'No account found with this email';
-        }
-        showToast(message, 'error');
-    }
+function sendPasswordReset() {
+    showToast('Please contact the administrator to reset your password.', 'info');
+    closeForgotModal();
 }
 
 // Toast notification helper
