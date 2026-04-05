@@ -131,7 +131,8 @@ class GitHubAPI {
                 const existing = await this.getFile('data/projects.json');
                 sha = existing.sha;
             } catch (e) {
-                // File doesn't exist yet
+                // File doesn't exist yet - this is fine for new files
+                console.log('Creating new projects.json file');
             }
 
             await this.saveFile('data/projects.json', projects, message, sha);
