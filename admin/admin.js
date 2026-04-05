@@ -1157,7 +1157,7 @@ function openOffplanModal(id = null) {
     }
 }
 
-function saveOffplan(e, id) {
+async function saveOffplan(e, id) {
     e.preventDefault();
     
     // Get price values
@@ -1200,9 +1200,55 @@ function saveOffplan(e, id) {
         offplanProjectsData.push(project);
     }
     
+    // Sync to GitHub if authenticated
+    if (window.githubAPI.isAuthenticated()) {
+        try {
+            showToast('Syncing off-plan to GitHub...', 'info');
+            await syncOffplanToGitHub();
+            showToast(id ? 'Off-plan updated and synced!' : 'Off-plan created and synced!');
+        } catch (error) {
+            console.error('GitHub sync error:', error);
+            showToast('Saved locally but GitHub sync failed', 'error');
+        }
+    } else {
+        showToast(id ? 'Off-plan updated successfully.' : 'Off-plan created successfully.');
+    }
+    
     closeModal();
     renderOffplan();
     addActivity(`${id ? 'Updated' : 'Added'} off-plan project: ${project.name}`, 'edit');
+}
+
+// Sync off-plan projects to GitHub
+async function syncOffplanToGitHub() {
+    const data = {
+        offplan: offplanProjectsData.map(project => ({
+            id: project.id,
+            title: project.name,
+            location: project.location,
+            price: project.price,
+            category: project.category,
+            description: project.description,
+            features: [],
+            image: project.image,
+            gallery: project.images || [],
+            status: 'selling',
+            updatedAt: new Date().toISOString()
+        })),
+        categories: [
+            { id: 'all', name: 'All Projects', count: offplanProjectsData.length },
+            { id: 'apartments', name: 'Apartments', count: 0 },
+            { id: 'villas', name: 'Villas', count: 0 },
+            { id: 'townhouses', name: 'Townhouses', count: 0 },
+            { id: 'land', name: 'Land', count: 0 }
+        ],
+        metadata: {
+            lastUpdated: new Date().toISOString(),
+            version: '1.0'
+        }
+    };
+    
+    await window.githubAPI.saveOffplanProjects(data);
 }
 
 function deleteOffplan(id) {
