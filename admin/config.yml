@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+  - name: "properties"
+    label: "Properties"
+    folder: "content/properties"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Status", name: "status", widget: "select", options: ["ongoing", "upcoming", "completed"] }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["Apartments", "Villa", "Duplex", "Bungalow", "House", "Penthouse"] }
+      - { label: "Price", name: "price", widget: "string", required: false }
+      - { label: "Bedrooms", name: "bedrooms", widget: "number", required: false }
+      - { label: "Bathrooms", name: "bathrooms", widget: "number", required: false }
+      - { label: "Area (sqft)", name: "area", widget: "number", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Description", name: "description", widget: "markdown", required: false }
+
+  - name: "offplan"
+    label: "Off-Plan Projects"
+    folder: "content/offplan"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Developer", name: "developer", widget: "string", required: false }
+      - { label: "Price From", name: "price_from", widget: "string", required: false }
+      - { label: "Completion Date", name: "completion_date", widget: "string", required: false }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Description", name: "description", widget: "markdown", required: false }
