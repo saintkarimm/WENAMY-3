@@ -1,6 +1,5 @@
 // Projects Data - Used by project-detail.html
-// This file now loads data from /data/projects.json
-// Fallback data is provided if JSON loading fails
+// Static project data for Wenamy properties
 
 const projectsData = {
   // Project 1: 3 Bedroom Bungalow
@@ -631,51 +630,4 @@ const projectsData = {
 // Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = projectsData;
-}
-
-// =========================================
-// DYNAMIC DATA LOADING FROM JSON
-// =========================================
-
-// Load projects from JSON file
-async function loadProjectsFromJSON() {
-  try {
-    const response = await fetch('/data/projects.json');
-    if (!response.ok) throw new Error('Failed to load projects');
-    const data = await response.json();
-    
-    // Merge with existing projectsData
-    Object.assign(projectsData, data);
-    
-    console.log('Projects loaded from JSON:', Object.keys(data).length, 'projects');
-    return data;
-  } catch (error) {
-    console.warn('Using fallback projects data:', error.message);
-    return projectsData;
-  }
-}
-
-// Load off-plan projects from JSON
-async function loadOffplanFromJSON() {
-  try {
-    const response = await fetch('/data/offplan-projects.json');
-    if (!response.ok) throw new Error('Failed to load off-plan projects');
-    const data = await response.json();
-    
-    console.log('Off-plan projects loaded:', data.offplan?.length || 0, 'projects');
-    return data;
-  } catch (error) {
-    console.warn('Failed to load off-plan projects:', error.message);
-    return { offplan: [], categories: [] };
-  }
-}
-
-// Auto-load on script execution
-if (typeof window !== 'undefined') {
-  // Load when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadProjectsFromJSON);
-  } else {
-    loadProjectsFromJSON();
-  }
 }
