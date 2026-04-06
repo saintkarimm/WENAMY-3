@@ -3544,27 +3544,24 @@
 
       // Add WhatsApp buttons to all offplan modals
       const modalActions = document.querySelectorAll('.offplan-modal-actions');
+      
+      // Map modal IDs to project parameters (must match the URL parameter checking logic)
       const projectParamMap = {
-        'duplex10': 'duplex10',
-        'environmental14': 'environmental14',
-        'duplex13': 'duplex13',
-        'beach7': 'beach7',
-        'vacation6': 'vacation6',
-        'duplex4': 'duplex4',
-        'aburi3': 'aburi3',
-        'townhouse2': 'townhouse2',
-        'aburimountain9': 'aburimountain9',
-        'aburiviews8': 'aburiviews8',
-        'environmental11': 'environmental11',
-        'retirement17': 'retirement17',
-        'vacation2': 'vacation2',
-        'cabin23': 'cabin23',
-        'cabin22': 'cabin22',
-        'duplex21': 'duplex21',
-        'bungalow24': 'bungalow24',
-        'bungalow20': 'bungalow20',
-        'family19': 'family19',
-        'modern18': 'modern18'
+        'townhouseModal': 'townhouse2',
+        'retirementHomeModal': 'retirement17',
+        'vacationModal': 'vacation2',
+        'aburiModal': 'aburi3',
+        'duplexModal': 'duplex4',
+        'duplex5Modal': 'duplex5',
+        'vacation6Modal': 'vacation6',
+        'beach7Modal': 'beach7',
+        'aburiViews8Modal': 'aburiviews8',
+        'aburiMountain9Modal': 'aburimountain9',
+        'duplex10Modal': 'duplex10',
+        'environmental11Modal': 'environmental11',
+        'duplex12Modal': 'duplex12',
+        'duplex13Modal': 'duplex13',
+        'environmental14Modal': 'environmental14'
       };
       
       modalActions.forEach((actionsContainer) => {
@@ -3576,14 +3573,8 @@
         const modalContent = actionsContainer.closest('.offplan-modal-content');
         const projectTitle = modalContent?.querySelector('.offplan-modal-title')?.textContent || 'Off-Plan Property';
         
-        // Find the project parameter based on modal ID
-        let projectParam = '';
-        for (const [key, value] of Object.entries(projectParamMap)) {
-          if (modalId.toLowerCase().includes(key.toLowerCase())) {
-            projectParam = value;
-            break;
-          }
-        }
+        // Get the project parameter from the map
+        const projectParam = projectParamMap[modalId] || '';
         
         // Build the URL with project parameter
         const baseUrl = window.location.origin + window.location.pathname;
