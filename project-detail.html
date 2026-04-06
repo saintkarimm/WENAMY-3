@@ -338,7 +338,7 @@
             <div class="hero-cta-row">
               <div class="price-block">
                 <span class="price-label">Starting from</span>
-                <span class="price-value">${project.price}</span>
+                <span class="price-value" data-usd="${project.price.includes('Contact') ? 'contact' : project.price.replace(/[^0-9]/g, '')}">${project.price}</span>
               </div>
               <div class="hero-buttons">
                 <button class="btn btn-glass" onclick="openGallery()">
@@ -367,6 +367,11 @@
             </svg>
           </div>
         </section>
+
+        <!-- Currency Switcher -->
+        <div class="currency-switcher-container">
+          <div class="currency-switcher"></div>
+        </div>
 
         <!-- Content Wrapper -->
         <div class="content-wrapper">
@@ -697,6 +702,10 @@
         mainContent.innerHTML = '<div class="project-not-found"><h1>Project Not Found</h1><p>No project ID specified.</p><a href="projects.html" class="project-btn project-btn-primary">View All Projects</a></div>';
       } else if (typeof projectsData !== 'undefined' && projectsData[projectId]) {
         renderProject(projectsData[projectId]);
+        // Refresh currency switcher after dynamic content is loaded
+        if (window.currencySwitcher) {
+          window.currencySwitcher.refresh();
+        }
       } else {
         mainContent.innerHTML = '<div class="project-not-found"><h1>Project Not Found</h1><p>The project you are looking for does not exist or has been removed.</p><a href="projects.html" class="project-btn project-btn-primary">View All Projects</a></div>';
       }
@@ -705,6 +714,7 @@
   <script src="js/basket.js?v=11" defer></script>
   <script src="js/chatbot.js?v=11" defer></script>
   <script src="js/navbar.js?v=11" defer></script>
+  <script src="js/currency-switcher.js?v=1" defer></script>
   <script>
     // Override navbar contrast for cinematic hero - keep glass effect
     document.addEventListener('DOMContentLoaded', function() {
