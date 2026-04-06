@@ -407,8 +407,12 @@ The offplan.html page displays investment properties with category filtering and
 | Duplexes | `duplexes` | Two-story residential buildings |
 | Vacation Homes | `vacation` / `vacation-homes` | Holiday/retreat properties |
 | Environmentalists | `environmentalists` | Eco-friendly/sustainable designs |
+| Retirement Homes | `retirement-homes` | Senior living properties |
+| Bungalows | `bungalows` | Single-story homes |
+| Cabins | `cabins` | Compact nature retreats |
+| Townhouses | `townhouses` | Urban row houses |
 
-### Property List (16 Total)
+### Property List (24 Total)
 
 | # | Property Name | Category | Bedrooms | Washrooms | Price | Location | Images |
 |---|---------------|----------|----------|-----------|-------|----------|--------|
@@ -428,28 +432,39 @@ The offplan.html page displays investment properties with category filtering and
 | OFFPLAN14 | 4 Bedroom Duplex | Environmentalists | 4 | 5 | $380,000 | East Legon Hills | 12 |
 | OFFPLAN15 | 5 Bedroom Home | Environmentalists | 5 | 6 | $530,000 | Peduasi | 14 |
 | OFFPLAN16 | 3 Bedroom Home | Vacation Homes | 3 | 4 | $310,000 | Peduasi | 13 |
+| OFFPLAN17 | Retirement Home | Retirement Homes | 2 | 2 | $180,000 | Peduasi | 5 |
+| OFFPLAN18 | Modern Retirement Home | Retirement Homes | 2 | 2 | $195,000 | Peduasi | 6 |
+| OFFPLAN19 | 3 Bedroom Family Home | Retirement Homes | 3 | 3 | $220,000 | Peduasi | 5 |
+| OFFPLAN20 | 3 Bedroom Bungalow | Bungalows | 3 | 4 | $145,000 | Accra | 3 |
+| OFFPLAN21 | 4 Bedroom Duplex | Duplexes | 4 | 5 | $280,000 | East Legon | 4 |
+| OFFPLAN22 | T-Shaped Cabin | Cabins | 3 | 2 | $125,000 | Peduasi | 4 |
+| OFFPLAN23 | Modern Scandi Cabin | Cabins | 3 | 2 | $95,000 | Peduasi | 4 |
+| OFFPLAN24 | 3 Bedroom Bungalow | Bungalows | 3 | 4 | $145,000 | Accra | 6 |
 
 ### URL Parameters for Direct Linking
 Append `?project={id}` to offplan.html to auto-open a specific property modal:
 
-| Parameter | Property | Category Filter Applied |
-|-----------|----------|------------------------|
-| `?project=vacation2` | OFFPLAN2 | Vacation Homes |
-| `?project=aburi3` | OFFPLAN3 | Vacation Homes |
-| `?project=duplex4` | OFFPLAN4 | Duplexes |
-| `?project=duplex5` | OFFPLAN5 | Duplexes |
-| `?project=vacation6` | OFFPLAN6 | Vacation Homes |
-| `?project=beach7` | OFFPLAN7 | Vacation Homes |
-| `?project=aburiviews8` | OFFPLAN8 | Vacation Homes |
-| `?project=aburimountain9` | OFFPLAN9 | Vacation Homes |
-| `?project=duplex10` | OFFPLAN10 | Duplexes |
-| `?project=environmental11` | OFFPLAN11 | Environmentalists |
-| `?project=duplex12` | OFFPLAN12 | Duplexes |
-| `?project=duplex13` | OFFPLAN13 | Duplexes |
-| `?project=environmental14` | OFFPLAN14 | Environmentalists |
-| `?project=environmental15` | OFFPLAN15 | Environmentalists |
+| Parameter | Property | Modal Function | Category |
+|-----------|----------|----------------|----------|
+| `?project=townhouse` | 3 Bedroom Townhouse | OFFPLAN1 | Townhouses |
+| `?project=vacation` | 4 Bedroom Vacation Home | OFFPLAN2 | Vacation Homes |
+| `?project=aburi` | 3 Bedroom Aburi Views | OFFPLAN3 | Vacation Homes |
+| `?project=beach` | 3 Bedroom Beach House | OFFPLAN7 | Vacation Homes |
+| `?project=vacation6` | 3 Bedroom Vacation Home | OFFPLAN6 | Vacation Homes |
+| `?project=vacation16` | 3 Bedroom Home | OFFPLAN16 | Vacation Homes |
+| `?project=retirement` | Retirement Home | OFFPLAN17 | Retirement Homes |
+| `?project=modern` | Modern Retirement Home | OFFPLAN18 | Retirement Homes |
+| `?project=family` | 3 Bedroom Family Home | OFFPLAN19 | Retirement Homes |
+| `?project=bungalow20` | 3 Bedroom Bungalow | OFFPLAN20 | Bungalows |
+| `?project=duplex21` | 4 Bedroom Duplex | OFFPLAN21 | Duplexes |
+| `?project=cabin22` | T-Shaped Cabin | OFFPLAN22 | Cabins |
+| `?project=cabin23` | Modern Scandi Cabin | OFFPLAN23 | Cabins |
+| `?project=bungalow24` | 3 Bedroom Bungalow | OFFPLAN24 | Bungalows |
+| `?project=environmental15` | 5 Bedroom Home | OFFPLAN15 | Environmentalists |
 
-Example: `https://wenamy.com/offplan?project=duplex10`
+**WhatsApp Deep-Linking:** When users click the WhatsApp button in any modal, the link includes the `?project=xxx` parameter. When the website owner clicks the link, the specific property modal automatically opens.
+
+Example: `https://wenamy.com/offplan?project=bungalow24`
 
 ### Image Storage
 - **Location:** `images/offplan/OFFPLAN{1-16}/`
@@ -488,7 +503,9 @@ Category: Duplexes|Vacation Homes|Environmentalists
 3. Creates modal with full image carousel
 4. Adds JavaScript functions for modal/carousel functionality
 5. Integrates with lightbox and escape key handler
-6. Updates URL parameter routing if needed
+6. **Adds URL parameter handler for WhatsApp deep-linking**
+7. **Updates projectParamMap for WhatsApp button injection**
+8. **Updates PROJECT-MAP.md documentation**
 
 **Requirements:**
 - Folder with images named `1st.jpeg`, `2nd.jpeg`, etc.
