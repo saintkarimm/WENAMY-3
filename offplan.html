@@ -3546,22 +3546,21 @@
       const modalActions = document.querySelectorAll('.offplan-modal-actions');
       
       // Map modal IDs to project parameters (must match the URL parameter checking logic)
+      // Only include parameters that are handled in the URL checking logic above
       const projectParamMap = {
-        'townhouseModal': 'townhouse2',
-        'retirementHomeModal': 'retirement17',
-        'modernRetirementModal': 'modern18',
-        'familyHome19Modal': 'family19',
-        'bungalow20Modal': 'bungalow20',
-        'duplex21Modal': 'duplex21',
-        'cabin22Modal': 'cabin22',
-        'cabin23Modal': 'cabin23',
-        'bungalow24Modal': 'bungalow24',
-        'vacationModal': 'vacation2',
-        'aburiModal': 'aburi3',
+        'duplex10Modal': 'duplex10',
+        'environmental14Modal': 'environmental14',
+        'duplex13Modal': 'duplex13',
+        'duplex12Modal': 'duplex12',
         'beach7Modal': 'beach7',
         'vacation6Modal': 'vacation6',
-        'vacation16Modal': 'vacation16',
-        'environmental15Modal': 'environmental15'
+        'duplexModal': 'duplex4',
+        'aburiModal': 'aburi3',
+        'duplex5Modal': 'duplex5',
+        'vacationModal': 'vacation2',
+        'aburiViews8Modal': 'aburiviews8',
+        'aburiMountain9Modal': 'aburimountain9',
+        'environmental11Modal': 'environmental11'
       };
       
       modalActions.forEach((actionsContainer) => {
