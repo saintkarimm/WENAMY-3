@@ -147,28 +147,47 @@
       const container = document.querySelector('.currency-switcher-container');
       if (!container) return;
 
-      const config = CURRENCY_CONFIG[this.currentCurrency];
+      const currencies = Object.values(CURRENCY_CONFIG);
       
       container.innerHTML = `
         <div class="currency-switcher">
-          <button class="currency-switcher-toggle" 
-                  aria-label="Select currency, current: ${config.name}"
-                  aria-expanded="false"
-                  aria-haspopup="menu"
-                  title="${config.name} (${config.code})">
-            <span class="currency-flag">${config.flag}</span>
-          </button>
-          <div class="currency-dropdown" role="menu">
-            ${Object.values(CURRENCY_CONFIG).map(currency => `
-              <button class="currency-option ${currency.code === this.currentCurrency ? 'active' : ''}" 
-                      data-currency="${currency.code}" 
-                      role="menuitem"
-                      aria-label="Switch to ${currency.name}">
-                <span class="currency-flag">${currency.flag}</span>
-                <span class="currency-name">${currency.name}</span>
-                <span class="currency-code-small">${currency.code}</span>
-              </button>
-            `).join('')}
+          <!-- Desktop: Dual Flag Selector -->
+          <div class="currency-switcher-desktop">
+            <span class="currency-switcher-label">Choose Currency</span>
+            <div class="currency-flags-row">
+              ${currencies.map(currency => `
+                <button class="currency-flag-btn ${currency.code === this.currentCurrency ? 'active' : ''}" 
+                        data-currency="${currency.code}"
+                        aria-label="Switch to ${currency.name}"
+                        title="${currency.name}">
+                  <span class="currency-flag">${currency.flag}</span>
+                </button>
+              `).join('<div class="currency-flag-divider"></div>')}
+            </div>
+          </div>
+          
+          <!-- Mobile: Circular Button -->
+          <div class="currency-switcher-mobile">
+            <button class="currency-switcher-toggle" 
+                    aria-label="Select currency, current: ${CURRENCY_CONFIG[this.currentCurrency].name}"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    title="${CURRENCY_CONFIG[this.currentCurrency].name} (${CURRENCY_CONFIG[this.currentCurrency].code})">
+              <span class="currency-flag">${CURRENCY_CONFIG[this.currentCurrency].flag}</span>
+              <span class="currency-toggle-text">${CURRENCY_CONFIG[this.currentCurrency].code}</span>
+            </button>
+            <div class="currency-dropdown" role="menu">
+              ${currencies.map(currency => `
+                <button class="currency-option ${currency.code === this.currentCurrency ? 'active' : ''}" 
+                        data-currency="${currency.code}" 
+                        role="menuitem"
+                        aria-label="Switch to ${currency.name}">
+                  <span class="currency-flag">${currency.flag}</span>
+                  <span class="currency-name">${currency.name}</span>
+                  <span class="currency-code-small">${currency.code}</span>
+                </button>
+              `).join('')}
+            </div>
           </div>
         </div>
       `;
@@ -181,43 +200,61 @@
       const container = document.querySelector('.currency-switcher-container');
       if (!container) return;
 
+      // Desktop: Flag buttons
+      const flagButtons = container.querySelectorAll('.currency-flag-btn');
+      flagButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const currency = btn.getAttribute('data-currency');
+          if (currency !== this.currentCurrency) {
+            this.switchCurrency(currency);
+          }
+        });
+      });
+
+      // Mobile: Toggle dropdown
       const toggle = container.querySelector('.currency-switcher-toggle');
       const dropdown = container.querySelector('.currency-dropdown');
+      
+      if (toggle && dropdown) {
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', !isExpanded);
+          dropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!container.contains(e.target)) {
+            toggle.setAttribute('aria-expanded', 'false');
+            dropdown.classList.remove('active');
+          }
+        });
+
+        // Keyboard navigation
+        toggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle.click();
+          }
+        });
+      }
+
+      // Mobile: Currency selection from dropdown
       const options = container.querySelectorAll('.currency-option');
-
-      // Toggle dropdown
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', !isExpanded);
-        dropdown.classList.toggle('active');
-      });
-
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!container.contains(e.target)) {
-          toggle.setAttribute('aria-expanded', 'false');
-          dropdown.classList.remove('active');
-        }
-      });
-
-      // Currency selection
       options.forEach(option => {
         option.addEventListener('click', (e) => {
           e.stopPropagation();
           const currency = option.getAttribute('data-currency');
           this.switchCurrency(currency);
-          toggle.setAttribute('aria-expanded', 'false');
-          dropdown.classList.remove('active');
+          if (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+          if (dropdown) {
+            dropdown.classList.remove('active');
+          }
         });
-      });
-
-      // Keyboard navigation
-      toggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle.click();
-        }
       });
     }
 

@@ -290,7 +290,7 @@ body {
 }
 
 /* ========================================
-   CURRENCY SWITCHER STYLES - Circular Button with Flags
+   CURRENCY SWITCHER STYLES - Desktop & Mobile
    ======================================== */
 
 /* Ensure price elements stay inside their containers */
@@ -313,6 +313,77 @@ body {
 .currency-switcher {
   position: relative;
   display: inline-block;
+}
+
+/* ========== DESKTOP: Dual Flag Selector ========== */
+.currency-switcher-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.currency-switcher-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #9ca3af;
+}
+
+.currency-flags-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.currency-flag-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.currency-flag-btn:hover {
+  background: #f8fafc;
+  transform: scale(1.05);
+}
+
+.currency-flag-btn.active {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-color: #0369a1;
+  box-shadow: 0 2px 8px rgba(3, 105, 161, 0.15);
+}
+
+.currency-flag-btn .currency-flag {
+  font-size: 1.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.currency-flag-divider {
+  width: 1px;
+  height: 24px;
+  background: #e5e7eb;
+}
+
+/* ========== MOBILE: Circular Button (Hidden on Desktop) ========== */
+.currency-switcher-mobile {
+  display: none;
 }
 
 /* Circular Currency Button */
@@ -352,7 +423,6 @@ body {
     0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Currency Flag in Button */
 .currency-switcher-toggle .currency-flag {
   font-size: 1.75rem;
   line-height: 1;
@@ -364,7 +434,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Expanded State Indicator Ring */
 .currency-switcher-toggle[aria-expanded="true"] {
   box-shadow: 
     0 0 0 2px #1e293b,
@@ -400,7 +469,6 @@ body {
   border-radius: 16px;
 }
 
-/* Currency Option in Radial Menu */
 .currency-option {
   display: flex;
   align-items: center;
@@ -442,21 +510,18 @@ body {
   color: #0369a1;
 }
 
-/* Currency Flag in Option */
 .currency-option .currency-flag {
   font-size: 1.5rem;
   line-height: 1;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
 }
 
-/* Currency Name */
 .currency-name {
   flex: 1;
   font-weight: 500;
   font-size: 0.9rem;
 }
 
-/* Currency Code Small */
 .currency-code-small {
   font-size: 0.75rem;
   color: #9ca3af;
@@ -471,28 +536,51 @@ body {
   color: #0369a1;
 }
 
-/* Mobile Responsive */
+/* ========== MOBILE RESPONSIVE ========== */
 @media (max-width: 768px) {
   .currency-switcher-container {
     padding: 1rem 0;
   }
   
+  /* Hide desktop version on mobile */
+  .currency-switcher-desktop {
+    display: none;
+  }
+  
+  /* Show mobile version */
+  .currency-switcher-mobile {
+    display: block;
+  }
+  
+  /* Mobile: Rectangle button with flag + text */
   .currency-switcher-toggle {
-    width: 48px;
-    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: auto;
+    height: auto;
+    padding: 0.625rem 1rem;
+    border-radius: 10px;
   }
   
   .currency-switcher-toggle .currency-flag {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .currency-toggle-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
   }
   
   .currency-dropdown {
-    min-width: 160px;
+    min-width: 180px;
     padding: 6px;
   }
   
   .currency-dropdown.active {
-    transform: translate(-50%, calc(-50% + 60px)) scale(1);
+    transform: translate(-50%, calc(-50% + 50px)) scale(1);
   }
   
   .currency-option {
