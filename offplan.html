@@ -3540,27 +3540,58 @@
           offplanCards.forEach(card => { card.style.display = (card.dataset.category === 'environmentalists') ? 'block' : 'none'; });
           openEnvironmental11Modal();
         }, 500);
+      } else if (projectParam === 'townhouse') {
+        setTimeout(() => { openTownhouseModal(); }, 500);
+      } else if (projectParam === 'retirement') {
+        setTimeout(() => { openRetirementHomeModal(); }, 500);
+      } else if (projectParam === 'modern') {
+        setTimeout(() => { openModernRetirementModal(); }, 500);
+      } else if (projectParam === 'family') {
+        setTimeout(() => { openFamilyHome19Modal(); }, 500);
+      } else if (projectParam === 'bungalow20') {
+        setTimeout(() => { openBungalow20Modal(); }, 500);
+      } else if (projectParam === 'duplex21') {
+        setTimeout(() => { openDuplex21Modal(); }, 500);
+      } else if (projectParam === 'cabin22') {
+        setTimeout(() => { openCabin22Modal(); }, 500);
+      } else if (projectParam === 'cabin23') {
+        setTimeout(() => { openCabin23Modal(); }, 500);
+      } else if (projectParam === 'bungalow24') {
+        setTimeout(() => { openBungalow24Modal(); }, 500);
+      } else if (projectParam === 'vacation') {
+        setTimeout(() => { openVacationModal(); }, 500);
+      } else if (projectParam === 'aburi') {
+        setTimeout(() => { openAburiModal(); }, 500);
+      } else if (projectParam === 'beach') {
+        setTimeout(() => { openBeach7Modal(); }, 500);
+      } else if (projectParam === 'vacation6') {
+        setTimeout(() => { openVacation6Modal(); }, 500);
+      } else if (projectParam === 'vacation16') {
+        setTimeout(() => { openVacation16Modal(); }, 500);
+      } else if (projectParam === 'environmental15') {
+        setTimeout(() => { openEnvironmental15Modal(); }, 500);
       }
 
       // Add WhatsApp buttons to all offplan modals
       const modalActions = document.querySelectorAll('.offplan-modal-actions');
       
       // Map modal IDs to project parameters (must match the URL parameter checking logic)
-      // Only include parameters that are handled in the URL checking logic above
       const projectParamMap = {
-        'duplex10Modal': 'duplex10',
-        'environmental14Modal': 'environmental14',
-        'duplex13Modal': 'duplex13',
-        'duplex12Modal': 'duplex12',
-        'beach7Modal': 'beach7',
+        'townhouseModal': 'townhouse',
+        'retirementHomeModal': 'retirement',
+        'modernRetirementModal': 'modern',
+        'familyHome19Modal': 'family',
+        'bungalow20Modal': 'bungalow20',
+        'duplex21Modal': 'duplex21',
+        'cabin22Modal': 'cabin22',
+        'cabin23Modal': 'cabin23',
+        'bungalow24Modal': 'bungalow24',
+        'vacationModal': 'vacation',
+        'aburiModal': 'aburi',
+        'beach7Modal': 'beach',
         'vacation6Modal': 'vacation6',
-        'duplexModal': 'duplex4',
-        'aburiModal': 'aburi3',
-        'duplex5Modal': 'duplex5',
-        'vacationModal': 'vacation2',
-        'aburiViews8Modal': 'aburiviews8',
-        'aburiMountain9Modal': 'aburimountain9',
-        'environmental11Modal': 'environmental11'
+        'vacation16Modal': 'vacation16',
+        'environmental15Modal': 'environmental15'
       };
       
       modalActions.forEach((actionsContainer) => {
