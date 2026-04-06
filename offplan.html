@@ -341,6 +341,15 @@
       background: #e2e8f0;
     }
     
+    .offplan-modal-btn.whatsapp {
+      background: #25d366;
+      color: #ffffff;
+    }
+    
+    .offplan-modal-btn.whatsapp:hover {
+      background: #128c7e;
+    }
+    
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .offplan-modal-content {
@@ -3532,6 +3541,24 @@
           openEnvironmental11Modal();
         }, 500);
       }
+
+      // Add WhatsApp buttons to all offplan modals
+      const modalActions = document.querySelectorAll('.offplan-modal-actions');
+      modalActions.forEach((actionsContainer, index) => {
+        // Get the project title from the modal
+        const modalContent = actionsContainer.closest('.offplan-modal-content');
+        const projectTitle = modalContent?.querySelector('.offplan-modal-title')?.textContent || 'Off-Plan Property';
+        
+        // Create WhatsApp button
+        const whatsappBtn = document.createElement('a');
+        whatsappBtn.href = `https://wa.me/233243817969?text=Hello%20Wenamy,%20I'm%20interested%20in%20${encodeURIComponent(projectTitle)}.%20Here's%20the%20link:%20${encodeURIComponent(window.location.href)}`;
+        whatsappBtn.target = '_blank';
+        whatsappBtn.className = 'offplan-modal-btn whatsapp';
+        whatsappBtn.textContent = 'WhatsApp';
+        
+        // Add to actions container
+        actionsContainer.appendChild(whatsappBtn);
+      });
 
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const menuClose = document.querySelector('.mobile-menu-close');
