@@ -381,9 +381,20 @@ body {
   background: #e5e7eb;
 }
 
-/* ========== MOBILE: Circular Button (Hidden on Desktop) ========== */
+/* ========== MOBILE: Hidden by default on Desktop ========== */
 .currency-switcher-mobile {
   display: none;
+}
+
+/* Desktop: Hidden on mobile by default */
+@media (max-width: 768px) {
+  .currency-switcher-desktop {
+    display: none;
+  }
+  
+  .currency-switcher-mobile {
+    display: block;
+  }
 }
 
 /* Circular Currency Button */
@@ -540,16 +551,6 @@ body {
 @media (max-width: 768px) {
   .currency-switcher-container {
     padding: 1rem 0;
-  }
-  
-  /* Hide desktop version on mobile */
-  .currency-switcher-desktop {
-    display: none;
-  }
-  
-  /* Show mobile version */
-  .currency-switcher-mobile {
-    display: block;
   }
   
   /* Mobile: Rectangle button with flag + text */
