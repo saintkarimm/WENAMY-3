@@ -287,13 +287,21 @@
         text-align: center;
       }
     }
-    /* Prevent FOUC - hide navbar until CSS loads */
-    .navbar { visibility: hidden; }
+    /* Prevent FOUC - hide navbar until CSS loads and set initial state */
+    .navbar { 
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .navbar.loaded {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar" id="mainNavbar">
+  <nav class="navbar navbar-light" id="mainNavbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
         <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
@@ -489,6 +497,12 @@
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
+      // Show navbar after CSS loads to prevent FOUC
+      const navbar = document.getElementById('mainNavbar');
+      if (navbar) {
+        navbar.classList.add('loaded');
+      }
+      
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const menuClose = document.querySelector('.mobile-menu-close');
       const mobileNav = document.querySelector('.mobile-nav-overlay');

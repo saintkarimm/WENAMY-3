@@ -44,8 +44,16 @@
   <link rel="stylesheet" href="../css/loading-states.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <style>
-    /* Prevent FOUC - hide navbar until CSS loads */
-    .navbar { visibility: hidden; }
+    /* Prevent FOUC - hide navbar until CSS loads and set initial state */
+    .navbar { 
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .navbar.loaded {
+      visibility: visible;
+      opacity: 1;
+    }
     
     /* ========================================
        PREMIUM CATEGORY PAGE STYLES - UPCOMING
@@ -930,6 +938,12 @@
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
+      // Show navbar after CSS loads to prevent FOUC
+      const navbar = document.getElementById('mainNavbar');
+      if (navbar) {
+        navbar.classList.add('loaded');
+      }
+      
       const menuToggle = document.getElementById('mobileMenuToggle');
       const menuClose = document.getElementById('mobileMenuClose');
       const mobileNav = document.getElementById('mobileNavOverlay');

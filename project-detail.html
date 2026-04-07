@@ -53,8 +53,16 @@
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/project-detail-cinematic.css?v=12">
   <style>
-    /* Prevent FOUC - hide navbar until CSS loads */
-    .navbar { visibility: visible; }
+    /* Prevent FOUC - hide navbar until CSS loads and set initial state */
+    .navbar { 
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .navbar.loaded {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -718,7 +726,12 @@
   <script>
     // Override navbar contrast for cinematic hero - keep glass effect
     document.addEventListener('DOMContentLoaded', function() {
+      // Show navbar after CSS loads to prevent FOUC
       const navbar = document.getElementById('mainNavbar');
+      if (navbar) {
+        navbar.classList.add('loaded');
+      }
+      
       if (!navbar) return;
       
       // Remove any light/dark classes that might interfere

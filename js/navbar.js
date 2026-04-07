@@ -5,13 +5,12 @@
  */
 
 /**
- * Initialize navbar scroll effect for glassmorphism enhancement
+ * Initialize navbar scroll effect for liquid glass enhancement
  */
 function initNavbarScroll() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
   
-  let lastScrollY = window.scrollY;
   let ticking = false;
   
   function updateNavbar() {
@@ -24,7 +23,6 @@ function initNavbarScroll() {
       navbar.classList.remove('scrolled');
     }
     
-    lastScrollY = scrollY;
     ticking = false;
   }
   
