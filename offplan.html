@@ -95,7 +95,8 @@
       border-radius: 1.5rem;
       max-width: 900px;
       width: 90%;
-      max-height: 90vh;
+      max-height: 85vh;
+      margin-top: 80px;
       overflow-y: auto;
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
       animation: modalSlideIn 0.3s ease-out;
@@ -434,7 +435,7 @@
     
     .lightbox-close {
       position: absolute;
-      top: 2rem;
+      top: 5rem;
       right: 2rem;
       width: 48px;
       height: 48px;
@@ -502,7 +503,7 @@
     
     @media (max-width: 768px) {
       .lightbox-close {
-        top: 1rem;
+        top: 4rem;
         right: 1rem;
         width: 40px;
         height: 40px;
@@ -3600,73 +3601,39 @@
       </button>
       
       <div class="offplan-modal-carousel">
-        <div class="carousel-container" id="villa27Carousel">
-          <div class="carousel-slide active">
-            <img src="images/offplan/OFFPLAN27/1st.jpeg" alt="Vacation Family Villa - Image 1" loading="eager" decoding="async" onclick="openLightbox(0)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/2nd.jpeg" alt="Vacation Family Villa - Image 2" loading="lazy" decoding="async" onclick="openLightbox(1)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/3rd.jpeg" alt="Vacation Family Villa - Image 3" loading="lazy" decoding="async" onclick="openLightbox(2)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/4th.jpeg" alt="Vacation Family Villa - Image 4" loading="lazy" decoding="async" onclick="openLightbox(3)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/5th.jpeg" alt="Vacation Family Villa - Image 5" loading="lazy" decoding="async" onclick="openLightbox(4)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/6th.jpeg" alt="Vacation Family Villa - Image 6" loading="lazy" decoding="async" onclick="openLightbox(5)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/7th.jpeg" alt="Vacation Family Villa - Image 7" loading="lazy" decoding="async" onclick="openLightbox(6)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/8th.jpeg" alt="Vacation Family Villa - Image 8" loading="lazy" decoding="async" onclick="openLightbox(7)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN27/9th.jpeg" alt="Vacation Family Villa - Image 9" loading="lazy" decoding="async" onclick="openLightbox(8)">
-          </div>
+        <div class="carousel-container" id="villa27CarouselContainer">
+          <img src="images/offplan/OFFPLAN27/1st.jpeg" alt="Vacation Family Villa - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/2nd.jpeg" alt="Vacation Family Villa - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/3rd.jpeg" alt="Vacation Family Villa - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/4th.jpeg" alt="Vacation Family Villa - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/5th.jpeg" alt="Vacation Family Villa - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/6th.jpeg" alt="Vacation Family Villa - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/7th.jpeg" alt="Vacation Family Villa - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/8th.jpeg" alt="Vacation Family Villa - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/9th.jpeg" alt="Vacation Family Villa - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
-        <button class="carousel-nav carousel-prev" onclick="moveVilla27Carousel(-1)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15,18 9,12 15,6"/>
-          </svg>
+        <button class="carousel-btn carousel-prev" onclick="moveVilla27Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <button class="carousel-nav carousel-next" onclick="moveVilla27Carousel(1)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9,18 15,12 9,6"/>
-          </svg>
+        <button class="carousel-btn carousel-next" onclick="moveVilla27Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
-        <div class="carousel-dots" id="villa27Dots">
-          <span class="dot active" onclick="goToVilla27Slide(0)"></span>
-          <span class="dot" onclick="goToVilla27Slide(1)"></span>
-          <span class="dot" onclick="goToVilla27Slide(2)"></span>
-          <span class="dot" onclick="goToVilla27Slide(3)"></span>
-          <span class="dot" onclick="goToVilla27Slide(4)"></span>
-          <span class="dot" onclick="goToVilla27Slide(5)"></span>
-          <span class="dot" onclick="goToVilla27Slide(6)"></span>
-          <span class="dot" onclick="goToVilla27Slide(7)"></span>
-          <span class="dot" onclick="goToVilla27Slide(8)"></span>
-        </div>
+        <div class="carousel-dots" id="villa27CarouselDots"></div>
       </div>
       
-      <div class="offplan-modal-info">
-        <div class="offplan-modal-header">
-          <h2>Vacation Family Villa</h2>
-          <p class="offplan-modal-location">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            Accra
-          </p>
-          <div class="offplan-modal-price" data-usd="710000">$710,000</div>
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Vacation Family Villa</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Villa</span></div>
+          <div class="feature-item"><span class="feature-label">Style</span><span class="feature-value">Vacation Family</span></div>
+          <div class="feature-item"><span class="feature-label">Features</span><span class="feature-value">Pool, Stone Cladding</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">$710,000</span></div>
         </div>
-        <div class="offplan-modal-description">
-          <p>This villa offers the feeling of a vacation and that of a family home at the same time. Features made leisure and family living a real experience. Natural finishes, stone cladding, greens, pool and seamless blend of outdoor and indoor spaces. Give us a call and make this your home.</p>
-        </div>
+        <p class="offplan-modal-description">This villa offers the feeling of a vacation and that of a family home at the same time. Features made leisure and family living a real experience. Natural finishes, stone cladding, greens, pool and seamless blend of outdoor and indoor spaces.</p>
         <div class="offplan-modal-highlights">
           <h4>Key Highlights</h4>
           <ul>
@@ -3699,77 +3666,40 @@
       </button>
       
       <div class="offplan-modal-carousel">
-        <div class="carousel-container" id="villa28Carousel">
-          <div class="carousel-slide active">
-            <img src="images/offplan/OFFPLAN28/1st.jpeg" alt="Standout Luxury Villa - Image 1" loading="eager" decoding="async" onclick="openLightbox(0)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/2nd.jpeg" alt="Standout Luxury Villa - Image 2" loading="lazy" decoding="async" onclick="openLightbox(1)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/3rd.jpeg" alt="Standout Luxury Villa - Image 3" loading="lazy" decoding="async" onclick="openLightbox(2)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/4th.jpeg" alt="Standout Luxury Villa - Image 4" loading="lazy" decoding="async" onclick="openLightbox(3)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/5th.jpeg" alt="Standout Luxury Villa - Image 5" loading="lazy" decoding="async" onclick="openLightbox(4)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/6th.jpeg" alt="Standout Luxury Villa - Image 6" loading="lazy" decoding="async" onclick="openLightbox(5)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/7th.jpeg" alt="Standout Luxury Villa - Image 7" loading="lazy" decoding="async" onclick="openLightbox(6)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/8th.jpeg" alt="Standout Luxury Villa - Image 8" loading="lazy" decoding="async" onclick="openLightbox(7)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/9th.jpeg" alt="Standout Luxury Villa - Image 9" loading="lazy" decoding="async" onclick="openLightbox(8)">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/offplan/OFFPLAN28/10th.jpeg" alt="Standout Luxury Villa - Image 10" loading="lazy" decoding="async" onclick="openLightbox(9)">
-          </div>
+        <div class="carousel-container" id="villa28CarouselContainer">
+          <img src="images/offplan/OFFPLAN28/1st.jpeg" alt="Standout Luxury Villa - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/2nd.jpeg" alt="Standout Luxury Villa - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/3rd.jpeg" alt="Standout Luxury Villa - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/4th.jpeg" alt="Standout Luxury Villa - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/5th.jpeg" alt="Standout Luxury Villa - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/6th.jpeg" alt="Standout Luxury Villa - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/7th.jpeg" alt="Standout Luxury Villa - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/8th.jpeg" alt="Standout Luxury Villa - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/9th.jpeg" alt="Standout Luxury Villa - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/10th.jpeg" alt="Standout Luxury Villa - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
-        <button class="carousel-nav carousel-prev" onclick="moveVilla28Carousel(-1)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15,18 9,12 15,6"/>
-          </svg>
+        <button class="carousel-btn carousel-prev" onclick="moveVilla28Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <button class="carousel-nav carousel-next" onclick="moveVilla28Carousel(1)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9,18 15,12 9,6"/>
-          </svg>
+        <button class="carousel-btn carousel-next" onclick="moveVilla28Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
-        <div class="carousel-dots" id="villa28Dots">
-          <span class="dot active" onclick="goToVilla28Slide(0)"></span>
-          <span class="dot" onclick="goToVilla28Slide(1)"></span>
-          <span class="dot" onclick="goToVilla28Slide(2)"></span>
-          <span class="dot" onclick="goToVilla28Slide(3)"></span>
-          <span class="dot" onclick="goToVilla28Slide(4)"></span>
-          <span class="dot" onclick="goToVilla28Slide(5)"></span>
-          <span class="dot" onclick="goToVilla28Slide(6)"></span>
-          <span class="dot" onclick="goToVilla28Slide(7)"></span>
-          <span class="dot" onclick="goToVilla28Slide(8)"></span>
-          <span class="dot" onclick="goToVilla28Slide(9)"></span>
-        </div>
+        <div class="carousel-dots" id="villa28CarouselDots"></div>
       </div>
       
-      <div class="offplan-modal-info">
-        <div class="offplan-modal-header">
-          <h2>Standout Luxury Villa</h2>
-          <p class="offplan-modal-location">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            Accra
-          </p>
-          <div class="offplan-modal-price" data-usd="965000">$965,000</div>
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Standout Luxury Villa</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Villa</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">5</span></div>
+          <div class="feature-item"><span class="feature-label">Washrooms</span><span class="feature-value">7</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">$965,000</span></div>
         </div>
-        <div class="offplan-modal-description">
-          <p>If you seek to stand out in your community, this villa is for you. With stunning looks, bold lines, natural element finishes, and boys quarters. Contact us now to make this yours.</p>
-        </div>
+        <p class="offplan-modal-description">If you seek to stand out in your community, this villa is for you. With stunning looks, bold lines, natural element finishes, and boys quarters.</p>
         <div class="offplan-modal-highlights">
           <h4>Key Highlights</h4>
           <ul>
@@ -4776,17 +4706,14 @@
       updateVilla26Carousel();
     }
 
-    // Villa 27 Modal Functions
+    // Villa 27 Modal Functions (OFFPLAN27)
     let villa27CurrentSlide = 0;
-
-    function getVilla27Slides() {
-      return document.querySelectorAll('#villa27Carousel .carousel-slide');
-    }
+    const villa27Slides = document.querySelectorAll('#villa27CarouselContainer .carousel-slide');
+    const villa27TotalSlides = villa27Slides.length;
 
     function openVilla27Modal() {
       document.getElementById('villa27Modal').classList.add('active');
       document.body.style.overflow = 'hidden';
-      villa27CurrentSlide = 0;
       createVilla27CarouselDots();
       updateVilla27Carousel();
     }
@@ -4797,32 +4724,28 @@
     }
 
     function createVilla27CarouselDots() {
-      const dotsContainer = document.getElementById('villa27Dots');
-      if (!dotsContainer) return;
-      const slides = getVilla27Slides();
+      const dotsContainer = document.getElementById('villa27CarouselDots');
       dotsContainer.innerHTML = '';
-      for (let i = 0; i < slides.length; i++) {
+      for (let i = 0; i < villa27TotalSlides; i++) {
         const dot = document.createElement('span');
-        dot.className = 'dot' + (i === villa27CurrentSlide ? ' active' : '');
+        dot.className = 'carousel-dot' + (i === villa27CurrentSlide ? ' active' : '');
         dot.onclick = () => goToVilla27Slide(i);
         dotsContainer.appendChild(dot);
       }
     }
 
     function updateVilla27Carousel() {
-      const slides = getVilla27Slides();
-      slides.forEach((slide, index) => {
+      villa27Slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === villa27CurrentSlide);
       });
-      const dots = document.querySelectorAll('#villa27Dots .dot');
+      const dots = document.querySelectorAll('#villa27CarouselDots .carousel-dot');
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === villa27CurrentSlide);
       });
     }
 
     function moveVilla27Carousel(direction) {
-      const slides = getVilla27Slides();
-      villa27CurrentSlide = (villa27CurrentSlide + direction + slides.length) % slides.length;
+      villa27CurrentSlide = (villa27CurrentSlide + direction + villa27TotalSlides) % villa27TotalSlides;
       updateVilla27Carousel();
     }
 
@@ -4831,17 +4754,14 @@
       updateVilla27Carousel();
     }
 
-    // Villa 28 Modal Functions
+    // Villa 28 Modal Functions (OFFPLAN28)
     let villa28CurrentSlide = 0;
-
-    function getVilla28Slides() {
-      return document.querySelectorAll('#villa28Carousel .carousel-slide');
-    }
+    const villa28Slides = document.querySelectorAll('#villa28CarouselContainer .carousel-slide');
+    const villa28TotalSlides = villa28Slides.length;
 
     function openVilla28Modal() {
       document.getElementById('villa28Modal').classList.add('active');
       document.body.style.overflow = 'hidden';
-      villa28CurrentSlide = 0;
       createVilla28CarouselDots();
       updateVilla28Carousel();
     }
@@ -4852,32 +4772,28 @@
     }
 
     function createVilla28CarouselDots() {
-      const dotsContainer = document.getElementById('villa28Dots');
-      if (!dotsContainer) return;
-      const slides = getVilla28Slides();
+      const dotsContainer = document.getElementById('villa28CarouselDots');
       dotsContainer.innerHTML = '';
-      for (let i = 0; i < slides.length; i++) {
+      for (let i = 0; i < villa28TotalSlides; i++) {
         const dot = document.createElement('span');
-        dot.className = 'dot' + (i === villa28CurrentSlide ? ' active' : '');
+        dot.className = 'carousel-dot' + (i === villa28CurrentSlide ? ' active' : '');
         dot.onclick = () => goToVilla28Slide(i);
         dotsContainer.appendChild(dot);
       }
     }
 
     function updateVilla28Carousel() {
-      const slides = getVilla28Slides();
-      slides.forEach((slide, index) => {
+      villa28Slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === villa28CurrentSlide);
       });
-      const dots = document.querySelectorAll('#villa28Dots .dot');
+      const dots = document.querySelectorAll('#villa28CarouselDots .carousel-dot');
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === villa28CurrentSlide);
       });
     }
 
     function moveVilla28Carousel(direction) {
-      const slides = getVilla28Slides();
-      villa28CurrentSlide = (villa28CurrentSlide + direction + slides.length) % slides.length;
+      villa28CurrentSlide = (villa28CurrentSlide + direction + villa28TotalSlides) % villa28TotalSlides;
       updateVilla28Carousel();
     }
 
@@ -5645,11 +5561,11 @@
 
       if (villa28Modal && villa28Modal.classList.contains('active')) {
         lightboxCurrentModal = 'villa28';
-        lightboxImages = Array.from(document.querySelectorAll('#villa28Carousel .carousel-slide')).map(img => img.src);
+        lightboxImages = Array.from(document.querySelectorAll('#villa28CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = villa28CurrentSlide;
       } else if (villa27Modal && villa27Modal.classList.contains('active')) {
         lightboxCurrentModal = 'villa27';
-        lightboxImages = Array.from(document.querySelectorAll('#villa27Carousel .carousel-slide')).map(img => img.src);
+        lightboxImages = Array.from(document.querySelectorAll('#villa27CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = villa27CurrentSlide;
       } else if (villa26Modal && villa26Modal.classList.contains('active')) {
         lightboxCurrentModal = 'villa26';
