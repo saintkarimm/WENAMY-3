@@ -45,8 +45,8 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=13">
-  <link rel="stylesheet" href="css/footer.css?v=13">
+  <link rel="stylesheet" href="css/hero-new.css?v=14">
+  <link rel="stylesheet" href="css/footer.css?v=14">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -3903,11 +3903,11 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=12" defer></script>
-  <script src="js/basket.js?v=12" defer></script>
-  <script src="js/chatbot.js?v=12" defer></script>
-  <script src="js/navbar.js?v=12" defer></script>
-  <script src="js/currency-switcher.js?v=3" defer></script>
+  <script src="js/animations.js?v=13" defer></script>
+  <script src="js/basket.js?v=13" defer></script>
+  <script src="js/chatbot.js?v=13" defer></script>
+  <script src="js/navbar.js?v=13" defer></script>
+  <script src="js/currency-switcher.js?v=4" defer></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -4778,12 +4778,15 @@
 
     // Villa 27 Modal Functions
     let villa27CurrentSlide = 0;
-    const villa27Slides = document.querySelectorAll('#villa27Carousel .carousel-slide');
-    const villa27TotalSlides = villa27Slides.length;
+
+    function getVilla27Slides() {
+      return document.querySelectorAll('#villa27Carousel .carousel-slide');
+    }
 
     function openVilla27Modal() {
       document.getElementById('villa27Modal').classList.add('active');
       document.body.style.overflow = 'hidden';
+      villa27CurrentSlide = 0;
       createVilla27CarouselDots();
       updateVilla27Carousel();
     }
@@ -4796,8 +4799,9 @@
     function createVilla27CarouselDots() {
       const dotsContainer = document.getElementById('villa27Dots');
       if (!dotsContainer) return;
+      const slides = getVilla27Slides();
       dotsContainer.innerHTML = '';
-      for (let i = 0; i < villa27TotalSlides; i++) {
+      for (let i = 0; i < slides.length; i++) {
         const dot = document.createElement('span');
         dot.className = 'dot' + (i === villa27CurrentSlide ? ' active' : '');
         dot.onclick = () => goToVilla27Slide(i);
@@ -4806,7 +4810,8 @@
     }
 
     function updateVilla27Carousel() {
-      villa27Slides.forEach((slide, index) => {
+      const slides = getVilla27Slides();
+      slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === villa27CurrentSlide);
       });
       const dots = document.querySelectorAll('#villa27Dots .dot');
@@ -4816,7 +4821,8 @@
     }
 
     function moveVilla27Carousel(direction) {
-      villa27CurrentSlide = (villa27CurrentSlide + direction + villa27TotalSlides) % villa27TotalSlides;
+      const slides = getVilla27Slides();
+      villa27CurrentSlide = (villa27CurrentSlide + direction + slides.length) % slides.length;
       updateVilla27Carousel();
     }
 
@@ -4827,12 +4833,15 @@
 
     // Villa 28 Modal Functions
     let villa28CurrentSlide = 0;
-    const villa28Slides = document.querySelectorAll('#villa28Carousel .carousel-slide');
-    const villa28TotalSlides = villa28Slides.length;
+
+    function getVilla28Slides() {
+      return document.querySelectorAll('#villa28Carousel .carousel-slide');
+    }
 
     function openVilla28Modal() {
       document.getElementById('villa28Modal').classList.add('active');
       document.body.style.overflow = 'hidden';
+      villa28CurrentSlide = 0;
       createVilla28CarouselDots();
       updateVilla28Carousel();
     }
@@ -4845,8 +4854,9 @@
     function createVilla28CarouselDots() {
       const dotsContainer = document.getElementById('villa28Dots');
       if (!dotsContainer) return;
+      const slides = getVilla28Slides();
       dotsContainer.innerHTML = '';
-      for (let i = 0; i < villa28TotalSlides; i++) {
+      for (let i = 0; i < slides.length; i++) {
         const dot = document.createElement('span');
         dot.className = 'dot' + (i === villa28CurrentSlide ? ' active' : '');
         dot.onclick = () => goToVilla28Slide(i);
@@ -4855,7 +4865,8 @@
     }
 
     function updateVilla28Carousel() {
-      villa28Slides.forEach((slide, index) => {
+      const slides = getVilla28Slides();
+      slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === villa28CurrentSlide);
       });
       const dots = document.querySelectorAll('#villa28Dots .dot');
@@ -4865,7 +4876,8 @@
     }
 
     function moveVilla28Carousel(direction) {
-      villa28CurrentSlide = (villa28CurrentSlide + direction + villa28TotalSlides) % villa28TotalSlides;
+      const slides = getVilla28Slides();
+      villa28CurrentSlide = (villa28CurrentSlide + direction + slides.length) % slides.length;
       updateVilla28Carousel();
     }
 
