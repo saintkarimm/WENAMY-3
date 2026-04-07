@@ -75,55 +75,54 @@
   }
 }
 
-/* EXCLUSIVE COLLECTIONS - Masonry Grid Gallery */
+/* EXCLUSIVE COLLECTIONS - Exact Euphoria Layout */
 .exclusive-collections {
-  padding: var(--space-24) var(--space-6);
+  padding: 96px 72px;
   overflow: hidden;
 }
 
 .collections-header {
   text-align: center;
-  margin-bottom: var(--space-12);
-  padding: 0 var(--space-6);
+  margin-bottom: 48px;
+  padding: 0 16px;
 }
 
 .collections-title {
-  font-size: var(--font-size-headline);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
-  color: var(--text-light);
-  margin-bottom: var(--space-2);
+  color: #3d5a6b;
+  margin-bottom: 8px;
 }
 
 .collections-subtitle {
-  font-size: var(--font-size-subheadline-sm);
-  font-weight: var(--font-weight-regular);
-  color: var(--text-light);
-  opacity: 0.8;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
 }
 
-/* Masonry Grid Layout */
+/* Euphoria Grid Layout */
 .collections-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
-  align-items: start;
 }
 
-.collections-column {
+.collections-column-left,
+.collections-column-right {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.collections-item {
+.collections-item-small,
+.collections-item-large {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   width: 100%;
+}
+
+.collections-item-small {
   height: 280px;
 }
 
@@ -131,33 +130,35 @@
   height: 584px;
 }
 
-.collections-item img {
+.collections-item-small img,
+.collections-item-large img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.collections-item:hover img {
+.collections-item-small:hover img,
+.collections-item-large:hover img {
   transform: scale(1.03);
-}
-
-.collections-item-large {
-  grid-row: span 2;
 }
 
 /* Tablet Responsive */
 @media (max-width: 1024px) {
+  .exclusive-collections {
+    padding: 64px 32px;
+  }
+  
   .collections-grid {
     gap: 16px;
-    padding: 0 var(--space-4);
   }
   
-  .collections-column {
+  .collections-column-left,
+  .collections-column-right {
     gap: 16px;
   }
   
-  .collections-item {
+  .collections-item-small {
     height: 200px;
   }
   
@@ -168,16 +169,21 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .exclusive-collections {
+    padding: 48px 24px;
+  }
+  
   .collections-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
   
-  .collections-column {
+  .collections-column-left,
+  .collections-column-right {
     gap: 16px;
   }
   
-  .collections-item,
+  .collections-item-small,
   .collections-item-large {
     height: 280px;
   }
