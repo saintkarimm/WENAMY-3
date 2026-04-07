@@ -440,6 +440,10 @@ The offplan.html page displays investment properties with category filtering and
 | OFFPLAN22 | T-Shaped Cabin | Cabins | 3 | 2 | $125,000 | Peduasi | 4 |
 | OFFPLAN23 | Modern Scandi Cabin | Cabins | 3 | 2 | $95,000 | Peduasi | 4 |
 | OFFPLAN24 | 3 Bedroom Bungalow | Bungalows | 3 | 4 | $145,000 | Accra | 6 |
+| OFFPLAN25 | Family Bungalow | Bungalows / Retirement Homes | 2 + annex | 2 | $189,000 | Accra | 10 |
+| OFFPLAN26 | Luxury Villa Duplex | Duplexes / Villa | Large Suites | 2+ | $720,000 | Accra | 12 |
+| OFFPLAN27 | Vacation Family Villa | Villa | Vacation-Style Living | 2+ | $710,000 | Accra | 9 |
+| OFFPLAN28 | Standout Luxury Villa | Villa | 5 Bed / 7 Bath | 5 | $965,000 | Accra | 10 |
 
 ### URL Parameters for Direct Linking
 Append `?project={id}` to offplan.html to auto-open a specific property modal:
@@ -460,6 +464,10 @@ Append `?project={id}` to offplan.html to auto-open a specific property modal:
 | `?project=cabin22` | T-Shaped Cabin | OFFPLAN22 | Cabins |
 | `?project=cabin23` | Modern Scandi Cabin | OFFPLAN23 | Cabins |
 | `?project=bungalow24` | 3 Bedroom Bungalow | OFFPLAN24 | Bungalows |
+| `?project=bungalow25` | Family Bungalow | OFFPLAN25 | Bungalows / Retirement Homes |
+| `?project=villa26` | Luxury Villa Duplex | OFFPLAN26 | Duplexes / Villa |
+| `?project=villa27` | Vacation Family Villa | OFFPLAN27 | Villa |
+| `?project=villa28` | Standout Luxury Villa | OFFPLAN28 | Villa |
 | `?project=environmental15` | 5 Bedroom Home | OFFPLAN15 | Environmentalists |
 
 **WhatsApp Deep-Linking:** When users click the WhatsApp button in any modal, the link includes the `?project=xxx` parameter. When the website owner clicks the link, the specific property modal automatically opens.

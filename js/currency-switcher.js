@@ -1,16 +1,19 @@
 /**
  * Currency Switcher Module for Wenamy
- * Supports USD and GHS currencies with hardcoded exchange rates
- * Base prices stored in USD, converted to GHS on display
+ * Supports USD, GHS, GBP, and EUR currencies with hardcoded exchange rates
+ * Base prices stored in USD, converted to other currencies on display
  */
 
 (function() {
   'use strict';
 
   // Exchange rate configuration - update monthly
+  // Rates are: 1 USD = X Currency
   const EXCHANGE_RATES = {
     USD: 1,
-    GHS: 11.01  // 1 USD = 11.01 GHS (updated April 2026)
+    GHS: 11.01,  // 1 USD = 11.01 GHS (updated April 2026)
+    GBP: 0.75,   // 1 USD = 0.75 GBP (1 GBP = 1.33 USD)
+    EUR: 0.86    // 1 USD = 0.86 EUR (1 EUR = 1.16 USD)
   };
 
   const CURRENCY_CONFIG = {
@@ -26,6 +29,20 @@
       symbol: 'GH₵',
       name: 'Ghana Cedi',
       flag: '🇬🇭',
+      position: 'before'
+    },
+    GBP: {
+      code: 'GBP',
+      symbol: '£',
+      name: 'British Pound',
+      flag: '🇬🇧',
+      position: 'before'
+    },
+    EUR: {
+      code: 'EUR',
+      symbol: '€',
+      name: 'Euro',
+      flag: '🇪🇺',
       position: 'before'
     }
   };
