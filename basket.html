@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=11">
-  <link rel="stylesheet" href="css/footer.css?v=11">
+  <link rel="stylesheet" href="css/hero-new.css?v=12">
+  <link rel="stylesheet" href="css/footer.css?v=12">
   <link rel="stylesheet" href="css/projects-luxury.css">
   <link rel="stylesheet" href="css/responsive.css">
   
@@ -317,11 +317,7 @@
       <a href="contact.html" class="nav-link">Contact</a>
       <!-- Basket Icon -->
       <a href="basket.html" class="nav-link basket-icon" aria-label="Saved Properties">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 0 1-8 0"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
         <span class="basket-count" id="basketCount">0</span>
       </a>
       <!-- Sign In Button -->
@@ -331,11 +327,7 @@
     <div class="mobile-nav-icons">
       <!-- Basket Icon -->
       <a href="basket.html" class="nav-link basket-icon mobile-basket-icon" aria-label="Saved Properties">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 0 1-8 0"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
         <span class="basket-count" id="mobileBasketCount">0</span>
       </a>
       <!-- Sign In Button -->
@@ -490,9 +482,9 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=11" defer></script>
-  <script src="js/basket.js?v=11" defer></script>
-  <script src="js/navbar.js?v=11" defer></script>
+  <script src="js/animations.js?v=12" defer></script>
+  <script src="js/basket.js?v=12" defer></script>
+  <script src="js/navbar.js?v=12" defer></script>
   
   <script>
     // Mobile Menu Toggle
@@ -517,6 +509,12 @@
 
     // Render basket items
     function renderBasket() {
+      // Ensure WenamyBasket is available
+      if (typeof WenamyBasket === 'undefined') {
+        console.error('WenamyBasket not loaded yet');
+        setTimeout(renderBasket, 100);
+        return;
+      }
       const basket = WenamyBasket.getBasket();
       const grid = document.getElementById('basketGrid');
       const emptyState = document.getElementById('emptyState');
@@ -587,8 +585,14 @@
       }
     });
 
-    // Initial render
-    renderBasket();
+    // Initial render - wait for basket.js to be ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(renderBasket, 50);
+      });
+    } else {
+      setTimeout(renderBasket, 50);
+    }
     
     // Navbar adaptive color based on section background
     (function() {
@@ -601,3 +605,4 @@
   </script>
 </body>
 </html>
+
