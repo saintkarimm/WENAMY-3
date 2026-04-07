@@ -1103,171 +1103,489 @@
       })();
     </script>
 
-    <!-- Property Showcase Carousel -->
-    <section class="property-carousel" id="offplan-projects" style="background-color: #fafbf4;">
-      <div class="carousel-header scroll-animate">
-        <h2 class="carousel-title" style="color: #1a1a1a;">EXCLUSIVE COLLECTIONS</h2>
-        <p class="carousel-subtitle" style="color: #4a4a4a;">Let's Build Your Dream Home Together in Accra, Ghana</p>
+    <!-- EXCLUSIVE COLLECTIONS - Masonry Grid Gallery -->
+    <section class="exclusive-collections" id="offplan-projects" style="background-color: #fafbf4;">
+      <div class="collections-header scroll-animate">
+        <h2 class="collections-title" style="color: #1a1a1a;">EXCLUSIVE COLLECTIONS</h2>
+        <p class="collections-subtitle" style="color: #4a4a4a;">Let's Build Your Dream Home Together in Accra, Ghana</p>
       </div>
       
-      <div class="carousel-container">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Slide 1 -->
-          <div class="carousel-slide">
-            <div class="carousel-slide-image">
-              <img src="images/DISCOVER/villa.jpg" alt="">
-            </div>
+      <div class="collections-grid">
+        <!-- Left Column -->
+        <div class="collections-column">
+          <!-- Large vertical image (spans 2 rows) -->
+          <div class="collections-item collections-item-large">
+            <img src="images/DISCOVER/villa.jpg" alt="Luxury Villa" loading="lazy" decoding="async">
           </div>
-          
-          <!-- Slide 2 -->
-          <div class="carousel-slide">
-            <div class="carousel-slide-image">
-              <img src="images/DISCOVER/water-front.jpg" alt="">
-            </div>
-          </div>
-          
-          <!-- Slide 3 -->
-          <div class="carousel-slide">
-            <div class="carousel-slide-image">
-              <img src="images/DISCOVER/penthouse.jpg" alt="">
-            </div>
-          </div>
-          
-          <!-- Slide 4 -->
-          <div class="carousel-slide">
-            <div class="carousel-slide-image">
-              <img src="images/DISCOVER/appartment.jpg" alt="">
-            </div>
-          </div>
-          
-          <!-- Slide 5 -->
-          <div class="carousel-slide">
-            <div class="carousel-slide-image">
-              <img src="images/DISCOVER/apart.jpg" alt="">
-            </div>
-          </div>
-          
-          <!-- Slide 6 -->
-          <div class="carousel-slide">
-            <div class="carousel-slide-image">
-              <img src="images/offplan/OFFPLAN6/1st.jpeg" alt="" loading="lazy" decoding="async">
-            </div>
-          </div>
-          
-          <!-- Slide 7 -->
-          <div class="carousel-slide">
-            <div class="carousel-slide-image">
-              <img src="images/offplan/OFFPLAN7/1st.jpeg" alt="" loading="lazy" decoding="async">
-            </div>
+          <!-- Small horizontal image -->
+          <div class="collections-item">
+            <img src="images/DISCOVER/water-front.jpg" alt="Waterfront Property" loading="lazy" decoding="async">
           </div>
         </div>
         
-
+        <!-- Right Column -->
+        <div class="collections-column">
+          <!-- Small horizontal image -->
+          <div class="collections-item">
+            <img src="images/DISCOVER/penthouse.jpg" alt="Penthouse" loading="lazy" decoding="async">
+          </div>
+          <!-- Large vertical image (spans 2 rows) -->
+          <div class="collections-item collections-item-large">
+            <img src="images/DISCOVER/appartment.jpg" alt="Luxury Apartment" loading="lazy" decoding="async">
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Services Section - Luxury Style -->
-    <section class="services-luxury" id="services" style="background-color: #fafbf4;">
-      <div class="services-luxury-container">
-        <div class="services-luxury-header scroll-animate">
-          <p class="services-luxury-label">What We Do</p>
-          <h2 class="services-luxury-title">Our Services</h2>
-          <p class="services-luxury-subtitle">Just Exceptional — Delivering excellence in every project we undertake</p>
+    <!-- Services Section - Minimalist Luxury Grid -->
+    <section class="services-minimal" id="services">
+      <div class="services-minimal-container">
+        <h2 class="services-minimal-title">SERVICES</h2>
+        <span class="services-minimal-hint">Tap an icon to learn more</span>
+        
+        <div class="services-minimal-grid">
+          <!-- Row 1: 2 on left, 2 on right -->
+          <!-- Service 1 - Estate Development (Left) -->
+          <div class="service-minimal-item scroll-animate" data-service="estate">
+            <div class="service-minimal-icon">
+              <img src="images/icons/Services Icons/estate-serv.png" alt="Estate Development">
+            </div>
+            <h3 class="service-minimal-name">Estate Development</h3>
+            <div class="service-minimal-tooltip">
+              <p>Creating premium residential and commercial properties with exceptional standards in Accra, Ghana</p>
+            </div>
+          </div>
+          
+          <!-- Service 2 - Building & Construction (Left) -->
+          <div class="service-minimal-item scroll-animate" data-service="building">
+            <div class="service-minimal-icon">
+              <img src="images/icons/Services Icons/building-serv.png" alt="Building & Construction">
+            </div>
+            <h3 class="service-minimal-name">Building & Construction</h3>
+            <div class="service-minimal-tooltip">
+              <p>Professional construction services from foundation to finishing, specializing in precise, durable, and high-quality building solutions</p>
+            </div>
+          </div>
+          
+          <!-- Service 3 - Investment Portfolio (Right) -->
+          <div class="service-minimal-item scroll-animate" data-service="investment">
+            <div class="service-minimal-icon">
+              <img src="images/icons/Services Icons/invest-serv.png" alt="Investment Portfolio">
+            </div>
+            <h3 class="service-minimal-name">Investment Portfolio</h3>
+            <div class="service-minimal-tooltip">
+              <p>Strategic real estate investment portfolio offering high-return opportunities with strong growth potential and long-term value</p>
+            </div>
+          </div>
+          
+          <!-- Service 4 - Architecture (Right) -->
+          <div class="service-minimal-item scroll-animate" data-service="architecture">
+            <div class="service-minimal-icon">
+              <img src="images/icons/Services Icons/architecture-serv.png" alt="Architecture">
+            </div>
+            <h3 class="service-minimal-name">Architecture</h3>
+            <div class="service-minimal-tooltip">
+              <p>Innovative architectural designs that blend functionality with aesthetic appeal</p>
+            </div>
+          </div>
         </div>
         
-        <div class="services-luxury-grid">
-          <!-- Service 1 - Estate Development -->
-          <div class="service-luxury-card scroll-animate" style="background-image: url('images/estate-development-serv.png');">
-            <div class="service-luxury-overlay"></div>
-            <div class="service-luxury-content">
-              <span class="service-luxury-number">01</span>
-              <div class="service-luxury-icon">
-                <img src="images/icons/Services Icons/estate-serv.png" alt="Estate Development">
-              </div>
-              <div class="service-luxury-text">
-                <h3 class="service-luxury-title">Estate Development</h3>
-                <p class="service-luxury-desc">Creating premium residential and commercial properties with exceptional standards in Accra,Ghana</p>
-              </div>
+        <!-- Row 2: 2 in the middle -->
+        <div class="services-minimal-grid services-minimal-grid-center">
+          <!-- Service 5 - Interior Design (Middle) -->
+          <div class="service-minimal-item scroll-animate" data-service="interior">
+            <div class="service-minimal-icon">
+              <img src="images/icons/Services Icons/interior-serv.png" alt="Interior Design">
+            </div>
+            <h3 class="service-minimal-name">Interior Design</h3>
+            <div class="service-minimal-tooltip">
+              <p>Creating beautiful, functional interior spaces that reflect your style</p>
             </div>
           </div>
           
-          <!-- Service 2 - Building & Construction -->
-          <div class="service-luxury-card scroll-animate" style="background-image: url('images/building-construction-serv.png');">
-            <div class="service-luxury-overlay"></div>
-            <div class="service-luxury-content">
-              <span class="service-luxury-number">02</span>
-              <div class="service-luxury-icon">
-                <img src="images/icons/Services Icons/building-serv.png" alt="Building & Construction">
-              </div>
-              <div class="service-luxury-text">
-                <h3 class="service-luxury-title">Building & Construction</h3>
-                <p class="service-luxury-desc">Professional construction services from foundation to finishing, specializing in precise, durable, and high-quality building solutions.</p>
-              </div>
+          <!-- Service 6 - Consultancy (Middle) -->
+          <div class="service-minimal-item scroll-animate" data-service="consultancy">
+            <div class="service-minimal-icon">
+              <img src="images/icons/Services Icons/consultancy-serv.png" alt="Consultancy">
             </div>
-          </div>
-          
-          <!-- Service 3 - Investment Portfolio -->
-          <div class="service-luxury-card scroll-animate" style="background-image: url('images/investment-serv.png');">
-            <div class="service-luxury-overlay"></div>
-            <div class="service-luxury-content">
-              <span class="service-luxury-number">03</span>
-              <div class="service-luxury-icon">
-                <img src="images/icons/Services Icons/invest-serv.png" alt="Investment Portfolio">
-              </div>
-              <div class="service-luxury-text">
-                <h3 class="service-luxury-title">Investment Portfolio</h3>
-                <p class="service-luxury-desc">Strategic real estate investment portfolio offering high-return opportunities with strong growth potential and long-term value.</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Service 4 - Architecture -->
-          <div class="service-luxury-card scroll-animate" style="background-image: url('images/architecture-serv.png');">
-            <div class="service-luxury-overlay"></div>
-            <div class="service-luxury-content">
-              <span class="service-luxury-number">04</span>
-              <div class="service-luxury-icon">
-                <img src="images/icons/Services Icons/architecture-serv.png" alt="Architecture">
-              </div>
-              <div class="service-luxury-text">
-                <h3 class="service-luxury-title">Architecture</h3>
-                <p class="service-luxury-desc">Innovative architectural designs that blend functionality with aesthetic appeal</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Service 5 - Interior Design -->
-          <div class="service-luxury-card scroll-animate" style="background-image: url('images/interior-design-serv.png');">
-            <div class="service-luxury-overlay"></div>
-            <div class="service-luxury-content">
-              <span class="service-luxury-number">05</span>
-              <div class="service-luxury-icon">
-                <img src="images/icons/Services Icons/interior-serv.png" alt="Interior Design">
-              </div>
-              <div class="service-luxury-text">
-                <h3 class="service-luxury-title">Interior Design</h3>
-                <p class="service-luxury-desc">Creating beautiful, functional interior spaces that reflect your style</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Service 6 - Consultancy -->
-          <div class="service-luxury-card scroll-animate" style="background-image: url('images/consultancy-serv.png');">
-            <div class="service-luxury-overlay"></div>
-            <div class="service-luxury-content">
-              <span class="service-luxury-number">06</span>
-              <div class="service-luxury-icon">
-                <img src="images/icons/Services Icons/consultancy-serv.png" alt="Consultancy">
-              </div>
-              <div class="service-luxury-text">
-                <h3 class="service-luxury-title">Consultancy</h3>
-                <p class="service-luxury-desc">Expert real estate and construction consultancy for informed decisions</p>
-              </div>
+            <h3 class="service-minimal-name">Consultancy</h3>
+            <div class="service-minimal-tooltip">
+              <p>Expert real estate and construction consultancy for informed decisions</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <style>
+      /* Services Section - Minimalist Luxury Grid */
+      .services-minimal {
+        background-color: #f5f3ef;
+        padding: 100px 24px;
+      }
+
+      .services-minimal-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .services-minimal-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+        font-size: 42px;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #3d5a6b;
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .services-minimal-hint {
+        display: none;
+      }
+
+      .services-minimal-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 48px 32px;
+      }
+
+      .service-minimal-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 16px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .service-minimal-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .service-minimal-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(45%) sepia(15%) saturate(850%) hue-rotate(160deg) brightness(90%) contrast(90%);
+        transition: filter 0.3s ease;
+      }
+
+      .service-minimal-item:hover .service-minimal-icon {
+        transform: scale(1.1);
+      }
+
+      .service-minimal-item:hover .service-minimal-icon img {
+        filter: brightness(0) saturate(100%) invert(35%) sepia(20%) saturate(1000%) hue-rotate(160deg) brightness(100%) contrast(95%);
+      }
+
+      /* Tooltip - Desktop only */
+      .service-minimal-tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: rgba(74, 107, 124, 0.95);
+        color: #fff;
+        padding: 16px 20px;
+        border-radius: 8px;
+        width: 280px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 100;
+        pointer-events: none;
+        margin-bottom: 12px;
+      }
+
+      .service-minimal-tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 8px solid transparent;
+        border-top-color: rgba(74, 107, 124, 0.95);
+      }
+
+      .service-minimal-tooltip p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .service-minimal-item:hover .service-minimal-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .service-minimal-name {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: #3d5a6b;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+      }
+
+      /* Centered grid for middle row */
+      .services-minimal-grid-center {
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 48px;
+      }
+
+      /* Tablet: 2 columns */
+      @media (max-width: 1024px) {
+        .services-minimal {
+          padding: 80px 24px;
+        }
+
+        .services-minimal-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px 24px;
+        }
+
+        .services-minimal-title {
+          margin-bottom: 48px;
+        }
+      }
+
+      /* Mobile: 2 columns side by side */
+      @media (max-width: 640px) {
+        .services-minimal {
+          padding: 64px 16px;
+        }
+
+        .services-minimal-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px 16px;
+        }
+
+        .services-minimal-grid-center {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 100%;
+          margin-top: 24px;
+        }
+
+        .service-minimal-item {
+          padding: 12px 8px;
+          cursor: pointer;
+        }
+
+        .service-minimal-icon {
+          width: 48px;
+          height: 48px;
+          margin-bottom: 12px;
+        }
+
+        .service-minimal-item:hover .service-minimal-icon {
+          transform: none;
+        }
+
+        /* Hide desktop tooltip on mobile */
+        .service-minimal-tooltip {
+          display: none !important;
+        }
+
+        /* Mobile: Modal overlay for service info */
+        .services-minimal-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(245, 243, 239, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 200;
+        }
+
+        .services-minimal-overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .service-minimal-modal {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.9);
+          background: #fff;
+          padding: 32px 24px;
+          border-radius: 16px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+          text-align: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 201;
+          max-width: 280px;
+          width: 85%;
+        }
+
+        .service-minimal-modal.active {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        .service-minimal-modal .modal-icon {
+          width: 56px;
+          height: 56px;
+          margin: 0 auto 16px;
+        }
+
+        .service-minimal-modal .modal-icon img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          filter: brightness(0) saturate(100%) invert(45%) sepia(15%) saturate(850%) hue-rotate(160deg) brightness(90%) contrast(90%);
+        }
+
+        .service-minimal-modal .modal-title {
+          font-size: 18px;
+          font-weight: 600;
+          color: #3d5a6b;
+          margin-bottom: 12px;
+        }
+
+        .service-minimal-modal .modal-desc {
+          font-size: 14px;
+          line-height: 1.5;
+          color: #666;
+          margin: 0;
+        }
+
+        .service-minimal-modal .modal-close {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          width: 32px;
+          height: 32px;
+          border: none;
+          background: transparent;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #999;
+          font-size: 20px;
+          line-height: 1;
+        }
+
+        .service-minimal-name {
+          font-size: 13px;
+          font-weight: 600;
+        }
+
+        .services-minimal-title {
+          font-size: 28px;
+          letter-spacing: 0.12em;
+          margin-bottom: 8px;
+        }
+
+        .services-minimal-hint {
+          display: block;
+          text-align: center;
+          font-size: 13px;
+          color: #888;
+          margin-bottom: 32px;
+          font-weight: 400;
+        }
+
+        .service-minimal-item {
+          padding: 12px 8px;
+          cursor: pointer;
+          position: relative;
+        }
+
+        .service-minimal-item::after {
+          content: '';
+          position: absolute;
+          bottom: 4px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4px;
+          height: 4px;
+          background: #4a6b7c;
+          border-radius: 50%;
+          opacity: 0.5;
+        }
+      }
+    </style>
+
+    <!-- Mobile Modal for Service Info -->
+    <div class="services-minimal-overlay" id="serviceOverlay"></div>
+    <div class="service-minimal-modal" id="serviceModal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-icon" id="modalIcon"></div>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-desc" id="modalDesc"></p>
+    </div>
+
+    <script>
+      // Mobile: Modal for service info
+      (function() {
+        const serviceItems = document.querySelectorAll('.service-minimal-item');
+        const overlay = document.getElementById('serviceOverlay');
+        const modal = document.getElementById('serviceModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        
+        function openModal(item) {
+          const iconImg = item.querySelector('.service-minimal-icon img').cloneNode(true);
+          const title = item.querySelector('.service-minimal-name').textContent;
+          const desc = item.querySelector('.service-minimal-tooltip p').textContent;
+          
+          modalIcon.innerHTML = '';
+          modalIcon.appendChild(iconImg);
+          modalTitle.textContent = title;
+          modalDesc.textContent = desc;
+          
+          overlay.classList.add('active');
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+          overlay.classList.remove('active');
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        
+        serviceItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            // Only handle on mobile (screen width <= 640px)
+            if (window.innerWidth > 640) return;
+            
+            e.preventDefault();
+            openModal(this);
+          });
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+        
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+          }
+        });
+      })();
+    </script>
   </main>
 
   <!-- Footer - Minimal Luxury Design -->
@@ -1391,7 +1709,7 @@
         if (!navbar) return;
         
         // Sections that should trigger light navbar (light backgrounds)
-        const lightSections = document.querySelectorAll('.featured-property, .bento-grid, .services-luxury');
+        const lightSections = document.querySelectorAll('.featured-property, .bento-grid, .services-minimal');
         
         // Sections that should trigger dark navbar (dark backgrounds)  
         const darkSections = document.querySelectorAll('.hero-new-wrapper, .property-carousel');
