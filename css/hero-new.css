@@ -1093,7 +1093,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #0a101d;
+    background: linear-gradient(135deg, #3d5a6b 0%, #2c4352 100%);
     z-index: 2000;
     flex-direction: column;
     justify-content: flex-start;
