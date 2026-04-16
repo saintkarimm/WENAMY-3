@@ -412,7 +412,7 @@ The offplan.html page displays investment properties with category filtering and
 | Cabins | `cabins` | Compact nature retreats |
 | Townhouses | `townhouses` | Urban row houses |
 
-### Property List (24 Total)
+### Property List (30 Total)
 
 | # | Property Name | Category | Bedrooms | Washrooms | Price | Location | Images |
 |---|---------------|----------|----------|-----------|-------|----------|--------|
@@ -444,6 +444,8 @@ The offplan.html page displays investment properties with category filtering and
 | OFFPLAN26 | Luxury Villa Duplex | Duplexes / Villa | Large Suites | 2+ | $720,000 | Accra | 12 |
 | OFFPLAN27 | Vacation Family Villa | Villa | Vacation-Style Living | 2+ | $710,000 | Accra | 9 |
 | OFFPLAN28 | Standout Luxury Villa | Villa | 5 Bed / 7 Bath | 5 | $965,000 | Accra | 10 |
+| OFFPLAN29 | 5 Bedroom Triplex | Triplexes | 5 | 5+ | $870,000 | Accra | 10 |
+| OFFPLAN30 | 6 Bedroom Modern Triplex | Triplexes | 6 | 6+ | $845,000 | Accra | 9 |
 
 ### URL Parameters for Direct Linking
 Append `?project={id}` to offplan.html to auto-open a specific property modal:
@@ -468,6 +470,8 @@ Append `?project={id}` to offplan.html to auto-open a specific property modal:
 | `?project=villa26` | Luxury Villa Duplex | OFFPLAN26 | Duplexes / Villa |
 | `?project=villa27` | Vacation Family Villa | OFFPLAN27 | Villa |
 | `?project=villa28` | Standout Luxury Villa | OFFPLAN28 | Villa |
+| `?project=triplex29` | 5 Bedroom Triplex | OFFPLAN29 | Triplexes |
+| `?project=triplex30` | 6 Bedroom Modern Triplex | OFFPLAN30 | Triplexes |
 | `?project=environmental15` | 5 Bedroom Home | OFFPLAN15 | Environmentalists |
 
 **WhatsApp Deep-Linking:** When users click the WhatsApp button in any modal, the link includes the `?project=xxx` parameter. When the website owner clicks the link, the specific property modal automatically opens.
@@ -591,6 +595,9 @@ Category: Duplexes|Vacation Homes|Environmentalists
 | `OFFPLAN14/` | 1st.jpeg - 12th.jpeg | 1 property |
 | `OFFPLAN15/` | 1st.jpeg - 14th.jpeg | 1 property |
 | `OFFPLAN16/` | 1st.jpeg - 13th.jpeg | 1 property |
+| `OFFPLAN17-28/` | 1st.jpeg - varies | 12 properties |
+| `OFFPLAN29/` | 1st.jpg - 10th.jpg | 1 property |
+| `OFFPLAN30/` | 1st.jpg - 9th.jpg | 1 property |
 
 ### Icons (`images/icons/`)
 - `logo.png` - Company logo

@@ -43,10 +43,10 @@
   
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/base.css?v=7">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=15">
-  <link rel="stylesheet" href="css/footer.css?v=15">
+  <link rel="stylesheet" href="css/hero-new.css?v=16">
+  <link rel="stylesheet" href="css/footer.css?v=16">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -698,6 +698,46 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- Multi-Level 3-Bedroom Bungalow - OFFPLAN32 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openBungalow32Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN32/1st.webp" alt="Multi-Level 3-Bedroom Bungalow" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Multi-Level 3-Bedroom Bungalow</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">A stunning multi-level bungalow nestled on a beautifully landscaped sloping site with breathtaking valley views. Features striking stone cladding, clean white architectural lines, and an intelligent layout maximizing natural surroundings.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="220000">$220,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openBungalow32Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- Lakefront Luxury Home - OFFPLAN31 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="villa" onclick="openVilla31Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN31/1st.jpg" alt="Lakefront Luxury Home" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Lakefront Luxury Home</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">An extraordinary lakefront estate on 2,242 m² land with 974 m² built area. Features 7 en-suite bedrooms, home theater, elevator, wine cellar, private beach tennis court, and smart home automation.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="2000000">$2,000,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openVilla31Modal()">View Details</button>
+        </div>
+      </article>
+
       <!-- 6 Bedroom Modern Triplex - OFFPLAN30 -->
       <article class="offplan-luxury-card scroll-animate" data-category="triplexes" onclick="openTriplex30Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -3964,6 +4004,160 @@
     </div>
   </div>
 
+  <!-- Lakefront Luxury Home Modal - OFFPLAN31 -->
+  <div class="offplan-modal" id="villa31Modal">
+    <div class="offplan-modal-overlay" onclick="closeVilla31Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeVilla31Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="villa31CarouselContainer">
+          <img src="images/offplan/OFFPLAN31/1st.jpg" alt="Lakefront Luxury Home - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/2nd.jpg" alt="Lakefront Luxury Home - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/3rd.jpg" alt="Lakefront Luxury Home - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/4th.jpg" alt="Lakefront Luxury Home - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/5th.jpg" alt="Lakefront Luxury Home - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/6th.jpg" alt="Lakefront Luxury Home - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/7th.jpg" alt="Lakefront Luxury Home - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/8th.jpg" alt="Lakefront Luxury Home - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/9th.jpg" alt="Lakefront Luxury Home - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/10th.jpg" alt="Lakefront Luxury Home - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/11th.jpg" alt="Lakefront Luxury Home - Image 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveVilla31Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveVilla31Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="villa31CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Lakefront Luxury Home</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Villa</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">7</span></div>
+          <div class="feature-item"><span class="feature-label">Land Area</span><span class="feature-value">2,242 m²</span></div>
+          <div class="feature-item"><span class="feature-label">Built Area</span><span class="feature-value">974 m²</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">$2,000,000</span></div>
+        </div>
+        <p class="offplan-modal-description">An extraordinary lakefront estate featuring stunning views, spacious living room integrated with gourmet area and pool, custom-planned kitchen, magnificent swimming pool, and 7 large en-suite bedrooms. This premium home includes exclusive home theater, elevator, and unparalleled luxury finishes throughout.</p>
+        <div class="offplan-modal-highlights">
+          <h4>Layout & Rooms</h4>
+          <ul>
+            <li>Spacious living room with gourmet area and pool views</li>
+            <li>Custom-planned and integrated kitchen</li>
+            <li>Magnificent swimming pool</li>
+            <li>Powder room (half bath)</li>
+            <li>7 large en-suite bedrooms (fully equipped)</li>
+            <li>Exclusive Home Theater</li>
+            <li>Elevator</li>
+          </ul>
+          <h4>Premium Features</h4>
+          <ul>
+            <li>Home automation system</li>
+            <li>High-end appliances</li>
+            <li>3 refrigerators + 2 freezers</li>
+            <li>Travertine flooring</li>
+            <li>Oak ceilings</li>
+            <li>Private Beach Tennis court</li>
+            <li>Designer furniture</li>
+            <li>Complete beds and linens</li>
+            <li>Climate-controlled wine cellar (200 bottles)</li>
+            <li>Indoor ambient sound system + garden sound system</li>
+            <li>Camera and alarm security system</li>
+            <li>Automatic irrigation system with rain sensor</li>
+          </ul>
+          <h4>Infrastructure</h4>
+          <ul>
+            <li>2,000-liter hot water boiler</li>
+            <li>10,000-liter cold water reservoir</li>
+          </ul>
+        </div>
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-Level 3-Bedroom Bungalow Modal - OFFPLAN32 -->
+  <div class="offplan-modal" id="bungalow32Modal">
+    <div class="offplan-modal-overlay" onclick="closeBungalow32Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeBungalow32Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="bungalow32CarouselContainer">
+          <img src="images/offplan/OFFPLAN32/1st.webp" alt="Multi-Level 3-Bedroom Bungalow - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN32/2nd.webp" alt="Multi-Level 3-Bedroom Bungalow - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN32/3rd.webp" alt="Multi-Level 3-Bedroom Bungalow - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN32/4th.webp" alt="Multi-Level 3-Bedroom Bungalow - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN32/5th.webp" alt="Multi-Level 3-Bedroom Bungalow - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveBungalow32Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveBungalow32Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="bungalow32CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Multi-Level 3-Bedroom Bungalow</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Bungalow</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">3</span></div>
+          <div class="feature-item"><span class="feature-label">Style</span><span class="feature-value">Multi-Level</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">$220,000</span></div>
+        </div>
+        <p class="offplan-modal-description">A stunning multi-level bungalow nestled on a beautifully landscaped sloping site, brilliantly designed to maximize natural surroundings and offer breathtaking valley views. The home beautifully balances modern aesthetic with natural textures.</p>
+        <div class="offplan-modal-highlights">
+          <h4>Intelligent Multi-Level Layout</h4>
+          <ul>
+            <li>Upper-Level Access with primary living spaces</li>
+            <li>Lower-Level Entertainment & Retreat lounge</li>
+            <li>Luxurious master bedroom with private balcony</li>
+            <li>Glass railings with seating space overlooking valley</li>
+          </ul>
+          <h4>Property Highlights</h4>
+          <ul>
+            <li>Custom sloping-site architecture</li>
+            <li>Panoramic valley views</li>
+            <li>Large picture windows for abundant natural light</li>
+            <li>Premium stone facade detailing</li>
+            <li>Striking stone cladding on lower level</li>
+            <li>Clean white architectural lines</li>
+            <li>Beautifully landscaped sloping site</li>
+          </ul>
+        </div>
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Benefits Section -->
   <section class="offplan-benefits-section">
     <h2 class="offplan-benefits-title">Why Invest Off-Plan?</h2>
@@ -4077,11 +4271,11 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=14" defer></script>
-  <script src="js/basket.js?v=14" defer></script>
-  <script src="js/chatbot.js?v=14" defer></script>
-  <script src="js/navbar.js?v=14" defer></script>
-  <script src="js/currency-switcher.js?v=4" defer></script>
+  <script src="js/animations.js?v=15" defer></script>
+  <script src="js/basket.js?v=15" defer></script>
+  <script src="js/chatbot.js?v=15" defer></script>
+  <script src="js/navbar.js?v=15" defer></script>
+  <script src="js/currency-switcher.js?v=7" defer></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -4266,6 +4460,10 @@
         setTimeout(() => { openTriplex29Modal(); }, 500);
       } else if (projectParam === 'triplex30') {
         setTimeout(() => { openTriplex30Modal(); }, 500);
+      } else if (projectParam === 'villa31') {
+        setTimeout(() => { openVilla31Modal(); }, 500);
+      } else if (projectParam === 'bungalow32') {
+        setTimeout(() => { openBungalow32Modal(); }, 500);
       } else if (projectParam === 'vacation') {
         setTimeout(() => { openVacationModal(); }, 500);
       } else if (projectParam === 'aburi') {
@@ -4300,6 +4498,8 @@
         'villa28Modal': 'villa28',
         'triplex29Modal': 'triplex29',
 'triplex30Modal': 'triplex30',
+        'villa31Modal': 'villa31',
+        'bungalow32Modal': 'bungalow32',
         'vacationModal': 'vacation',
         'aburiModal': 'aburi',
         'beach7Modal': 'beach',
@@ -5148,6 +5348,102 @@
       updateTriplex30Carousel();
     }
 
+    // Villa 31 Modal Functions (OFFPLAN31)
+    let villa31CurrentSlide = 0;
+    const villa31Slides = document.querySelectorAll('#villa31CarouselContainer .carousel-slide');
+    const villa31TotalSlides = villa31Slides.length;
+
+    function openVilla31Modal() {
+      document.getElementById('villa31Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createVilla31CarouselDots();
+      updateVilla31Carousel();
+    }
+
+    function closeVilla31Modal() {
+      document.getElementById('villa31Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createVilla31CarouselDots() {
+      const dotsContainer = document.getElementById('villa31CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < villa31TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === villa31CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToVilla31Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateVilla31Carousel() {
+      villa31Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === villa31CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#villa31CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === villa31CurrentSlide);
+      });
+    }
+
+    function moveVilla31Carousel(direction) {
+      villa31CurrentSlide = (villa31CurrentSlide + direction + villa31TotalSlides) % villa31TotalSlides;
+      updateVilla31Carousel();
+    }
+
+    function goToVilla31Slide(index) {
+      villa31CurrentSlide = index;
+      updateVilla31Carousel();
+    }
+
+    // Bungalow 32 Modal Functions (OFFPLAN32)
+    let bungalow32CurrentSlide = 0;
+    const bungalow32Slides = document.querySelectorAll('#bungalow32CarouselContainer .carousel-slide');
+    const bungalow32TotalSlides = bungalow32Slides.length;
+
+    function openBungalow32Modal() {
+      document.getElementById('bungalow32Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createBungalow32CarouselDots();
+      updateBungalow32Carousel();
+    }
+
+    function closeBungalow32Modal() {
+      document.getElementById('bungalow32Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createBungalow32CarouselDots() {
+      const dotsContainer = document.getElementById('bungalow32CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < bungalow32TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === bungalow32CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToBungalow32Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateBungalow32Carousel() {
+      bungalow32Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === bungalow32CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#bungalow32CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === bungalow32CurrentSlide);
+      });
+    }
+
+    function moveBungalow32Carousel(direction) {
+      bungalow32CurrentSlide = (bungalow32CurrentSlide + direction + bungalow32TotalSlides) % bungalow32TotalSlides;
+      updateBungalow32Carousel();
+    }
+
+    function goToBungalow32Slide(index) {
+      bungalow32CurrentSlide = index;
+      updateBungalow32Carousel();
+    }
+
     // Vacation Modal Functions
     let vacationCurrentSlide = 0;
     const vacationSlides = document.querySelectorAll('#vacationCarouselContainer .carousel-slide');
@@ -5906,8 +6202,18 @@
       const villa28Modal = document.getElementById('villa28Modal');
       const triplex29Modal = document.getElementById('triplex29Modal');
       const triplex30Modal = document.getElementById('triplex30Modal');
+      const villa31Modal = document.getElementById('villa31Modal');
+      const bungalow32Modal = document.getElementById('bungalow32Modal');
 
-      if (triplex30Modal && triplex30Modal.classList.contains('active')) {
+      if (bungalow32Modal && bungalow32Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'bungalow32';
+        lightboxImages = Array.from(document.querySelectorAll('#bungalow32CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = bungalow32CurrentSlide;
+      } else if (villa31Modal && villa31Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'villa31';
+        lightboxImages = Array.from(document.querySelectorAll('#villa31CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = villa31CurrentSlide;
+      } else if (triplex30Modal && triplex30Modal.classList.contains('active')) {
         lightboxCurrentModal = 'triplex30';
         lightboxImages = Array.from(document.querySelectorAll('#triplex30CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = triplex30CurrentSlide;
@@ -6105,6 +6411,8 @@
           closeVilla28Modal();
           closeTriplex29Modal();
           closeTriplex30Modal();
+          closeVilla31Modal();
+          closeBungalow32Modal();
         }
       }
     });

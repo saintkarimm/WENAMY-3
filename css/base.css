@@ -575,6 +575,178 @@ body {
   color: #0369a1;
 }
 
+/* ========== FLOATING CURRENCY SWITCHER (Sticky on Scroll) ========== */
+.currency-switcher-container {
+  transition: all 0.3s ease;
+}
+
+/* Hidden state when footer is in view */
+.currency-switcher-container.floating.floating-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(100%) !important;
+}
+
+@media (max-width: 768px) {
+  .currency-switcher-container.floating.floating-hidden {
+    transform: translateX(100%) !important;
+  }
+}
+
+.currency-switcher-container.floating {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  padding: 0;
+  background: transparent;
+}
+
+/* Glassmorphism Effect for Floating Currency Switcher */
+.currency-switcher-container.floating .currency-switcher {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px 0 0 16px;
+  box-shadow: 
+    -8px 0 32px rgba(0, 0, 0, 0.08),
+    -2px 0 16px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  padding: 0.875rem 0.625rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: none;
+}
+
+.currency-switcher-container.floating .currency-switcher-desktop {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.currency-switcher-container.floating .currency-switcher-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.currency-switcher-container.floating .currency-flags-row {
+  flex-direction: column;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.currency-switcher-container.floating .currency-flag-divider {
+  width: 24px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Glassmorphism Flag Buttons */
+.currency-switcher-container.floating .currency-flag-btn {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.currency-switcher-container.floating .currency-flag-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.currency-switcher-container.floating .currency-flag-btn.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 0 0 2px rgba(3, 105, 161, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile floating styles with Glassmorphism */
+@media (max-width: 768px) {
+  .currency-switcher-container.floating {
+    top: auto;
+    bottom: 100px;
+    right: 0;
+    transform: none;
+  }
+  
+  .currency-switcher-container.floating .currency-switcher-mobile {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px 0 0 16px;
+    box-shadow: 
+      -8px 0 32px rgba(0, 0, 0, 0.08),
+      -2px 0 16px rgba(0, 0, 0, 0.04),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    padding: 0.625rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-right: none;
+  }
+  
+  .currency-switcher-container.floating .currency-switcher-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 0.625rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .currency-switcher-container.floating .currency-switcher-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .currency-switcher-container.floating .currency-toggle-text {
+    display: none;
+  }
+  
+  .currency-switcher-container.floating .currency-dropdown {
+    right: 100%;
+    left: auto;
+    top: 0;
+    bottom: auto;
+    transform: none;
+    border-radius: 16px 0 0 16px;
+    margin-right: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+      -8px 0 32px rgba(0, 0, 0, 0.08),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .currency-switcher-container.floating .currency-option {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .currency-switcher-container.floating .currency-option:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .currency-switcher-container.floating .currency-option.active {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
 /* ========== MOBILE RESPONSIVE ========== */
 @media (max-width: 768px) {
   .currency-switcher-container {

@@ -390,6 +390,9 @@
       window.currencySwitcher = new CurrencySwitcher();
     }
     window.currencySwitcher.init();
+    
+    // Initialize floating behavior
+    initFloatingCurrencySwitcher();
   }
   
   if (document.readyState === 'loading') {
@@ -400,5 +403,101 @@
 
   // Expose to global scope for manual initialization or debugging
   window.CurrencySwitcher = CurrencySwitcher;
+
+  /**
+   * Floating Currency Switcher - Sticks to right side on scroll
+   */
+  function initFloatingCurrencySwitcher() {
+    const container = document.querySelector('.currency-switcher-container');
+    if (!container) return;
+    
+    // Store original position
+    const originalOffsetTop = container.offsetTop;
+    const scrollThreshold = originalOffsetTop + 100; // Start floating after scrolling 100px past the original position
+    
+    let isFloating = false;
+    let isHidden = false;
+    
+    // Get footer element
+    const footer = document.querySelector('footer') || document.querySelector('.footer') || document.querySelector('.page-footer');
+    
+    function handleScroll() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      
+      // Check if footer is in view
+      let footerInView = false;
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        // Footer is in view when its top is visible in the viewport
+        footerInView = footerRect.top < windowHeight && footerRect.bottom > 0;
+      }
+      
+      // Handle showing/hiding based on footer visibility
+      if (footerInView && !isHidden) {
+        // Hide when footer is in view
+        container.classList.add('floating-hidden');
+        isHidden = true;
+      } else if (!footerInView && isHidden) {
+        // Show when footer is not in view
+        container.classList.remove('floating-hidden');
+        isHidden = false;
+      }
+      
+      // Handle floating mode activation
+      if (scrollY > scrollThreshold && !isFloating) {
+        // Switch to floating mode
+        container.classList.add('floating');
+        isFloating = true;
+        
+        // Add animation class for smooth transition
+        container.style.opacity = '0';
+        container.style.transform = isMobile() ? 'translateX(100%)' : 'translateY(-50%) translateX(100%)';
+        
+        setTimeout(() => {
+          if (!isHidden) {
+            container.style.opacity = '1';
+            container.style.transform = isMobile() ? 'translateX(0)' : 'translateY(-50%) translateX(0)';
+          }
+        }, 50);
+        
+      } else if (scrollY <= scrollThreshold && isFloating) {
+        // Return to normal mode
+        container.classList.remove('floating');
+        isFloating = false;
+        container.style.opacity = '';
+        container.style.transform = '';
+      }
+    }
+    
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+    
+    // Throttle scroll handler for performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    
+    // Handle resize
+    window.addEventListener('resize', function() {
+      if (isFloating) {
+        // Reset and re-evaluate on resize
+        container.classList.remove('floating');
+        isFloating = false;
+        handleScroll();
+      }
+    });
+    
+    // Initial check
+    handleScroll();
+  }
 
 })();
