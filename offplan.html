@@ -43,7 +43,7 @@
   
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css?v=14">
+  <link rel="stylesheet" href="css/base.css?v=15">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/hero-new.css?v=16">
   <link rel="stylesheet" href="css/footer.css?v=16">
@@ -698,6 +698,26 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- 3 Bedroom Privacy Duplex - OFFPLAN34 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="duplexes environmentalist" onclick="openDuplex34Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN34/1st.jpg" alt="3 Bedroom Privacy Duplex" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3 Bedroom Privacy Duplex</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">A corner lot in a pedestrian-friendly area. The relatively closed front facade, a thoughtfully designed garden, and a structural wall supporting the covered sections ensure complete privacy, while the home still maintains maximum openness to the outdoors on three sides.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="330000">$330,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openDuplex34Modal()">View Details</button>
+        </div>
+      </article>
+
       <!-- 4 Bedroom U-Shaped Bungalow - OFFPLAN33 -->
       <article class="offplan-luxury-card scroll-animate" data-category="bungalows" onclick="openBungalow33Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -4249,6 +4269,77 @@
     </div>
   </div>
 
+  <!-- 3 Bedroom Privacy Duplex Modal - OFFPLAN34 -->
+  <div class="offplan-modal" id="duplex34Modal">
+    <div class="offplan-modal-overlay" onclick="closeDuplex34Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeDuplex34Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="duplex34CarouselContainer">
+          <img src="images/offplan/OFFPLAN34/1st.jpg" alt="3 Bedroom Privacy Duplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/2nd.jpg" alt="3 Bedroom Privacy Duplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/3rd.jpg" alt="3 Bedroom Privacy Duplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/4th.jpg" alt="3 Bedroom Privacy Duplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/5th.jpg" alt="3 Bedroom Privacy Duplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/6th.jpg" alt="3 Bedroom Privacy Duplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/7th.jpg" alt="3 Bedroom Privacy Duplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/8th.jpg" alt="3 Bedroom Privacy Duplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/9th.jpg" alt="3 Bedroom Privacy Duplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveDuplex34Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveDuplex34Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="duplex34CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3 Bedroom Privacy Duplex</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Duplex</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">3</span></div>
+          <div class="feature-item"><span class="feature-label">Style</span><span class="feature-value">Environmentalist</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">$330,000</span></div>
+        </div>
+        <p class="offplan-modal-description">A corner lot in a pedestrian-friendly area. The relatively closed front facade, a thoughtfully designed garden, and a structural wall supporting the covered sections ensure complete privacy, while the home still maintains maximum openness to the outdoors on three sides.</p>
+        <div class="offplan-modal-highlights">
+          <h4>Privacy Design Features</h4>
+          <ul>
+            <li>Relatively closed front facade for privacy</li>
+            <li>Thoughtfully designed garden space</li>
+            <li>Structural wall supporting covered sections</li>
+            <li>Maximum openness to outdoors on three sides</li>
+          </ul>
+          <h4>Property Highlights</h4>
+          <ul>
+            <li>Corner lot in pedestrian-friendly area</li>
+            <li>Environmentalist architectural design</li>
+            <li>Seamless indoor-outdoor connection</li>
+            <li>Premium materials and finishes</li>
+            <li>Natural light optimization</li>
+            <li>Private outdoor living spaces</li>
+            <li>Sustainable design principles</li>
+          </ul>
+        </div>
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Benefits Section -->
   <section class="offplan-benefits-section">
     <h2 class="offplan-benefits-title">Why Invest Off-Plan?</h2>
@@ -4557,6 +4648,8 @@
         setTimeout(() => { openBungalow32Modal(); }, 500);
       } else if (projectParam === 'bungalow33') {
         setTimeout(() => { openBungalow33Modal(); }, 500);
+      } else if (projectParam === 'duplex34') {
+        setTimeout(() => { openDuplex34Modal(); }, 500);
       } else if (projectParam === 'vacation') {
         setTimeout(() => { openVacationModal(); }, 500);
       } else if (projectParam === 'aburi') {
@@ -4594,6 +4687,7 @@
         'villa31Modal': 'villa31',
         'bungalow32Modal': 'bungalow32',
         'bungalow33Modal': 'bungalow33',
+        'duplex34Modal': 'duplex34',
         'vacationModal': 'vacation',
         'aburiModal': 'aburi',
         'beach7Modal': 'beach',
@@ -5543,6 +5637,54 @@
       updateBungalow33Carousel();
     }
 
+    // Duplex 34 Modal Functions (OFFPLAN34)
+    let duplex34CurrentSlide = 0;
+    const duplex34Slides = document.querySelectorAll('#duplex34CarouselContainer .carousel-slide');
+    const duplex34TotalSlides = duplex34Slides.length;
+
+    function openDuplex34Modal() {
+      document.getElementById('duplex34Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createDuplex34CarouselDots();
+      updateDuplex34Carousel();
+    }
+
+    function closeDuplex34Modal() {
+      document.getElementById('duplex34Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createDuplex34CarouselDots() {
+      const dotsContainer = document.getElementById('duplex34CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < duplex34TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === duplex34CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToDuplex34Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDuplex34Carousel() {
+      duplex34Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === duplex34CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#duplex34CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === duplex34CurrentSlide);
+      });
+    }
+
+    function moveDuplex34Carousel(direction) {
+      duplex34CurrentSlide = (duplex34CurrentSlide + direction + duplex34TotalSlides) % duplex34TotalSlides;
+      updateDuplex34Carousel();
+    }
+
+    function goToDuplex34Slide(index) {
+      duplex34CurrentSlide = index;
+      updateDuplex34Carousel();
+    }
+
     function openBungalow32Modal() {
       document.getElementById('bungalow32Modal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -6347,8 +6489,13 @@
       const villa31Modal = document.getElementById('villa31Modal');
       const bungalow32Modal = document.getElementById('bungalow32Modal');
       const bungalow33Modal = document.getElementById('bungalow33Modal');
+      const duplex34Modal = document.getElementById('duplex34Modal');
 
-      if (bungalow33Modal && bungalow33Modal.classList.contains('active')) {
+      if (duplex34Modal && duplex34Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'duplex34';
+        lightboxImages = Array.from(document.querySelectorAll('#duplex34CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = duplex34CurrentSlide;
+      } else if (bungalow33Modal && bungalow33Modal.classList.contains('active')) {
         lightboxCurrentModal = 'bungalow33';
         lightboxImages = Array.from(document.querySelectorAll('#bungalow33CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = bungalow33CurrentSlide;
@@ -6561,6 +6708,7 @@
           closeVilla31Modal();
           closeBungalow32Modal();
           closeBungalow33Modal();
+          closeDuplex34Modal();
         }
       }
     });
