@@ -589,7 +589,7 @@ body {
 
 @media (max-width: 768px) {
   .currency-switcher-container.floating.floating-hidden {
-    transform: translateX(100%) !important;
+    transform: translateY(-50%) translateX(100%) !important;
   }
 }
 
@@ -678,10 +678,10 @@ body {
 /* Mobile floating styles with Glassmorphism */
 @media (max-width: 768px) {
   .currency-switcher-container.floating {
-    top: auto;
-    bottom: 100px;
+    top: 50%;
+    bottom: auto;
     right: 0;
-    transform: none;
+    transform: translateY(-50%);
   }
   
   .currency-switcher-container.floating .currency-switcher-mobile {
