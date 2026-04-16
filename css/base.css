@@ -578,7 +578,6 @@ body {
 /* ========== FLOATING CURRENCY SWITCHER (Sticky on Scroll) ========== */
 .currency-switcher-container {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-  transform: translateZ(0); /* Hardware acceleration */
   backface-visibility: hidden; /* Prevent flickering */
   -webkit-backface-visibility: hidden;
 }
@@ -587,12 +586,12 @@ body {
 .currency-switcher-container.floating.floating-hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-50%) translateX(100%) !important;
+  transform: translateY(-50%) translateX(100%) translateZ(0) !important;
 }
 
 @media (max-width: 768px) {
   .currency-switcher-container.floating.floating-hidden {
-    transform: translateY(-50%) translateX(100%) !important;
+    transform: translateY(-50%) translateX(100%) translateZ(0) !important;
   }
 }
 
@@ -600,7 +599,7 @@ body {
   position: fixed;
   top: 50%;
   right: 0;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateZ(0);
   z-index: 999;
   padding: 0;
   background: transparent;
@@ -684,7 +683,7 @@ body {
     top: 50%;
     bottom: auto;
     right: 0;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateZ(0);
   }
   
   .currency-switcher-container.floating .currency-switcher-mobile {
