@@ -417,29 +417,37 @@
     
     let isFloating = false;
     let isHidden = false;
+    let lastScrollY = 0;
+    let scrollTimeout = null;
     
     // Get footer element
     const footer = document.querySelector('footer') || document.querySelector('.footer') || document.querySelector('.page-footer');
+    
+    // Use CSS will-change for better performance
+    container.style.willChange = 'transform, opacity';
     
     function handleScroll() {
       const scrollY = window.scrollY || window.pageYOffset;
       const windowHeight = window.innerHeight;
       
+      // Only process if scroll position changed significantly (reduces jitter)
+      if (Math.abs(scrollY - lastScrollY) < 5 && isFloating) {
+        return;
+      }
+      lastScrollY = scrollY;
+      
       // Check if footer is in view
       let footerInView = false;
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
-        // Footer is in view when its top is visible in the viewport
         footerInView = footerRect.top < windowHeight && footerRect.bottom > 0;
       }
       
       // Handle showing/hiding based on footer visibility
       if (footerInView && !isHidden) {
-        // Hide when footer is in view
         container.classList.add('floating-hidden');
         isHidden = true;
       } else if (!footerInView && isHidden) {
-        // Show when footer is not in view
         container.classList.remove('floating-hidden');
         isHidden = false;
       }
@@ -450,16 +458,9 @@
         container.classList.add('floating');
         isFloating = true;
         
-        // Add animation class for smooth transition
-        container.style.opacity = '0';
-        container.style.transform = isMobile() ? 'translateX(100%)' : 'translateY(-50%) translateX(100%)';
-        
-        setTimeout(() => {
-          if (!isHidden) {
-            container.style.opacity = '1';
-            container.style.transform = isMobile() ? 'translateX(0)' : 'translateY(-50%) translateX(0)';
-          }
-        }, 50);
+        // Use CSS transition instead of manual animation for smoother effect
+        container.style.opacity = '1';
+        container.style.transform = isMobile() ? 'translateX(0)' : 'translateY(-50%) translateX(0)';
         
       } else if (scrollY <= scrollThreshold && isFloating) {
         // Return to normal mode
@@ -474,30 +475,37 @@
       return window.innerWidth <= 768;
     }
     
-    // Throttle scroll handler for performance
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
+    // Debounced scroll handler for smooth performance
+    function onScroll() {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
       }
-    });
+      scrollTimeout = window.requestAnimationFrame(handleScroll);
+    }
     
-    // Handle resize
+    // Passive scroll listener for better performance
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    // Handle resize with debounce
+    let resizeTimeout;
     window.addEventListener('resize', function() {
-      if (isFloating) {
-        // Reset and re-evaluate on resize
-        container.classList.remove('floating');
-        isFloating = false;
-        handleScroll();
-      }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        if (isFloating) {
+          container.classList.remove('floating');
+          isFloating = false;
+          handleScroll();
+        }
+      }, 250);
     });
     
     // Initial check
     handleScroll();
+    
+    // Clean up will-change after initial animation
+    setTimeout(() => {
+      container.style.willChange = 'auto';
+    }, 1000);
   }
 
 })();
