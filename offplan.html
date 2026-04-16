@@ -45,8 +45,8 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=14">
-  <link rel="stylesheet" href="css/footer.css?v=14">
+  <link rel="stylesheet" href="css/hero-new.css?v=15">
+  <link rel="stylesheet" href="css/footer.css?v=15">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -698,6 +698,46 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- 6 Bedroom Modern Triplex - OFFPLAN30 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="triplexes" onclick="openTriplex30Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN30/1st.jpg" alt="6 Bedroom Modern Triplex" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">6 Bedroom Modern Triplex</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Step into modern luxury with this stunning architectural masterpiece! Featuring a pristine, minimalist white facade and expansive floor-to-ceiling windows, this contemporary home is designed to impress.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="845000">$845,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openTriplex30Modal()">View Details</button>
+        </div>
+      </article>
+
+      <!-- 5 Bedroom Triplex - OFFPLAN29 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="triplexes" onclick="openTriplex29Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN29/1st.jpg" alt="5 Bedroom Triplex" fetchpriority="high" decoding="async">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">5 Bedroom Triplex</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">A luxurious 5 bedroom triplex sitting on a 1000sqm plot. Features 6 parking garage, grand lounge, open kitchen, private lounge, lift, BQs, outdoor gym, and beautifully landscaped garden.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="870000">$870,000</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openTriplex29Modal()">View Details</button>
+        </div>
+      </article>
+
       <!-- Standout Luxury Villa - OFFPLAN28 -->
       <article class="offplan-luxury-card scroll-animate" data-category="villa" onclick="openVilla28Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -3781,6 +3821,149 @@
     </div>
   </div>
 
+  <!-- 5 Bedroom Triplex Modal - OFFPLAN29 -->
+  <div class="offplan-modal" id="triplex29Modal">
+    <div class="offplan-modal-overlay" onclick="closeTriplex29Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeTriplex29Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="triplex29CarouselContainer">
+          <img src="images/offplan/OFFPLAN29/1st.jpg" alt="5 Bedroom Triplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/2nd.jpg" alt="5 Bedroom Triplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/3rd.jpg" alt="5 Bedroom Triplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/4th.jpg" alt="5 Bedroom Triplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/5th.jpg" alt="5 Bedroom Triplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/6th.jpg" alt="5 Bedroom Triplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/7th.jpg" alt="5 Bedroom Triplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/8th.jpg" alt="5 Bedroom Triplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/9th.jpg" alt="5 Bedroom Triplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/10th.jpg" alt="5 Bedroom Triplex - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveTriplex29Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveTriplex29Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="triplex29CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">5 Bedroom Triplex </h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Triplex</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">5</span></div>
+          <div class="feature-item"><span class="feature-label">Plot Size</span><span class="feature-value">1000 sqm</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">$870,000</span></div>
+        </div>
+        <p class="offplan-modal-description">A luxurious 5 bedroom triplex  sitting on a 1000sqm plot. This exceptional home offers spacious living with premium finishes, modern amenities, and thoughtful design throughout.</p>
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>6 Parking Garage</li>
+            <li>Ante Room</li>
+            <li>Grand Lounge</li>
+            <li>Open Kitchen</li>
+            <li>Dining Area</li>
+            <li>Guest Bedroom</li>
+            <li>Reading Room</li>
+            <li>Private Lounge</li>
+            <li>Kitchen & Store</li>
+            <li>BQ 1 & 2</li>
+            <li>Lift</li>
+            <li>Family Lounge</li>
+            <li>5 Bedrooms (All En-suite with closets)</li>
+            <li>Master's Bedroom (En-suite with closets)</li>
+            <li>Sit-Out Area</li>
+            <li>Kitchenette</li>
+            <li>Outdoor Gym</li>
+            <li>Beautiful Garden</li>
+          </ul>
+        </div>
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 Bedroom Modern Triplex Modal - OFFPLAN30 -->
+  <div class="offplan-modal" id="triplex30Modal">
+    <div class="offplan-modal-overlay" onclick="closeTriplex30Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeTriplex30Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="triplex30CarouselContainer">
+          <img src="images/offplan/OFFPLAN30/1st.jpg" alt="6 Bedroom Modern Triplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/2nd.jpg" alt="6 Bedroom Modern Triplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/3rd.jpg" alt="6 Bedroom Modern Triplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/4th.jpg" alt="6 Bedroom Modern Triplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/5th.jpg" alt="6 Bedroom Modern Triplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/6th.jpg" alt="6 Bedroom Modern Triplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/7th.jpg" alt="6 Bedroom Modern Triplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/8th.jpg" alt="6 Bedroom Modern Triplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/9th.jpg" alt="6 Bedroom Modern Triplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveTriplex30Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveTriplex30Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="triplex30CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">6 Bedroom Modern Triplex</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Triplex</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">6</span></div>
+          <div class="feature-item"><span class="feature-label">Style</span><span class="feature-value">Modern</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">$845,000</span></div>
+        </div>
+        <p class="offplan-modal-description">Step into modern luxury with this stunning architectural masterpiece! Featuring a pristine, minimalist white facade and expansive floor-to-ceiling windows, this contemporary home is designed to impress. The striking geometric layout offers incredible curb appeal and abundant natural light, making it an entertainer's dream.</p>
+        <div class="offplan-modal-highlights">
+          <h4>Key Highlights</h4>
+          <ul>
+            <li>6 Bedrooms</li>
+            <li>Minimalist white facade</li>
+            <li>Floor-to-ceiling windows</li>
+            <li>Contemporary architecture</li>
+            <li>Striking geometric layout</li>
+            <li>Incredible curb appeal</li>
+            <li>Abundant natural light</li>
+            <li>Entertainer's dream home</li>
+            <li>High-end modern design</li>
+            <li>Spacious living areas</li>
+          </ul>
+        </div>
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Benefits Section -->
   <section class="offplan-benefits-section">
     <h2 class="offplan-benefits-title">Why Invest Off-Plan?</h2>
@@ -3894,10 +4077,10 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=13" defer></script>
-  <script src="js/basket.js?v=13" defer></script>
-  <script src="js/chatbot.js?v=13" defer></script>
-  <script src="js/navbar.js?v=13" defer></script>
+  <script src="js/animations.js?v=14" defer></script>
+  <script src="js/basket.js?v=14" defer></script>
+  <script src="js/chatbot.js?v=14" defer></script>
+  <script src="js/navbar.js?v=14" defer></script>
   <script src="js/currency-switcher.js?v=4" defer></script>
   <script>
     // Mobile Menu Toggle
@@ -4079,6 +4262,10 @@
         setTimeout(() => { openVilla27Modal(); }, 500);
       } else if (projectParam === 'villa28') {
         setTimeout(() => { openVilla28Modal(); }, 500);
+      } else if (projectParam === 'triplex29') {
+        setTimeout(() => { openTriplex29Modal(); }, 500);
+      } else if (projectParam === 'triplex30') {
+        setTimeout(() => { openTriplex30Modal(); }, 500);
       } else if (projectParam === 'vacation') {
         setTimeout(() => { openVacationModal(); }, 500);
       } else if (projectParam === 'aburi') {
@@ -4111,6 +4298,8 @@
         'villa26Modal': 'villa26',
         'villa27Modal': 'villa27',
         'villa28Modal': 'villa28',
+        'triplex29Modal': 'triplex29',
+'triplex30Modal': 'triplex30',
         'vacationModal': 'vacation',
         'aburiModal': 'aburi',
         'beach7Modal': 'beach',
@@ -4861,6 +5050,102 @@
     function goToVilla28Slide(index) {
       villa28CurrentSlide = index;
       updateVilla28Carousel();
+    }
+
+    // Triplex 29 Modal Functions (OFFPLAN29)
+    let triplex29CurrentSlide = 0;
+    const triplex29Slides = document.querySelectorAll('#triplex29CarouselContainer .carousel-slide');
+    const triplex29TotalSlides = triplex29Slides.length;
+
+    function openTriplex29Modal() {
+      document.getElementById('triplex29Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createTriplex29CarouselDots();
+      updateTriplex29Carousel();
+    }
+
+    function closeTriplex29Modal() {
+      document.getElementById('triplex29Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createTriplex29CarouselDots() {
+      const dotsContainer = document.getElementById('triplex29CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < triplex29TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === triplex29CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToTriplex29Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateTriplex29Carousel() {
+      triplex29Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === triplex29CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#triplex29CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === triplex29CurrentSlide);
+      });
+    }
+
+    function moveTriplex29Carousel(direction) {
+      triplex29CurrentSlide = (triplex29CurrentSlide + direction + triplex29TotalSlides) % triplex29TotalSlides;
+      updateTriplex29Carousel();
+    }
+
+    function goToTriplex29Slide(index) {
+      triplex29CurrentSlide = index;
+      updateTriplex29Carousel();
+    }
+
+    // Triplex 30 Modal Functions (OFFPLAN30)
+    let triplex30CurrentSlide = 0;
+    const triplex30Slides = document.querySelectorAll('#triplex30CarouselContainer .carousel-slide');
+    const triplex30TotalSlides = triplex30Slides.length;
+
+    function openTriplex30Modal() {
+      document.getElementById('triplex30Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createTriplex30CarouselDots();
+      updateTriplex30Carousel();
+    }
+
+    function closeTriplex30Modal() {
+      document.getElementById('triplex30Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createTriplex30CarouselDots() {
+      const dotsContainer = document.getElementById('triplex30CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < triplex30TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === triplex30CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToTriplex30Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateTriplex30Carousel() {
+      triplex30Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === triplex30CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#triplex30CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === triplex30CurrentSlide);
+      });
+    }
+
+    function moveTriplex30Carousel(direction) {
+      triplex30CurrentSlide = (triplex30CurrentSlide + direction + triplex30TotalSlides) % triplex30TotalSlides;
+      updateTriplex30Carousel();
+    }
+
+    function goToTriplex30Slide(index) {
+      triplex30CurrentSlide = index;
+      updateTriplex30Carousel();
     }
 
     // Vacation Modal Functions
@@ -5619,8 +5904,18 @@
       const villa26Modal = document.getElementById('villa26Modal');
       const villa27Modal = document.getElementById('villa27Modal');
       const villa28Modal = document.getElementById('villa28Modal');
+      const triplex29Modal = document.getElementById('triplex29Modal');
+      const triplex30Modal = document.getElementById('triplex30Modal');
 
-      if (villa28Modal && villa28Modal.classList.contains('active')) {
+      if (triplex30Modal && triplex30Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'triplex30';
+        lightboxImages = Array.from(document.querySelectorAll('#triplex30CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = triplex30CurrentSlide;
+      } else if (triplex29Modal && triplex29Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'triplex29';
+        lightboxImages = Array.from(document.querySelectorAll('#triplex29CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = triplex29CurrentSlide;
+      } else if (villa28Modal && villa28Modal.classList.contains('active')) {
         lightboxCurrentModal = 'villa28';
         lightboxImages = Array.from(document.querySelectorAll('#villa28CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = villa28CurrentSlide;
@@ -5805,6 +6100,11 @@
           closeEnvironmental14Modal();
           closeEnvironmental15Modal();
           closeVacation16Modal();
+          closeVilla26Modal();
+          closeVilla27Modal();
+          closeVilla28Modal();
+          closeTriplex29Modal();
+          closeTriplex30Modal();
         }
       }
     });
