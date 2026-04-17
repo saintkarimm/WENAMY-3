@@ -21,47 +21,30 @@
   <meta property="og:url" content="https://wenamy.com/offplan.html">
   <meta property="og:title" content="Off-Plan Properties | Wenamy Ghana - Early Investment Deals">
   <meta property="og:description" content="Invest in off-plan properties with Wenamy Ghana. Secure pre-construction prices & flexible payment plans.">
-  <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
+  <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.webp">
   <meta property="og:site_name" content="Wenamy Ghana">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Off-Plan Properties | Wenamy Ghana - Early Investment Deals">
   <meta name="twitter:description" content="Invest in off-plan properties with Wenamy Ghana. Secure pre-construction prices.">
-  <meta name="twitter:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
+  <meta name="twitter:image" content="https://wenamy.com/images/hero/hero-bg.webp">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/icons/logo.png">
+  <link rel="icon" type="image/png" href="images/icons/logo.webp">
   
   <!-- Preconnect to improve load times -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <!-- Preload critical CSS -->
-  <link rel="preload" href="css/variables.css" as="style">
-  <link rel="preload" href="css/base.css" as="style">
-  
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css?v=16">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=17">
-  <link rel="stylesheet" href="css/footer.css?v=17">
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/main.css?v=16">
+  <link rel="stylesheet" href="css/hero-new.css?v=18">
+  <link rel="stylesheet" href="css/footer.css?v=18">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
   <style>
-    /* Prevent FOUC - hide navbar until CSS loads and set initial state */
-    .navbar { 
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    .navbar.loaded {
-      visibility: visible;
-      opacity: 1;
-    }
-    
     /* Off-Plan Modal Styles */
     .offplan-modal {
       display: none;
@@ -309,7 +292,7 @@
     }
     
     .offplan-modal-highlights li::before {
-      content: '✓';
+      content: '?';
       position: absolute;
       left: 0;
       color: #10b981;
@@ -599,7 +582,7 @@
   <nav class="navbar" id="mainNavbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
-        <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+        <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
         Wenamy
       </a>
     </div>
@@ -641,7 +624,7 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay">
     <div class="mobile-nav-header">
       <a href="index.html" class="logo">
-        <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+        <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
         Wenamy
       </a>
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
@@ -702,7 +685,7 @@
       <!-- Minimalist Floating Villa - OFFPLAN39 -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes environmentalists family-homes" onclick="openFloating39Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN39/1st.webp" alt="Minimalist Floating Villa" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN39/1st.webp" alt="Minimalist Floating Villa" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Minimalist Floating Villa</h3>
@@ -722,7 +705,7 @@
       <!-- Resort-Style Modern Oasis - OFFPLAN38 -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes villa" onclick="openOasis38Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN38/1st.jpg" alt="Resort-Style Modern Oasis" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN38/1st.webp" alt="Resort-Style Modern Oasis" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Resort-Style Modern Oasis</h3>
@@ -742,7 +725,7 @@
       <!-- Modern Minimalist Gable Home - OFFPLAN37 -->
       <article class="offplan-luxury-card scroll-animate" data-category="bungalows family-homes" onclick="openGable37Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN37/1st.jpg" alt="Modern Minimalist Gable Home" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN37/1st.webp" alt="Modern Minimalist Gable Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Modern Minimalist Gable Home</h3>
@@ -762,7 +745,7 @@
       <!-- Double-Height Ceiling Bungalow - OFFPLAN36 -->
       <article class="offplan-luxury-card scroll-animate" data-category="bungalows retirement-homes family-homes" onclick="openVaulted36Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN36/1st.jpg" alt="Double-Height Ceiling Bungalow" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN36/1st.webp" alt="Double-Height Ceiling Bungalow" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Double-Height Ceiling Bungalow</h3>
@@ -782,7 +765,7 @@
       <!-- Ultra-Modern Single-Story Sanctuary - OFFPLAN35 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes family-homes bungalows" onclick="openSanctuary35Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN35/1st.jpg" alt="Ultra-Modern Single-Story Sanctuary" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN35/1st.webp" alt="Ultra-Modern Single-Story Sanctuary" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Ultra-Modern Single-Story Sanctuary</h3>
@@ -802,7 +785,7 @@
       <!-- 3 Bedroom Privacy Duplex - OFFPLAN34 -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes environmentalist" onclick="openDuplex34Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN34/1st.jpg" alt="3 Bedroom Privacy Duplex" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN34/1st.webp" alt="3 Bedroom Privacy Duplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Privacy Duplex</h3>
@@ -822,7 +805,7 @@
       <!-- 4 Bedroom U-Shaped Bungalow - OFFPLAN33 -->
       <article class="offplan-luxury-card scroll-animate" data-category="bungalows" onclick="openBungalow33Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN33/1st.jpg" alt="4 Bedroom U-Shaped Bungalow" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN33/1st.webp" alt="4 Bedroom U-Shaped Bungalow" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">4 Bedroom U-Shaped Bungalow</h3>
@@ -842,7 +825,7 @@
       <!-- Multi-Level 3-Bedroom Bungalow - OFFPLAN32 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows family-homes" onclick="openBungalow32Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN32/1st.webp" alt="Multi-Level 3-Bedroom Bungalow" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN32/1st.webp" alt="Multi-Level 3-Bedroom Bungalow" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Multi-Level 3-Bedroom Bungalow</h3>
@@ -862,7 +845,7 @@
       <!-- Lakefront Luxury Home - OFFPLAN31 -->
       <article class="offplan-luxury-card scroll-animate" data-category="villa" onclick="openVilla31Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN31/1st.jpg" alt="Lakefront Luxury Home" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN31/1st.webp" alt="Lakefront Luxury Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Lakefront Luxury Home</h3>
@@ -882,7 +865,7 @@
       <!-- 6 Bedroom Modern Triplex - OFFPLAN30 -->
       <article class="offplan-luxury-card scroll-animate" data-category="triplexes" onclick="openTriplex30Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN30/1st.jpg" alt="6 Bedroom Modern Triplex" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN30/1st.webp" alt="6 Bedroom Modern Triplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">6 Bedroom Modern Triplex</h3>
@@ -902,7 +885,7 @@
       <!-- 5 Bedroom Triplex - OFFPLAN29 -->
       <article class="offplan-luxury-card scroll-animate" data-category="triplexes" onclick="openTriplex29Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN29/1st.jpg" alt="5 Bedroom Triplex" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN29/1st.webp" alt="5 Bedroom Triplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">5 Bedroom Triplex</h3>
@@ -922,7 +905,7 @@
       <!-- Standout Luxury Villa - OFFPLAN28 -->
       <article class="offplan-luxury-card scroll-animate" data-category="villa" onclick="openVilla28Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN28/1st.jpeg" alt="Standout Luxury Villa" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN28/1st.webp" alt="Standout Luxury Villa" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Standout Luxury Villa</h3>
@@ -942,7 +925,7 @@
       <!-- Vacation Family Villa - OFFPLAN27 -->
       <article class="offplan-luxury-card scroll-animate" data-category="villa" onclick="openVilla27Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN27/1st.jpeg" alt="Vacation Family Villa" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN27/1st.webp" alt="Vacation Family Villa" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Vacation Family Villa</h3>
@@ -962,7 +945,7 @@
       <!-- Luxury Villa Duplex - OFFPLAN26 -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes villa" onclick="openVilla26Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN26/1st.jpeg" alt="Luxury Villa Duplex" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN26/1st.webp" alt="Luxury Villa Duplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Luxury Villa Duplex</h3>
@@ -982,7 +965,7 @@
       <!-- Family Bungalow - OFFPLAN25 -->
       <article class="offplan-luxury-card scroll-animate" data-category="bungalows retirement-homes" onclick="openBungalow25Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN25/1st.jpeg" alt="Family Bungalow" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN25/1st.webp" alt="Family Bungalow" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Family Bungalow</h3>
@@ -1002,7 +985,7 @@
       <!-- 3 Bedroom Bungalow - OFFPLAN24 -->
       <article class="offplan-luxury-card scroll-animate" data-category="bungalows" onclick="openBungalow24Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN24/1st.jpeg" alt="3 Bedroom Bungalow" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN24/1st.webp" alt="3 Bedroom Bungalow" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Bungalow</h3>
@@ -1022,7 +1005,7 @@
       <!-- Modern Scandi Cabin - OFFPLAN23 -->
       <article class="offplan-luxury-card scroll-animate" data-category="cabins" onclick="openCabin23Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN23/1st.jpeg" alt="Modern Scandi Cabin" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN23/1st.webp" alt="Modern Scandi Cabin" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Modern Scandi Cabin</h3>
@@ -1042,7 +1025,7 @@
       <!-- T-Shaped Cabin - OFFPLAN22 -->
       <article class="offplan-luxury-card scroll-animate" data-category="cabins" onclick="openCabin22Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN22/1st.jpeg" alt="T-Shaped Cabin" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN22/1st.webp" alt="T-Shaped Cabin" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">T-Shaped Cabin</h3>
@@ -1062,11 +1045,11 @@
       <!-- 3 Bedroom Duplex - OFFPLAN21 -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplex21Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN21/1st.jpeg" alt="3 Bedroom Duplex" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN21/1st.webp" alt="3 Bedroom Duplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Duplex</h3>
-          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">3 bedroom, 4 washrooms, 2 living rooms with every bedroom ensuite. Features large windows, pool, serene outdoor spaces, greens, and large 270Â° balcony for great views.</p>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">3 bedroom, 4 washrooms, 2 living rooms with every bedroom ensuite. Features large windows, pool, serene outdoor spaces, greens, and large 270° balcony for great views.</p>
           <p class="offplan-luxury-location">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -1082,7 +1065,7 @@
       <!-- 3 Bedroom Bungalow - OFFPLAN20 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openBungalow20Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN20/1st.jpeg" alt="3 Bedroom Bungalow" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN20/1st.webp" alt="3 Bedroom Bungalow" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Bungalow</h3>
@@ -1102,7 +1085,7 @@
       <!-- 3 Bedroom Family Home - OFFPLAN19 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openFamilyHome19Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN19/1st.jpg" alt="3 Bedroom Family Home" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN19/1st.webp" alt="3 Bedroom Family Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Family Home</h3>
@@ -1122,7 +1105,7 @@
       <!-- Modern Retirement Bungalow - OFFPLAN18 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes bungalows" onclick="openModernRetirementModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN18/1st.jpeg" alt="Modern Retirement Bungalow" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN18/1st.webp" alt="Modern Retirement Bungalow" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Modern Retirement Bungalow</h3>
@@ -1142,7 +1125,7 @@
       <!-- 3+1 Bedroom Retirement Home - OFFPLAN17 -->
       <article class="offplan-luxury-card scroll-animate" data-category="retirement-homes" onclick="openRetirementHomeModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN17/1st.jpeg" alt="3+1 Bedroom Retirement Home" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN17/1st.webp" alt="3+1 Bedroom Retirement Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3+1 Bedroom House</h3>
@@ -1162,7 +1145,7 @@
       <!-- 4 Bedroom Townhouse with Boy's Quarters -->
       <article class="offplan-luxury-card scroll-animate" data-category="townhouses" onclick="openTownhouseModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN1/1st.jpg" alt="4 Bedroom Townhouse with Boy's Quarters" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN1/1st.webp" alt="4 Bedroom Townhouse with Boy's Quarters" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">4 Bedroom Townhouse with Boy's Quarters</h3>
@@ -1182,7 +1165,7 @@
       <!-- 2 Bedroom Leisure Home -->
       <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openVacationModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN2/1st.jpeg" alt="2 Bedroom Leisure Home" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN2/1st.webp" alt="2 Bedroom Leisure Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">2 Bedroom Leisure Home</h3>
@@ -1202,7 +1185,7 @@
       <!-- 2 Bedroom Leisure Home - Aburi -->
       <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openAburiModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN3/1st.jpeg" alt="2 Bedroom Leisure Home - Aburi" fetchpriority="high" decoding="async">
+          <img src="images/offplan/OFFPLAN3/1st.webp" alt="2 Bedroom Leisure Home - Aburi" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">2 Bedroom Leisure Home</h3>
@@ -1222,7 +1205,7 @@
       <!-- 4 Bedroom Family Home Duplex - Aburi -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplexModal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN4/1st.jpeg" alt="4 Bedroom Family Home Duplex" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN4/1st.webp" alt="4 Bedroom Family Home Duplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">4 Bedroom Family Home</h3>
@@ -1242,7 +1225,7 @@
       <!-- OFFPLAN7: 3 Bedroom Beach Home - Kokrobite -->
       <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openBeach7Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN7/1st.jpeg" alt="3 Bedroom Beach Home" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN7/1st.webp" alt="3 Bedroom Beach Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Beach Home</h3>
@@ -1262,7 +1245,7 @@
       <!-- OFFPLAN6: Green Mountain Vacation Home - Aburi -->
       <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openVacation6Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN6/1st.jpeg" alt="Green Mountain Vacation Home" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN6/1st.webp" alt="Green Mountain Vacation Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Green Mountain Vacation Home</h3>
@@ -1282,7 +1265,7 @@
       <!-- OFFPLAN5: 3 Bedroom Family Home Duplex - Aburi -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplex5Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN5/1st.jpeg" alt="3 Bedroom Family Home Duplex" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN5/1st.webp" alt="3 Bedroom Family Home Duplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Family Home</h3>
@@ -1302,7 +1285,7 @@
       <!-- OFFPLAN8: Vacation Home with Great Views - Aburi -->
       <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openAburiViews8Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN8/1st.jpeg" alt="Vacation Home with Great Views" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN8/1st.webp" alt="Vacation Home with Great Views" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">Vacation Home with Great Views</h3>
@@ -1322,7 +1305,7 @@
       <!-- OFFPLAN9: 3 Bedroom Vacation Home - Aburi -->
       <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes" onclick="openAburiMountain9Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN9/1st.jpeg" alt="3 Bedroom Vacation Home" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN9/1st.webp" alt="3 Bedroom Vacation Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Vacation Home</h3>
@@ -1342,7 +1325,7 @@
       <!-- OFFPLAN10: 3 Bedroom Duplex - East Legon Hills -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplex10Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN10/1st.jpeg" alt="3 Bedroom Duplex" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN10/1st.webp" alt="3 Bedroom Duplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Duplex</h3>
@@ -1362,7 +1345,7 @@
       <!-- OFFPLAN11: 5 Bedroom Family Home - East Legon Hills -->
       <article class="offplan-luxury-card scroll-animate" data-category="environmentalists" onclick="openEnvironmental11Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN11/1st.jpeg" alt="5 Bedroom Family Home" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN11/1st.webp" alt="5 Bedroom Family Home" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">5 Bedroom Family Home</h3>
@@ -1382,7 +1365,7 @@
       <!-- OFFPLAN12: 4 Bedroom Duplex - Community 25 -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplex12Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN12/1st.jpeg" alt="4 Bedroom Duplex" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN12/1st.webp" alt="4 Bedroom Duplex" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">4 Bedroom Duplex</h3>
@@ -1402,7 +1385,7 @@
       <!-- OFFPLAN13: 4 Bedroom Duplex with Underground Garage - Peduasi -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="openDuplex13Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN13/1st.jpeg" alt="4 Bedroom Duplex with Underground Garage" loading="lazy" decoding="async">
+          <img src="images/offplan/OFFPLAN13/1st.webp" alt="4 Bedroom Duplex with Underground Garage" loading="lazy" decoding="async" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">4 Bedroom Duplex with Underground Garage</h3>
@@ -1422,7 +1405,7 @@
       <!-- OFFPLAN14: 4 Bedroom Duplex - East Legon Hills -->
       <article class="offplan-luxury-card scroll-animate" data-category="environmentalists" onclick="openEnvironmental14Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN14/1st.jpeg" alt="4 Bedroom Duplex">
+          <img src="images/offplan/OFFPLAN14/1st.webp" alt="4 Bedroom Duplex" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">4 Bedroom Duplex</h3>
@@ -1442,7 +1425,7 @@
       <!-- OFFPLAN15: 5 Bedroom Home - Peduasi -->
       <article class="offplan-luxury-card scroll-animate" data-category="environmentalists" onclick="openEnvironmental15Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN15/1st.jpeg" alt="5 Bedroom Home">
+          <img src="images/offplan/OFFPLAN15/1st.webp" alt="5 Bedroom Home" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">5 Bedroom Home</h3>
@@ -1462,7 +1445,7 @@
       <!-- OFFPLAN16: 3 Bedroom Home - Peduasi -->
       <article class="offplan-luxury-card scroll-animate" data-category="vacation" onclick="openVacation16Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
-          <img src="images/offplan/OFFPLAN16/1st.jpeg" alt="3 Bedroom Home">
+          <img src="images/offplan/OFFPLAN16/1st.webp" alt="3 Bedroom Home" width="400" height="300">
         </div>
         <div class="offplan-luxury-content">
           <h3 class="offplan-luxury-name">3 Bedroom Home</h3>
@@ -1478,6 +1461,14 @@
           <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openVacation16Modal()">View Details</button>
         </div>
       </article>
+    </div>
+    
+    <!-- Pagination Controls -->
+    <div class="pagination-controls" style="text-align: center; margin-top: 3rem;">
+      <button id="loadMoreBtn" class="offplan-luxury-btn" style="padding: 1rem 2.5rem; font-size: 1rem;">
+        Load More Properties
+        <span id="propertiesCount" style="display: block; font-size: 0.85rem; margin-top: 0.25rem; opacity: 0.8;"></span>
+      </button>
     </div>
   </section>
 
@@ -1495,11 +1486,11 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="townhouseCarouselContainer">
-          <img src="images/offplan/OFFPLAN1/1st.jpg" alt="Townhouse View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN1/2nd.jpg" alt="Townhouse View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN1/3rd.jpg" alt="Townhouse View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN1/4th.jpeg" alt="Townhouse View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN1/5th.jpeg" alt="Townhouse View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/1st.webp" alt="Townhouse View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/2nd.webp" alt="Townhouse View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/3rd.webp" alt="Townhouse View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/4th.webp" alt="Townhouse View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN1/5th.webp" alt="Townhouse View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveTownhouseCarousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1579,14 +1570,14 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="retirementHomeCarouselContainer">
-          <img src="images/offplan/OFFPLAN17/1st.jpeg" alt="Retirement Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN17/2nd.jpeg" alt="Retirement Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN17/3rd.jpeg" alt="Retirement Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN17/4th.jpeg" alt="Retirement Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN17/5th.jpeg" alt="Retirement Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN17/6th.jpeg" alt="Retirement Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN17/7th.jpeg" alt="Retirement Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN17/8th.jpeg" alt="Retirement Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/1st.webp" alt="Retirement Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/2nd.webp" alt="Retirement Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/3rd.webp" alt="Retirement Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/4th.webp" alt="Retirement Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/5th.webp" alt="Retirement Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/6th.webp" alt="Retirement Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/7th.webp" alt="Retirement Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN17/8th.webp" alt="Retirement Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveRetirementHomeCarousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1667,19 +1658,19 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="vacationCarouselContainer">
-          <img src="images/offplan/OFFPLAN2/1st.jpeg" alt="Vacation Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/2nd.jpeg" alt="Vacation Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/3rd.jpeg" alt="Vacation Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/4th.jpeg" alt="Vacation Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/5th.jpeg" alt="Vacation Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/6th.jpeg" alt="Vacation Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/7th.jpeg" alt="Vacation Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/8th.jpeg" alt="Vacation Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/9th.jpeg" alt="Vacation Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/10th.jpeg" alt="Vacation Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/11th.jpeg" alt="Vacation Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/12th.jpeg" alt="Vacation Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN2/13th.jpeg" alt="Vacation Home View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/1st.webp" alt="Vacation Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/2nd.webp" alt="Vacation Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/3rd.webp" alt="Vacation Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/4th.webp" alt="Vacation Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/5th.webp" alt="Vacation Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/6th.webp" alt="Vacation Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/7th.webp" alt="Vacation Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/8th.webp" alt="Vacation Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/9th.webp" alt="Vacation Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/10th.webp" alt="Vacation Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/11th.webp" alt="Vacation Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/12th.webp" alt="Vacation Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN2/13th.webp" alt="Vacation Home View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVacationCarousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1759,18 +1750,18 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="aburiCarouselContainer">
-          <img src="images/offplan/OFFPLAN3/1st.jpeg" alt="Aburi Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/2nd.jpeg" alt="Aburi Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/3rd.jpeg" alt="Aburi Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/4th.jpeg" alt="Aburi Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/5th.jpeg" alt="Aburi Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/6th.jpeg" alt="Aburi Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/7th.jpeg" alt="Aburi Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/8th.jpeg" alt="Aburi Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/9th.jpeg" alt="Aburi Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/10th.jpeg" alt="Aburi Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/11th.jpeg" alt="Aburi Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN3/12th.jpeg" alt="Aburi Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/1st.webp" alt="Aburi Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/2nd.webp" alt="Aburi Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/3rd.webp" alt="Aburi Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/4th.webp" alt="Aburi Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/5th.webp" alt="Aburi Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/6th.webp" alt="Aburi Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/7th.webp" alt="Aburi Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/8th.webp" alt="Aburi Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/9th.webp" alt="Aburi Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/10th.webp" alt="Aburi Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/11th.webp" alt="Aburi Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN3/12th.webp" alt="Aburi Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveAburiCarousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1850,12 +1841,12 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="duplexCarouselContainer">
-          <img src="images/offplan/OFFPLAN4/1st.jpeg" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN4/2nd.jpeg" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN4/3rd.jpeg" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN4/4th.jpeg" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN4/5th.jpeg" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN4/6th.jpeg" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/1st.webp" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/2nd.webp" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/3rd.webp" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/4th.webp" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/5th.webp" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN4/6th.webp" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveDuplexCarousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1935,15 +1926,15 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="duplex5CarouselContainer">
-          <img src="images/offplan/OFFPLAN5/1st.jpeg" alt="3 Bedroom Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/2nd.jpeg" alt="3 Bedroom Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/3rd.jpeg" alt="3 Bedroom Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/4th.jpeg" alt="3 Bedroom Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/5th.jpeg" alt="3 Bedroom Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/6th.jpeg" alt="3 Bedroom Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/7th.jpeg" alt="3 Bedroom Duplex View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/8th.jpeg" alt="3 Bedroom Duplex View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN5/9th.jpeg" alt="3 Bedroom Duplex View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/1st.webp" alt="3 Bedroom Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/2nd.webp" alt="3 Bedroom Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/3rd.webp" alt="3 Bedroom Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/4th.webp" alt="3 Bedroom Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/5th.webp" alt="3 Bedroom Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/6th.webp" alt="3 Bedroom Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/7th.webp" alt="3 Bedroom Duplex View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/8th.webp" alt="3 Bedroom Duplex View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN5/9th.webp" alt="3 Bedroom Duplex View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveDuplex5Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1994,8 +1985,8 @@
             <li>3 spacious family bedrooms</li>
             <li>4 modern washrooms</li>
             <li>Minimalist contemporary architecture</li>
-            <li>Land area: 144 mÂ²</li>
-            <li>Building area: 200 mÂ²</li>
+            <li>Land area: 144 m²</li>
+            <li>Building area: 200 m²</li>
             <li>Purity in materials and proportions</li>
             <li>Spaces that inspire calm and identity</li>
           </ul>
@@ -2023,19 +2014,19 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="vacation6CarouselContainer">
-          <img src="images/offplan/OFFPLAN6/1st.jpeg" alt="Green Mountain View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/2nd.jpeg" alt="Green Mountain View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/3rd.jpeg" alt="Green Mountain View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/4th.jpeg" alt="Green Mountain View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/5th.jpeg" alt="Green Mountain View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/6th.jpeg" alt="Green Mountain View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/7th.jpeg" alt="Green Mountain View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/8th.jpeg" alt="Green Mountain View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/9th.jpeg" alt="Green Mountain View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/10th.jpeg" alt="Green Mountain View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/11th.jpeg" alt="Green Mountain View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/12th.jpeg" alt="Green Mountain View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN6/13th.jpeg" alt="Green Mountain View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/1st.webp" alt="Green Mountain View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/2nd.webp" alt="Green Mountain View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/3rd.webp" alt="Green Mountain View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/4th.webp" alt="Green Mountain View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/5th.webp" alt="Green Mountain View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/6th.webp" alt="Green Mountain View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/7th.webp" alt="Green Mountain View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/8th.webp" alt="Green Mountain View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/9th.webp" alt="Green Mountain View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/10th.webp" alt="Green Mountain View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/11th.webp" alt="Green Mountain View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/12th.webp" alt="Green Mountain View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN6/13th.webp" alt="Green Mountain View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVacation6Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2115,13 +2106,13 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="beach7CarouselContainer">
-          <img src="images/offplan/OFFPLAN7/1st.jpeg" alt="Beach Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN7/2nd.jpeg" alt="Beach Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN7/3rd.jpeg" alt="Beach Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN7/4th.jpeg" alt="Beach Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN7/5th.jpeg" alt="Beach Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN7/6th.jpeg" alt="Beach Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN7/7th.jpeg" alt="Beach Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/1st.webp" alt="Beach Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/2nd.webp" alt="Beach Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/3rd.webp" alt="Beach Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/4th.webp" alt="Beach Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/5th.webp" alt="Beach Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/6th.webp" alt="Beach Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN7/7th.webp" alt="Beach Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveBeach7Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2201,13 +2192,13 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="aburiViews8CarouselContainer">
-          <img src="images/offplan/OFFPLAN8/1st.jpeg" alt="Vacation Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN8/2nd.jpeg" alt="Vacation Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN8/3rd.jpeg" alt="Vacation Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN8/4th.jpeg" alt="Vacation Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN8/5th.jpeg" alt="Vacation Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN8/6th.jpeg" alt="Vacation Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN8/7th.jpeg" alt="Vacation Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN8/1st.webp" alt="Vacation Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN8/2nd.webp" alt="Vacation Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN8/3rd.webp" alt="Vacation Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN8/4th.webp" alt="Vacation Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN8/5th.webp" alt="Vacation Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN8/6th.webp" alt="Vacation Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN8/7th.webp" alt="Vacation Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveAburiViews8Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2287,17 +2278,17 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="aburiMountain9CarouselContainer">
-          <img src="images/offplan/OFFPLAN9/1st.jpeg" alt="Mountain Vacation Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/2nd.jpeg" alt="Mountain Vacation Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/3rd.jpeg" alt="Mountain Vacation Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/4th.jpeg" alt="Mountain Vacation Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/5th.jpeg" alt="Mountain Vacation Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/6th.jpeg" alt="Mountain Vacation Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/7th.jpeg" alt="Mountain Vacation Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/8th.jpeg" alt="Mountain Vacation Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/9th.jpeg" alt="Mountain Vacation Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/10th.jpeg" alt="Mountain Vacation Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN9/11th.jpeg" alt="Mountain Vacation Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/1st.webp" alt="Mountain Vacation Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/2nd.webp" alt="Mountain Vacation Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/3rd.webp" alt="Mountain Vacation Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/4th.webp" alt="Mountain Vacation Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/5th.webp" alt="Mountain Vacation Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/6th.webp" alt="Mountain Vacation Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/7th.webp" alt="Mountain Vacation Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/8th.webp" alt="Mountain Vacation Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/9th.webp" alt="Mountain Vacation Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/10th.webp" alt="Mountain Vacation Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN9/11th.webp" alt="Mountain Vacation Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveAburiMountain9Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2378,26 +2369,26 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="duplex10CarouselContainer">
-          <img src="images/offplan/OFFPLAN10/1st.jpeg" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/2nd.jpeg" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/3rd.jpeg" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/4th.jpeg" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/5th.jpeg" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/6th.jpeg" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/7th.jpeg" alt="Duplex View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/8th.jpeg" alt="Duplex View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/9th.jpeg" alt="Duplex View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/10th.jpeg" alt="Duplex View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/11th.jpeg" alt="Duplex View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/12th.jpeg" alt="Duplex View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/13th.jpeg" alt="Duplex View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/14th.jpeg" alt="Duplex View 14" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/15th.jpeg" alt="Duplex View 15" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/16th.jpeg" alt="Duplex View 16" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/17th.jpeg" alt="Duplex View 17" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/18th.jpeg" alt="Duplex View 18" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/19th.jpeg" alt="Duplex View 19" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN10/20th.jpeg" alt="Duplex View 20" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/1st.webp" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/2nd.webp" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/3rd.webp" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/4th.webp" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/5th.webp" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/6th.webp" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/7th.webp" alt="Duplex View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/8th.webp" alt="Duplex View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/9th.webp" alt="Duplex View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/10th.webp" alt="Duplex View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/11th.webp" alt="Duplex View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/12th.webp" alt="Duplex View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/13th.webp" alt="Duplex View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/14th.webp" alt="Duplex View 14" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/15th.webp" alt="Duplex View 15" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/16th.webp" alt="Duplex View 16" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/17th.webp" alt="Duplex View 17" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/18th.webp" alt="Duplex View 18" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/19th.webp" alt="Duplex View 19" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN10/20th.webp" alt="Duplex View 20" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveDuplex10Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2478,17 +2469,17 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="environmental11CarouselContainer">
-          <img src="images/offplan/OFFPLAN11/1st.jpeg" alt="Family Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/2nd.jpeg" alt="Family Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/3rd.jpeg" alt="Family Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/4th.jpeg" alt="Family Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/5th.jpeg" alt="Family Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/6th.jpeg" alt="Family Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/7th.jpeg" alt="Family Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/8th.jpeg" alt="Family Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/9th.jpeg" alt="Family Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/10th.jpeg" alt="Family Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN11/11th.jpeg" alt="Family Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/1st.webp" alt="Family Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/2nd.webp" alt="Family Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/3rd.webp" alt="Family Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/4th.webp" alt="Family Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/5th.webp" alt="Family Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/6th.webp" alt="Family Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/7th.webp" alt="Family Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/8th.webp" alt="Family Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/9th.webp" alt="Family Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/10th.webp" alt="Family Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN11/11th.webp" alt="Family Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveEnvironmental11Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2569,12 +2560,12 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="duplex12CarouselContainer">
-          <img src="images/offplan/OFFPLAN12/1st.jpeg" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN12/2nd.jpeg" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN12/3rd.jpeg" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN12/4th.jpeg" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN12/5th.jpeg" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN12/6th.jpeg" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN12/1st.webp" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN12/2nd.webp" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN12/3rd.webp" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN12/4th.webp" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN12/5th.webp" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN12/6th.webp" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveDuplex12Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2655,17 +2646,17 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="duplex13CarouselContainer">
-          <img src="images/offplan/OFFPLAN13/1st.jpeg" alt="Balestra House View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/2nd.jpeg" alt="Balestra House View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/3rd.jpeg" alt="Balestra House View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/4th.jpeg" alt="Balestra House View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/5th.jpeg" alt="Balestra House View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/6th.jpeg" alt="Balestra House View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/7th.jpeg" alt="Balestra House View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/8th.jpeg" alt="Balestra House View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/9th.jpeg" alt="Balestra House View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/10th.jpeg" alt="Balestra House View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN13/11th.jpeg" alt="Balestra House View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/1st.webp" alt="Balestra House View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/2nd.webp" alt="Balestra House View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/3rd.webp" alt="Balestra House View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/4th.webp" alt="Balestra House View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/5th.webp" alt="Balestra House View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/6th.webp" alt="Balestra House View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/7th.webp" alt="Balestra House View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/8th.webp" alt="Balestra House View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/9th.webp" alt="Balestra House View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/10th.webp" alt="Balestra House View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN13/11th.webp" alt="Balestra House View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveDuplex13Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2746,18 +2737,18 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="environmental14CarouselContainer">
-          <img src="images/offplan/OFFPLAN14/1st.jpeg" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/2nd.jpeg" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/3rd.jpeg" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/4th.jpeg" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/5th.jpeg" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/6th.jpeg" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/7th.jpeg" alt="Duplex View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/8th.jpeg" alt="Duplex View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/9th.jpeg" alt="Duplex View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/10th.jpeg" alt="Duplex View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/11th.jpeg" alt="Duplex View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN14/12th.jpeg" alt="Duplex View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/1st.webp" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/2nd.webp" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/3rd.webp" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/4th.webp" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/5th.webp" alt="Duplex View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/6th.webp" alt="Duplex View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/7th.webp" alt="Duplex View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/8th.webp" alt="Duplex View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/9th.webp" alt="Duplex View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/10th.webp" alt="Duplex View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/11th.webp" alt="Duplex View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN14/12th.webp" alt="Duplex View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveEnvironmental14Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2838,20 +2829,20 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="environmental15CarouselContainer">
-          <img src="images/offplan/OFFPLAN15/1st.jpeg" alt="Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/2nd.jpeg" alt="Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/3rd.jpeg" alt="Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/4th.jpeg" alt="Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/5th.jpeg" alt="Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/6th.jpeg" alt="Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/7th.jpeg" alt="Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/8th.jpeg" alt="Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/9th.jpeg" alt="Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/10th.jpeg" alt="Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/11th.jpeg" alt="Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/12th.jpeg" alt="Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/13th.jpeg" alt="Home View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN15/14th.jpeg" alt="Home View 14" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/1st.webp" alt="Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/2nd.webp" alt="Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/3rd.webp" alt="Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/4th.webp" alt="Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/5th.webp" alt="Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/6th.webp" alt="Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/7th.webp" alt="Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/8th.webp" alt="Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/9th.webp" alt="Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/10th.webp" alt="Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/11th.webp" alt="Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/12th.webp" alt="Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/13th.webp" alt="Home View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN15/14th.webp" alt="Home View 14" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveEnvironmental15Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2932,19 +2923,19 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="vacation16CarouselContainer">
-          <img src="images/offplan/OFFPLAN16/1st.jpeg" alt="Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/2nd.jpeg" alt="Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/3rd.jpeg" alt="Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/4th.jpeg" alt="Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/5th.jpeg" alt="Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/6th.jpeg" alt="Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/7th.jpeg" alt="Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/8th.jpeg" alt="Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/9th.jpeg" alt="Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/10th.jpeg" alt="Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/11th.jpeg" alt="Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/12th.jpeg" alt="Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN16/13th.jpeg" alt="Home View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/1st.webp" alt="Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/2nd.webp" alt="Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/3rd.webp" alt="Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/4th.webp" alt="Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/5th.webp" alt="Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/6th.webp" alt="Home View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/7th.webp" alt="Home View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/8th.webp" alt="Home View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/9th.webp" alt="Home View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/10th.webp" alt="Home View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/11th.webp" alt="Home View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/12th.webp" alt="Home View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN16/13th.webp" alt="Home View 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVacation16Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2986,7 +2977,7 @@
         </div>
         
         <p class="offplan-modal-description">
-          This project is a reflection of architecture-minimal, intentional, and deeply connected to its landscape. The house is situated on a lush, sloping terrain at the base of a mountain range, designed to create a quiet dialogue between built form and nature. It was designed as a home that feels as though it's hovering slightly above the land, light and effortless, without disturbing the natural contours of the site. The clean, elongated rectangular form frames the surrounding landscape like a living artwork. The open faÃ§ade is defined by floor-to-ceiling glazing, allowing for uninterrupted views and creating a seamless indoor-outdoor experience.
+          This project is a reflection of architecture-minimal, intentional, and deeply connected to its landscape. The house is situated on a lush, sloping terrain at the base of a mountain range, designed to create a quiet dialogue between built form and nature. It was designed as a home that feels as though it's hovering slightly above the land, light and effortless, without disturbing the natural contours of the site. The clean, elongated rectangular form frames the surrounding landscape like a living artwork. The open façade is defined by floor-to-ceiling glazing, allowing for uninterrupted views and creating a seamless indoor-outdoor experience.
         </p>
         
         <div class="offplan-modal-highlights">
@@ -3025,12 +3016,12 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="modernRetirementCarouselContainer">
-          <img src="images/offplan/OFFPLAN18/1st.jpeg" alt="Modern Retirement Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN18/2nd.jpeg" alt="Modern Retirement Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN18/3rd.jpeg" alt="Modern Retirement Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN18/4th.jpeg" alt="Modern Retirement Bungalow View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN18/5th.jpeg" alt="Modern Retirement Bungalow View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN18/6th.jpeg" alt="Modern Retirement Bungalow View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/1st.webp" alt="Modern Retirement Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/2nd.webp" alt="Modern Retirement Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/3rd.webp" alt="Modern Retirement Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/4th.webp" alt="Modern Retirement Bungalow View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/5th.webp" alt="Modern Retirement Bungalow View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN18/6th.webp" alt="Modern Retirement Bungalow View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveModernRetirementCarousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3111,11 +3102,11 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="familyHome19CarouselContainer">
-          <img src="images/offplan/OFFPLAN19/1st.jpg" alt="Family Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN19/2nd.jpg" alt="Family Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN19/3rd.jpg" alt="Family Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN19/4th.jpg" alt="Family Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN19/5th.jpg" alt="Family Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/1st.webp" alt="Family Home View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/2nd.webp" alt="Family Home View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/3rd.webp" alt="Family Home View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/4th.webp" alt="Family Home View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN19/5th.webp" alt="Family Home View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveFamilyHome19Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3196,9 +3187,9 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="bungalow20CarouselContainer">
-          <img src="images/offplan/OFFPLAN20/1st.jpeg" alt="Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN20/2nd.jpeg" alt="Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN20/3rd.jpeg" alt="Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN20/1st.webp" alt="Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN20/2nd.webp" alt="Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN20/3rd.webp" alt="Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveBungalow20Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3280,10 +3271,10 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="duplex21CarouselContainer">
-          <img src="images/offplan/OFFPLAN21/1st.jpeg" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN21/2nd.jpeg" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN21/3rd.jpeg" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN21/4th.jpeg" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN21/1st.webp" alt="Duplex View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN21/2nd.webp" alt="Duplex View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN21/3rd.webp" alt="Duplex View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN21/4th.webp" alt="Duplex View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveDuplex21Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3325,7 +3316,7 @@
         </div>
         
         <p class="offplan-modal-description">
-          3 bedroom duplex with 4 washrooms and 2 living rooms with every bedroom ensuite. Features large windows, pool, serene outdoor spaces, greens, and large 270Â° balcony for great views.
+          3 bedroom duplex with 4 washrooms and 2 living rooms with every bedroom ensuite. Features large windows, pool, serene outdoor spaces, greens, and large 270° balcony for great views.
         </p>
         
         <div class="offplan-modal-highlights">
@@ -3338,7 +3329,7 @@
             <li>Swimming pool</li>
             <li>Serene outdoor spaces</li>
             <li>Green surroundings</li>
-            <li>Large 270Â° balcony for great views</li>
+            <li>Large 270° balcony for great views</li>
           </ul>
         </div>
         
@@ -3364,10 +3355,10 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="cabin22CarouselContainer">
-          <img src="images/offplan/OFFPLAN22/1st.jpeg" alt="Cabin View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN22/2nd.jpeg" alt="Cabin View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN22/3rd.jpeg" alt="Cabin View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN22/4th.jpeg" alt="Cabin View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN22/1st.webp" alt="Cabin View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN22/2nd.webp" alt="Cabin View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN22/3rd.webp" alt="Cabin View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN22/4th.webp" alt="Cabin View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveCabin22Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3448,15 +3439,15 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="cabin23CarouselContainer">
-          <img src="images/offplan/OFFPLAN23/1st.jpeg" alt="Scandi Cabin View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/2nd.jpeg" alt="Scandi Cabin View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/3rd.jpeg" alt="Scandi Cabin View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/4th.jpeg" alt="Scandi Cabin View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/5th.jpeg" alt="Scandi Cabin View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/6th.jpeg" alt="Scandi Cabin View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/7th.jpeg" alt="Scandi Cabin View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/8th.jpeg" alt="Scandi Cabin View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN23/9th.jpeg" alt="Scandi Cabin View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/1st.webp" alt="Scandi Cabin View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/2nd.webp" alt="Scandi Cabin View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/3rd.webp" alt="Scandi Cabin View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/4th.webp" alt="Scandi Cabin View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/5th.webp" alt="Scandi Cabin View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/6th.webp" alt="Scandi Cabin View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/7th.webp" alt="Scandi Cabin View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/8th.webp" alt="Scandi Cabin View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN23/9th.webp" alt="Scandi Cabin View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveCabin23Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3541,9 +3532,9 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="bungalow24CarouselContainer">
-          <img src="images/offplan/OFFPLAN24/1st.jpeg" alt="Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN24/2nd.jpeg" alt="Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN24/3rd.jpeg" alt="Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN24/1st.webp" alt="Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN24/2nd.webp" alt="Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN24/3rd.webp" alt="Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveBungalow24Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3629,16 +3620,16 @@
       <!-- Image Carousel -->
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="bungalow25CarouselContainer">
-          <img src="images/offplan/OFFPLAN25/1st.jpeg" alt="Family Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/2nd.jpeg" alt="Family Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/3rd.jpeg" alt="Family Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/4th.jpeg" alt="Family Bungalow View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/5th.jpeg" alt="Family Bungalow View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/6th.jpeg" alt="Family Bungalow View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/7th.jpeg" alt="Family Bungalow View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/8th.jpeg" alt="Family Bungalow View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/9th.jpeg" alt="Family Bungalow View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/10th.jpeg" alt="Family Bungalow View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/1st.webp" alt="Family Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/2nd.webp" alt="Family Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/3rd.webp" alt="Family Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/4th.webp" alt="Family Bungalow View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/5th.webp" alt="Family Bungalow View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/6th.webp" alt="Family Bungalow View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/7th.webp" alt="Family Bungalow View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/8th.webp" alt="Family Bungalow View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/9th.webp" alt="Family Bungalow View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/10th.webp" alt="Family Bungalow View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveBungalow25Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3726,16 +3717,16 @@
       </button>
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="bungalow25CarouselContainer">
-          <img src="images/offplan/OFFPLAN25/1st.jpeg" alt="Family Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/2nd.jpeg" alt="Family Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/3rd.jpeg" alt="Family Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/4th.jpeg" alt="Family Bungalow View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/5th.jpeg" alt="Family Bungalow View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/6th.jpeg" alt="Family Bungalow View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/7th.jpeg" alt="Family Bungalow View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/8th.jpeg" alt="Family Bungalow View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/9th.jpeg" alt="Family Bungalow View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN25/10th.jpeg" alt="Family Bungalow View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/1st.webp" alt="Family Bungalow View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/2nd.webp" alt="Family Bungalow View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/3rd.webp" alt="Family Bungalow View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/4th.webp" alt="Family Bungalow View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/5th.webp" alt="Family Bungalow View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/6th.webp" alt="Family Bungalow View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/7th.webp" alt="Family Bungalow View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/8th.webp" alt="Family Bungalow View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/9th.webp" alt="Family Bungalow View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN25/10th.webp" alt="Family Bungalow View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveBungalow25Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -3814,18 +3805,18 @@
       </button>
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="villa26CarouselContainer">
-          <img src="images/offplan/OFFPLAN26/1st.jpeg" alt="Luxury Villa View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/2nd.jpeg" alt="Luxury Villa View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/3rd.jpeg" alt="Luxury Villa View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/4th.jpeg" alt="Luxury Villa View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/5th.jpeg" alt="Luxury Villa View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/6th.jpeg" alt="Luxury Villa View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/7th.jpeg" alt="Luxury Villa View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/8th.jpeg" alt="Luxury Villa View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/9th.jpeg" alt="Luxury Villa View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/10th.jpeg" alt="Luxury Villa View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/11th.jpeg" alt="Luxury Villa View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN26/12th.jpeg" alt="Luxury Villa View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/1st.webp" alt="Luxury Villa View 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/2nd.webp" alt="Luxury Villa View 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/3rd.webp" alt="Luxury Villa View 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/4th.webp" alt="Luxury Villa View 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/5th.webp" alt="Luxury Villa View 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/6th.webp" alt="Luxury Villa View 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/7th.webp" alt="Luxury Villa View 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/8th.webp" alt="Luxury Villa View 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/9th.webp" alt="Luxury Villa View 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/10th.webp" alt="Luxury Villa View 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/11th.webp" alt="Luxury Villa View 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN26/12th.webp" alt="Luxury Villa View 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVilla26Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -3884,15 +3875,15 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="villa27CarouselContainer">
-          <img src="images/offplan/OFFPLAN27/1st.jpeg" alt="Vacation Family Villa - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/2nd.jpeg" alt="Vacation Family Villa - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/3rd.jpeg" alt="Vacation Family Villa - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/4th.jpeg" alt="Vacation Family Villa - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/5th.jpeg" alt="Vacation Family Villa - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/6th.jpeg" alt="Vacation Family Villa - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/7th.jpeg" alt="Vacation Family Villa - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/8th.jpeg" alt="Vacation Family Villa - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN27/9th.jpeg" alt="Vacation Family Villa - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/1st.webp" alt="Vacation Family Villa - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/2nd.webp" alt="Vacation Family Villa - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/3rd.webp" alt="Vacation Family Villa - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/4th.webp" alt="Vacation Family Villa - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/5th.webp" alt="Vacation Family Villa - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/6th.webp" alt="Vacation Family Villa - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/7th.webp" alt="Vacation Family Villa - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/8th.webp" alt="Vacation Family Villa - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN27/9th.webp" alt="Vacation Family Villa - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVilla27Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -3949,16 +3940,16 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="villa28CarouselContainer">
-          <img src="images/offplan/OFFPLAN28/1st.jpeg" alt="Standout Luxury Villa - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/2nd.jpeg" alt="Standout Luxury Villa - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/3rd.jpeg" alt="Standout Luxury Villa - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/4th.jpeg" alt="Standout Luxury Villa - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/5th.jpeg" alt="Standout Luxury Villa - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/6th.jpeg" alt="Standout Luxury Villa - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/7th.jpeg" alt="Standout Luxury Villa - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/8th.jpeg" alt="Standout Luxury Villa - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/9th.jpeg" alt="Standout Luxury Villa - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN28/10th.jpeg" alt="Standout Luxury Villa - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/1st.webp" alt="Standout Luxury Villa - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/2nd.webp" alt="Standout Luxury Villa - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/3rd.webp" alt="Standout Luxury Villa - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/4th.webp" alt="Standout Luxury Villa - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/5th.webp" alt="Standout Luxury Villa - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/6th.webp" alt="Standout Luxury Villa - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/7th.webp" alt="Standout Luxury Villa - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/8th.webp" alt="Standout Luxury Villa - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/9th.webp" alt="Standout Luxury Villa - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN28/10th.webp" alt="Standout Luxury Villa - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVilla28Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4015,16 +4006,16 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="triplex29CarouselContainer">
-          <img src="images/offplan/OFFPLAN29/1st.jpg" alt="5 Bedroom Triplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/2nd.jpg" alt="5 Bedroom Triplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/3rd.jpg" alt="5 Bedroom Triplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/4th.jpg" alt="5 Bedroom Triplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/5th.jpg" alt="5 Bedroom Triplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/6th.jpg" alt="5 Bedroom Triplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/7th.jpg" alt="5 Bedroom Triplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/8th.jpg" alt="5 Bedroom Triplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/9th.jpg" alt="5 Bedroom Triplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN29/10th.jpg" alt="5 Bedroom Triplex - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/1st.webp" alt="5 Bedroom Triplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/2nd.webp" alt="5 Bedroom Triplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/3rd.webp" alt="5 Bedroom Triplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/4th.webp" alt="5 Bedroom Triplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/5th.webp" alt="5 Bedroom Triplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/6th.webp" alt="5 Bedroom Triplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/7th.webp" alt="5 Bedroom Triplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/8th.webp" alt="5 Bedroom Triplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/9th.webp" alt="5 Bedroom Triplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN29/10th.webp" alt="5 Bedroom Triplex - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveTriplex29Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4091,15 +4082,15 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="triplex30CarouselContainer">
-          <img src="images/offplan/OFFPLAN30/1st.jpg" alt="6 Bedroom Modern Triplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/2nd.jpg" alt="6 Bedroom Modern Triplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/3rd.jpg" alt="6 Bedroom Modern Triplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/4th.jpg" alt="6 Bedroom Modern Triplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/5th.jpg" alt="6 Bedroom Modern Triplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/6th.jpg" alt="6 Bedroom Modern Triplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/7th.jpg" alt="6 Bedroom Modern Triplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/8th.jpg" alt="6 Bedroom Modern Triplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN30/9th.jpg" alt="6 Bedroom Modern Triplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/1st.webp" alt="6 Bedroom Modern Triplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/2nd.webp" alt="6 Bedroom Modern Triplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/3rd.webp" alt="6 Bedroom Modern Triplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/4th.webp" alt="6 Bedroom Modern Triplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/5th.webp" alt="6 Bedroom Modern Triplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/6th.webp" alt="6 Bedroom Modern Triplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/7th.webp" alt="6 Bedroom Modern Triplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/8th.webp" alt="6 Bedroom Modern Triplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN30/9th.webp" alt="6 Bedroom Modern Triplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveTriplex30Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4158,17 +4149,17 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="villa31CarouselContainer">
-          <img src="images/offplan/OFFPLAN31/1st.jpg" alt="Lakefront Luxury Home - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/2nd.jpg" alt="Lakefront Luxury Home - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/3rd.jpg" alt="Lakefront Luxury Home - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/4th.jpg" alt="Lakefront Luxury Home - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/5th.jpg" alt="Lakefront Luxury Home - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/6th.jpg" alt="Lakefront Luxury Home - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/7th.jpg" alt="Lakefront Luxury Home - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/8th.jpg" alt="Lakefront Luxury Home - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/9th.jpg" alt="Lakefront Luxury Home - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/10th.jpg" alt="Lakefront Luxury Home - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN31/11th.jpg" alt="Lakefront Luxury Home - Image 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/1st.webp" alt="Lakefront Luxury Home - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/2nd.webp" alt="Lakefront Luxury Home - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/3rd.webp" alt="Lakefront Luxury Home - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/4th.webp" alt="Lakefront Luxury Home - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/5th.webp" alt="Lakefront Luxury Home - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/6th.webp" alt="Lakefront Luxury Home - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/7th.webp" alt="Lakefront Luxury Home - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/8th.webp" alt="Lakefront Luxury Home - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/9th.webp" alt="Lakefront Luxury Home - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/10th.webp" alt="Lakefront Luxury Home - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN31/11th.webp" alt="Lakefront Luxury Home - Image 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVilla31Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4312,15 +4303,15 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="bungalow33CarouselContainer">
-          <img src="images/offplan/OFFPLAN33/1st.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/2nd.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/3rd.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/4th.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/5th.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/6th.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/7th.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/8th.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN33/9th.jpg" alt="4 Bedroom U-Shaped Bungalow - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/1st.webp" alt="4 Bedroom U-Shaped Bungalow - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/2nd.webp" alt="4 Bedroom U-Shaped Bungalow - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/3rd.webp" alt="4 Bedroom U-Shaped Bungalow - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/4th.webp" alt="4 Bedroom U-Shaped Bungalow - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/5th.webp" alt="4 Bedroom U-Shaped Bungalow - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/6th.webp" alt="4 Bedroom U-Shaped Bungalow - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/7th.webp" alt="4 Bedroom U-Shaped Bungalow - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/8th.webp" alt="4 Bedroom U-Shaped Bungalow - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN33/9th.webp" alt="4 Bedroom U-Shaped Bungalow - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveBungalow33Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4383,15 +4374,15 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="duplex34CarouselContainer">
-          <img src="images/offplan/OFFPLAN34/1st.jpg" alt="3 Bedroom Privacy Duplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/2nd.jpg" alt="3 Bedroom Privacy Duplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/3rd.jpg" alt="3 Bedroom Privacy Duplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/4th.jpg" alt="3 Bedroom Privacy Duplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/5th.jpg" alt="3 Bedroom Privacy Duplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/6th.jpg" alt="3 Bedroom Privacy Duplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/7th.jpg" alt="3 Bedroom Privacy Duplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/8th.jpg" alt="3 Bedroom Privacy Duplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN34/9th.jpg" alt="3 Bedroom Privacy Duplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/1st.webp" alt="3 Bedroom Privacy Duplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/2nd.webp" alt="3 Bedroom Privacy Duplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/3rd.webp" alt="3 Bedroom Privacy Duplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/4th.webp" alt="3 Bedroom Privacy Duplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/5th.webp" alt="3 Bedroom Privacy Duplex - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/6th.webp" alt="3 Bedroom Privacy Duplex - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/7th.webp" alt="3 Bedroom Privacy Duplex - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/8th.webp" alt="3 Bedroom Privacy Duplex - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN34/9th.webp" alt="3 Bedroom Privacy Duplex - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveDuplex34Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4454,10 +4445,10 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="sanctuary35CarouselContainer">
-          <img src="images/offplan/OFFPLAN35/1st.jpg" alt="Ultra-Modern Single-Story Sanctuary - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN35/2nd.jpg" alt="Ultra-Modern Single-Story Sanctuary - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN35/3rd.jpg" alt="Ultra-Modern Single-Story Sanctuary - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN35/4th.jpg" alt="Ultra-Modern Single-Story Sanctuary - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN35/1st.webp" alt="Ultra-Modern Single-Story Sanctuary - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN35/2nd.webp" alt="Ultra-Modern Single-Story Sanctuary - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN35/3rd.webp" alt="Ultra-Modern Single-Story Sanctuary - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN35/4th.webp" alt="Ultra-Modern Single-Story Sanctuary - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveSanctuary35Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4521,14 +4512,14 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="vaulted36CarouselContainer">
-          <img src="images/offplan/OFFPLAN36/1st.jpg" alt="Double-Height Ceiling Bungalow - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN36/2nd.jpg" alt="Double-Height Ceiling Bungalow - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN36/3rd.jpg" alt="Double-Height Ceiling Bungalow - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN36/4th.jpg" alt="Double-Height Ceiling Bungalow - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN36/5th.jpg" alt="Double-Height Ceiling Bungalow - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN36/6th.jpg" alt="Double-Height Ceiling Bungalow - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN36/7th.jpg" alt="Double-Height Ceiling Bungalow - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN36/8th.jpg" alt="Double-Height Ceiling Bungalow - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/1st.webp" alt="Double-Height Ceiling Bungalow - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/2nd.webp" alt="Double-Height Ceiling Bungalow - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/3rd.webp" alt="Double-Height Ceiling Bungalow - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/4th.webp" alt="Double-Height Ceiling Bungalow - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/5th.webp" alt="Double-Height Ceiling Bungalow - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/6th.webp" alt="Double-Height Ceiling Bungalow - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/7th.webp" alt="Double-Height Ceiling Bungalow - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN36/8th.webp" alt="Double-Height Ceiling Bungalow - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveVaulted36Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4591,15 +4582,15 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="gable37CarouselContainer">
-          <img src="images/offplan/OFFPLAN37/1st.jpg" alt="Modern Minimalist Gable Home - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/2nd.jpg" alt="Modern Minimalist Gable Home - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/3rd.jpg" alt="Modern Minimalist Gable Home - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/4th.jpg" alt="Modern Minimalist Gable Home - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/5th.jpg" alt="Modern Minimalist Gable Home - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/6th.jpg" alt="Modern Minimalist Gable Home - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/7th.jpg" alt="Modern Minimalist Gable Home - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/8th.jpg" alt="Modern Minimalist Gable Home - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN37/9th.jpg" alt="Modern Minimalist Gable Home - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/1st.webp" alt="Modern Minimalist Gable Home - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/2nd.webp" alt="Modern Minimalist Gable Home - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/3rd.webp" alt="Modern Minimalist Gable Home - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/4th.webp" alt="Modern Minimalist Gable Home - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/5th.webp" alt="Modern Minimalist Gable Home - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/6th.webp" alt="Modern Minimalist Gable Home - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/7th.webp" alt="Modern Minimalist Gable Home - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/8th.webp" alt="Modern Minimalist Gable Home - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN37/9th.webp" alt="Modern Minimalist Gable Home - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveGable37Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4664,15 +4655,15 @@
       
       <div class="offplan-modal-carousel">
         <div class="carousel-container" id="oasis38CarouselContainer">
-          <img src="images/offplan/OFFPLAN38/1st.jpg" alt="Resort-Style Modern Oasis - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/2nd.jpg" alt="Resort-Style Modern Oasis - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/3rd.jpg" alt="Resort-Style Modern Oasis - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/4th.jpg" alt="Resort-Style Modern Oasis - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/5th.jpg" alt="Resort-Style Modern Oasis - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/6th.jpg" alt="Resort-Style Modern Oasis - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/7th.jpg" alt="Resort-Style Modern Oasis - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/8th.jpg" alt="Resort-Style Modern Oasis - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
-          <img src="images/offplan/OFFPLAN38/9th.jpg" alt="Resort-Style Modern Oasis - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/1st.webp" alt="Resort-Style Modern Oasis - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/2nd.webp" alt="Resort-Style Modern Oasis - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/3rd.webp" alt="Resort-Style Modern Oasis - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/4th.webp" alt="Resort-Style Modern Oasis - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/5th.webp" alt="Resort-Style Modern Oasis - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/6th.webp" alt="Resort-Style Modern Oasis - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/7th.webp" alt="Resort-Style Modern Oasis - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/8th.webp" alt="Resort-Style Modern Oasis - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN38/9th.webp" alt="Resort-Style Modern Oasis - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
         </div>
         <button class="carousel-btn carousel-prev" onclick="moveOasis38Carousel(-1)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -4850,7 +4841,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+            <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
             Wenamy
           </div>
           <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
@@ -4920,7 +4911,7 @@
   <script src="js/basket.js?v=16" defer></script>
   <script src="js/chatbot.js?v=16" defer></script>
   <script src="js/navbar.js?v=16" defer></script>
-  <script src="js/currency-switcher.js?v=11" defer></script>
+  <script src="js/currency-switcher.js?v=12" defer></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -7472,6 +7463,103 @@
         }
       }
     });
+    
+    // Pagination for Off-Plan Properties
+    (function() {
+      const PROPERTIES_PER_PAGE = 12;
+      const propertyCards = document.querySelectorAll('.offplan-luxury-card');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const propertiesCount = document.getElementById('propertiesCount');
+      let currentlyShown = 0;
+      
+      function updateVisibleProperties() {
+        const totalProperties = propertyCards.length;
+        const endIndex = Math.min(currentlyShown + PROPERTIES_PER_PAGE, totalProperties);
+        
+        // Show properties up to endIndex
+        for (let i = currentlyShown; i < endIndex; i++) {
+          if (propertyCards[i]) {
+            propertyCards[i].style.display = '';
+            propertyCards[i].classList.add('pagination-visible');
+          }
+        }
+        
+        currentlyShown = endIndex;
+        
+        // Update count text
+        if (propertiesCount) {
+          propertiesCount.textContent = `Showing ${currentlyShown} of ${totalProperties} properties`;
+        }
+        
+        // Hide button if all properties shown
+        if (currentlyShown >= totalProperties && loadMoreBtn) {
+          loadMoreBtn.style.display = 'none';
+        }
+      }
+      
+      // Initially hide all properties
+      propertyCards.forEach(card => {
+        card.style.display = 'none';
+        card.classList.remove('pagination-visible');
+      });
+      
+      // Show first batch
+      updateVisibleProperties();
+      
+      // Load more on button click
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+          updateVisibleProperties();
+        });
+      }
+      
+      // Handle category filtering - reset pagination when filter changes
+      const categoryPills = document.querySelectorAll('.category-pill');
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          const selectedCategory = this.dataset.category;
+          
+          // Reset counter
+          currentlyShown = 0;
+          
+          // Hide all first
+          propertyCards.forEach(card => {
+            card.style.display = 'none';
+            card.classList.remove('pagination-visible');
+          });
+          
+          // Show filtered properties with pagination
+          const filteredCards = Array.from(propertyCards).filter(card => {
+            if (selectedCategory === 'all') return true;
+            return card.dataset.category && card.dataset.category.includes(selectedCategory);
+          });
+          
+          // Show first 12 filtered
+          const endIndex = Math.min(PROPERTIES_PER_PAGE, filteredCards.length);
+          for (let i = 0; i < endIndex; i++) {
+            if (filteredCards[i]) {
+              filteredCards[i].style.display = '';
+              filteredCards[i].classList.add('pagination-visible');
+            }
+          }
+          
+          currentlyShown = endIndex;
+          
+          // Update count and button
+          if (propertiesCount) {
+            propertiesCount.textContent = `Showing ${currentlyShown} of ${filteredCards.length} properties`;
+          }
+          
+          if (loadMoreBtn) {
+            if (currentlyShown >= filteredCards.length) {
+              loadMoreBtn.style.display = 'none';
+            } else {
+              loadMoreBtn.style.display = '';
+            }
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>

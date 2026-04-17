@@ -2,5 +2,8 @@
   "dependencies": {
     "framer-motion": "^12.38.0",
     "motion": "^12.38.0"
+  },
+  "devDependencies": {
+    "cwebp-bin": "^8.0.0"
   }
 }

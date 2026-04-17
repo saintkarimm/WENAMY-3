@@ -15,10 +15,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "3 bedrooms, 4 washrooms, kitchens, pantry, and a big hall. Designed and built for family living and recreational activities. This beautiful bungalow offers spacious living areas perfect for entertaining guests and creating lasting family memories.",
     images: [
-      "images/properties/PROJECT 1/2nd.png",
-      "images/properties/PROJECT 1/3rd.png",
-      "images/properties/PROJECT 1/4th.png",
-      "images/properties/PROJECT 1/5th.png"
+      "images/properties/PROJECT 1/2nd.webp",
+      "images/properties/PROJECT 1/3rd.webp",
+      "images/properties/PROJECT 1/4th.webp",
+      "images/properties/PROJECT 1/5th.webp"
     ],
     amenities: ["3 Bedrooms", "4 Washrooms", "Kitchen", "Pantry", "Big Hall", "Family Living", "Recreational Space"],
     features: [
@@ -46,10 +46,10 @@ const projectsData = {
     parking: "4+ Spaces",
     description: "Fascinating Villa designed for special and exceptional people. On a little more than one Acre of land, this Villa features Rooftop Infinity pool, 3 halls, 2 kitchens, Cinema, Bar, Barbecue area, Outdoor jacuzzi, Large windows, Bedrooms: 6, Bathrooms: 9, And extras.",
     images: [
-      "images/properties/PROJECT 2/2nd.png",
-      "images/properties/PROJECT 2/3rd.png",
-      "images/properties/PROJECT 2/4th.png",
-      "images/properties/PROJECT 2/5th.png"
+      "images/properties/PROJECT 2/2nd.webp",
+      "images/properties/PROJECT 2/3rd.webp",
+      "images/properties/PROJECT 2/4th.webp",
+      "images/properties/PROJECT 2/5th.webp"
     ],
     amenities: ["Rooftop Infinity Pool", "Cinema", "Bar", "Barbecue Area", "Outdoor Jacuzzi", "2 Kitchens", "3 Halls"],
     features: [
@@ -77,10 +77,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "3 suites, Guest washroom, Living room, Dining hall, Kitchen, Pantry, Open garage, Compound with greens. Perfect family home designed for comfort and modern living in the prestigious East Legon area.",
     images: [
-      "images/properties/PROJECT 3/2nd.png",
-      "images/properties/PROJECT 3/3rd.png",
-      "images/properties/PROJECT 3/4th.png",
-      "images/properties/PROJECT 3/5th.png"
+      "images/properties/PROJECT 3/2nd.webp",
+      "images/properties/PROJECT 3/3rd.webp",
+      "images/properties/PROJECT 3/4th.webp",
+      "images/properties/PROJECT 3/5th.webp"
     ],
     amenities: ["3 Suites", "Guest Washroom", "Living Room", "Dining Hall", "Kitchen", "Pantry", "Open Garage"],
     features: [
@@ -108,10 +108,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "On a 40ft by 100 feet plot, this 3 ensuite bedrooms bungalow features very elegant and minimalistic design with a modern touch and boys quarters. It's selling off-plan with options of semi furnished and fully furnished.",
     images: [
-      "images/properties/PROJECT 4/2nd.png",
-      "images/properties/PROJECT 4/3rd.png",
-      "images/properties/PROJECT 4/4th.png",
-      "images/properties/PROJECT 4/5th.png"
+      "images/properties/PROJECT 4/2nd.webp",
+      "images/properties/PROJECT 4/3rd.webp",
+      "images/properties/PROJECT 4/4th.webp",
+      "images/properties/PROJECT 4/5th.webp"
     ],
     amenities: ["3 En-suite Bedrooms", "Boys Quarters", "Modern Design", "Off-Plan Options", "Semi Furnished Option", "Fully Furnished Option"],
     features: [
@@ -139,10 +139,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "Exclusive 4 bedroom duplex with all bedrooms ensuite, 2 halls, big kitchen with pantry, compound with greens, open garage, pool, child play area, and very spacious and comfortable. Perfect for family living with luxury amenities.",
     images: [
-      "images/properties/PROJECT 5/2nd.png",
-      "images/properties/PROJECT 5/3rd.png",
-      "images/properties/PROJECT 5/4th.png",
-      "images/properties/PROJECT 5/5th.png"
+      "images/properties/PROJECT 5/2nd.webp",
+      "images/properties/PROJECT 5/3rd.webp",
+      "images/properties/PROJECT 5/4th.webp",
+      "images/properties/PROJECT 5/5th.webp"
     ],
     amenities: ["4 En-suite Bedrooms", "2 Halls", "Kitchen with Pantry", "Swimming Pool", "Child Play Area", "Open Garage"],
     features: [
@@ -170,10 +170,10 @@ const projectsData = {
     parking: "4 Spaces",
     description: "This 7 bedrooms Luxurious Contemporary Mansion comes with 5 master bedrooms all in En-suite and 2 En-suite Boy's Quarters each with kitchen and bathroom. Features include: 2 Spacious living rooms, Security room, Dining area, Fully Fitted Kitchen, Pantry, Guest Toilet, Walk-in-closet, Kitchen store, Balcony, Jacuzzi, Water heater, POP ceiling, Swimming Pool, CCTV, 24 hours electricity, Family Lounge, Walk-in Showers, Bath Tub.",
     images: [
-      "images/properties/PROJECT 6/2nd.png",
-      "images/properties/PROJECT 6/3rd.png",
-      "images/properties/PROJECT 6/4th.png",
-      "images/properties/PROJECT 6/5th.png"
+      "images/properties/PROJECT 6/2nd.webp",
+      "images/properties/PROJECT 6/3rd.webp",
+      "images/properties/PROJECT 6/4th.webp",
+      "images/properties/PROJECT 6/5th.webp"
     ],
     amenities: ["Swimming Pool", "Jacuzzi", "CCTV", "24hr Electricity", "Walk-in Closet", "Family Lounge", "Security Room", "Bath Tub"],
     features: [
@@ -201,10 +201,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "This contemporary 4 bedroom duplex is designed to suit your family needs and provide comfort and a luxury lifestyle as well as child safety and recreational purposes. Features: 4 big ensuite bedrooms, Guest washroom, Big fitted kitchen, Storeroom, Laundry, Balcony, Boys quarters and an open garage.",
     images: [
-      "images/properties/PROJECT 7/2nd.png",
-      "images/properties/PROJECT 7/3rd.png",
-      "images/properties/PROJECT 7/4th.png",
-      "images/properties/PROJECT 7/5th.png"
+      "images/properties/PROJECT 7/2nd.webp",
+      "images/properties/PROJECT 7/3rd.webp",
+      "images/properties/PROJECT 7/4th.webp",
+      "images/properties/PROJECT 7/5th.webp"
     ],
     amenities: ["4 En-suite Bedrooms", "Guest Washroom", "Fitted Kitchen", "Storeroom", "Laundry", "Balcony", "Boys Quarters"],
     features: [
@@ -232,10 +232,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "Beautiful 3 bedroom bungalow, comes with all rooms ensuite, guest washroom, big hall, dining hall, swimming pool and compound with lots of greens. A perfect blend of luxury and nature in prestigious East Legon.",
     images: [
-      "images/properties/PROJECT 8/2nd.png",
-      "images/properties/PROJECT 8/3rd.png",
-      "images/properties/PROJECT 8/4th.png",
-      "images/properties/PROJECT 8/5th.png"
+      "images/properties/PROJECT 8/2nd.webp",
+      "images/properties/PROJECT 8/3rd.webp",
+      "images/properties/PROJECT 8/4th.webp",
+      "images/properties/PROJECT 8/5th.webp"
     ],
     amenities: ["3 En-suite Bedrooms", "Guest Washroom", "Big Hall", "Dining Hall", "Swimming Pool", "Green Compound"],
     features: [
@@ -263,10 +263,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "Simple 3 bedroom house for sale, each bedroom en-suite, visitors washroom, ample compound space. Selling now as off-plan. A great investment opportunity in the desirable East Legon area.",
     images: [
-      "images/properties/PROJECT 9/2nd.png",
-      "images/properties/PROJECT 9/3rd.png",
-      "images/properties/PROJECT 9/4th.png",
-      "images/properties/PROJECT 9/5th.png"
+      "images/properties/PROJECT 9/2nd.webp",
+      "images/properties/PROJECT 9/3rd.webp",
+      "images/properties/PROJECT 9/4th.webp",
+      "images/properties/PROJECT 9/5th.webp"
     ],
     amenities: ["3 En-suite Bedrooms", "Visitors Washroom", "Ample Compound", "Off-Plan Sale", "East Legon Location"],
     features: [
@@ -294,10 +294,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "Simple, detailed, minimalistic, and very well planned out and designed for great family experience. 3 suites with a guest washroom. Swimming Pool and compound with greens and children play area. Open garage and a nice fence wall design.",
     images: [
-      "images/properties/PROJECT 10/2nd.png",
-      "images/properties/PROJECT 10/3rd.png",
-      "images/properties/PROJECT 10/4th.png",
-      "images/properties/PROJECT 10/5th.png"
+      "images/properties/PROJECT 10/2nd.webp",
+      "images/properties/PROJECT 10/3rd.webp",
+      "images/properties/PROJECT 10/4th.webp",
+      "images/properties/PROJECT 10/5th.webp"
     ],
     amenities: ["3 Suites", "Guest Washroom", "Swimming Pool", "Children Play Area", "Open Garage", "Green Compound"],
     features: [
@@ -325,10 +325,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "3 ensuite bedrooms designed for leisure and vacation purposes suitable for beaches and mountainous areas like Aburi. Now selling off-plan, you can also buy the plan from us. Perfect for holiday retreats or Airbnb investment.",
     images: [
-      "images/properties/PROJECT 11/2nd.png",
-      "images/properties/PROJECT 11/3rd.png",
-      "images/properties/PROJECT 11/4th.png",
-      "images/properties/PROJECT 11/5th.png"
+      "images/properties/PROJECT 11/2nd.webp",
+      "images/properties/PROJECT 11/3rd.webp",
+      "images/properties/PROJECT 11/4th.webp",
+      "images/properties/PROJECT 11/5th.webp"
     ],
     amenities: ["3 En-suite Bedrooms", "Vacation Design", "Leisure Purpose", "Off-Plan Sale", "Plan Purchase Option"],
     features: [
@@ -356,10 +356,10 @@ const projectsData = {
     parking: "2 Spaces",
     description: "All en-suites rooms, Good road network, Fully fitted kitchen, Land Title Certificate included. Premium property with excellent infrastructure and secure land ownership. Price: Without pool $250,000 / With pool $280,000.",
     images: [
-      "images/properties/PROJECT 12/2nd.png",
-      "images/properties/PROJECT 12/3rd.png",
-      "images/properties/PROJECT 12/4th.png",
-      "images/properties/PROJECT 12/5th.png"
+      "images/properties/PROJECT 12/2nd.webp",
+      "images/properties/PROJECT 12/3rd.webp",
+      "images/properties/PROJECT 12/4th.webp",
+      "images/properties/PROJECT 12/5th.webp"
     ],
     amenities: ["4 En-suite Rooms", "Fully Fitted Kitchen", "Land Title Certificate", "Good Road Network", "Pool Option Available"],
     features: [
@@ -388,11 +388,11 @@ const projectsData = {
     livingRooms: "2",
     description: "Spacious 5 bedroom duplex at Community 6, Tema featuring 6 washrooms and 2 living rooms. Modern design with premium finishes perfect for family living.",
     images: [
-      "images/properties/ONGOING/Project 4/2nd.jpeg",
-      "images/properties/ONGOING/Project 4/3rd.jpeg",
-      "images/properties/ONGOING/Project 4/4th.jpeg",
-      "images/properties/ONGOING/Project 4/5th.jpeg",
-      "images/properties/ONGOING/Project 4/6th.jpeg"
+      "images/properties/ONGOING/Project 4/2nd.webp",
+      "images/properties/ONGOING/Project 4/3rd.webp",
+      "images/properties/ONGOING/Project 4/4th.webp",
+      "images/properties/ONGOING/Project 4/5th.webp",
+      "images/properties/ONGOING/Project 4/6th.webp"
     ],
     video: "images/properties/ONGOING/Project 4/video 1.mp4",
     amenities: ["5 Bedrooms", "6 Washrooms", "2 Living Rooms", "Modern Design", "Premium Finishes"],
@@ -421,18 +421,18 @@ const projectsData = {
     parking: "",
     description: "",
     images: [
-      "images/properties/ONGOING/Project 1/2nd.jpeg",
-      "images/properties/ONGOING/Project 1/3rd.jpeg",
-      "images/properties/ONGOING/Project 1/4th.jpeg",
-      "images/properties/ONGOING/Project 1/5th.jpeg",
-      "images/properties/ONGOING/Project 1/6th.jpeg",
-      "images/properties/ONGOING/Project 1/7th.jpeg",
-      "images/properties/ONGOING/Project 1/8th.jpeg",
-      "images/properties/ONGOING/Project 1/9th.jpeg",
-      "images/properties/ONGOING/Project 1/10th.jpeg",
-      "images/properties/ONGOING/Project 1/11th.jpeg",
-      "images/properties/ONGOING/Project 1/12th.jpeg",
-      "images/properties/ONGOING/Project 1/13th.jpeg"
+      "images/properties/ONGOING/Project 1/2nd.webp",
+      "images/properties/ONGOING/Project 1/3rd.webp",
+      "images/properties/ONGOING/Project 1/4th.webp",
+      "images/properties/ONGOING/Project 1/5th.webp",
+      "images/properties/ONGOING/Project 1/6th.webp",
+      "images/properties/ONGOING/Project 1/7th.webp",
+      "images/properties/ONGOING/Project 1/8th.webp",
+      "images/properties/ONGOING/Project 1/9th.webp",
+      "images/properties/ONGOING/Project 1/10th.webp",
+      "images/properties/ONGOING/Project 1/11th.webp",
+      "images/properties/ONGOING/Project 1/12th.webp",
+      "images/properties/ONGOING/Project 1/13th.webp"
     ],
     amenities: [],
     features: []
@@ -451,19 +451,19 @@ const projectsData = {
     parking: "",
     description: "",
     images: [
-      "images/properties/ONGOING/Project 2/2nd.jpeg",
-      "images/properties/ONGOING/Project 2/3rd.jpeg",
-      "images/properties/ONGOING/Project 2/4th.jpeg",
-      "images/properties/ONGOING/Project 2/5th.jpeg",
-      "images/properties/ONGOING/Project 2/6th.jpeg",
-      "images/properties/ONGOING/Project 2/7th.jpeg",
-      "images/properties/ONGOING/Project 2/8th.jpeg",
-      "images/properties/ONGOING/Project 2/9th.jpeg",
-      "images/properties/ONGOING/Project 2/10th.jpeg",
-      "images/properties/ONGOING/Project 2/11th.jpeg",
-      "images/properties/ONGOING/Project 2/12th.jpeg",
-      "images/properties/ONGOING/Project 2/13th.jpeg",
-      "images/properties/ONGOING/Project 2/14th.jpeg"
+      "images/properties/ONGOING/Project 2/2nd.webp",
+      "images/properties/ONGOING/Project 2/3rd.webp",
+      "images/properties/ONGOING/Project 2/4th.webp",
+      "images/properties/ONGOING/Project 2/5th.webp",
+      "images/properties/ONGOING/Project 2/6th.webp",
+      "images/properties/ONGOING/Project 2/7th.webp",
+      "images/properties/ONGOING/Project 2/8th.webp",
+      "images/properties/ONGOING/Project 2/9th.webp",
+      "images/properties/ONGOING/Project 2/10th.webp",
+      "images/properties/ONGOING/Project 2/11th.webp",
+      "images/properties/ONGOING/Project 2/12th.webp",
+      "images/properties/ONGOING/Project 2/13th.webp",
+      "images/properties/ONGOING/Project 2/14th.webp"
     ],
     videos: [
       "images/properties/ONGOING/Project 2/video 1.mp4",
@@ -487,34 +487,34 @@ const projectsData = {
     parking: "",
     description: "",
     images: [
-      "images/properties/ONGOING/Project 3/2nd.jpeg",
-      "images/properties/ONGOING/Project 3/3rd.jpeg",
-      "images/properties/ONGOING/Project 3/4th.jpeg",
-      "images/properties/ONGOING/Project 3/5th.jpeg",
-      "images/properties/ONGOING/Project 3/6th.jpeg",
-      "images/properties/ONGOING/Project 3/7th.jpeg",
-      "images/properties/ONGOING/Project 3/8th.jpeg",
-      "images/properties/ONGOING/Project 3/9th.jpeg",
-      "images/properties/ONGOING/Project 3/10th.jpeg",
-      "images/properties/ONGOING/Project 3/11th.jpeg",
-      "images/properties/ONGOING/Project 3/12th.jpeg",
-      "images/properties/ONGOING/Project 3/13th.jpeg",
-      "images/properties/ONGOING/Project 3/14th.jpeg",
-      "images/properties/ONGOING/Project 3/15th.jpeg",
-      "images/properties/ONGOING/Project 3/16th.jpeg",
-      "images/properties/ONGOING/Project 3/17th.jpeg",
-      "images/properties/ONGOING/Project 3/18th.jpeg",
-      "images/properties/ONGOING/Project 3/19th.jpeg",
-      "images/properties/ONGOING/Project 3/20th.jpeg",
-      "images/properties/ONGOING/Project 3/21th.jpeg",
-      "images/properties/ONGOING/Project 3/22th.jpeg",
-      "images/properties/ONGOING/Project 3/23th.jpeg",
-      "images/properties/ONGOING/Project 3/24th.jpeg",
-      "images/properties/ONGOING/Project 3/25th.jpeg",
-      "images/properties/ONGOING/Project 3/26th.jpeg",
-      "images/properties/ONGOING/Project 3/27th.jpeg",
-      "images/properties/ONGOING/Project 3/28th.jpeg",
-      "images/properties/ONGOING/Project 3/29th.jpeg"
+      "images/properties/ONGOING/Project 3/2nd.webp",
+      "images/properties/ONGOING/Project 3/3rd.webp",
+      "images/properties/ONGOING/Project 3/4th.webp",
+      "images/properties/ONGOING/Project 3/5th.webp",
+      "images/properties/ONGOING/Project 3/6th.webp",
+      "images/properties/ONGOING/Project 3/7th.webp",
+      "images/properties/ONGOING/Project 3/8th.webp",
+      "images/properties/ONGOING/Project 3/9th.webp",
+      "images/properties/ONGOING/Project 3/10th.webp",
+      "images/properties/ONGOING/Project 3/11th.webp",
+      "images/properties/ONGOING/Project 3/12th.webp",
+      "images/properties/ONGOING/Project 3/13th.webp",
+      "images/properties/ONGOING/Project 3/14th.webp",
+      "images/properties/ONGOING/Project 3/15th.webp",
+      "images/properties/ONGOING/Project 3/16th.webp",
+      "images/properties/ONGOING/Project 3/17th.webp",
+      "images/properties/ONGOING/Project 3/18th.webp",
+      "images/properties/ONGOING/Project 3/19th.webp",
+      "images/properties/ONGOING/Project 3/20th.webp",
+      "images/properties/ONGOING/Project 3/21th.webp",
+      "images/properties/ONGOING/Project 3/22th.webp",
+      "images/properties/ONGOING/Project 3/23th.webp",
+      "images/properties/ONGOING/Project 3/24th.webp",
+      "images/properties/ONGOING/Project 3/25th.webp",
+      "images/properties/ONGOING/Project 3/26th.webp",
+      "images/properties/ONGOING/Project 3/27th.webp",
+      "images/properties/ONGOING/Project 3/28th.webp",
+      "images/properties/ONGOING/Project 3/29th.webp"
     ],
     videos: [
       "images/properties/ONGOING/Project 3/video.mp4",
@@ -538,16 +538,16 @@ const projectsData = {
     parking: "",
     description: "",
     images: [
-      "images/properties/PROJECT 15/2nd.jpeg",
-      "images/properties/PROJECT 15/3rd.jpeg",
-      "images/properties/PROJECT 15/4th.jpeg",
-      "images/properties/PROJECT 15/5th.jpeg",
-      "images/properties/PROJECT 15/6th.jpeg",
-      "images/properties/PROJECT 15/7th.jpeg",
-      "images/properties/PROJECT 15/8th.jpeg",
-      "images/properties/PROJECT 15/9th.jpeg",
-      "images/properties/PROJECT 15/10th.jpeg",
-      "images/properties/PROJECT 15/11th.jpeg"
+      "images/properties/PROJECT 15/2nd.webp",
+      "images/properties/PROJECT 15/3rd.webp",
+      "images/properties/PROJECT 15/4th.webp",
+      "images/properties/PROJECT 15/5th.webp",
+      "images/properties/PROJECT 15/6th.webp",
+      "images/properties/PROJECT 15/7th.webp",
+      "images/properties/PROJECT 15/8th.webp",
+      "images/properties/PROJECT 15/9th.webp",
+      "images/properties/PROJECT 15/10th.webp",
+      "images/properties/PROJECT 15/11th.webp"
     ],
     video: "images/properties/PROJECT 15/video 1.mp4",
     amenities: [],
@@ -567,19 +567,19 @@ const projectsData = {
     parking: "",
     description: "Semi finished 5 bedroom house. Comes with a pergola summer hut and kitsbif greenery.",
     images: [
-      "images/properties/PROJECT 14/2nd.jpeg",
-      "images/properties/PROJECT 14/3rd.jpeg",
-      "images/properties/PROJECT 14/4th.jpeg",
-      "images/properties/PROJECT 14/5th.jpeg",
-      "images/properties/PROJECT 14/6th.jpeg",
-      "images/properties/PROJECT 14/7th.jpeg",
-      "images/properties/PROJECT 14/8th.jpeg",
-      "images/properties/PROJECT 14/9th.jpeg",
-      "images/properties/PROJECT 14/10th.jpeg",
-      "images/properties/PROJECT 14/11th.jpeg",
-      "images/properties/PROJECT 14/12th.jpeg",
-      "images/properties/PROJECT 14/13th.jpeg",
-      "images/properties/PROJECT 14/14th.jpeg"
+      "images/properties/PROJECT 14/2nd.webp",
+      "images/properties/PROJECT 14/3rd.webp",
+      "images/properties/PROJECT 14/4th.webp",
+      "images/properties/PROJECT 14/5th.webp",
+      "images/properties/PROJECT 14/6th.webp",
+      "images/properties/PROJECT 14/7th.webp",
+      "images/properties/PROJECT 14/8th.webp",
+      "images/properties/PROJECT 14/9th.webp",
+      "images/properties/PROJECT 14/10th.webp",
+      "images/properties/PROJECT 14/11th.webp",
+      "images/properties/PROJECT 14/12th.webp",
+      "images/properties/PROJECT 14/13th.webp",
+      "images/properties/PROJECT 14/14th.webp"
     ],
     amenities: [],
     features: []
@@ -598,25 +598,25 @@ const projectsData = {
     parking: "",
     description: "",
     images: [
-      "images/properties/PROJECT 13/2nd.jpeg",
-      "images/properties/PROJECT 13/3rd.jpeg",
-      "images/properties/PROJECT 13/4th.jpeg",
-      "images/properties/PROJECT 13/5th.jpeg",
-      "images/properties/PROJECT 13/6th.jpeg",
-      "images/properties/PROJECT 13/7th.jpeg",
-      "images/properties/PROJECT 13/8th.jpeg",
-      "images/properties/PROJECT 13/9th.jpeg",
-      "images/properties/PROJECT 13/10th.jpeg",
-      "images/properties/PROJECT 13/11th.jpeg",
-      "images/properties/PROJECT 13/12th.jpeg",
-      "images/properties/PROJECT 13/13th.jpeg",
-      "images/properties/PROJECT 13/14th.jpeg",
-      "images/properties/PROJECT 13/15th.jpeg",
-      "images/properties/PROJECT 13/16th.jpeg",
-      "images/properties/PROJECT 13/17th.jpeg",
-      "images/properties/PROJECT 13/18th.jpeg",
-      "images/properties/PROJECT 13/19th.jpeg",
-      "images/properties/PROJECT 13/20th.jpeg"
+      "images/properties/PROJECT 13/2nd.webp",
+      "images/properties/PROJECT 13/3rd.webp",
+      "images/properties/PROJECT 13/4th.webp",
+      "images/properties/PROJECT 13/5th.webp",
+      "images/properties/PROJECT 13/6th.webp",
+      "images/properties/PROJECT 13/7th.webp",
+      "images/properties/PROJECT 13/8th.webp",
+      "images/properties/PROJECT 13/9th.webp",
+      "images/properties/PROJECT 13/10th.webp",
+      "images/properties/PROJECT 13/11th.webp",
+      "images/properties/PROJECT 13/12th.webp",
+      "images/properties/PROJECT 13/13th.webp",
+      "images/properties/PROJECT 13/14th.webp",
+      "images/properties/PROJECT 13/15th.webp",
+      "images/properties/PROJECT 13/16th.webp",
+      "images/properties/PROJECT 13/17th.webp",
+      "images/properties/PROJECT 13/18th.webp",
+      "images/properties/PROJECT 13/19th.webp",
+      "images/properties/PROJECT 13/20th.webp"
     ],
     videos: [
       "images/properties/PROJECT 13/video 1.mp4",

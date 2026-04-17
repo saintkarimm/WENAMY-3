@@ -147,7 +147,7 @@ class WenamyChatbot {
         </div>
       </div>
       <button class="chatbot-toggle" aria-label="Open chat">
-        <img src="images/icons/logo.png" alt="Wenamy" class="chatbot-logo">
+        <img src="images/icons/logo.webp" alt="Wenamy" class="chatbot-logo">
         <span class="chatbot-bubble">TALK TO ME</span>
       </button>
     `;

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,8 +27,8 @@
   <meta property="og:url" content="https://wenamy.com/">
   <meta property="og:title" content="Wenamy Ghana | Luxury Real Estate & Construction">
   <meta property="og:description" content="Discover premium properties in Ghana. Luxury homes, off-plan developments & expert construction. Your exceptional space awaits.">
-  <meta property="og:image" content="https://wenamy.com/images/properties/PROJECT%201/1st.png">
-  <meta property="og:image:secure_url" content="https://wenamy.com/images/properties/PROJECT%201/1st.png">
+  <meta property="og:image" content="https://wenamy.com/images/properties/PROJECT%201/1st.webp">
+  <meta property="og:image:secure_url" content="https://wenamy.com/images/properties/PROJECT%201/1st.webp">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -42,12 +42,12 @@
   <meta name="twitter:creator" content="@wenamyghana">
   <meta name="twitter:title" content="Wenamy Ghana | Luxury Real Estate & Construction">
   <meta name="twitter:description" content="Discover premium properties in Ghana. Luxury homes, off-plan developments & expert construction.">
-  <meta name="twitter:image" content="https://wenamy.com/images/properties/PROJECT%201/1st.png">
+  <meta name="twitter:image" content="https://wenamy.com/images/properties/PROJECT%201/1st.webp">
   <meta name="twitter:image:alt" content="Wenamy Ghana - Luxury Real Estate Development">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/icons/logo.png">
-  <link rel="apple-touch-icon" href="images/icons/logo.png">
+  <link rel="icon" type="image/png" href="images/icons/logo.webp">
+  <link rel="apple-touch-icon" href="images/icons/logo.webp">
   
   <!-- Schema.org Structured Data - Organization -->
   <script type="application/ld+json">
@@ -56,7 +56,7 @@
     "@type": "Organization",
     "name": "Wenamy Ghana Ltd",
     "url": "https://wenamy.com",
-    "logo": "https://wenamy.com/images/icons/logo.png",
+    "logo": "https://wenamy.com/images/icons/logo.webp",
     "sameAs": [
       "https://facebook.com/wenamyghanaltd",
       "https://instagram.com/wenamy_ghana_ltd",
@@ -70,36 +70,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <!-- Preload critical CSS -->
-  <link rel="preload" href="css/variables.css?v=11" as="style">
-  <link rel="preload" href="css/base.css?v=11" as="style">
+  <!-- Preload hero image for LCP optimization -->
+  <link rel="preload" as="image" href="images/luxury_building.webp" fetchpriority="high">
   
   <!-- CSS Files -->
-  <link rel="stylesheet" href="css/reset.css?v=11">
-  <link rel="stylesheet" href="css/variables.css?v=11">
-  <link rel="stylesheet" href="css/base.css?v=11">
-  <link rel="stylesheet" href="css/animations.css?v=11">
-  <link rel="stylesheet" href="css/sections.css?v=11">
-  <link rel="stylesheet" href="css/grid.css?v=11">
-  <link rel="stylesheet" href="css/carousel.css?v=11">
-  <link rel="stylesheet" href="css/features.css?v=11">
-  <link rel="stylesheet" href="css/footer.css?v=11">
-  <link rel="stylesheet" href="css/chatbot.css?v=11">
-  <link rel="stylesheet" href="css/page-clean.css?v=11">
-  <link rel="stylesheet" href="css/responsive.css?v=11">
-  <link rel="stylesheet" href="css/hero-new.css?v=14">
+  <link rel="stylesheet" href="css/main.css?v=16">
+  <link rel="stylesheet" href="css/sections.css?v=12">
+  <link rel="stylesheet" href="css/grid.css?v=12">
+  <link rel="stylesheet" href="css/carousel.css?v=12">
+  <link rel="stylesheet" href="css/features.css?v=12">
+  <link rel="stylesheet" href="css/footer.css?v=12">
+  <link rel="stylesheet" href="css/chatbot.css?v=12">
+  <link rel="stylesheet" href="css/page-clean.css?v=12">
+  <link rel="stylesheet" href="css/hero-new.css?v=15">
   <style>
-    /* Prevent FOUC - hide navbar until CSS loads and set initial state */
-    .navbar { 
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    .navbar.loaded {
-      visibility: visible;
-      opacity: 1;
-    }
-    
     /* ========================================
        WATER BUBBLE SCROLL EFFECT - HOMEPAGE ONLY
        Ultra-transparent with minimal blur like a water bubble
@@ -159,7 +143,7 @@
     <nav class="navbar" id="mainNavbar">
       <div class="nav-left">
         <a href="index.html" class="logo">
-          <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+          <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
           Wenamy
         </a>
       </div>
@@ -201,7 +185,7 @@
     <div class="mobile-nav-overlay">
       <div class="mobile-nav-header">
         <a href="index.html" class="logo">
-          <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+          <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
           Wenamy
         </a>
         <button class="mobile-menu-close" aria-label="Close menu">
@@ -257,7 +241,7 @@
         </div>
 
         <div class="hero-new-bg-wrapper">
-          <img src="images/luxury_building.png" alt="Luxury Real Estate" class="hero-new-bg-image" fetchpriority="high" decoding="async">
+          <img src="images/luxury_building.webp" alt="Luxury Real Estate" class="hero-new-bg-image" fetchpriority="high" decoding="async" width="1920" height="1080">
         </div>
       </div>
     </section>
@@ -279,7 +263,7 @@
         </div>
         <div class="featured-image">
           <img 
-            src="images/offplan/OFFPLAN1/1st.jpg" 
+            src="images/offplan/OFFPLAN1/1st.webp" 
             alt="4 Bedroom Townhouse with Boy's Quarters"
           >
         </div>
@@ -329,7 +313,7 @@
               <div class="hero-container">
                 <div class="hero-slide current" data-slide="0">
                 <a class="hero-card" href="offplan.html?project=duplex10">
-                  <img src="images/offplan/OFFPLAN10/1st.jpg" alt="3 Bedroom Duplex" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN10/1st.webp" alt="3 Bedroom Duplex" loading="lazy" decoding="async" width="400" height="300">
                   <div class="hero-overlay">
                     <div class="hero-content">
                       <div class="button button-neutral">Discover</div>
@@ -340,7 +324,7 @@
               </div>
               <div class="hero-slide" data-slide="1">
                 <a class="hero-card" href="offplan.html?project=environmental14">
-                  <img src="images/offplan/OFFPLAN14/9th.jpg" alt="4 Bedroom Duplex" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN14/9th.webp" alt="4 Bedroom Duplex" loading="lazy" decoding="async" width="400" height="300">
                   <div class="hero-overlay">
                     <div class="hero-content">
                       <div class="button button-neutral">View</div>
@@ -351,7 +335,7 @@
               </div>
               <div class="hero-slide" data-slide="2">
                 <a class="hero-card" href="offplan.html?project=duplex13">
-                  <img src="images/offplan/OFFPLAN13/6th.jpg" alt="4 Bedroom Duplex with Underground Garage" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN13/6th.webp" alt="4 Bedroom Duplex with Underground Garage" loading="lazy" decoding="async" width="400" height="300">
                   <div class="hero-overlay">
                     <div class="hero-content">
                       <div class="button button-neutral">Explore</div>
@@ -362,7 +346,7 @@
               </div>
               <div class="hero-slide" data-slide="3">
                 <a class="hero-card" href="offplan.html?project=duplex12">
-                  <img src="images/offplan/OFFPLAN12/1st.jpeg" alt="4 Bedroom Duplex" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN12/1st.webp" alt="4 Bedroom Duplex" loading="lazy" decoding="async" width="400" height="300">
                   <div class="hero-overlay">
                     <div class="hero-content">
                       <div class="button button-neutral">See More</div>
@@ -379,7 +363,7 @@
               <!-- Slide 0's secondary cards -->
               <div class="secondary-group current" data-slide="0">
                 <a class="secondary-card" href="offplan.html?project=beach7">
-                  <img src="images/offplan/OFFPLAN7/1st.jpeg" alt="Beachfront" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN7/1st.webp" alt="Beachfront" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Kokrobite</span>
                     <div class="secondary-content">
@@ -389,7 +373,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=vacation6">
-                  <img src="images/offplan/OFFPLAN6/1st.jpeg" alt="Mountain" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN6/1st.webp" alt="Mountain" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Aburi</span>
                     <div class="secondary-content">
@@ -399,7 +383,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=duplex4">
-                  <img src="images/offplan/OFFPLAN4/1st.jpeg" alt="Family" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN4/1st.webp" alt="Family" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Aburi</span>
                     <div class="secondary-content">
@@ -413,7 +397,7 @@
               <!-- Slide 1's secondary cards -->
               <div class="secondary-group" data-slide="1">
                 <a class="secondary-card" href="offplan.html?project=aburi3">
-                  <img src="images/offplan/OFFPLAN3/1st.jpeg" alt="Leisure" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN3/1st.webp" alt="Leisure" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Aburi</span>
                     <div class="secondary-content">
@@ -423,7 +407,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=duplex5">
-                  <img src="images/offplan/OFFPLAN5/1st.jpeg" alt="Duplex" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN5/1st.webp" alt="Duplex" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Aburi</span>
                     <div class="secondary-content">
@@ -433,7 +417,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=vacation2">
-                  <img src="images/offplan/OFFPLAN2/1st.jpeg" alt="Akosombo" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN2/1st.webp" alt="Akosombo" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Akosombo</span>
                     <div class="secondary-content">
@@ -447,7 +431,7 @@
               <!-- Slide 2's secondary cards -->
               <div class="secondary-group" data-slide="2">
                 <a class="secondary-card" href="offplan.html?project=aburiviews8">
-                  <img src="images/offplan/OFFPLAN8/1st.jpeg" alt="Project 8" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN8/1st.webp" alt="Project 8" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Aburi</span>
                     <div class="secondary-content">
@@ -457,7 +441,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=aburimountain9">
-                  <img src="images/offplan/OFFPLAN9/1st.jpeg" alt="Project 9" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN9/1st.webp" alt="Project 9" loading="lazy" decoding="async" width="400" height="300">
                   <div class="secondary-overlay">
                     <span class="location-badge">Aburi</span>
                     <div class="secondary-content">
@@ -467,7 +451,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=duplex10">
-                  <img src="images/offplan/OFFPLAN10/1st.jpeg" alt="Project 10" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN10/1st.webp" alt="Project 10" loading="lazy" decoding="async">
                   <div class="secondary-overlay">
                     <span class="location-badge">East Legon Hills</span>
                     <div class="secondary-content">
@@ -481,7 +465,7 @@
               <!-- Slide 3's secondary cards -->
               <div class="secondary-group" data-slide="3">
                 <a class="secondary-card" href="offplan.html?project=environmental11">
-                  <img src="images/offplan/OFFPLAN11/1st.jpeg" alt="Project 11" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN11/1st.webp" alt="Project 11" loading="lazy" decoding="async">
                   <div class="secondary-overlay">
                     <span class="location-badge">East Legon Hills</span>
                     <div class="secondary-content">
@@ -491,7 +475,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=duplex12">
-                  <img src="images/offplan/OFFPLAN12/1st.jpeg" alt="Project 12" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN12/1st.webp" alt="Project 12" loading="lazy" decoding="async">
                   <div class="secondary-overlay">
                     <span class="location-badge">Community 25</span>
                     <div class="secondary-content">
@@ -501,7 +485,7 @@
                   </div>
                 </a>
                 <a class="secondary-card" href="offplan.html?project=duplex13">
-                  <img src="images/offplan/OFFPLAN13/1st.jpeg" alt="Project 13" loading="lazy" decoding="async">
+                  <img src="images/offplan/OFFPLAN13/1st.webp" alt="Project 13" loading="lazy" decoding="async">
                   <div class="secondary-overlay">
                     <span class="location-badge">Peduasi</span>
                     <div class="secondary-content">
@@ -808,7 +792,7 @@
       }
 
       .genre:after {
-        content: "•";
+        content: "→";
         margin-left: 8px;
       }
 
@@ -1166,20 +1150,20 @@
         <!-- Left Column: Large top, Small bottom -->
         <div class="collections-column-left">
           <div class="collections-item-large">
-            <img src="images/DISCOVER/villa.jpg?v=2" alt="Luxury Villa" loading="lazy" decoding="async">
+            <img src="images/DISCOVER/villa.webp?v=2" alt="Luxury Villa" loading="lazy" decoding="async">
           </div>
           <div class="collections-item-small">
-            <img src="images/DISCOVER/water-front.jpg?v=2" alt="Waterfront Property" loading="lazy" decoding="async">
+            <img src="images/DISCOVER/water-front.webp?v=2" alt="Waterfront Property" loading="lazy" decoding="async">
           </div>
         </div>
         
         <!-- Right Column: Small top, Large bottom -->
         <div class="collections-column-right">
           <div class="collections-item-small">
-            <img src="images/DISCOVER/penthouse.jpg?v=2" alt="Penthouse" loading="lazy" decoding="async">
+            <img src="images/DISCOVER/penthouse.webp?v=2" alt="Penthouse" loading="lazy" decoding="async">
           </div>
           <div class="collections-item-large">
-            <img src="images/DISCOVER/appartment.jpg?v=2" alt="Luxury Apartment" loading="lazy" decoding="async">
+            <img src="images/DISCOVER/appartment.webp?v=2" alt="Luxury Apartment" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -1196,12 +1180,12 @@
         
         <div class="services-new-grid">
           <!-- Service 1 - Estate Development -->
-          <div class="service-new-card scroll-animate" style="background-image: url('images/estate-development-serv.png');">
+          <div class="service-new-card scroll-animate" style="background-image: url('images/estate-development-serv.webp');">
             <div class="service-new-overlay"></div>
             <div class="service-new-content">
               <span class="service-new-number">01</span>
               <div class="service-new-icon">
-                <img src="images/icons/Services Icons/estate-serv.png" alt="Estate Development">
+                <img src="images/icons/Services Icons/estate-serv.webp" alt="Estate Development">
               </div>
               <h3 class="service-new-name">Estate Development</h3>
               <p class="service-new-desc">Premium residential and commercial properties</p>
@@ -1209,12 +1193,12 @@
           </div>
           
           <!-- Service 2 - Building & Construction -->
-          <div class="service-new-card scroll-animate" style="background-image: url('images/building-construction-serv.png');">
+          <div class="service-new-card scroll-animate" style="background-image: url('images/building-construction-serv.webp');">
             <div class="service-new-overlay"></div>
             <div class="service-new-content">
               <span class="service-new-number">02</span>
               <div class="service-new-icon">
-                <img src="images/icons/Services Icons/building-serv.png" alt="Building & Construction">
+                <img src="images/icons/Services Icons/building-serv.webp" alt="Building & Construction">
               </div>
               <h3 class="service-new-name">Building & Construction</h3>
               <p class="service-new-desc">From foundation to finishing</p>
@@ -1222,12 +1206,12 @@
           </div>
           
           <!-- Service 3 - Investment Portfolio -->
-          <div class="service-new-card scroll-animate" style="background-image: url('images/investment-serv.png');">
+          <div class="service-new-card scroll-animate" style="background-image: url('images/investment-serv.webp');">
             <div class="service-new-overlay"></div>
             <div class="service-new-content">
               <span class="service-new-number">03</span>
               <div class="service-new-icon">
-                <img src="images/icons/Services Icons/invest-serv.png" alt="Investment Portfolio">
+                <img src="images/icons/Services Icons/invest-serv.webp" alt="Investment Portfolio">
               </div>
               <h3 class="service-new-name">Investment Portfolio</h3>
               <p class="service-new-desc">High-return opportunities</p>
@@ -1235,12 +1219,12 @@
           </div>
           
           <!-- Service 4 - Architecture -->
-          <div class="service-new-card scroll-animate" style="background-image: url('images/architecture-serv.png');">
+          <div class="service-new-card scroll-animate" style="background-image: url('images/architecture-serv.webp');">
             <div class="service-new-overlay"></div>
             <div class="service-new-content">
               <span class="service-new-number">04</span>
               <div class="service-new-icon">
-                <img src="images/icons/Services Icons/architecture-serv.png" alt="Architecture">
+                <img src="images/icons/Services Icons/architecture-serv.webp" alt="Architecture">
               </div>
               <h3 class="service-new-name">Architecture</h3>
               <p class="service-new-desc">Innovative design solutions</p>
@@ -1248,12 +1232,12 @@
           </div>
           
           <!-- Service 5 - Interior Design -->
-          <div class="service-new-card scroll-animate" style="background-image: url('images/interior-design-serv.png');">
+          <div class="service-new-card scroll-animate" style="background-image: url('images/interior-design-serv.webp');">
             <div class="service-new-overlay"></div>
             <div class="service-new-content">
               <span class="service-new-number">05</span>
               <div class="service-new-icon">
-                <img src="images/icons/Services Icons/interior-serv.png" alt="Interior Design">
+                <img src="images/icons/Services Icons/interior-serv.webp" alt="Interior Design">
               </div>
               <h3 class="service-new-name">Interior Design</h3>
               <p class="service-new-desc">Beautiful, functional spaces</p>
@@ -1261,12 +1245,12 @@
           </div>
           
           <!-- Service 6 - Consultancy -->
-          <div class="service-new-card scroll-animate" style="background-image: url('images/consultancy-serv.png');">
+          <div class="service-new-card scroll-animate" style="background-image: url('images/consultancy-serv.webp');">
             <div class="service-new-overlay"></div>
             <div class="service-new-content">
               <span class="service-new-number">06</span>
               <div class="service-new-icon">
-                <img src="images/icons/Services Icons/consultancy-serv.png" alt="Consultancy">
+                <img src="images/icons/Services Icons/consultancy-serv.webp" alt="Consultancy">
               </div>
               <h3 class="service-new-name">Consultancy</h3>
               <p class="service-new-desc">Expert guidance & advice</p>
@@ -1852,7 +1836,7 @@
         <!-- Brand Column -->
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+            <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
             Wenamy
           </div>
           <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
@@ -1928,13 +1912,13 @@
   </footer>
 
   <!-- JavaScript Files -->
-  <script src="js/utils.js?v=11" defer></script>
-  <script src="js/animations.js?v=11" defer></script>
-  <script src="js/carousel.js?v=11" defer></script>
-  <script src="js/main.js?v=11" defer></script>
-  <script src="js/basket.js?v=11" defer></script>
-  <script src="js/chatbot.js?v=11" defer></script>
-  <script src="js/navbar.js?v=11" defer></script>
+  <script src="js/utils.js?v=12" defer></script>
+  <script src="js/animations.js?v=12" defer></script>
+  <script src="js/carousel.js?v=12" defer></script>
+  <script src="js/main.js?v=12" defer></script>
+  <script src="js/basket.js?v=12" defer></script>
+  <script src="js/chatbot.js?v=12" defer></script>
+  <script src="js/navbar.js?v=12" defer></script>
   
   <!-- Mobile Menu Toggle -->
   <script>

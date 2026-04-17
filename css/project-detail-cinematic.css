@@ -367,7 +367,7 @@ body {
 
 /* Features Section */
 .features-section {
-  background: linear-gradient(rgba(10, 16, 29, 0.85), rgba(10, 16, 29, 0.9)), url('../images/footer-image.png');
+  background: linear-gradient(rgba(10, 16, 29, 0.85), rgba(10, 16, 29, 0.9)), url('../images/footer-image.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -20,20 +20,16 @@
   <meta property="og:url" content="https://wenamy.com/basket.html">
   <meta property="og:title" content="Saved Properties | Wenamy Ghana">
   <meta property="og:description" content="View and manage your saved properties.">
-  <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.jpg">
+  <meta property="og:image" content="https://wenamy.com/images/hero/hero-bg.webp">
   <meta property="og:site_name" content="Wenamy Ghana">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/icons/logo.png">
+  <link rel="icon" type="image/png" href="images/icons/logo.webp">
   
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/hero-new.css?v=12">
-  <link rel="stylesheet" href="css/footer.css?v=12">
+  <link rel="stylesheet" href="css/main.css?v=16">
+  <link rel="stylesheet" href="css/hero-new.css?v=13">
+  <link rel="stylesheet" href="css/footer.css?v=13">
   <link rel="stylesheet" href="css/projects-luxury.css">
-  <link rel="stylesheet" href="css/responsive.css">
   
   <style>
     /* Basket Page Specific Styles */
@@ -334,7 +330,7 @@
   <nav class="navbar navbar-light" id="mainNavbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
-        <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+        <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
         Wenamy
       </a>
     </div>
@@ -376,7 +372,7 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay">
     <div class="mobile-nav-header">
       <a href="index.html" class="logo">
-        <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+        <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
         Wenamy
       </a>
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
@@ -437,7 +433,7 @@
         <!-- Brand Column -->
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="images/icons/logo.png" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
+            <img src="images/icons/logo.webp" alt="Wenamy" width="28" height="28" loading="eager" decoding="async">
             Wenamy
           </div>
           <p class="footer-tagline">Just Exceptional. Creating premium residential and commercial properties with exceptional standards in Ghana.</p>
@@ -512,9 +508,9 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=12" defer></script>
-  <script src="js/basket.js?v=12" defer></script>
-  <script src="js/navbar.js?v=12" defer></script>
+  <script src="js/animations.js?v=13" defer></script>
+  <script src="js/basket.js?v=13" defer></script>
+  <script src="js/navbar.js?v=13" defer></script>
   
   <script>
     // Mobile Menu Toggle
@@ -572,7 +568,7 @@
       grid.innerHTML = basket.map(item => `
         <div class="basket-item" data-id="${item.id}">
           <div class="basket-item-image">
-            <img src="${item.image || 'images/hero/hero-bg.jpg'}" alt="${item.title}">
+            <img src="${item.image || 'images/hero/hero-bg.webp'}" alt="${item.title}">
             <button class="basket-item-remove" data-id="${item.id}" aria-label="Remove from saved">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
