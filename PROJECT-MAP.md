@@ -411,8 +411,9 @@ The offplan.html page displays investment properties with category filtering and
 | Bungalows | `bungalows` | Single-story homes |
 | Cabins | `cabins` | Compact nature retreats |
 | Townhouses | `townhouses` | Urban row houses |
+| Add-ons | `add-ons` | Additional studio properties |
 
-### Property List (30 Total)
+### Property List (31 Total)
 
 | # | Property Name | Category | Bedrooms | Washrooms | Price | Location | Images |
 |---|---------------|----------|----------|-----------|-------|----------|--------|
@@ -446,6 +447,7 @@ The offplan.html page displays investment properties with category filtering and
 | OFFPLAN28 | Standout Luxury Villa | Villa | 5 Bed / 7 Bath | 5 | $965,000 | Accra | 10 |
 | OFFPLAN29 | 5 Bedroom Triplex | Triplexes | 5 | 5+ | $870,000 | Accra | 10 |
 | OFFPLAN30 | 6 Bedroom Modern Triplex | Triplexes | 6 | 6+ | $845,000 | Accra | 9 |
+| OFFPLAN40 | Modern Minimalist Studio | Vacation Homes / Add-ons | 1 | 1 | Contact for Pricing | Accra | 14 |
 
 ### URL Parameters for Direct Linking
 Append `?project={id}` to offplan.html to auto-open a specific property modal:
@@ -473,6 +475,7 @@ Append `?project={id}` to offplan.html to auto-open a specific property modal:
 | `?project=triplex29` | 5 Bedroom Triplex | OFFPLAN29 | Triplexes |
 | `?project=triplex30` | 6 Bedroom Modern Triplex | OFFPLAN30 | Triplexes |
 | `?project=environmental15` | 5 Bedroom Home | OFFPLAN15 | Environmentalists |
+| `?project=studio40` | Modern Minimalist Studio | OFFPLAN40 | Vacation Homes / Add-ons |
 
 **WhatsApp Deep-Linking:** When users click the WhatsApp button in any modal, the link includes the `?project=xxx` parameter. When the website owner clicks the link, the specific property modal automatically opens.
 

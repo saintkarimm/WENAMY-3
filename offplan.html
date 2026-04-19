@@ -38,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- CSS Files -->
-  <link rel="stylesheet" href="css/main.css?v=17">
-  <link rel="stylesheet" href="css/hero-new.css?v=19">
-  <link rel="stylesheet" href="css/footer.css?v=19">
+  <link rel="stylesheet" href="css/main.css?v=18">
+  <link rel="stylesheet" href="css/hero-new.css?v=20">
+  <link rel="stylesheet" href="css/footer.css?v=20">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -675,6 +675,7 @@
         <button class="category-pill" data-category="cabins">Cabins</button>
         <button class="category-pill" data-category="environmentalists">Environmentalists</button>
         <button class="category-pill" data-category="family-homes">Family Homes</button>
+        <button class="category-pill" data-category="add-ons">Add-ons</button>
       </div>
     </div>
   </section>
@@ -682,6 +683,26 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- Modern Minimalist Studio - OFFPLAN40 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="vacation-homes add-ons" onclick="openStudio40Modal()" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN40/1st.webp" alt="Modern Minimalist Studio" loading="lazy" decoding="async" width="400" height="300">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Modern Minimalist Studio</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">This modern 1-bedroom studio offers a sleek, minimalist retreat that seamlessly blends with its natural surroundings. Featuring an earth-toned exterior, bold structural beams, and expansive floor-to-ceiling glass doors.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price">Contact for Pricing</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); openStudio40Modal()">View Details</button>
+        </div>
+      </article>
+
       <!-- Minimalist Floating Villa - OFFPLAN39 -->
       <article class="offplan-luxury-card scroll-animate" data-category="duplexes environmentalists family-homes" onclick="openFloating39Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -4794,6 +4815,87 @@
     </div>
   </div>
 
+  <!-- Modern Minimalist Studio - OFFPLAN40 Modal -->
+  <div class="offplan-modal" id="studio40Modal">
+    <div class="offplan-modal-overlay" onclick="closeStudio40Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeStudio40Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="studio40CarouselContainer">
+          <img src="images/offplan/OFFPLAN40/1st.webp" alt="Modern Minimalist Studio - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/2nd.webp" alt="Modern Minimalist Studio - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/3rd.webp" alt="Modern Minimalist Studio - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/4th.webp" alt="Modern Minimalist Studio - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/5th.webp" alt="Modern Minimalist Studio - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/6th.webp" alt="Modern Minimalist Studio - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/7th.webp" alt="Modern Minimalist Studio - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/8th.webp" alt="Modern Minimalist Studio - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/9th.webp" alt="Modern Minimalist Studio - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/10th.webp" alt="Modern Minimalist Studio - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/11th.webp" alt="Modern Minimalist Studio - Image 11" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/12th.webp" alt="Modern Minimalist Studio - Image 12" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/13th.webp" alt="Modern Minimalist Studio - Image 13" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN40/14th.webp" alt="Modern Minimalist Studio - Image 14" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveStudio40Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveStudio40Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="studio40CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Modern Minimalist Studio</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra
+        </p>
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Studio</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">1</span></div>
+          <div class="feature-item"><span class="feature-label">Style</span><span class="feature-value">Minimalist</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">Contact for Pricing</span></div>
+        </div>
+        <p class="offplan-modal-description">This modern 1-bedroom studio offers a sleek, minimalist retreat that seamlessly blends with its natural surroundings. Featuring an earth-toned exterior, bold structural beams, and expansive floor-to-ceiling glass doors, the open-concept design bathes the interior in natural light while providing uninterrupted landscape views.</p>
+        <div class="offplan-modal-highlights">
+          <h4>Architectural Design</h4>
+          <ul>
+            <li>Sleek, minimalist earth-toned exterior</li>
+            <li>Bold structural beams creating visual interest</li>
+            <li>Expansive floor-to-ceiling glass doors</li>
+            <li>Open-concept layout maximizing space</li>
+          </ul>
+          <h4>Interior Features</h4>
+          <ul>
+            <li>Natural light flooding the entire space</li>
+            <li>Uninterrupted landscape views</li>
+            <li>Modern minimalist aesthetic throughout</li>
+            <li>Seamless indoor-outdoor connection</li>
+          </ul>
+          <h4>Premium Amenities</h4>
+          <ul>
+            <li>Contemporary kitchen with sleek finishes</li>
+            <li>Luxury bathroom with modern fixtures</li>
+            <li>Smart home integration ready</li>
+            <li>Energy-efficient design</li>
+            <li>Private outdoor space</li>
+          </ul>
+        </div>
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Benefits Section -->
   <section class="offplan-benefits-section">
     <h2 class="offplan-benefits-title">Why Invest Off-Plan?</h2>
@@ -5114,6 +5216,8 @@
         setTimeout(() => { openOasis38Modal(); }, 500);
       } else if (projectParam === 'floating39') {
         setTimeout(() => { openFloating39Modal(); }, 500);
+      } else if (projectParam === 'studio40') {
+        setTimeout(() => { openStudio40Modal(); }, 500);
       } else if (projectParam === 'vacation') {
         setTimeout(() => { openVacationModal(); }, 500);
       } else if (projectParam === 'aburi') {
@@ -5157,6 +5261,7 @@
         'gable37Modal': 'gable37',
         'oasis38Modal': 'oasis38',
         'floating39Modal': 'floating39',
+        'studio40Modal': 'studio40',
         'vacationModal': 'vacation',
         'aburiModal': 'aburi',
         'beach7Modal': 'beach',
@@ -6394,6 +6499,54 @@
       updateFloating39Carousel();
     }
 
+    // Studio 40 Modal Functions (OFFPLAN40)
+    let studio40CurrentSlide = 0;
+    const studio40Slides = document.querySelectorAll('#studio40CarouselContainer .carousel-slide');
+    const studio40TotalSlides = studio40Slides.length;
+
+    function openStudio40Modal() {
+      document.getElementById('studio40Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createStudio40CarouselDots();
+      updateStudio40Carousel();
+    }
+
+    function closeStudio40Modal() {
+      document.getElementById('studio40Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createStudio40CarouselDots() {
+      const dotsContainer = document.getElementById('studio40CarouselDots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < studio40TotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === studio40CurrentSlide ? ' active' : '');
+        dot.onclick = () => goToStudio40Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateStudio40Carousel() {
+      studio40Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === studio40CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#studio40CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === studio40CurrentSlide);
+      });
+    }
+
+    function moveStudio40Carousel(direction) {
+      studio40CurrentSlide = (studio40CurrentSlide + direction + studio40TotalSlides) % studio40TotalSlides;
+      updateStudio40Carousel();
+    }
+
+    function goToStudio40Slide(index) {
+      studio40CurrentSlide = index;
+      updateStudio40Carousel();
+    }
+
     function openBungalow32Modal() {
       document.getElementById('bungalow32Modal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -7204,8 +7357,13 @@
       const gable37Modal = document.getElementById('gable37Modal');
       const oasis38Modal = document.getElementById('oasis38Modal');
       const floating39Modal = document.getElementById('floating39Modal');
+      const studio40Modal = document.getElementById('studio40Modal');
 
-      if (floating39Modal && floating39Modal.classList.contains('active')) {
+      if (studio40Modal && studio40Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'studio40';
+        lightboxImages = Array.from(document.querySelectorAll('#studio40CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = studio40CurrentSlide;
+      } else if (floating39Modal && floating39Modal.classList.contains('active')) {
         lightboxCurrentModal = 'floating39';
         lightboxImages = Array.from(document.querySelectorAll('#floating39CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = floating39CurrentSlide;
