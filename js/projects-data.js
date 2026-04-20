@@ -525,6 +525,45 @@ const projectsData = {
     features: []
   },
 
+  // Project 19: 4 Bedroom Townhouses - Daweyna (Ongoing)
+  "4-bedroom-townhouses-daweyna": {
+    name: "4 Bedroom Townhouses",
+    location: "Daweyna",
+    type: "Townhouses",
+    status: "ongoing",
+    price: "Contact for Pricing",
+    bedrooms: "4",
+    bathrooms: "",
+    sqft: "",
+    parking: "",
+    description: "Modern 4 bedroom townhouses in Daweyna featuring contemporary design and spacious living areas. Perfect for families seeking comfort and style in a prime location.",
+    images: [
+      "images/properties/ONGOING/Project 5/2nd.webp",
+      "images/properties/ONGOING/Project 5/3rd.webp",
+      "images/properties/ONGOING/Project 5/4th.webp",
+      "images/properties/ONGOING/Project 5/5th.webp",
+      "images/properties/ONGOING/Project 5/6th.webp",
+      "images/properties/ONGOING/Project 5/7th.webp",
+      "images/properties/ONGOING/Project 5/8th.webp",
+      "images/properties/ONGOING/Project 5/9th.webp",
+      "images/properties/ONGOING/Project 5/10th.webp",
+      "images/properties/ONGOING/Project 5/11th.webp",
+      "images/properties/ONGOING/Project 5/12th.webp",
+      "images/properties/ONGOING/Project 5/13th.webp"
+    ],
+    amenities: ["4 Bedrooms", "Modern Design", "Spacious Living", "Prime Location"],
+    features: [
+      "Contemporary townhouse design",
+      "4 spacious bedrooms",
+      "Modern architectural finishes",
+      "Prime Daweyna location",
+      "Family-friendly environment",
+      "Quality construction",
+      "Secure neighborhood",
+      "Easy access to amenities"
+    ]
+  },
+
   // Project 18: 2 Bedroom Townhomes at Tema - Completed
   "2-bedroom-townhomes-tema": {
     name: "2 Bedroom Townhomes at Tema",
