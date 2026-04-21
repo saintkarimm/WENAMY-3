@@ -636,7 +636,52 @@ const projectsData = {
     features: []
   },
 
-  // Project 16: Restaurant at Community Tema - Completed
+  // Project 16: 4 Bedroom Mansion - Completed
+  "4-bedroom-mansion-accra": {
+    name: "4 Bedroom Mansion",
+    location: "Accra",
+    type: "Mansion",
+    status: "completed",
+    price: "Contact for Pricing",
+    bedrooms: "4",
+    bathrooms: "",
+    sqft: "550",
+    parking: "",
+    description: "A bespoke 4-bedroom mansion where comfort meets luxury. Spanning 550sqm, this stunning residence features a private swimming pool, summer hut, bar, and boy's quarters. Designed for families who appreciate both recreation and refined living, every detail has been thoughtfully crafted to create an exceptional home experience.",
+    images: [
+      "images/properties/PROJECT 16/2nd.webp",
+      "images/properties/PROJECT 16/3rd.webp",
+      "images/properties/PROJECT 16/4th.webp",
+      "images/properties/PROJECT 16/5th.webp",
+      "images/properties/PROJECT 16/6th.webp",
+      "images/properties/PROJECT 16/7th.webp"
+    ],
+    amenities: ["4 Bedrooms", "550sqm", "24-Hour Electricity", "Air Conditioning", "Swimming Pool", "Summer Hut", "Bar", "Boy's Quarters", "Balcony", "Dining Area", "Dishwasher", "En Suite", "Hot Water", "Kitchen Cabinets", "Refrigerator", "Microwave", "Wi-Fi", "Wardrobe", "TV", "Pop Ceiling", "Chandelier", "Sectionals"],
+    features: [
+      "Expansive 550sqm luxury residence",
+      "4 spacious bedrooms with en-suite options",
+      "Private swimming pool for recreation",
+      "Summer hut for outdoor relaxation",
+      "Dedicated bar for entertaining",
+      "Boy's quarters for additional space",
+      "24-hour electricity supply",
+      "Full air conditioning throughout",
+      "Hot water system",
+      "Modern fitted kitchen with cabinets",
+      "Premium appliances including dishwasher",
+      "Built-in wardrobes in all bedrooms",
+      "Elegant chandelier lighting",
+      "Comfortable sectional seating",
+      "High-speed Wi-Fi ready",
+      "Private balcony spaces",
+      "Formal dining area",
+      "Premium POP ceiling finishes",
+      "Quality tiled flooring",
+      "Pre-paid meter for utilities"
+    ]
+  },
+
+  // Project 17: Restaurant at Community Tema - Completed
   "restaurant-community-tema": {
     name: "Restaurant at Community Tema",
     location: "Community 3 - Tema",
