@@ -41,13 +41,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Preload critical CSS -->
-  <link rel="preload" href="css/main.css?v=15" as="style">
+  <link rel="preload" href="css/main.css?v=16" as="style">
   
-  <link rel="stylesheet" href="css/main.css?v=15">
-  <link rel="stylesheet" href="css/hero-new.css?v=12">
-  <link rel="stylesheet" href="css/footer.css?v=12">
+  <link rel="stylesheet" href="css/main.css?v=16">
+  <link rel="stylesheet" href="css/hero-new.css?v=13">
+  <link rel="stylesheet" href="css/footer.css?v=13">
   <link rel="stylesheet" href="css/chatbot.css">
-  <link rel="stylesheet" href="css/project-detail-cinematic.css?v=13">
+  <link rel="stylesheet" href="css/project-detail-cinematic.css?v=14">
   <style>
     /* Prevent FOUC - hide navbar until CSS loads and set initial state */
     .navbar { 
@@ -380,10 +380,12 @@
             <p class="property-tagline">${project.description}</p>
             
             <div class="hero-cta-row">
+              ${project.price !== 'Contact for Pricing' ? `
               <div class="price-block">
                 <span class="price-label">Starting from</span>
                 <span class="price-value" data-usd="${project.price.includes('Contact') ? 'contact' : project.price.replace(/[^0-9]/g, '')}">${project.price}</span>
               </div>
+              ` : ''}
               <div class="hero-buttons">
                 <button class="btn btn-glass" onclick="openGallery()">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

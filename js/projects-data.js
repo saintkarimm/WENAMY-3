@@ -261,7 +261,7 @@ const projectsData = {
     bathrooms: "3",
     sqft: "1,800",
     parking: "2 Spaces",
-    description: "A beautifully furnished 3 bedroom low-rise family home designed for young families in the prestigious East Legon Hills. Thoughtfully crafted with child safety in mind, featuring dedicated play and entertainment areas, a nurturing learning environment, and spacious living areas perfect for family bonding and recreational activities. This home comes fully equipped with modern amenities including air conditioning, hot water, kitchen appliances, and premium finishes throughout.",
+    description: "Move-in ready family living in East Legon Hills. A thoughtfully furnished 3-bedroom home with child-safe design, modern amenities, and spaces crafted for living, learning, and play.",
     images: [
       "images/properties/PROJECT 9/2nd.webp",
       "images/properties/PROJECT 9/3rd.webp",
