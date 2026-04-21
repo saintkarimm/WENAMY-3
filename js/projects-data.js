@@ -636,6 +636,62 @@ const projectsData = {
     features: []
   },
 
+  // Project 17: Luxury 4 Bedroom Mansion - Completed
+  "luxury-4-bedroom-mansion-accra": {
+    name: "Luxury 4 Bedroom Mansion",
+    location: "Accra",
+    type: "Mansion",
+    status: "completed",
+    price: "Contact for Pricing",
+    bedrooms: "4",
+    bathrooms: "",
+    sqft: "600",
+    parking: "21 Spaces",
+    description: "A magnificent semi-furnished 4-bedroom mansion built as a symbol of success and refined living. Spanning 600sqm, this extraordinary residence features an infinity pool, outdoor jacuzzi, private cinema, beauty salon, steam shower, and multiple entertainment halls. With a 6-car garage, car porch, and additional parking for 15 cars, plus triple power backup, every detail speaks of uncompromising luxury.",
+    images: [
+      "images/properties/PROJECT 17/2nd.webp",
+      "images/properties/PROJECT 17/3rd.webp",
+      "images/properties/PROJECT 17/4th.webp",
+      "images/properties/PROJECT 17/5th.webp",
+      "images/properties/PROJECT 17/6th.webp",
+      "images/properties/PROJECT 17/7th.webp",
+      "images/properties/PROJECT 17/8th.webp",
+      "images/properties/PROJECT 17/9th.webp",
+      "images/properties/PROJECT 17/10th.webp"
+    ],
+    amenities: ["4 Bedrooms", "600sqm", "Semi-Furnished", "24-Hour Electricity", "Air Conditioning", "Infinity Pool", "Outdoor Jacuzzi", "Cinema", "Salon", "Steam Shower", "Bar", "Safe", "3 Power Sources", "6-Car Garage", "15-Car Parking", "Car Porch", "3 Outdoor Seating Areas", "Dining Area", "Dishwasher", "En Suite", "Hot Water", "Kitchen Cabinets", "Refrigerator", "Microwave", "Wi-Fi", "Wardrobe", "TV", "Pop Ceiling", "Chandelier", "Sectionals", "Tiled Floor", "Balcony", "Pre-Paid Meter"],
+    features: [
+      "Magnificent 600sqm semi-furnished mansion",
+      "4 spacious bedrooms with luxury finishes",
+      "Stunning infinity pool for relaxation",
+      "Outdoor jacuzzi for premium comfort",
+      "Private cinema / movie theater",
+      "Beauty salon for personal grooming",
+      "Steam shower with spa experience",
+      "Multiple entertainment halls",
+      "3 outdoor seating areas",
+      "Dedicated bar for hosting guests",
+      "Built-in safe for valuables",
+      "Triple power source supply",
+      "Garage accommodating 6 cars",
+      "Car porch and parking for 15 cars",
+      "24-hour electricity supply",
+      "Full air conditioning throughout",
+      "Hot water system",
+      "Modern kitchen with fitted cabinets",
+      "Premium appliances including dishwasher",
+      "Built-in wardrobes in all bedrooms",
+      "Elegant chandelier lighting",
+      "Comfortable sectional seating",
+      "High-speed Wi-Fi ready",
+      "Private balcony spaces",
+      "Formal dining area",
+      "Premium POP ceiling finishes",
+      "Quality tiled flooring",
+      "Pre-paid meter for utilities"
+    ]
+  },
+
   // Project 16: 4 Bedroom Mansion - Completed
   "4-bedroom-mansion-accra": {
     name: "4 Bedroom Mansion",
