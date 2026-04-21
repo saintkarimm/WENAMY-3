@@ -250,34 +250,46 @@ const projectsData = {
     ]
   },
 
-  // Project 9: 3 Bedroom Bungalow Simple
-  "3-bedroom-bungalow-simple": {
-    name: "3 Bedroom Bungalow",
-    location: "East Legon, Accra",
-    type: "Bungalow",
+  // Project 9: Furnished 3 Bedroom House
+  "furnished-3-bedroom-house-east-legon-hills": {
+    name: "Furnished 3 Bedroom House",
+    location: "East Legon Hills, Accra Metropolitan",
+    type: "House",
     status: "available",
     price: "$83,000+",
     bedrooms: "3",
     bathrooms: "3",
     sqft: "1,800",
     parking: "2 Spaces",
-    description: "Simple 3 bedroom house for sale, each bedroom en-suite, visitors washroom, ample compound space. Selling now as off-plan. A great investment opportunity in the desirable East Legon area.",
+    description: "A beautifully furnished 3 bedroom low-rise family home designed for young families in the prestigious East Legon Hills. Thoughtfully crafted with child safety in mind, featuring dedicated play and entertainment areas, a nurturing learning environment, and spacious living areas perfect for family bonding and recreational activities. This home comes fully equipped with modern amenities including air conditioning, hot water, kitchen appliances, and premium finishes throughout.",
     images: [
       "images/properties/PROJECT 9/2nd.webp",
       "images/properties/PROJECT 9/3rd.webp",
       "images/properties/PROJECT 9/4th.webp",
       "images/properties/PROJECT 9/5th.webp"
     ],
-    amenities: ["3 En-suite Bedrooms", "Visitors Washroom", "Ample Compound", "Off-Plan Sale", "East Legon Location"],
+    amenities: ["3 Bedrooms", "En Suite Bathrooms", "Air Conditioning", "24-Hour Electricity", "Hot Water", "Furnished", "Wi-Fi", "Balcony", "Dining Area", "Kitchen Cabinets", "Refrigerator", "Microwave", "Dishwasher", "Wardrobe", "TV", "Pre-Paid Meter", "Pop Ceiling", "Tiled Floor", "Chandelier", "Sectionals"],
     features: [
-      "Each bedroom en-suite",
-      "Visitors washroom",
-      "Ample compound space",
-      "Off-plan purchase available",
-      "Simple elegant design",
-      "Secure East Legon location",
-      "Great investment opportunity",
-      "Flexible payment options"
+      "Fully furnished move-in ready home",
+      "Child-safe design throughout",
+      "Dedicated play and entertainment areas",
+      "Nurturing learning environment",
+      "Spacious family living spaces",
+      "Recreational activity zones",
+      "24-hour electricity supply",
+      "Air conditioning in all rooms",
+      "Hot water system",
+      "Modern kitchen with appliances",
+      "Premium POP ceiling finishes",
+      "Elegant chandelier lighting",
+      "Comfortable sectional seating",
+      "Built-in wardrobes",
+      "Private balcony",
+      "Secure East Legon Hills location",
+      "Pre-paid meter for utilities",
+      "High-speed Wi-Fi ready",
+      "Tiled flooring throughout",
+      "Formal dining area"
     ]
   },
 
