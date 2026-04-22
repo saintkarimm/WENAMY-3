@@ -737,6 +737,56 @@ const projectsData = {
     ]
   },
 
+  // Project 20: 3 Bedroom House
+  "3-bedroom-house-accra": {
+    name: "3 Bedroom House",
+    location: "Accra",
+    type: "House",
+    status: "completed",
+    price: "GH₵ 2,850,000",
+    bedrooms: "3",
+    bathrooms: "3",
+    sqft: "195 sqm",
+    parking: "6 Spaces (3 Covered)",
+    description: "A stunning 3-bedroom house featuring 3 comfortable bedrooms all en-suite, air-conditioned, and with complete privacy. Includes 6 garage spaces with 3 covered, home cinema style intimate room, complete air-conditioned kitchen with cooktop, hob, dishwasher, oven, microwave, and pantry. The leisure area features a gourmet space equipped with barbecue, brewery, cellar, stove, banquets, and more, plus a pool with LED and exclusive social toilet. Total privacy, more tranquility, and appreciation.",
+    images: [
+      "images/properties/PROJECT 20/2nd.webp",
+      "images/properties/PROJECT 20/3rd.webp",
+      "images/properties/PROJECT 20/4th.webp",
+      "images/properties/PROJECT 20/5th.webp",
+      "images/properties/PROJECT 20/6th.webp",
+      "images/properties/PROJECT 20/7th.webp",
+      "images/properties/PROJECT 20/8th.webp",
+      "images/properties/PROJECT 20/9th.webp",
+      "images/properties/PROJECT 20/10th.webp",
+      "images/properties/PROJECT 20/11th.webp",
+      "images/properties/PROJECT 20/12th.webp",
+      "images/properties/PROJECT 20/13th.webp",
+      "images/properties/PROJECT 20/14th.webp",
+      "images/properties/PROJECT 20/15th.webp",
+      "images/properties/PROJECT 20/16th.webp",
+      "images/properties/PROJECT 20/17th.webp",
+      "images/properties/PROJECT 20/18th.webp",
+      "images/properties/PROJECT 20/19th.webp",
+      "images/properties/PROJECT 20/20th.webp"
+    ],
+    amenities: ["24-Hour Electricity", "Air Conditioning", "Balcony", "Chandelier", "Dining Area", "Dishwasher", "En Suite", "Hot Water", "Kitchen Cabinets", "Kitchen Shelf", "Microwave", "Pop Ceiling", "Pre-Paid Meter", "Refrigerator", "Sectionals", "Tiled Floor", "TV", "Wardrobe", "Wi-Fi"],
+    features: [
+      "3 comfortable bedrooms all en-suite",
+      "Air-conditioned throughout",
+      "Complete privacy",
+      "6 garage spaces with 3 covered",
+      "Home cinema style intimate room",
+      "Complete air-conditioned kitchen with cooktop, hob, dishwasher, oven, microwave, and pantry",
+      "Dining room and visiting room with perfect integration",
+      "Gourmet area equipped with barbecue, brewery, cellar, stove, banquets",
+      "Pool with LED",
+      "Exclusive social toilet in leisure area",
+      "Total privacy and tranquility",
+      "The ideal property for your family"
+    ]
+  },
+
   // Project 19: 5 Bedroom Mansion
   "5-bedroom-mansion-accra": {
     name: "5 Bedroom Mansion",
