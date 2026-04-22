@@ -588,6 +588,7 @@ Category: Duplexes|Vacation Homes|Environmentalists
 | `PROJECT 16/` | 1st.webp - 5th.webp | 4 Bedroom Mansion |
 | `PROJECT 17/` | 1st.webp - 5th.webp | Luxury 4 Bedroom Mansion |
 | `PROJECT 18/` | 1st.webp - 5th.webp | Executive 3 Bedroom Duplex |
+| `PROJECT 19/` | 1st.webp - 15th.webp | 5 Bedroom Mansion |
 
 ### Off-Plan (`images/offplan/`)
 | Folder | Contents | Property Count |

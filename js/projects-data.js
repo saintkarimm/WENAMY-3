@@ -737,6 +737,49 @@ const projectsData = {
     ]
   },
 
+  // Project 19: 5 Bedroom Mansion
+  "5-bedroom-mansion-accra": {
+    name: "5 Bedroom Mansion",
+    location: "Accra",
+    type: "Mansion",
+    status: "completed",
+    price: "GH₵ 7,755,000",
+    bedrooms: "5",
+    bathrooms: "5",
+    sqft: "540 sqm",
+    parking: "",
+    description: "A magnificent 5-bedroom mansion designed for class and luxury living. Features infinity pool, bar, barbecue area, pergola summer hut, private cinema, and a huge compound. This exceptional home offers spacious living with premium finishes, modern amenities, and thoughtful design throughout.",
+    images: [
+      "images/properties/PROJECT 19/2nd.webp",
+      "images/properties/PROJECT 19/3rd.webp",
+      "images/properties/PROJECT 19/4th.webp",
+      "images/properties/PROJECT 19/5th.webp",
+      "images/properties/PROJECT 19/6th.webp",
+      "images/properties/PROJECT 19/7th.webp",
+      "images/properties/PROJECT 19/8th.webp",
+      "images/properties/PROJECT 19/9th.webp",
+      "images/properties/PROJECT 19/10th.webp",
+      "images/properties/PROJECT 19/11th.webp",
+      "images/properties/PROJECT 19/12th.webp",
+      "images/properties/PROJECT 19/13th.webp",
+      "images/properties/PROJECT 19/14th.webp",
+      "images/properties/PROJECT 19/15th.webp"
+    ],
+    amenities: ["24-Hour Electricity", "Air Conditioning", "Balcony", "Chandelier", "Dining Area", "Dishwasher", "En Suite", "Hot Water", "Kitchen Cabinets", "Kitchen Shelf", "Microwave", "Pop Ceiling", "Pre-Paid Meter", "Refrigerator", "Sectionals", "Tiled Floor", "TV", "Wardrobe", "Wi-Fi"],
+    features: [
+      "5 big ensuite luxurious bedrooms",
+      "Infinity pool",
+      "Bar",
+      "Barbecue area",
+      "Pergola summer hut",
+      "Private cinema",
+      "Huge compound",
+      "Premium finishes throughout",
+      "Modern amenities",
+      "Designed for class and luxury living"
+    ]
+  },
+
   // Project 18: Executive 3 Bedroom Duplex
   "executive-3-bedroom-duplex-accra": {
     name: "Executive 3 Bedroom Duplex",
