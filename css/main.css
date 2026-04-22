@@ -1503,6 +1503,10 @@ body {
   .currency-switcher-container.floating .currency-option.active {
     background: rgba(255, 255, 255, 0.45);
   }
+  
+  .currency-switcher-container.floating .currency-toggle-text {
+    display: none !important;
+  }
 }
 
 @media (max-width: 768px) {

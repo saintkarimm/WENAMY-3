@@ -148,8 +148,12 @@
       // Extract numeric value from price text
       const match = text.match(/[\d,]+\.?\d*/);
       if (match) {
-        const numericValue = parseFloat(match[0].replace(/,/g, ''));
+        let numericValue = parseFloat(match[0].replace(/,/g, ''));
         if (!isNaN(numericValue)) {
+          // If price is already in GHS (GH₵ or GHS), convert to USD equivalent
+          if (text.includes('GH₵') || text.includes('GHS') || text.includes('₵')) {
+            numericValue = numericValue / EXCHANGE_RATES.GHS;
+          }
           element.setAttribute('data-usd', numericValue);
           // Store original text format for reference
           element.setAttribute('data-original-format', text);
