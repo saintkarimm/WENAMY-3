@@ -737,6 +737,46 @@ const projectsData = {
     ]
   },
 
+  // Project 21: 4 Bedroom Family House
+  "4-bedroom-family-house-east-legon": {
+    name: "4 Bedroom Family House",
+    location: "East Legon Hills, Accra",
+    type: "House",
+    status: "completed",
+    price: "GH₵ 4,850,000",
+    bedrooms: "4",
+    bathrooms: "4",
+    sqft: "410 sqm",
+    parking: "",
+    description: "A stunning 4-bedroom family house with 2 living rooms, featuring big kitchen with two setups, big living rooms, big ensuite bedrooms, balconies, contemporary design, great finishes, well crafted and well planned.",
+    images: [
+      "images/properties/PROJECT 21/2nd.webp",
+      "images/properties/PROJECT 21/3rd.webp",
+      "images/properties/PROJECT 21/4th.webp",
+      "images/properties/PROJECT 21/5th.webp",
+      "images/properties/PROJECT 21/6th.webp",
+      "images/properties/PROJECT 21/7th.webp",
+      "images/properties/PROJECT 21/8th.webp",
+      "images/properties/PROJECT 21/9th.webp",
+      "images/properties/PROJECT 21/10th.webp",
+      "images/properties/PROJECT 21/11th.webp",
+      "images/properties/PROJECT 21/12th.webp",
+      "images/properties/PROJECT 21/13th.webp"
+    ],
+    amenities: ["24-Hour Electricity", "Air Conditioning", "Balcony", "Chandelier", "Dining Area", "Dishwasher", "En Suite", "Hot Water", "Kitchen Cabinets", "Kitchen Shelf", "Microwave", "Pop Ceiling", "Pre-Paid Meter", "Refrigerator", "Sectionals", "Tiled Floor", "TV", "Wardrobe", "Wi-Fi"],
+    features: [
+      "4 big ensuite bedrooms",
+      "2 living rooms",
+      "Big kitchen with two setups",
+      "Big living rooms",
+      "Balconies",
+      "Contemporary design",
+      "Great finishes",
+      "Well crafted and well planned",
+      "Family friendly"
+    ]
+  },
+
   // Project 20: 3 Bedroom House
   "3-bedroom-house-accra": {
     name: "3 Bedroom House",
