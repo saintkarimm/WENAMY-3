@@ -737,6 +737,41 @@ const projectsData = {
     ]
   },
 
+  // Project 18: Executive 3 Bedroom Duplex
+  "executive-3-bedroom-duplex-accra": {
+    name: "Executive 3 Bedroom Duplex",
+    location: "Accra",
+    type: "Duplex",
+    status: "completed",
+    price: "GH₵ 2,255,000",
+    bedrooms: "3",
+    bathrooms: "4",
+    sqft: "345 sqm",
+    parking: "",
+    description: "An executive and contemporary 3-bedroom duplex featuring 3 big ensuite luxurious bedrooms with a very huge primary bedroom and walk-in closet, guest washroom, open kitchen (can be made closed), storeroom, laundry, big hall, dining hall, balconies, outside seating area, swimming pool, and a boys quarters. Designed for modern family living with premium finishes throughout.",
+    images: [
+      "images/properties/PROJECT 18/2nd.webp",
+      "images/properties/PROJECT 18/3rd.webp",
+      "images/properties/PROJECT 18/4th.webp",
+      "images/properties/PROJECT 18/5th.webp"
+    ],
+    amenities: ["24-Hour Electricity", "Air Conditioning", "Balcony", "Chandelier", "Dining Area", "Dishwasher", "En Suite", "Hot Water", "Kitchen Cabinets", "Kitchen Shelf", "Microwave", "Pop Ceiling", "Pre-Paid Meter", "Refrigerator", "Sectionals", "Tiled Floor", "TV", "Wardrobe", "Wi-Fi"],
+    features: [
+      "3 big ensuite luxurious bedrooms",
+      "Huge primary bedroom with walk-in closet",
+      "Guest washroom",
+      "Open kitchen (can be made closed)",
+      "Dedicated storeroom",
+      "Laundry room",
+      "Big hall for entertaining",
+      "Dining hall",
+      "Balconies",
+      "Outside seating area",
+      "Swimming pool",
+      "Boys quarters"
+    ]
+  },
+
   // Project 17: Restaurant at Community Tema - Completed
   "restaurant-community-tema": {
     name: "Restaurant at Community Tema",
