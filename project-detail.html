@@ -254,7 +254,7 @@
     </div>
   </footer>
 
-  <script src="js/projects-data.js?v=14" defer></script>
+  <script src="js/projects-data.js?v=15" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile Menu Toggle
@@ -453,7 +453,7 @@
             </div>
             
             <h1 class="property-name">${project.name}</h1>
-            <p class="property-tagline">${project.description}</p>
+            <p class="property-tagline">${project.tagline || project.description || ''}</p>
             
             <div class="hero-cta-row">
               ${project.price !== 'Contact for Pricing' ? `
@@ -505,11 +505,7 @@
                 <h2 class="section-title">A Home Designed for Modern Living</h2>
               </div>
               <div>
-                <p class="description-text">
-                  ${project.description} This exceptional property features spacious family living areas, 
-                  modern amenities, and premium finishes. Designed and built for family living and 
-                  recreational activities in the prestigious ${project.location} area.
-                </p>
+                <p class="description-text">${project.description}</p>
               </div>
             </div>
             

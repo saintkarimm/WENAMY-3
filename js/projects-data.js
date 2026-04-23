@@ -14,6 +14,7 @@ const projectsData = {
     sqft: "1,800",
     parking: "2 Spaces",
     description: "3 bedrooms, 4 washrooms, kitchens, pantry, and a big hall. Designed and built for family living and recreational activities. This beautiful bungalow offers spacious living areas perfect for entertaining guests and creating lasting family memories.",
+    tagline: "Spacious living designed for family memories and lasting comfort.",
     images: [
       "images/properties/PROJECT 1/2nd.webp",
       "images/properties/PROJECT 1/3rd.webp",
@@ -45,6 +46,7 @@ const projectsData = {
     sqft: "8,000+",
     parking: "4+ Spaces",
     description: "Fascinating Villa designed for special and exceptional people. On a little more than one Acre of land, this Villa features Rooftop Infinity pool, 3 halls, 2 kitchens, Cinema, Bar, Barbecue area, Outdoor jacuzzi, Large windows, Bedrooms: 6, Bathrooms: 9, And extras.",
+    tagline: "A fascinating villa for the truly exceptional, on over an acre of paradise.",
     images: [
       "images/properties/PROJECT 2/2nd.webp",
       "images/properties/PROJECT 2/3rd.webp",
@@ -76,6 +78,7 @@ const projectsData = {
     sqft: "2,200",
     parking: "2 Spaces",
     description: "3 suites, Guest washroom, Living room, Dining hall, Kitchen, Pantry, Open garage, Compound with greens. Perfect family home designed for comfort and modern living in the prestigious East Legon area.",
+    tagline: "Perfect family comfort in the heart of prestigious East Legon.",
     images: [
       "images/properties/PROJECT 3/2nd.webp",
       "images/properties/PROJECT 3/3rd.webp",
@@ -107,6 +110,7 @@ const projectsData = {
     sqft: "2,000",
     parking: "2 Spaces",
     description: "On a 40ft by 100 feet plot, this 3 ensuite bedrooms bungalow features very elegant and minimalistic design with a modern touch and boys quarters. It's selling off-plan with options of semi furnished and fully furnished.",
+    tagline: "Elegant minimalism with a modern touch on a generous plot.",
     images: [
       "images/properties/PROJECT 4/2nd.webp",
       "images/properties/PROJECT 4/3rd.webp",
@@ -138,6 +142,7 @@ const projectsData = {
     sqft: "3,500",
     parking: "2 Spaces",
     description: "Exclusive 4 bedroom duplex with all bedrooms ensuite, 2 halls, big kitchen with pantry, compound with greens, open garage, pool, child play area, and very spacious and comfortable. Perfect for family living with luxury amenities.",
+    tagline: "Exclusive luxury living designed for the modern family.",
     images: [
       "images/properties/PROJECT 5/2nd.webp",
       "images/properties/PROJECT 5/3rd.webp",
@@ -169,6 +174,7 @@ const projectsData = {
     sqft: "6,500",
     parking: "4 Spaces",
     description: "This 7 bedrooms Luxurious Contemporary Mansion comes with 5 master bedrooms all in En-suite and 2 En-suite Boy's Quarters each with kitchen and bathroom. Features include: 2 Spacious living rooms, Security room, Dining area, Fully Fitted Kitchen, Pantry, Guest Toilet, Walk-in-closet, Kitchen store, Balcony, Jacuzzi, Water heater, POP ceiling, Swimming Pool, CCTV, 24 hours electricity, Family Lounge, Walk-in Showers, Bath Tub.",
+    tagline: "A luxurious contemporary mansion built for grand living and entertaining.",
     images: [
       "images/properties/PROJECT 6/2nd.webp",
       "images/properties/PROJECT 6/3rd.webp",
@@ -200,6 +206,7 @@ const projectsData = {
     sqft: "3,200",
     parking: "2 Spaces",
     description: "This contemporary 4 bedroom duplex is designed to suit your family needs and provide comfort and a luxury lifestyle as well as child safety and recreational purposes. Features: 4 big ensuite bedrooms, Guest washroom, Big fitted kitchen, Storeroom, Laundry, Balcony, Boys quarters and an open garage.",
+    tagline: "Contemporary design for family comfort, safety, and luxury living.",
     images: [
       "images/properties/PROJECT 7/2nd.webp",
       "images/properties/PROJECT 7/3rd.webp",
@@ -231,6 +238,7 @@ const projectsData = {
     sqft: "2,400",
     parking: "2 Spaces",
     description: "Beautiful 3 bedroom bungalow, comes with all rooms ensuite, guest washroom, big hall, dining hall, swimming pool and compound with lots of greens. A perfect blend of luxury and nature in prestigious East Legon.",
+    tagline: "Where luxury meets nature in prestigious East Legon.",
     images: [
       "images/properties/PROJECT 8/2nd.webp",
       "images/properties/PROJECT 8/3rd.webp",
@@ -262,6 +270,7 @@ const projectsData = {
     sqft: "1,800",
     parking: "2 Spaces",
     description: "Move-in ready family living in East Legon Hills. A thoughtfully furnished 3-bedroom home with child-safe design, modern amenities, and spaces crafted for living, learning, and play.",
+    tagline: "Move-in ready family living crafted for comfort and joy.",
     images: [
       "images/properties/PROJECT 9/2nd.webp",
       "images/properties/PROJECT 9/3rd.webp",
@@ -305,6 +314,7 @@ const projectsData = {
     sqft: "2,600",
     parking: "2 Spaces",
     description: "Simple, detailed, minimalistic, and very well planned out and designed for great family experience. 3 suites with a guest washroom. Swimming Pool and compound with greens and children play area. Open garage and a nice fence wall design.",
+    tagline: "Minimalistic design perfectly planned for great family experiences.",
     images: [
       "images/properties/PROJECT 10/2nd.webp",
       "images/properties/PROJECT 10/3rd.webp",
@@ -336,6 +346,7 @@ const projectsData = {
     sqft: "2,000",
     parking: "2 Spaces",
     description: "3 ensuite bedrooms designed for leisure and vacation purposes suitable for beaches and mountainous areas like Aburi. Now selling off-plan, you can also buy the plan from us. Perfect for holiday retreats or Airbnb investment.",
+    tagline: "Your perfect vacation retreat or Airbnb investment awaits.",
     images: [
       "images/properties/PROJECT 11/2nd.webp",
       "images/properties/PROJECT 11/3rd.webp",
@@ -367,6 +378,7 @@ const projectsData = {
     sqft: "2,800 - 3,200",
     parking: "2 Spaces",
     description: "All en-suites rooms, Good road network, Fully fitted kitchen, Land Title Certificate included. Premium property with excellent infrastructure and secure land ownership. Price: Without pool $250,000 / With pool $280,000.",
+    tagline: "Premium living with secure land ownership and excellent infrastructure.",
     images: [
       "images/properties/PROJECT 12/2nd.webp",
       "images/properties/PROJECT 12/3rd.webp",
@@ -399,6 +411,7 @@ const projectsData = {
     parking: "",
     livingRooms: "2",
     description: "Spacious 5 bedroom duplex at Community 6, Tema featuring 6 washrooms and 2 living rooms. Modern design with premium finishes perfect for family living.",
+    tagline: "Spacious modern living with premium finishes in Community 6.",
     images: [
       "images/properties/ONGOING/Project 4/2nd.webp",
       "images/properties/ONGOING/Project 4/3rd.webp",
@@ -432,6 +445,7 @@ const projectsData = {
     sqft: "",
     parking: "",
     description: "",
+    tagline: "",
     images: [
       "images/properties/ONGOING/Project 1/2nd.webp",
       "images/properties/ONGOING/Project 1/3rd.webp",
@@ -462,6 +476,7 @@ const projectsData = {
     sqft: "",
     parking: "",
     description: "",
+    tagline: "",
     images: [
       "images/properties/ONGOING/Project 2/2nd.webp",
       "images/properties/ONGOING/Project 2/3rd.webp",
@@ -498,6 +513,7 @@ const projectsData = {
     sqft: "",
     parking: "",
     description: "",
+    tagline: "",
     images: [
       "images/properties/ONGOING/Project 3/2nd.webp",
       "images/properties/ONGOING/Project 3/3rd.webp",
@@ -549,6 +565,7 @@ const projectsData = {
     sqft: "",
     parking: "",
     description: "Modern 4 bedroom townhouses in Daweyna featuring contemporary design and spacious living areas. Perfect for families seeking comfort and style in a prime location.",
+    tagline: "Contemporary townhouses for comfort and style in prime Daweyna.",
     images: [
       "images/properties/ONGOING/Project 5/2nd.webp",
       "images/properties/ONGOING/Project 5/3rd.webp",
@@ -588,6 +605,7 @@ const projectsData = {
     sqft: "",
     parking: "",
     description: "",
+    tagline: "",
     images: [
       "images/properties/PROJECT 15/2nd.webp",
       "images/properties/PROJECT 15/3rd.webp",
@@ -648,6 +666,7 @@ const projectsData = {
     sqft: "600",
     parking: "21 Spaces",
     description: "A magnificent semi-furnished 4-bedroom mansion built as a symbol of success and refined living. Spanning 600sqm, this extraordinary residence features an infinity pool, outdoor jacuzzi, private cinema, beauty salon, steam shower, and multiple entertainment halls. With a 6-car garage, car porch, and additional parking for 15 cars, plus triple power backup, every detail speaks of uncompromising luxury.",
+    tagline: "A symbol of success and refined living across 600sqm of pure luxury.",
     images: [
       "images/properties/PROJECT 17/2nd.webp",
       "images/properties/PROJECT 17/3rd.webp",
@@ -704,6 +723,7 @@ const projectsData = {
     sqft: "550",
     parking: "",
     description: "A bespoke 4-bedroom mansion where comfort meets luxury. Spanning 550sqm, this stunning residence features a private swimming pool, summer hut, bar, and boy's quarters. Designed for families who appreciate both recreation and refined living, every detail has been thoughtfully crafted to create an exceptional home experience.",
+    tagline: "Where comfort meets luxury in a stunning 550sqm bespoke residence.",
     images: [
       "images/properties/PROJECT 16/2nd.webp",
       "images/properties/PROJECT 16/3rd.webp",
@@ -749,6 +769,7 @@ const projectsData = {
     sqft: "410 sqm",
     parking: "",
     description: "A stunning 4-bedroom family house with 2 living rooms, featuring big kitchen with two setups, big living rooms, big ensuite bedrooms, balconies, contemporary design, great finishes, well crafted and well planned.",
+    tagline: "Stunning family living with contemporary design and great finishes.",
     images: [
       "images/properties/PROJECT 21/2nd.webp",
       "images/properties/PROJECT 21/3rd.webp",
@@ -789,6 +810,7 @@ const projectsData = {
     sqft: "195 sqm",
     parking: "6 Spaces (3 Covered)",
     description: "A stunning 3-bedroom house featuring 3 comfortable bedrooms all en-suite, air-conditioned, and with complete privacy. Includes 6 garage spaces with 3 covered, home cinema style intimate room, complete air-conditioned kitchen with cooktop, hob, dishwasher, oven, microwave, and pantry. The leisure area features a gourmet space equipped with barbecue, brewery, cellar, stove, banquets, and more, plus a pool with LED and exclusive social toilet. Total privacy, more tranquility, and appreciation.",
+    tagline: "Stunning privacy with premium leisure amenities and total tranquility.",
     images: [
       "images/properties/PROJECT 20/2nd.webp",
       "images/properties/PROJECT 20/3rd.webp",
@@ -839,6 +861,7 @@ const projectsData = {
     sqft: "540 sqm",
     parking: "",
     description: "A magnificent 5-bedroom mansion designed for class and luxury living. Features infinity pool, bar, barbecue area, pergola summer hut, private cinema, and a huge compound. This exceptional home offers spacious living with premium finishes, modern amenities, and thoughtful design throughout.",
+    tagline: "Designed for class and luxury living with every amenity imaginable.",
     images: [
       "images/properties/PROJECT 19/2nd.webp",
       "images/properties/PROJECT 19/3rd.webp",
@@ -882,6 +905,7 @@ const projectsData = {
     sqft: "345 sqm",
     parking: "",
     description: "An executive and contemporary 3-bedroom duplex featuring 3 big ensuite luxurious bedrooms with a very huge primary bedroom and walk-in closet, guest washroom, open kitchen (can be made closed), storeroom, laundry, big hall, dining hall, balconies, outside seating area, swimming pool, and a boys quarters. Designed for modern family living with premium finishes throughout.",
+    tagline: "Executive living with premium finishes designed for the modern family.",
     images: [
       "images/properties/PROJECT 18/2nd.webp",
       "images/properties/PROJECT 18/3rd.webp",
@@ -917,6 +941,7 @@ const projectsData = {
     sqft: "",
     parking: "",
     description: "",
+    tagline: "",
     images: [
       "images/properties/PROJECT 13/2nd.webp",
       "images/properties/PROJECT 13/3rd.webp",
