@@ -52,4 +52,18 @@ function close() {
   rl.close();
 }
 
-module.exports = { ask, askNumber, askList, askChoice, confirm, close };
+function askMultiChoice(question, choices) {
+  const choiceStr = choices.map((c, i) => `${i + 1}. ${c}`).join('\n');
+  return ask(`${question} (enter numbers separated by commas)\n${choiceStr}\nEnter numbers`).then(val => {
+    if (!val.trim()) return [];
+    const nums = val.split(/[,\s]+/).map(s => parseInt(s.trim(), 10)).filter(n => !isNaN(n));
+    const selected = [...new Set(nums.filter(n => n >= 1 && n <= choices.length).map(n => choices[n - 1]))];
+    if (!selected.length) {
+      console.log('Invalid choice. Please enter at least one valid number.');
+      return askMultiChoice(question, choices);
+    }
+    return selected;
+  });
+}
+
+module.exports = { ask, askNumber, askList, askChoice, askMultiChoice, confirm, close };

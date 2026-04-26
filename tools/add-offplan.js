@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { ask, askNumber, askList, askChoice, confirm, close } = require('./lib/prompts');
+const { ask, askNumber, askList, askChoice, askMultiChoice, confirm, close } = require('./lib/prompts');
 const { incrementCacheBusters } = require('./lib/cache-buster');
 const { generateFunctionBase, checkExists } = require('./lib/validators');
 
@@ -43,7 +43,7 @@ function buildAmenitiesList(amenities) {
 
 function buildCard(data) {
   return `      <!-- ${data.title} - ${data.folder} -->
-      <article class="offplan-luxury-card scroll-animate" data-category="${data.category}" onclick="try { open${data.funcBaseUpper}Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
+      <article class="offplan-luxury-card scroll-animate" data-category="${Array.isArray(data.category) ? data.category.join(' ') : data.category}" onclick="try { open${data.funcBaseUpper}Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
         <div class="offplan-luxury-image">
           <img src="images/offplan/${data.folder}/1st.webp" alt="${data.title}" loading="lazy" decoding="async" width="400" height="300">
         </div>
@@ -287,7 +287,7 @@ async function main() {
   const location = await ask('Location', 'Accra');
   const size = await askNumber('Size in sqm', '300');
   const usdPrice = await askNumber('Price in USD', '150000');
-  const category = await askChoice('Category', CATEGORIES);
+  const category = await askMultiChoice('Categories', CATEGORIES);
   const bedrooms = await askNumber('Bedrooms', '3');
   const bathrooms = await askNumber('Bathrooms', '3');
   const folder = await ask('Image folder name (e.g., OFFPLAN49)', 'OFFPLAN49');
@@ -315,7 +315,9 @@ async function main() {
   const varPrefix = funcBase;
   const param = funcBase.toLowerCase();
   const ghsPrice = Math.round(usdPrice * EXCHANGE_RATE);
-  const categoryLabel = category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  const categoryLabel = Array.isArray(category)
+    ? category.map(c => c.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')).join(' / ')
+    : category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
   const data = {
     title, shortDesc, fullDesc, location, size, usdPrice, ghsPrice, category, categoryLabel,
@@ -332,7 +334,7 @@ async function main() {
   console.log(`Images: ${imageCount}`);
   console.log(`Features: ${features.length}`);
   console.log(`Amenities: ${amenities.length}`);
-  console.log(`Category: ${category}`);
+  console.log(`Categories: ${Array.isArray(category) ? category.join(', ') : category}`);
 
   const html = fs.readFileSync(OFFPLAN_HTML, 'utf8');
   const issues = checkExists(html, modalId, funcBase);
