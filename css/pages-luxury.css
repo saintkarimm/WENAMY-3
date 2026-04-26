@@ -5,7 +5,7 @@
    SHARED PAGE HEADER - Dark Gradient
    ======================================== */
 .page-luxury-hero {
-  background: url('../images/bar-all.webp') center/cover no-repeat;
+  background: url('../images/bar-all.webp?v=2') center/cover no-repeat;
   padding: calc(80px + 4rem) 4rem 4rem;
   position: relative;
   overflow: hidden;
