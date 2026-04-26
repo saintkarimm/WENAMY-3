@@ -38,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- CSS Files -->
-  <link rel="stylesheet" href="css/main.css?v=19">
-  <link rel="stylesheet" href="css/hero-new.css?v=21">
-  <link rel="stylesheet" href="css/footer.css?v=21">
+  <link rel="stylesheet" href="css/main.css?v=21">
+  <link rel="stylesheet" href="css/hero-new.css?v=23">
+  <link rel="stylesheet" href="css/footer.css?v=23">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -683,6 +683,46 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- Executive 3-Bedroom Modern Neoclassical Bungalow - OFFPLAN50 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="bungalows" onclick="try { openExecutiveBedroomModernNeoclassicalBungalow50Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN50/1st.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow" loading="lazy" decoding="async" width="400" height="300">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Executive 3-Bedroom Modern Neoclassical Bungalow</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Experience the pinnacle of modern living in this architectural gem. This newly completed detached bungalow features a striking white facade complemented by grand neoclassical pillars and expansive floor-to-ceiling windows.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="234657">GH₵ 2,583,574</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); try { openExecutiveBedroomModernNeoclassicalBungalow50Modal(); } catch(e) { console.error('Button click error:', e.message); }">View Details</button>
+        </div>
+      </article>
+
+      <!-- Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - OFFPLAN49 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="try { openUltraModernBedroomMasterpieceWithRooftopTerrace49Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN49/1st.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace" loading="lazy" decoding="async" width="400" height="300">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Experience the pinnacle of luxury living in this stunning, newly built 4-bedroom detached home. Featuring a bold monochromatic facade with signature LED accent lighting, this property offers a seamless blend of high-end aesthetics and functional design.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Acrra
+          </p>
+          <div class="offplan-luxury-price" data-usd="30470000">GH₵ 335,474,700</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); try { openUltraModernBedroomMasterpieceWithRooftopTerrace49Modal(); } catch(e) { console.error('Button click error:', e.message); }">View Details</button>
+        </div>
+      </article>
+
       <!-- Furnished 3 Bedroom House - OFFPLAN48 -->
       <article class="offplan-luxury-card scroll-animate" data-category="family-homes" onclick="openHouse48Modal()" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -5819,6 +5859,203 @@
     </div>
   </div>
 
+  <!-- Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - OFFPLAN49 Modal -->
+  <div class="offplan-modal" id="ultraModernBedroomMasterpieceWithRooftopTerrace49Modal">
+    <div class="offplan-modal-overlay" onclick="closeUltraModernBedroomMasterpieceWithRooftopTerrace49Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeUltraModernBedroomMasterpieceWithRooftopTerrace49Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="ultraModernBedroomMasterpieceWithRooftopTerrace49CarouselContainer">
+          <img src="images/offplan/OFFPLAN49/1st.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/2nd.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/3rd.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/4th.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/5th.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/6th.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/7th.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/8th.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 8" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/9th.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 9" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN49/10th.webp" alt="Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace - Image 10" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveUltraModernBedroomMasterpieceWithRooftopTerrace49Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveUltraModernBedroomMasterpieceWithRooftopTerrace49Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="ultraModernBedroomMasterpieceWithRooftopTerrace49CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Acrra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Duplexes</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">3</span></div>
+          <div class="feature-item"><span class="feature-label">Bathrooms</span><span class="feature-value">4</span></div>
+          <div class="feature-item"><span class="feature-label">Size</span><span class="feature-value">285 sqm</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">GH₵ 335,474,700</span></div>
+        </div>
+        
+        <div class="offplan-modal-description">
+          <p>Experience the pinnacle of luxury living in this stunning, newly built 4-bedroom detached home. Featuring a bold monochromatic facade with signature LED accent lighting, this property offers a seamless blend of high-end aesthetics and functional design. Highlights include a spacious open-plan interior, an expansive private balcony with glass railings, a dedicated carport, and premium finishes throughout. Perfect for the discerning homeowner seeking a sophisticated urban retreat.</p>
+        </div>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Features</h4>
+          <ul>
+            <li>3 bedrooms duplex</li>
+            <li>two living rooms</li>
+            <li>huge kitchen with pantry</li>
+            <li>big bedrooms</li>
+            <li>balconies</li>
+            <li>selling ofplan</li>
+          </ul>
+        </div>
+
+        <div class="offplan-modal-highlights">
+          <h4>Amenities</h4>
+          <ul>
+            <li>24-hour Electricity</li>
+            <li>Air Conditioning</li>
+            <li>Balcony</li>
+            <li>Chandelier</li>
+            <li>Dining Area</li>
+            <li>Dishwasher</li>
+            <li>En Suite</li>
+            <li>Hot Water</li>
+            <li>Kitchen Cabinets</li>
+            <li>Kitchen Shelf</li>
+            <li>Microwave</li>
+            <li>Pop Ceiling</li>
+            <li>Pre-Paid Meter</li>
+            <li>Refrigerator</li>
+            <li>Sectionals</li>
+            <li>Tiled Floor</li>
+            <li>TV</li>
+            <li>Wardrobe</li>
+            <li>Wi-Fi</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Executive 3-Bedroom Modern Neoclassical Bungalow - OFFPLAN50 Modal -->
+  <div class="offplan-modal" id="executiveBedroomModernNeoclassicalBungalow50Modal">
+    <div class="offplan-modal-overlay" onclick="closeExecutiveBedroomModernNeoclassicalBungalow50Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeExecutiveBedroomModernNeoclassicalBungalow50Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="executiveBedroomModernNeoclassicalBungalow50CarouselContainer">
+          <img src="images/offplan/OFFPLAN50/1st.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN50/2nd.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN50/3rd.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN50/4th.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN50/5th.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow - Image 5" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN50/6th.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow - Image 6" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN50/7th.webp" alt="Executive 3-Bedroom Modern Neoclassical Bungalow - Image 7" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveExecutiveBedroomModernNeoclassicalBungalow50Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveExecutiveBedroomModernNeoclassicalBungalow50Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="executiveBedroomModernNeoclassicalBungalow50CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Executive 3-Bedroom Modern Neoclassical Bungalow</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Bungalows</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">3</span></div>
+          <div class="feature-item"><span class="feature-label">Bathrooms</span><span class="feature-value">4</span></div>
+          <div class="feature-item"><span class="feature-label">Size</span><span class="feature-value">280 sqm</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">GH₵ 2,583,574</span></div>
+        </div>
+        
+        <div class="offplan-modal-description">
+          <p>Experience the pinnacle of modern living in this architectural gem. This newly completed detached bungalow features a striking white facade complemented by grand neoclassical pillars and expansive floor-to-ceiling windows.</p>
+        </div>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Portable 3-bedroom design</li>
+            <li>boys' quarters included</li>
+            <li>serene living environment</li>
+            <li>all bedrooms en-suite</li>
+            <li>oversized rooms</li>
+            <li>big spacious kitchen</li>
+            <li>dedicated storeroom</li>
+            <li>laundry room</li>
+            <li>spacious compound</li>
+            <li>children's play area.</li>
+          </ul>
+        </div>
+
+        <div class="offplan-modal-highlights">
+          <h4>Amenities</h4>
+          <ul>
+            <li>Balcony</li>
+            <li>Chandelier</li>
+            <li>Dining Area</li>
+            <li>Dishwasher</li>
+            <li>En Suite</li>
+            <li>Hot Water</li>
+            <li>Kitchen Cabinets</li>
+            <li>Kitchen Shelf</li>
+            <li>Microwave</li>
+            <li>Pop Ceiling</li>
+            <li>Pre-Paid Meter</li>
+            <li>Refrigerator</li>
+            <li>Sectionals</li>
+            <li>Tiled Floor</li>
+            <li>TV</li>
+            <li>Wardrobe</li>
+            <li>Wi-Fi</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- Benefits Section -->
   <section class="offplan-benefits-section">
     <h2 class="offplan-benefits-title">Why Invest Off-Plan?</h2>
@@ -5932,11 +6169,11 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=17" defer></script>
-  <script src="js/basket.js?v=17" defer></script>
-  <script src="js/chatbot.js?v=17" defer></script>
-  <script src="js/navbar.js?v=17" defer></script>
-  <script src="js/currency-switcher.js?v=13" defer></script>
+  <script src="js/animations.js?v=19" defer></script>
+  <script src="js/basket.js?v=19" defer></script>
+  <script src="js/chatbot.js?v=19" defer></script>
+  <script src="js/navbar.js?v=19" defer></script>
+  <script src="js/currency-switcher.js?v=15" defer></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -6169,6 +6406,10 @@
         setTimeout(() => { openVacation16Modal(); }, 500);
       } else if (projectParam === 'environmental15') {
         setTimeout(() => { openEnvironmental15Modal(); }, 500);
+      } else if (projectParam === 'ultramodernbedroommasterpiecewithrooftopterrace49') {
+        setTimeout(() => { openUltraModernBedroomMasterpieceWithRooftopTerrace49Modal(); }, 500);
+      } else if (projectParam === 'executivebedroommodernneoclassicalbungalow50') {
+        setTimeout(() => { openExecutiveBedroomModernNeoclassicalBungalow50Modal(); }, 500);
       }
 
       // Add WhatsApp buttons to all offplan modals
@@ -6214,6 +6455,8 @@
         'beach7Modal': 'beach',
         'vacation6Modal': 'vacation6',
         'vacation16Modal': 'vacation16',
+        'ultraModernBedroomMasterpieceWithRooftopTerrace49Modal': 'ultramodernbedroommasterpiecewithrooftopterrace49',
+        'executiveBedroomModernNeoclassicalBungalow50Modal': 'executivebedroommodernneoclassicalbungalow50',
         'environmental15Modal': 'environmental15'
       };
       
@@ -7103,6 +7346,106 @@
     function goToVilla31Slide(index) {
       villa31CurrentSlide = index;
       updateVilla31Carousel();
+    }
+
+    // Ultra-Modern 3-Bedroom Masterpiece with Rooftop Terrace Modal Functions (OFFPLAN49)
+    let ultraModernBedroomMasterpieceWithRooftopTerrace49CurrentSlide = 0;
+    const ultraModernBedroomMasterpieceWithRooftopTerrace49Slides = document.querySelectorAll('#ultraModernBedroomMasterpieceWithRooftopTerrace49CarouselContainer .carousel-slide');
+    const ultraModernBedroomMasterpieceWithRooftopTerrace49TotalSlides = ultraModernBedroomMasterpieceWithRooftopTerrace49Slides.length;
+
+    function openUltraModernBedroomMasterpieceWithRooftopTerrace49Modal() {
+      document.getElementById('ultraModernBedroomMasterpieceWithRooftopTerrace49Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createUltraModernBedroomMasterpieceWithRooftopTerrace49CarouselDots();
+      updateUltraModernBedroomMasterpieceWithRooftopTerrace49Carousel();
+    }
+
+    function closeUltraModernBedroomMasterpieceWithRooftopTerrace49Modal() {
+      document.getElementById('ultraModernBedroomMasterpieceWithRooftopTerrace49Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createUltraModernBedroomMasterpieceWithRooftopTerrace49CarouselDots() {
+      const dotsContainer = document.getElementById('ultraModernBedroomMasterpieceWithRooftopTerrace49CarouselDots');
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < ultraModernBedroomMasterpieceWithRooftopTerrace49TotalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => goToUltraModernBedroomMasterpieceWithRooftopTerrace49Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateUltraModernBedroomMasterpieceWithRooftopTerrace49Carousel() {
+      ultraModernBedroomMasterpieceWithRooftopTerrace49Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === ultraModernBedroomMasterpieceWithRooftopTerrace49CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#ultraModernBedroomMasterpieceWithRooftopTerrace49CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === ultraModernBedroomMasterpieceWithRooftopTerrace49CurrentSlide);
+      });
+    }
+
+    function moveUltraModernBedroomMasterpieceWithRooftopTerrace49Carousel(direction) {
+      ultraModernBedroomMasterpieceWithRooftopTerrace49CurrentSlide = (ultraModernBedroomMasterpieceWithRooftopTerrace49CurrentSlide + direction + ultraModernBedroomMasterpieceWithRooftopTerrace49TotalSlides) % ultraModernBedroomMasterpieceWithRooftopTerrace49TotalSlides;
+      updateUltraModernBedroomMasterpieceWithRooftopTerrace49Carousel();
+    }
+
+    function goToUltraModernBedroomMasterpieceWithRooftopTerrace49Slide(index) {
+      ultraModernBedroomMasterpieceWithRooftopTerrace49CurrentSlide = index;
+      updateUltraModernBedroomMasterpieceWithRooftopTerrace49Carousel();
+    }
+
+    // Executive 3-Bedroom Modern Neoclassical Bungalow Modal Functions (OFFPLAN50)
+    let executiveBedroomModernNeoclassicalBungalow50CurrentSlide = 0;
+    const executiveBedroomModernNeoclassicalBungalow50Slides = document.querySelectorAll('#executiveBedroomModernNeoclassicalBungalow50CarouselContainer .carousel-slide');
+    const executiveBedroomModernNeoclassicalBungalow50TotalSlides = executiveBedroomModernNeoclassicalBungalow50Slides.length;
+
+    function openExecutiveBedroomModernNeoclassicalBungalow50Modal() {
+      document.getElementById('executiveBedroomModernNeoclassicalBungalow50Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createExecutiveBedroomModernNeoclassicalBungalow50CarouselDots();
+      updateExecutiveBedroomModernNeoclassicalBungalow50Carousel();
+    }
+
+    function closeExecutiveBedroomModernNeoclassicalBungalow50Modal() {
+      document.getElementById('executiveBedroomModernNeoclassicalBungalow50Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createExecutiveBedroomModernNeoclassicalBungalow50CarouselDots() {
+      const dotsContainer = document.getElementById('executiveBedroomModernNeoclassicalBungalow50CarouselDots');
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < executiveBedroomModernNeoclassicalBungalow50TotalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => goToExecutiveBedroomModernNeoclassicalBungalow50Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateExecutiveBedroomModernNeoclassicalBungalow50Carousel() {
+      executiveBedroomModernNeoclassicalBungalow50Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === executiveBedroomModernNeoclassicalBungalow50CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#executiveBedroomModernNeoclassicalBungalow50CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === executiveBedroomModernNeoclassicalBungalow50CurrentSlide);
+      });
+    }
+
+    function moveExecutiveBedroomModernNeoclassicalBungalow50Carousel(direction) {
+      executiveBedroomModernNeoclassicalBungalow50CurrentSlide = (executiveBedroomModernNeoclassicalBungalow50CurrentSlide + direction + executiveBedroomModernNeoclassicalBungalow50TotalSlides) % executiveBedroomModernNeoclassicalBungalow50TotalSlides;
+      updateExecutiveBedroomModernNeoclassicalBungalow50Carousel();
+    }
+
+    function goToExecutiveBedroomModernNeoclassicalBungalow50Slide(index) {
+      executiveBedroomModernNeoclassicalBungalow50CurrentSlide = index;
+      updateExecutiveBedroomModernNeoclassicalBungalow50Carousel();
     }
 
     // Bungalow 32 Modal Functions (OFFPLAN32)
@@ -8859,6 +9202,8 @@
               const family46Modal = document.getElementById('family46Modal');
               const design47Modal = document.getElementById('design47Modal');
               const house48Modal = document.getElementById('house48Modal');
+      const ultraModernBedroomMasterpieceWithRooftopTerrace49Modal = document.getElementById('ultraModernBedroomMasterpieceWithRooftopTerrace49Modal');
+      const executiveBedroomModernNeoclassicalBungalow50Modal = document.getElementById('executiveBedroomModernNeoclassicalBungalow50Modal');
               if (duplex10Modal.classList.contains('active')) {
                 lightboxCurrentModal = 'duplex10';
                 lightboxImages = Array.from(document.querySelectorAll('#duplex10CarouselContainer .carousel-slide')).map(img => img.src);
@@ -8919,6 +9264,14 @@
                 lightboxCurrentModal = 'family46';
                 lightboxImages = Array.from(document.querySelectorAll('#family46CarouselContainer .carousel-slide')).map(img => img.src);
                 lightboxCurrentIndex = family46CurrentSlide;
+      } else if (ultraModernBedroomMasterpieceWithRooftopTerrace49Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'ultraModernBedroomMasterpieceWithRooftopTerrace49';
+        lightboxImages = Array.from(document.querySelectorAll('#ultraModernBedroomMasterpieceWithRooftopTerrace49CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = ultraModernBedroomMasterpieceWithRooftopTerrace49CurrentSlide;
+      } else if (executiveBedroomModernNeoclassicalBungalow50Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'executiveBedroomModernNeoclassicalBungalow50';
+        lightboxImages = Array.from(document.querySelectorAll('#executiveBedroomModernNeoclassicalBungalow50CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = executiveBedroomModernNeoclassicalBungalow50CurrentSlide;
               }
             }
           }
@@ -8995,6 +9348,8 @@
           closeFamily46Modal();
                     closeDesign47Modal();
                     closeHouse48Modal();
+          closeUltraModernBedroomMasterpieceWithRooftopTerrace49Modal();
+          closeExecutiveBedroomModernNeoclassicalBungalow50Modal();
         }
       }
     });
@@ -9110,187 +9465,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-          }
-          
-          if (loadMoreBtn) {
-            if (currentlyShown >= filteredCards.length) {
-              loadMoreBtn.style.display = 'none';
-            } else {
-              loadMoreBtn.style.display = '';
-            }
-          }
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
-
-
-
-
-
-        } else {
-          closeTownhouseModal();
-          closeVacationModal();
-          closeAburiModal();
-          closeDuplexModal();
-          closeDuplex5Modal();
-          closeVacation6Modal();
-          closeBeach7Modal();
-          closeAburiViews8Modal();
-          closeAburiMountain9Modal();
-          closeDuplex10Modal();
-          closeEnvironmental11Modal();
-          closeDuplex12Modal();
-          closeDuplex13Modal();
-          closeEnvironmental14Modal();
-          closeEnvironmental15Modal();
-          closeVacation16Modal();
-          closeVilla26Modal();
-          closeVilla27Modal();
-          closeVilla28Modal();
-          closeTriplex29Modal();
-          closeTriplex30Modal();
-          closeVilla31Modal();
-          closeBungalow32Modal();
-          closeBungalow33Modal();
-          closeDuplex34Modal();
-          closeSanctuary35Modal();
-          closeVaulted36Modal();
-          closeGable37Modal();
-          closeOasis38Modal();
-          closeFloating39Modal();
-          closeMansion41Modal();
-          closeLuxury42Modal();
-          closeDuplex43Modal();
-          closeMansion44Modal();
-          closeHouse45Modal();
-          closeFamily46Modal();
-                    closeDesign47Modal();
-                    closeHouse48Modal();
-        }
-      }
-    });
-    
-    // Keyboard navigation for lightbox
-    document.addEventListener('keydown', (e) => {
-      const lightbox = document.getElementById('imageLightbox');
-      if (lightbox.classList.contains('active')) {
-        if (e.key === 'ArrowLeft') {
-          moveLightbox(-1);
-        } else if (e.key === 'ArrowRight') {
-          moveLightbox(1);
-        }
-      }
-    });
-    
-    // Pagination for Off-Plan Properties
-    (function() {
-      const PROPERTIES_PER_PAGE = 12;
-      const propertyCards = document.querySelectorAll('.offplan-luxury-card');
-      const loadMoreBtn = document.getElementById('loadMoreBtn');
-      const propertiesCount = document.getElementById('propertiesCount');
-      let currentlyShown = 0;
-      
-      function updateVisibleProperties() {
-        const totalProperties = propertyCards.length;
-        const endIndex = Math.min(currentlyShown + PROPERTIES_PER_PAGE, totalProperties);
-        
-        // Show properties up to endIndex
-        for (let i = currentlyShown; i < endIndex; i++) {
-          if (propertyCards[i]) {
-            propertyCards[i].style.display = '';
-            propertyCards[i].classList.add('pagination-visible');
-          }
-        }
-        
-        currentlyShown = endIndex;
-        
-        // Update count text
-        if (propertiesCount) {
-          propertiesCount.textContent = `Showing ${currentlyShown} of ${totalProperties} properties`;
-        }
-        
-        // Hide button if all properties shown
-        if (currentlyShown >= totalProperties && loadMoreBtn) {
-          loadMoreBtn.style.display = 'none';
-        }
-      }
-      
-      // Initially hide all properties
-      propertyCards.forEach(card => {
-        card.style.display = 'none';
-        card.classList.remove('pagination-visible');
-      });
-      
-      // Show first batch
-      updateVisibleProperties();
-      
-      // Load more on button click
-      if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', function() {
-          updateVisibleProperties();
-        });
-      }
-      
-      // Handle category filtering - reset pagination when filter changes
-      const categoryPills = document.querySelectorAll('.category-pill');
-      categoryPills.forEach(pill => {
-        pill.addEventListener('click', function() {
-          const selectedCategory = this.dataset.category;
-          
-          // Reset counter
-          currentlyShown = 0;
-          
-          // Hide all first
-          propertyCards.forEach(card => {
-            card.style.display = 'none';
-            card.classList.remove('pagination-visible');
-          });
-          
-          // Show filtered properties with pagination
-          const filteredCards = Array.from(propertyCards).filter(card => {
-            if (selectedCategory === 'all') return true;
-            return card.dataset.category && card.dataset.category.includes(selectedCategory);
-          });
-          
-          // Show first 12 filtered
-          const endIndex = Math.min(PROPERTIES_PER_PAGE, filteredCards.length);
-          for (let i = 0; i < endIndex; i++) {
-            if (filteredCards[i]) {
-              filteredCards[i].style.display = '';
-              filteredCards[i].classList.add('pagination-visible');
-            }
-          }
-          
-          currentlyShown = endIndex;
-          
-          // Update count and button
-          if (propertiesCount) {
-            propertiesCount.textContent = `Showing ${currentlyShown} of ${filteredCards.length} properties`;
-          }
-          
-          if (loadMoreBtn) {
-            if (currentlyShown >= filteredCards.length) {
-              loadMoreBtn.style.display = 'none';
-            } else {
-              loadMoreBtn.style.display = '';
-            }
-          }
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
-
-
-
-
-

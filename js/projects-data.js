@@ -692,6 +692,49 @@ const projectsData = {
     ],
     amenities: [],
     features: []
+  },
+
+  // Project: Exclusive 4-Bedroom Luxury
+  "exclusive-4-bedroom-luxury-east-legon-hills": {
+    name: "Exclusive 4-Bedroom Luxury",
+    location: "East Legon Hills, Accra",
+    type: "Duplex",
+    status: "upcoming",
+    price: "$350,000",
+    bedrooms: "4",
+    bathrooms: "5",
+    sqft: "",
+    parking: "",
+    description: "Secure your future home in one of Accra's fastest-growing residential hubs. This contemporary 4-bedroom (all en-suite) duplex offers a sleek, 'Apple-style' minimalist design, blending luxury with functional smart-living.",
+    tagline: "Secure your future home in one of Accra's fastest-growing residential hubs.",
+    images: [
+      "images/properties/PROJECT 16/2nd.webp",
+      "images/properties/PROJECT 16/3rd.webp",
+      "images/properties/PROJECT 16/4th.webp",
+      "images/properties/PROJECT 16/5th.webp",
+      "images/properties/PROJECT 16/6th.webp",
+      "images/properties/PROJECT 16/7th.webp",
+      "images/properties/PROJECT 16/8th.webp",
+      "images/properties/PROJECT 16/9th.webp",
+      "images/properties/PROJECT 16/10th.webp",
+      "images/properties/PROJECT 16/11th.webp",
+      "images/properties/PROJECT 16/12th.webp",
+      "images/properties/PROJECT 16/13th.webp",
+      "images/properties/PROJECT 16/14th.webp",
+      "images/properties/PROJECT 16/15th.webp",
+      "images/properties/PROJECT 16/16th.webp",
+      "images/properties/PROJECT 16/17th.webp",
+      "images/properties/PROJECT 16/18th.webp",
+      "images/properties/PROJECT 16/19th.webp",
+      "images/properties/PROJECT 16/20th.webp"
+    ],
+    amenities: ["24-Hour Electricity", "Air Conditioning", "Balcony", "Chandelier", "Dining Area", "Dishwasher", "En Suite", "Hot Water", "Kitchen Cabinets", "Kitchen Shelf", "Microwave", "Pop Ceiling", "Pre-Paid Meter", "Refrigerator", "Sectionals", "Tiled Floor", "TV", "Wardrobe", "Wi-Fi"],
+    features: [
+      "Contemporary 4-bedroom all en-suite duplex",
+      "Apple-style minimalist design",
+      "Smart-living functionality",
+      "Located in East Legon Hills"
+    ]
   }
 };
 

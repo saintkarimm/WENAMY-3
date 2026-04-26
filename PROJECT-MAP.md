@@ -585,7 +585,7 @@ Category: Duplexes|Vacation Homes|Environmentalists
 | `PROJECT 4/` | 1st.png - 5th.png | Luxury Apartment |
 | `PROJECT 5-12/` | 1st.png - 5th.png | Various properties |
 | `PROJECT 13/` | 1st.png - 20th.png | Restaurant at Community Tema |
-| `PROJECT 16/` | 1st.webp - 5th.webp | 4 Bedroom Mansion |
+| PROJECT 16/ | 1st.webp - 20th.webp | Exclusive 4-Bedroom Luxury (Upcoming) |
 | `PROJECT 17/` | 1st.webp - 5th.webp | Luxury 4 Bedroom Mansion |
 | `PROJECT 18/` | 1st.webp - 5th.webp | Executive 3 Bedroom Duplex |
 | `PROJECT 19/` | 1st.webp - 15th.webp | 5 Bedroom Mansion |
