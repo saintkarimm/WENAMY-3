@@ -1,13 +1,19 @@
 const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const { ask, askChoice, confirm, close } = require('./lib/prompts');
 
-const SUSPICIOUS_PATTERNS = [
+// Find repo root so tool works from any subdirectory
+let REPO_ROOT;
+try {
+  REPO_ROOT = execSync('git rev-parse --show-toplevel', { encoding: 'utf8' }).trim();
+} catch {
+  console.error('Error: Not a git repository.');
+  process.exit(1);
+}
+
+const IGNORE_PATTERNS = [
   /backup/i,
   /corrupted/i,
   /corruption/i,
-  /fixed/i,
+  /fixed\.html$/i,
   /test-input/i,
   /extract-output/i,
   /migration\.diff$/i,
@@ -21,17 +27,17 @@ const SUSPICIOUS_PATTERNS = [
   /\.diff$/i
 ];
 
-function isSuspicious(file) {
-  return SUSPICIOUS_PATTERNS.some(p => p.test(file));
-}
-
 function runGit(args, silent = false) {
   try {
-    return execSync(`git ${args}`, { encoding: 'utf8', cwd: process.cwd() });
+    return execSync(`git ${args}`, { encoding: 'utf8', cwd: REPO_ROOT });
   } catch (err) {
     if (silent) return '';
     throw new Error(`git ${args} failed: ${err.stderr || err.message}`);
   }
+}
+
+function isIgnored(file) {
+  return IGNORE_PATTERNS.some(p => p.test(file));
 }
 
 function getStatus() {
@@ -59,172 +65,111 @@ function getStatus() {
   return { staged, modified, untracked };
 }
 
-function printStatus({ staged, modified, untracked }) {
-  console.log('\n=== Git Status ===');
-  if (staged.length) {
-    console.log('\nStaged:');
-    staged.forEach(f => console.log(`  [${f.status}] ${f.file}`));
-  }
-  if (modified.length) {
-    console.log('\nModified (not staged):');
-    modified.forEach(f => console.log(`  [${f.status}] ${f.file}`));
-  }
-  if (untracked.length) {
-    const normal = untracked.filter(f => !isSuspicious(f.file));
-    const suspicious = untracked.filter(f => isSuspicious(f.file));
-    if (normal.length) {
-      console.log('\nUntracked:');
-      normal.forEach(f => console.log(`  ${f.file}`));
+function generateCommitMessage(files) {
+  const newOffplans = [];
+  const newProjects = [];
+  const newUpcoming = [];
+  const toolChanges = [];
+  const otherChanges = [];
+
+  files.forEach(f => {
+    const offplanMatch = f.match(/images\/offplan\/(OFFPLAN\d+)/i);
+    const projectMatch = f.match(/images\/properties\/(PROJECT\s*\d+)/i);
+    const upcomingMatch = f.match(/images\/properties\/UPCOMING\/(Project\s*\d+)/i);
+    const toolMatch = f.match(/tools\/(\S+)/);
+
+    if (offplanMatch && !newOffplans.includes(offplanMatch[1])) {
+      newOffplans.push(offplanMatch[1]);
+    } else if (upcomingMatch && !newUpcoming.includes(upcomingMatch[1])) {
+      newUpcoming.push(upcomingMatch[1]);
+    } else if (projectMatch && !newProjects.includes(projectMatch[1])) {
+      newProjects.push(projectMatch[1]);
+    } else if (toolMatch && !toolChanges.includes(toolMatch[1])) {
+      toolChanges.push(toolMatch[1]);
+    } else if (!offplanMatch && !projectMatch && !upcomingMatch && !toolMatch) {
+      otherChanges.push(f);
     }
-    if (suspicious.length) {
-      console.log('\nUntracked (looks temporary — will warn if staging):');
-      suspicious.forEach(f => console.log(`  ⚠️  ${f.file}`));
-    }
+  });
+
+  const parts = [];
+
+  if (newOffplans.length) {
+    parts.push(`Add ${newOffplans.join(', ')} properties`);
   }
-  if (!staged.length && !modified.length && !untracked.length) {
-    console.log('  Working tree clean. Nothing to commit.');
+  if (newProjects.length) {
+    parts.push(`Add ${newProjects.join(', ')} to completed projects`);
   }
+  if (newUpcoming.length) {
+    parts.push(`Add ${newUpcoming.join(', ')} to upcoming projects`);
+  }
+  if (toolChanges.length) {
+    parts.push(`Update ${toolChanges.join(', ')}`);
+  }
+
+  if (parts.length === 0 && otherChanges.length) {
+    return 'Update files and assets';
+  }
+
+  if (parts.length === 0) {
+    return 'Update files';
+  }
+
+  return parts.join('; ');
 }
 
-async function selectFilesToStage({ staged, modified, untracked }) {
-  const allChanged = [...modified.map(f => f.file), ...untracked.map(f => f.file)];
-  const suspiciousUntracked = untracked.filter(f => isSuspicious(f.file)).map(f => f.file);
-
-  if (!allChanged.length) {
-    if (staged.length) {
-      const proceed = await confirm(`${staged.length} file(s) already staged. Proceed with commit?`);
-      return proceed ? 'STAGED_ONLY' : null;
-    }
-    return null;
-  }
-
-  const choices = [
-    'Stage all changed files (modified + untracked)',
-    'Stage only modified files (ignore untracked)',
-    'Stage only untracked files (ignore modified)',
-    'Pick files individually'
-  ];
-
-  if (staged.length) {
-    choices.unshift('Use already staged files only');
-  }
-
-  const choice = await askChoice('What do you want to stage?', choices);
-
-  if (choice.includes('already staged')) return 'STAGED_ONLY';
-
-  if (choice.includes('all changed')) {
-    if (suspiciousUntracked.length) {
-      console.log(`\n⚠️  Found ${suspiciousUntracked.length} suspicious untracked file(s):`);
-      suspiciousUntracked.forEach(f => console.log(`     ${f}`));
-      const includeSuspicious = await confirm('Include these in the commit?');
-      if (!includeSuspicious) {
-        const addToIgnore = await confirm('Add them to .gitignore instead?');
-        if (addToIgnore) {
-          await addToGitignore(suspiciousUntracked);
-        }
-        return allChanged.filter(f => !isSuspicious(f));
-      }
-    }
-    return allChanged;
-  }
-
-  if (choice.includes('only modified')) return modified.map(f => f.file);
-
-  if (choice.includes('only untracked')) {
-    const untrackedFiles = untracked.map(f => f.file);
-    if (suspiciousUntracked.length) {
-      console.log(`\n⚠️  Found ${suspiciousUntracked.length} suspicious untracked file(s):`);
-      suspiciousUntracked.forEach(f => console.log(`     ${f}`));
-      const includeSuspicious = await confirm('Include these in the commit?');
-      if (!includeSuspicious) {
-        const addToIgnore = await confirm('Add them to .gitignore instead?');
-        if (addToIgnore) {
-          await addToGitignore(suspiciousUntracked);
-        }
-        return untrackedFiles.filter(f => !isSuspicious(f));
-      }
-    }
-    return untrackedFiles;
-  }
-
-  // Pick individually
-  const picked = [];
-  for (const file of allChanged) {
-    const isSus = isSuspicious(file);
-    const prompt = isSus ? `Stage "${file}"? (looks temporary)` : `Stage "${file}"?`;
-    const yes = await confirm(prompt);
-    if (yes) picked.push(file);
-  }
-  return picked.length ? picked : null;
-}
-
-async function addToGitignore(files) {
-  const gitignorePath = path.join(process.cwd(), '.gitignore');
-  let content = '';
-  if (fs.existsSync(gitignorePath)) {
-    content = fs.readFileSync(gitignorePath, 'utf8');
-    if (!content.endsWith('\n')) content += '\n';
-  }
-  const newEntries = files.filter(f => !content.includes(f));
-  if (newEntries.length) {
-    content += '# Temporary files ignored by commit-push tool\n';
-    newEntries.forEach(f => { content += `${f}\n`; });
-    fs.writeFileSync(gitignorePath, content);
-    console.log(`  Added ${newEntries.length} entry(s) to .gitignore`);
-  }
-}
-
-async function main() {
-  console.log('=== Commit & Push Tool ===\n');
-
-  // Check if we're in a git repo
-  try {
-    runGit('rev-parse --git-dir', true);
-  } catch {
-    console.error('Error: Not a git repository.');
-    close();
-    process.exit(1);
-  }
+function main() {
+  console.log('=== Auto Commit & Push ===\n');
+  console.log(`Repo root: ${REPO_ROOT}\n`);
 
   const status = getStatus();
-  printStatus(status);
 
   if (!status.staged.length && !status.modified.length && !status.untracked.length) {
-    close();
+    console.log('Working tree clean. Nothing to commit.');
     process.exit(0);
   }
 
-  const filesToStage = await selectFilesToStage(status);
-  if (!filesToStage) {
-    console.log('\nCancelled. No files staged.');
-    close();
+  // Collect files to stage
+  const filesToStage = [];
+  const ignoredFiles = [];
+
+  status.staged.forEach(f => filesToStage.push(f.file));
+  status.modified.forEach(f => {
+    if (isIgnored(f.file)) {
+      ignoredFiles.push(f.file);
+    } else {
+      filesToStage.push(f.file);
+    }
+  });
+  status.untracked.forEach(f => {
+    if (isIgnored(f.file)) {
+      ignoredFiles.push(f.file);
+    } else {
+      filesToStage.push(f.file);
+    }
+  });
+
+  if (ignoredFiles.length) {
+    console.log('Ignoring temp/backup files:');
+    ignoredFiles.forEach(f => console.log(`  - ${f}`));
+  }
+
+  if (!filesToStage.length) {
+    console.log('\nNothing to commit after ignoring temp files.');
     process.exit(0);
   }
 
-  if (filesToStage !== 'STAGED_ONLY') {
-    const fileList = Array.isArray(filesToStage) ? filesToStage : [filesToStage];
-    console.log(`\nStaging ${fileList.length} file(s)...`);
-    fileList.forEach(f => {
-      try {
-        runGit(`add "${f}"`);
-        console.log(`  + ${f}`);
-      } catch (err) {
-        console.error(`  FAILED: ${f} — ${err.message}`);
-      }
-    });
-  }
+  console.log(`\nStaging ${filesToStage.length} file(s)...`);
+  filesToStage.forEach(f => {
+    try {
+      runGit(`add "${f}"`);
+      console.log(`  + ${f}`);
+    } catch (err) {
+      console.error(`  FAILED: ${f} — ${err.message}`);
+    }
+  });
 
-  const defaultMsg = filesToStage === 'STAGED_ONLY'
-    ? 'Update files'
-    : `Update ${Array.isArray(filesToStage) ? filesToStage.length : 1} file(s)`;
-  const message = await ask('Commit message', defaultMsg);
-
-  if (!message.trim()) {
-    console.log('Commit message cannot be empty. Cancelling.');
-    close();
-    process.exit(1);
-  }
+  const message = generateCommitMessage(filesToStage);
+  console.log(`\nCommit message: "${message}"`);
 
   console.log('\nCommitting...');
   try {
@@ -232,32 +177,18 @@ async function main() {
     console.log('  Committed successfully.');
   } catch (err) {
     console.error(`  Commit failed: ${err.message}`);
-    close();
     process.exit(1);
   }
 
   const currentBranch = runGit('branch --show-current').trim();
-  const shouldPush = await confirm(`\nPush to origin/${currentBranch}?`);
-
-  if (shouldPush) {
-    console.log(`\nPushing to origin/${currentBranch}...`);
-    try {
-      runGit(`push origin ${currentBranch}`);
-      console.log('  Pushed successfully.');
-    } catch (err) {
-      console.error(`  Push failed: ${err.message}`);
-      close();
-      process.exit(1);
-    }
-  } else {
-    console.log('\nPush skipped. Commit is local only.');
+  console.log(`\nPushing to origin/${currentBranch}...`);
+  try {
+    runGit(`push origin ${currentBranch}`);
+    console.log('  Pushed successfully.');
+  } catch (err) {
+    console.error(`  Push failed: ${err.message}`);
+    process.exit(1);
   }
-
-  close();
 }
 
-main().catch(err => {
-  console.error(err);
-  close();
-  process.exit(1);
-});
+main();
