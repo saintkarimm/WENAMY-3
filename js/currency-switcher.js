@@ -337,13 +337,11 @@
      * Format price with appropriate separators
      */
     formatPrice(value, config) {
-      // Determine if we need decimals
-      const hasDecimals = value % 1 !== 0;
-      
-      // Format number with commas
-      const formattedNumber = hasDecimals 
-        ? value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })
-        : value.toLocaleString('en-US');
+      // Format number with commas, keeping decimals when present
+      const formattedNumber = value.toLocaleString('en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+      });
 
       // Add symbol
       if (config.position === 'before') {
@@ -434,17 +432,12 @@
       const scrollY = window.scrollY || window.pageYOffset;
       const windowHeight = window.innerHeight;
       
-      // Only process if scroll position changed significantly (reduces jitter)
-      if (Math.abs(scrollY - lastScrollY) < 5 && isFloating) {
-        return;
-      }
-      lastScrollY = scrollY;
-      
-      // Check if footer is in view
+      // Check if footer is in view - ALWAYS check this (don't skip for small scrolls)
       let footerInView = false;
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
-        footerInView = footerRect.top < windowHeight && footerRect.bottom > 0;
+        // Footer is "in view" when its top edge enters the viewport
+        footerInView = footerRect.top < windowHeight;
       }
       
       // Handle showing/hiding based on footer visibility
@@ -455,6 +448,12 @@
         container.classList.remove('floating-hidden');
         isHidden = false;
       }
+      
+      // Skip floating mode transition for tiny scroll changes (reduces jitter)
+      if (Math.abs(scrollY - lastScrollY) < 5) {
+        return;
+      }
+      lastScrollY = scrollY;
       
       // Handle floating mode activation
       if (scrollY > scrollThreshold && !isFloating) {
