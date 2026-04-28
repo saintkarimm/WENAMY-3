@@ -1,8 +1,0 @@
-# Temporary files ignored by commit-push tool
-corruption-analysis.txt
-offplan-backup-karim.html
-offplan-corrupted.html
-offplan-fixed.html
-offplan-migration.diff
-test-inputs.txt
-tools/update-prompts.js
