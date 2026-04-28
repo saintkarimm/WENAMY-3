@@ -1443,6 +1443,19 @@ body {
   box-shadow: 0 0 0 2px rgba(3, 105, 161, 0.2), 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Hide floating switcher when footer is in view */
+.currency-switcher-container.floating.floating-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(100%) translateZ(0) !important;
+}
+
+@media (max-width: 768px) {
+  .currency-switcher-container.floating.floating-hidden {
+    transform: translateY(-50%) translateX(100%) translateZ(0) !important;
+  }
+}
+
 @media (max-width: 768px) {
   .currency-switcher-container.floating {
     top: 50%;

@@ -70,11 +70,9 @@
       this.findPriceElements();
       this.renderSwitcher();
       this.bindEvents();
-      // Don't update display on init - let the original prices show
-      // Only update when user explicitly changes currency
-      if (this.currentCurrency !== 'USD') {
-        this.updateDisplay();
-      }
+      // Always update display to match selected currency
+      // HTML defaults to GHS but switcher may show USD
+      this.updateDisplay();
     }
 
     /**
@@ -468,7 +466,9 @@
       } else if (scrollY <= scrollThreshold && isFloating) {
         // Return to normal mode
         container.classList.remove('floating');
+        container.classList.remove('floating-hidden');
         isFloating = false;
+        isHidden = false;
         container.style.opacity = '';
         container.style.transform = '';
       }
