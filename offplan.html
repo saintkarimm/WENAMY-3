@@ -38,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- CSS Files -->
-  <link rel="stylesheet" href="css/main.css?v=60">
-  <link rel="stylesheet" href="css/hero-new.css?v=62">
-  <link rel="stylesheet" href="css/footer.css?v=62">
+  <link rel="stylesheet" href="css/main.css?v=61">
+  <link rel="stylesheet" href="css/hero-new.css?v=63">
+  <link rel="stylesheet" href="css/footer.css?v=63">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -763,6 +763,26 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- 3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls - OFFPLAN90 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="family-homes bungalows environmentalists" onclick="try { openBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN90/1st.webp" alt="3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls" loading="lazy" decoding="async" width="400" height="300">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">Stunning 3-bedroom family bungalow. Designed to merge indoor luxury with the beauty of nature, the home features expansive floor-to-ceiling panoramic glass walls and a premium natural stone facade.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="310000">GH₵ 3,413,100</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); try { openBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal(); } catch(e) { console.error('Button click error:', e.message); }">View Details</button>
+        </div>
+      </article>
+
       <!-- 2-Bedroom Family Home – Minimalist Beauty with Secure Carport - OFFPLAN89 -->
       <article class="offplan-luxury-card scroll-animate" data-category="family-homes bungalows" onclick="try { openBedroomFamilyHomeMinimalistBeautyWithSecureCarport89Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -10079,6 +10099,76 @@
     </div>
   </div>
 
+  <!-- 3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls - OFFPLAN90 Modal -->
+  <div class="offplan-modal" id="bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal">
+    <div class="offplan-modal-overlay" onclick="closeBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselContainer">
+          <img src="images/offplan/OFFPLAN90/1st.webp" alt="3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN90/2nd.webp" alt="3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN90/3rd.webp" alt="3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Family Homes / Bungalows / Environmentalists</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">3</span></div>
+          <div class="feature-item"><span class="feature-label">Bathrooms</span><span class="feature-value">4</span></div>
+          <div class="feature-item"><span class="feature-label">Size</span><span class="feature-value">200 sqm</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">GH₵ 3,413,100</span></div>
+        </div>
+        
+        <div class="offplan-modal-description">
+          <p>he property centers around a private, sun-drenched garden and a shimmering swimming pool, offering the ultimate setting for relaxation and high-end entertainment. With its clean horizontal lines and open-plan layout, this home is a masterpiece of modern minimalist design.</p>
+        </div>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Features</h4>
+          <ul>
+            <li>3 Spacious En-suite Bedrooms</li>
+            <li>Private Luxury Swimming Pool</li>
+            <li>Floor-to-Ceiling Panoramic Glass</li>
+            <li>Premium Natural Stone Facade</li>
+            <li>Open-Air Poolside Lounge</li>
+            <li>Modern Flat-Roof Architectural Design</li>
+            <li>Lush Manicured Green Lawns</li>
+            <li>Secluded and Secure Perimeter</li>
+            <li>Integrated Mood Lighting.</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- Benefits Section -->
   <section class="offplan-benefits-section">
     <h2 class="offplan-benefits-title">Why Invest Off-Plan?</h2>
@@ -10192,11 +10282,11 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=58" defer></script>
-  <script src="js/basket.js?v=58" defer></script>
-  <script src="js/chatbot.js?v=58" defer></script>
-  <script src="js/navbar.js?v=58" defer></script>
-  <script src="js/currency-switcher.js?v=54" defer></script>
+  <script src="js/animations.js?v=59" defer></script>
+  <script src="js/basket.js?v=59" defer></script>
+  <script src="js/chatbot.js?v=59" defer></script>
+  <script src="js/navbar.js?v=59" defer></script>
+  <script src="js/currency-switcher.js?v=55" defer></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -10511,6 +10601,8 @@
         setTimeout(() => { openBedroomModernDuplexWithDesignerLandscapingSecureGarage88Modal(); }, 500);
       } else if (projectParam === 'bedroomfamilyhomeminimalistbeautywithsecurecarport89') {
         setTimeout(() => { openBedroomFamilyHomeMinimalistBeautyWithSecureCarport89Modal(); }, 500);
+      } else if (projectParam === 'bedroomfamilyretreatwithfloortoceilingglasswalls90') {
+        setTimeout(() => { openBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal(); }, 500);
       }
 
       // Add WhatsApp buttons to all offplan modals
@@ -10597,6 +10689,7 @@
         'ultraModernBedroomLuxuryTriplexWithSignaturePerforatedDesign87Modal': 'ultramodernbedroomluxurytriplexwithsignatureperforateddesign87',
         'bedroomModernDuplexWithDesignerLandscapingSecureGarage88Modal': 'bedroommodernduplexwithdesignerlandscapingsecuregarage88',
         'bedroomFamilyHomeMinimalistBeautyWithSecureCarport89Modal': 'bedroomfamilyhomeminimalistbeautywithsecurecarport89',
+        'bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal': 'bedroomfamilyretreatwithfloortoceilingglasswalls90',
         'environmental15Modal': 'environmental15'
       };
       
@@ -13538,6 +13631,56 @@
       updateBedroomFamilyHomeMinimalistBeautyWithSecureCarport89Carousel();
     }
 
+    // 3-Bedroom Family Retreat with Floor-to-Ceiling Glass Walls Modal Functions (OFFPLAN90)
+    let bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CurrentSlide = 0;
+    const bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Slides = document.querySelectorAll('#bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselContainer .carousel-slide');
+    const bedroomFamilyRetreatWithFloorToCeilingGlassWalls90TotalSlides = bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Slides.length;
+
+    function openBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal() {
+      document.getElementById('bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createBedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselDots();
+      updateBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Carousel();
+    }
+
+    function closeBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal() {
+      document.getElementById('bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createBedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselDots() {
+      const dotsContainer = document.getElementById('bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselDots');
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < bedroomFamilyRetreatWithFloorToCeilingGlassWalls90TotalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => goToBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Carousel() {
+      bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CurrentSlide);
+      });
+    }
+
+    function moveBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Carousel(direction) {
+      bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CurrentSlide = (bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CurrentSlide + direction + bedroomFamilyRetreatWithFloorToCeilingGlassWalls90TotalSlides) % bedroomFamilyRetreatWithFloorToCeilingGlassWalls90TotalSlides;
+      updateBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Carousel();
+    }
+
+    function goToBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Slide(index) {
+      bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CurrentSlide = index;
+      updateBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Carousel();
+    }
+
     // Bungalow 32 Modal Functions (OFFPLAN32)
     let bungalow32CurrentSlide = 0;
     const bungalow32Slides = document.querySelectorAll('#bungalow32CarouselContainer .carousel-slide');
@@ -15333,6 +15476,7 @@
       const ultraModernBedroomLuxuryTriplexWithSignaturePerforatedDesign87Modal = document.getElementById('ultraModernBedroomLuxuryTriplexWithSignaturePerforatedDesign87Modal');
       const bedroomModernDuplexWithDesignerLandscapingSecureGarage88Modal = document.getElementById('bedroomModernDuplexWithDesignerLandscapingSecureGarage88Modal');
       const bedroomFamilyHomeMinimalistBeautyWithSecureCarport89Modal = document.getElementById('bedroomFamilyHomeMinimalistBeautyWithSecureCarport89Modal');
+      const bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal = document.getElementById('bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal');
               if (duplex10Modal.classList.contains('active')) {
                 lightboxCurrentModal = 'duplex10';
                 lightboxImages = Array.from(document.querySelectorAll('#duplex10CarouselContainer .carousel-slide')).map(img => img.src);
@@ -15557,6 +15701,10 @@
         lightboxCurrentModal = 'bedroomFamilyHomeMinimalistBeautyWithSecureCarport89';
         lightboxImages = Array.from(document.querySelectorAll('#bedroomFamilyHomeMinimalistBeautyWithSecureCarport89CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = bedroomFamilyHomeMinimalistBeautyWithSecureCarport89CurrentSlide;
+      } else if (bedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'bedroomFamilyRetreatWithFloorToCeilingGlassWalls90';
+        lightboxImages = Array.from(document.querySelectorAll('#bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = bedroomFamilyRetreatWithFloorToCeilingGlassWalls90CurrentSlide;
               }
             }
           }
@@ -15674,6 +15822,7 @@
           closeUltraModernBedroomLuxuryTriplexWithSignaturePerforatedDesign87Modal();
           closeBedroomModernDuplexWithDesignerLandscapingSecureGarage88Modal();
           closeBedroomFamilyHomeMinimalistBeautyWithSecureCarport89Modal();
+          closeBedroomFamilyRetreatWithFloorToCeilingGlassWalls90Modal();
         }
       }
     });
