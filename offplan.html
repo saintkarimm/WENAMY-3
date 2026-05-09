@@ -38,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- CSS Files -->
-  <link rel="stylesheet" href="css/main.css?v=69">
-  <link rel="stylesheet" href="css/hero-new.css?v=71">
-  <link rel="stylesheet" href="css/footer.css?v=71">
+  <link rel="stylesheet" href="css/main.css?v=70">
+  <link rel="stylesheet" href="css/hero-new.css?v=72">
+  <link rel="stylesheet" href="css/footer.css?v=72">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/pages-luxury.css">
   <link rel="stylesheet" href="css/loading-states.css">
@@ -763,6 +763,26 @@
   <!-- Off-Plan Projects Section -->
   <section class="offplan-luxury-section">
     <div class="offplan-luxury-grid">
+      <!-- Luxury 5-Bedroom Executive Duplex - OFFPLAN99 -->
+      <article class="offplan-luxury-card scroll-animate" data-category="duplexes" onclick="try { openLuxuryBedroomExecutiveDuplex99Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
+        <div class="offplan-luxury-image">
+          <img src="images/offplan/OFFPLAN99/1st.webp" alt="Luxury 5-Bedroom Executive Duplex" loading="lazy" decoding="async" width="400" height="300">
+        </div>
+        <div class="offplan-luxury-content">
+          <h3 class="offplan-luxury-name">Luxury 5-Bedroom Executive Duplex</h3>
+          <p class="offplan-luxury-desc" style="font-size: 0.9rem; color: #64748b; margin: 0.75rem 0; line-height: 1.5;">his home is an architectural standout, featuring unique laser-cut decorative screens that provide both privacy and a stunning visual aesthetic.</p>
+          <p class="offplan-luxury-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Accra
+          </p>
+          <div class="offplan-luxury-price" data-usd="380000">GH₵ 4,183,800</div>
+          <button class="offplan-luxury-btn" onclick="event.stopPropagation(); try { openLuxuryBedroomExecutiveDuplex99Modal(); } catch(e) { console.error('Button click error:', e.message); }">View Details</button>
+        </div>
+      </article>
+
       <!-- 5-Bedroom Glass-Front Duplex - OFFPLAN98 -->
       <article class="offplan-luxury-card scroll-animate" data-category="family-homes duplexes" onclick="try { openBedroomGlassFrontDuplex98Modal(); } catch(e) { console.error('Card click error:', e.message); }" style="cursor: pointer;">
         <div class="offplan-luxury-image">
@@ -11008,6 +11028,77 @@
     </div>
   </div>
 
+  <!-- Luxury 5-Bedroom Executive Duplex - OFFPLAN99 Modal -->
+  <div class="offplan-modal" id="luxuryBedroomExecutiveDuplex99Modal">
+    <div class="offplan-modal-overlay" onclick="closeLuxuryBedroomExecutiveDuplex99Modal()"></div>
+    <div class="offplan-modal-content">
+      <button class="offplan-modal-close" onclick="closeLuxuryBedroomExecutiveDuplex99Modal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="offplan-modal-carousel">
+        <div class="carousel-container" id="luxuryBedroomExecutiveDuplex99CarouselContainer">
+          <img src="images/offplan/OFFPLAN99/1st.webp" alt="Luxury 5-Bedroom Executive Duplex - Image 1" class="carousel-slide active" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN99/2nd.webp" alt="Luxury 5-Bedroom Executive Duplex - Image 2" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN99/3rd.webp" alt="Luxury 5-Bedroom Executive Duplex - Image 3" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+          <img src="images/offplan/OFFPLAN99/4th.webp" alt="Luxury 5-Bedroom Executive Duplex - Image 4" class="carousel-slide" onclick="openLightbox(this.src, event)" style="cursor: zoom-in;">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveLuxuryBedroomExecutiveDuplex99Carousel(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveLuxuryBedroomExecutiveDuplex99Carousel(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="luxuryBedroomExecutiveDuplex99CarouselDots"></div>
+      </div>
+      
+      <div class="offplan-modal-details">
+        <h2 class="offplan-modal-title">Luxury 5-Bedroom Executive Duplex</h2>
+        <p class="offplan-modal-location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Accra
+        </p>
+        
+        <div class="offplan-modal-features">
+          <div class="feature-item"><span class="feature-label">Type</span><span class="feature-value">Duplexes</span></div>
+          <div class="feature-item"><span class="feature-label">Bedrooms</span><span class="feature-value">5</span></div>
+          <div class="feature-item"><span class="feature-label">Bathrooms</span><span class="feature-value">6</span></div>
+          <div class="feature-item"><span class="feature-label">Size</span><span class="feature-value">222 sqm</span></div>
+          <div class="feature-item"><span class="feature-label">Price</span><span class="feature-value">GH₵ 4,183,800</span></div>
+        </div>
+        
+        <div class="offplan-modal-description">
+          <p>The facade is defined by its clean white geometric lines, warm timber-clad ceilings, and massive floor-to-ceiling glass windows that flood the home with natural light. With a spacious upper-level glass balcony, professional tropical landscaping, and a grand paved driveway, this property offers an unrivaled living experience for those who appreciate high-end designer living.</p>
+        </div>
+        
+        <div class="offplan-modal-highlights">
+          <h4>Key Features</h4>
+          <ul>
+            <li>5 Palatial En-suite Bedrooms</li>
+            <li>Signature Laser-Cut Decorative Screens</li>
+            <li>Grand Floor-to-Ceiling Glass Galleries</li>
+            <li>Premium Timber-Clad Exterior Ceilings</li>
+            <li>Seamless Glass-Railing Balcony</li>
+            <li>Massive Paved Designer Driveway</li>
+            <li>Integrated Modern Planter Boxes</li>
+            <li>Professional Tropical Landscaping</li>
+            <li>Sleek Modern Main Entrance.</li>
+          </ul>
+        </div>
+        
+        <div class="offplan-modal-actions">
+          <a href="tel:+233243817969" class="offplan-modal-btn secondary">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- Benefits Section -->
   <section class="offplan-benefits-section">
     <h2 class="offplan-benefits-title">Why Invest Off-Plan?</h2>
@@ -11121,11 +11212,11 @@
     </div>
   </footer>
 
-  <script src="js/animations.js?v=67" defer></script>
-  <script src="js/basket.js?v=67" defer></script>
-  <script src="js/chatbot.js?v=67" defer></script>
-  <script src="js/navbar.js?v=67" defer></script>
-  <script src="js/currency-switcher.js?v=63" defer></script>
+  <script src="js/animations.js?v=68" defer></script>
+  <script src="js/basket.js?v=68" defer></script>
+  <script src="js/chatbot.js?v=68" defer></script>
+  <script src="js/navbar.js?v=68" defer></script>
+  <script src="js/currency-switcher.js?v=64" defer></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -11458,6 +11549,8 @@
         setTimeout(() => { openBedroomExecutiveDuplexPremiumFinishesLandscapedGarden97Modal(); }, 500);
       } else if (projectParam === 'bedroomglassfrontduplex98') {
         setTimeout(() => { openBedroomGlassFrontDuplex98Modal(); }, 500);
+      } else if (projectParam === 'luxurybedroomexecutiveduplex99') {
+        setTimeout(() => { openLuxuryBedroomExecutiveDuplex99Modal(); }, 500);
       }
 
       // Add WhatsApp buttons to all offplan modals
@@ -11553,6 +11646,7 @@
         'bedroomDesignerDuplexFeaturingTimberAccentsNaturalLight96Modal': 'bedroomdesignerduplexfeaturingtimberaccentsnaturallight96',
         'bedroomExecutiveDuplexPremiumFinishesLandscapedGarden97Modal': 'bedroomexecutiveduplexpremiumfinisheslandscapedgarden97',
         'bedroomGlassFrontDuplex98Modal': 'bedroomglassfrontduplex98',
+        'luxuryBedroomExecutiveDuplex99Modal': 'luxurybedroomexecutiveduplex99',
         'environmental15Modal': 'environmental15'
       };
       
@@ -14944,6 +15038,56 @@
       updateBedroomGlassFrontDuplex98Carousel();
     }
 
+    // Luxury 5-Bedroom Executive Duplex Modal Functions (OFFPLAN99)
+    let luxuryBedroomExecutiveDuplex99CurrentSlide = 0;
+    const luxuryBedroomExecutiveDuplex99Slides = document.querySelectorAll('#luxuryBedroomExecutiveDuplex99CarouselContainer .carousel-slide');
+    const luxuryBedroomExecutiveDuplex99TotalSlides = luxuryBedroomExecutiveDuplex99Slides.length;
+
+    function openLuxuryBedroomExecutiveDuplex99Modal() {
+      document.getElementById('luxuryBedroomExecutiveDuplex99Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      createLuxuryBedroomExecutiveDuplex99CarouselDots();
+      updateLuxuryBedroomExecutiveDuplex99Carousel();
+    }
+
+    function closeLuxuryBedroomExecutiveDuplex99Modal() {
+      document.getElementById('luxuryBedroomExecutiveDuplex99Modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function createLuxuryBedroomExecutiveDuplex99CarouselDots() {
+      const dotsContainer = document.getElementById('luxuryBedroomExecutiveDuplex99CarouselDots');
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < luxuryBedroomExecutiveDuplex99TotalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => goToLuxuryBedroomExecutiveDuplex99Slide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateLuxuryBedroomExecutiveDuplex99Carousel() {
+      luxuryBedroomExecutiveDuplex99Slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === luxuryBedroomExecutiveDuplex99CurrentSlide);
+      });
+      const dots = document.querySelectorAll('#luxuryBedroomExecutiveDuplex99CarouselDots .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === luxuryBedroomExecutiveDuplex99CurrentSlide);
+      });
+    }
+
+    function moveLuxuryBedroomExecutiveDuplex99Carousel(direction) {
+      luxuryBedroomExecutiveDuplex99CurrentSlide = (luxuryBedroomExecutiveDuplex99CurrentSlide + direction + luxuryBedroomExecutiveDuplex99TotalSlides) % luxuryBedroomExecutiveDuplex99TotalSlides;
+      updateLuxuryBedroomExecutiveDuplex99Carousel();
+    }
+
+    function goToLuxuryBedroomExecutiveDuplex99Slide(index) {
+      luxuryBedroomExecutiveDuplex99CurrentSlide = index;
+      updateLuxuryBedroomExecutiveDuplex99Carousel();
+    }
+
     // Bungalow 32 Modal Functions (OFFPLAN32)
     let bungalow32CurrentSlide = 0;
     const bungalow32Slides = document.querySelectorAll('#bungalow32CarouselContainer .carousel-slide');
@@ -16748,6 +16892,7 @@
       const bedroomDesignerDuplexFeaturingTimberAccentsNaturalLight96Modal = document.getElementById('bedroomDesignerDuplexFeaturingTimberAccentsNaturalLight96Modal');
       const bedroomExecutiveDuplexPremiumFinishesLandscapedGarden97Modal = document.getElementById('bedroomExecutiveDuplexPremiumFinishesLandscapedGarden97Modal');
       const bedroomGlassFrontDuplex98Modal = document.getElementById('bedroomGlassFrontDuplex98Modal');
+      const luxuryBedroomExecutiveDuplex99Modal = document.getElementById('luxuryBedroomExecutiveDuplex99Modal');
               if (duplex10Modal.classList.contains('active')) {
                 lightboxCurrentModal = 'duplex10';
                 lightboxImages = Array.from(document.querySelectorAll('#duplex10CarouselContainer .carousel-slide')).map(img => img.src);
@@ -17008,6 +17153,10 @@
         lightboxCurrentModal = 'bedroomGlassFrontDuplex98';
         lightboxImages = Array.from(document.querySelectorAll('#bedroomGlassFrontDuplex98CarouselContainer .carousel-slide')).map(img => img.src);
         lightboxCurrentIndex = bedroomGlassFrontDuplex98CurrentSlide;
+      } else if (luxuryBedroomExecutiveDuplex99Modal.classList.contains('active')) {
+        lightboxCurrentModal = 'luxuryBedroomExecutiveDuplex99';
+        lightboxImages = Array.from(document.querySelectorAll('#luxuryBedroomExecutiveDuplex99CarouselContainer .carousel-slide')).map(img => img.src);
+        lightboxCurrentIndex = luxuryBedroomExecutiveDuplex99CurrentSlide;
               }
             }
           }
@@ -17134,6 +17283,7 @@
           closeBedroomDesignerDuplexFeaturingTimberAccentsNaturalLight96Modal();
           closeBedroomExecutiveDuplexPremiumFinishesLandscapedGarden97Modal();
           closeBedroomGlassFrontDuplex98Modal();
+          closeLuxuryBedroomExecutiveDuplex99Modal();
         }
       }
     });
