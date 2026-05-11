@@ -305,8 +305,11 @@
       const config = CURRENCY_CONFIG[this.currentCurrency];
 
       this.priceElements.forEach(element => {
-        // Skip if element is not in document or is hidden
-        if (!document.contains(element) || element.offsetParent === null) {
+        // Skip only if element is no longer attached to the document.
+        // Do NOT skip hidden elements — offplan.html hides properties until
+        // "Load More" is clicked; those prices must still be converted so
+        // they don't flash the original GHS text when revealed.
+        if (!document.contains(element)) {
           return;
         }
         
