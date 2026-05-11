@@ -9,7 +9,7 @@
 
 ---
 
-## Current State (As of March 31, 2026)
+## Current State (As of May 11, 2026)
 
 ### Architecture Overview
 This is a **static HTML/CSS/JS website** with no backend dependencies. Previously had Firebase Authentication and user accounts, but these have been removed for simplification.
@@ -22,6 +22,8 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 - **Visual-only interactions** - Heart icons on properties toggle visually but don't save
 - **Apple-style carousels** - Two-tiered hero carousel with deep-linking to offplan projects
 - **Unified background** - Consistent #fafbf4 color across homepage sections
+- **Floating currency switcher** - USD/GHS/GBP/EUR with base prices stored in USD via `data-usd` (see `js/currency-switcher.js`)
+- **Offplan pagination** - 12 properties per page with "Load More" button; currency switcher converts hidden cards so revealed items don't flash GHS
 
 ---
 
@@ -75,6 +77,7 @@ This is a **static HTML/CSS/JS website** with no backend dependencies. Previousl
 | `js/basket.js` | Basket/saved properties functionality |
 | `js/chatbot.js` | Chatbot widget functionality |
 | `js/loading-states.js` | Loading state management |
+| `js/currency-switcher.js` | Floating USD/GHS/GBP/EUR switcher; converts all `[data-usd]` prices (including hidden lazy-loaded cards) |
 
 ---
 
@@ -404,14 +407,21 @@ The offplan.html page displays investment properties with category filtering and
 | Category | data-category | Description |
 |----------|---------------|-------------|
 | All | `all` | Shows all properties |
-| Duplexes | `duplexes` | Two-story residential buildings |
-| Vacation Homes | `vacation` / `vacation-homes` | Holiday/retreat properties |
-| Environmentalists | `environmentalists` | Eco-friendly/sustainable designs |
 | Retirement Homes | `retirement-homes` | Senior living properties |
+| Duplexes | `duplexes` | Two-story residential buildings |
+| Triplexes | `triplexes` | Three-story residential buildings |
 | Bungalows | `bungalows` | Single-story homes |
-| Cabins | `cabins` | Compact nature retreats |
+| Villa | `villa` | Luxury villa residences |
+| Mansions | `mansions` | Grand large-scale homes |
 | Townhouses | `townhouses` | Urban row houses |
+| Vacation Homes | `vacation-homes` | Holiday/retreat properties |
+| Cabins | `cabins` | Compact nature retreats |
+| Environmentalists | `environmentalists` | Eco-friendly/sustainable designs |
+| Family Homes | `family-homes` | Residential family properties |
+| Multi Family Home | `multi-family-home` | Multi-family / multi-unit residences |
 | Add-ons | `add-ons` | Additional studio properties |
+
+Categories are shared between [offplan.html](file:///c:/Users/SAINTKARIM/Desktop/WENAMY%203/offplan.html) category pills and the [tools/add-offplan.js](file:///c:/Users/SAINTKARIM/Desktop/WENAMY%203/tools/add-offplan.js) `CATEGORIES` array — keep both in sync when adding new categories. Cards can hold multiple categories via space-separated `data-category` values.
 
 ### Property List (31 Total)
 
@@ -448,6 +458,8 @@ The offplan.html page displays investment properties with category filtering and
 | OFFPLAN29 | 5 Bedroom Triplex | Triplexes | 5 | 5+ | $870,000 | Accra | 10 |
 | OFFPLAN30 | 6 Bedroom Modern Triplex | Triplexes | 6 | 6+ | $845,000 | Accra | 9 |
 | OFFPLAN40 | Modern Minimalist Studio | Vacation Homes / Add-ons | 1 | 1 | Contact for Pricing | Accra | 14 |
+
+> **Note:** Off-plan catalog has grown well past OFFPLAN40. Individual property entries are no longer tracked in this table — the authoritative source is the cards in [offplan.html](file:///c:/Users/SAINTKARIM/Desktop/WENAMY%203/offplan.html) (currently OFFPLAN1 through OFFPLAN134+). Use [tools/add-offplan.js](file:///c:/Users/SAINTKARIM/Desktop/WENAMY%203/tools/add-offplan.js) to add new ones; it auto-generates the card, modal, carousel, and URL-parameter hook.
 
 ### URL Parameters for Direct Linking
 Append `?project={id}` to offplan.html to auto-open a specific property modal:
@@ -621,5 +633,21 @@ Category: Duplexes|Vacation Homes|Environmentalists
 
 ---
 
-*Last Updated: March 31, 2026*  
-*Project Status: Production-Ready Static Site with Apple-Style Carousels, 16 Off-Plan Properties, and Custom AI Skills*
+## Currency Switcher
+
+### Overview
+Floating switcher in the top-right corner of content pages; supports USD, GHS, GBP, EUR. All prices are stored as USD in the `data-usd` attribute on `.offplan-luxury-price`, `.project-luxury-price`, and `.price-value` elements. The switcher converts them live using hardcoded rates in [js/currency-switcher.js](file:///c:/Users/SAINTKARIM/Desktop/WENAMY%203/js/currency-switcher.js).
+
+### Key Rules
+- **Never** filter out hidden elements in `updateDisplay()` — offplan pagination hides cards until "Load More" is clicked, and they must still be converted ahead of time so revealed cards don't flash their raw GHS HTML text.
+- Legacy GHS-formatted prices are auto-migrated to `data-usd` on first load via `migrateLegacyPrice()`.
+- Exchange rates are reviewed monthly inside `EXCHANGE_RATES` — update when the rate drifts.
+- When adding/renaming a price element selector, update both `findPriceElements()` selector lists.
+
+### Cache Busting
+All pages referencing `js/currency-switcher.js` use a `?v=` query parameter. Bump the version on every change to the script ([offplan.html](file:///c:/Users/SAINTKARIM/Desktop/WENAMY%203/offplan.html), [projects.html](file:///c:/Users/SAINTKARIM/Desktop/WENAMY%203/projects.html)).
+
+---
+
+*Last Updated: May 11, 2026*  
+*Project Status: Production-Ready Static Site with Apple-Style Carousels, 134+ Off-Plan Properties, Floating Multi-Currency Switcher, Load-More Pagination, and Custom AI Skills*
