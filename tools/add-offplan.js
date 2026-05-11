@@ -9,6 +9,7 @@ const EXCHANGE_RATE = 11.01;
 
 const CATEGORIES = [
   'family-homes',
+  'multi-family-home',
   'townhouses',
   'vacation-homes',
   'duplexes',
